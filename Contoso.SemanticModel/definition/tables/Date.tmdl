@@ -1,0 +1,197 @@
+table Date
+	lineageTag: e697d3e3-9068-4ff7-a50c-474494c23324
+
+	column Date
+		dataType: dateTime
+		isNullable: false
+		lineageTag: 671d3a6f-c538-4264-909d-676b0338be9b
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'Year Number'
+		dataType: int64
+		isHidden
+		lineageTag: 14a707a2-bc8c-4d82-82d1-3e1bb7acd04f
+		summarizeBy: none
+		sourceColumn: Year Number
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Year
+		dataType: string
+		lineageTag: e306ded6-d54c-4d39-a596-a8b8121a58fb
+		summarizeBy: none
+		sourceColumn: Year
+		sortByColumn: 'Year Number'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year Quarter Number'
+		dataType: int64
+		isHidden
+		lineageTag: 5dd44fd1-5afb-49a4-8ad1-ddbb352c4d96
+		summarizeBy: none
+		sourceColumn: Year Quarter Number
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Year Quarter'
+		dataType: string
+		isHidden
+		lineageTag: 1616bd24-d9b3-4ee4-9e02-72eded239ee8
+		summarizeBy: none
+		sourceColumn: Year Quarter
+		sortByColumn: 'Year Quarter Number'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year Month Number'
+		dataType: int64
+		isHidden
+		lineageTag: 0043cb98-8c53-40a2-8980-4437961d7dcc
+		summarizeBy: none
+		sourceColumn: Year Month Number
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Year Month'
+		dataType: string
+		isHidden
+		lineageTag: 56a780fd-9519-44a9-90d9-5384aa7fc197
+		summarizeBy: none
+		sourceColumn: Year Month
+		sortByColumn: 'Year Month Number'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Number'
+		dataType: int64
+		isHidden
+		lineageTag: da2f7a59-0669-4e62-aab2-3ae8e53c5c5d
+		summarizeBy: none
+		sourceColumn: Month Number
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Month
+		dataType: string
+		lineageTag: 1571bef4-d1ab-4701-9517-c901c378fe1a
+		summarizeBy: none
+		sourceColumn: Month
+		sortByColumn: 'Month Number'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day of Week Number'
+		dataType: int64
+		isHidden
+		lineageTag: 17918a2f-d9ff-464e-b99f-9f8ffafcd024
+		summarizeBy: none
+		sourceColumn: Day of Week Number
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Day of Week'
+		dataType: string
+		isHidden
+		lineageTag: fa13737a-34d8-45fc-a800-a69f122d0a8d
+		summarizeBy: none
+		sourceColumn: Day of Week
+		sortByColumn: 'Day of Week Number'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Working Day'
+		dataType: string
+		isHidden
+		lineageTag: 38c7c7ad-4a2f-44e8-aeed-91fddd31215a
+		summarizeBy: none
+		sourceColumn: Working Day
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	hierarchy Calendar
+		lineageTag: c72db194-489a-4646-8255-1a23485bd7cc
+
+		level Year
+			lineageTag: f5fc78bb-fd2c-428c-9483-ce53d833679b
+			column: Year
+
+		level Month
+			lineageTag: ece96c36-a3c9-4a94-a0f5-9f39ac01c57c
+			column: 'Year Month'
+
+		level Date
+			lineageTag: 7c7fe970-ada2-47f7-bbf1-9e14448ba0ed
+			column: Date
+
+	partition 'DaxBook Date' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("Demo", "ContosoRetailDW"),
+				    DaxBook_Date = Source{[Schema="DaxBook",Item="Date"]}[Data],
+				    #"Removed Columns" = Table.RemoveColumns(DaxBook_Date,{"Fiscal Month", "Fiscal Month Number", "Fiscal Quarter", "Fiscal Quarter Number", "Fiscal Year", "Fiscal Year Number", "Fiscal Year Quarter", "Fiscal Year Quarter Number", "North America Season", "Europe Season", "Asia Season", "DateKey"}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Removed Columns",{{"Calendar Year", "Year"}, {"Calendar Year Number", "Year Number"}, {"Calendar Year Quarter Number", "Year Quarter Number"}, {"Calendar Year Quarter", "Year Quarter"}, {"Calendar Year Month Number", "Year Month Number"}, {"Calendar Year Month", "Year Month"}}),
+				    #"Removed Columns1" = Table.RemoveColumns(#"Renamed Columns",{"Holiday Name", "Is Holiday"})
+				in
+				    #"Removed Columns1"
+
+		annotation IsQueryEditorUsed = False
+
+		annotation QueryEditorSerialization
+
+		annotation TableWidgetSerialization
+
+	annotation _TM_ExtProp_QueryDefinition = SELECT * FROM [Date]
+
+	annotation _TM_ExtProp_DbTableName = 290
+
+	annotation IsQueryEditorUsed = False
+
+	annotation QueryEditorSerialization
+
+	annotation TableWidgetSerialization
+
+	annotation DataMarketWebBaseUrl
+
+	annotation DataMarketWebQueryUrl
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

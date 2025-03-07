@@ -1,0 +1,24 @@
+expression 'Product Category' =
+		let
+		    Source = Sql.Database("Demo", "ContosoRetailDW"),
+		    #"DaxBook_Product Category" = Source{[Schema="DaxBook",Item="Product Category"]}[Data]
+		in
+		    #"DaxBook_Product Category"
+	lineageTag: 9ddea3fc-a910-4592-85b1-73f568d4a788
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression 'Product Subcategory' =
+		let
+		    Source = Sql.Database("Demo", "ContosoRetailDW"),
+		    #"DaxBook_Product Subcategory" = Source{[Schema="DaxBook",Item="Product Subcategory"]}[Data]
+		in
+		    #"DaxBook_Product Subcategory"
+	lineageTag: ee64b0b4-23f6-4523-8804-9b09a2bb0aa7
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
