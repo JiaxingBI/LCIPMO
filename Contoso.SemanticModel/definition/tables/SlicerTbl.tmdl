@@ -1,0 +1,129 @@
+table SlicerTbl
+	lineageTag: 49b773eb-4674-489e-916a-95d57efcfa0f
+
+	column Date
+		formatString: General Date
+		lineageTag: fbe9de75-7794-4684-81fb-3e9790b0eab4
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Date[Date]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year Number'
+		formatString: 0
+		lineageTag: eda549cc-edcc-4d4b-9efe-12ca857be255
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: Date[Year Number]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		isHidden
+		lineageTag: 4435d7c9-a85b-43a1-b347-4c41b17411d8
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Date[Year]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year Quarter Number'
+		formatString: 0
+		lineageTag: e082fb7f-6e8c-405c-86b3-312e8cdbf13d
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: Date[Year Quarter Number]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year Quarter'
+		lineageTag: 58ca4bb7-7f87-46f1-a326-19c2ace75d59
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Date[Year Quarter]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year Month Number'
+		formatString: 0
+		lineageTag: 1696e88e-e09d-4236-baea-560ea9665692
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: Date[Year Month Number]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year Month'
+		isHidden
+		lineageTag: 3e61b651-ee26-4f49-9947-ee98c3fe3c0a
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Date[Year Month]
+		sortByColumn: 'Year Month Number'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Number'
+		formatString: 0
+		lineageTag: 3fa6cdb0-d0ba-4217-80c0-d792843197a0
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: Date[Month Number]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month
+		lineageTag: fb19e63d-94ae-47f2-a3a5-3f721d67ee7d
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Date[Month]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day of Week Number'
+		formatString: 0
+		lineageTag: 3dfd1481-b4bb-4411-90f6-bdeeb6e8b92c
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: Date[Day of Week Number]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day of Week'
+		lineageTag: ea9d2da3-b38a-416c-8b0f-e09bb97f6d31
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Date[Day of Week]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Working Day'
+		lineageTag: 05cdac9a-17bd-4807-99be-5bbb33c4566a
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Date[Working Day]
+
+		annotation SummarizationSetBy = Automatic
+
+	hierarchy 'Year Hierarchy'
+		lineageTag: 9eb1bc4a-cf13-4f95-bf1d-6262e7ff0e8f
+
+		level Year
+			lineageTag: 8efaee85-5d70-4012-8fea-42aa35fe3458
+			column: Year
+
+		level 'Year Month'
+			lineageTag: 37c938e9-6a0f-4198-99ce-1a5cbec33405
+			column: 'Year Month'
+
+		level Date
+			lineageTag: 507cb0e0-3714-4016-8f85-14882bd51576
+			column: Date
+
+	partition SlicerTbl = calculated
+		mode: import
+		source = 'Date'
+
+	annotation PBI_Id = a2676197b3bf405e9a7b7b6d7eae091b
+
