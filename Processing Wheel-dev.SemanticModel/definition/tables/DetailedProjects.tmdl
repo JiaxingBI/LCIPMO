@@ -1,0 +1,159 @@
+table DetailedProjects
+	lineageTag: d68df17a-b4f0-4db5-a6ff-2e79beca0835
+
+	column Category
+		dataType: string
+		lineageTag: c42710e2-be26-462d-b6ed-0a74e3fbf59c
+		summarizeBy: none
+		sourceColumn: Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ID Tracker'
+		dataType: string
+		lineageTag: 0b883308-a4cd-4cce-81d5-32c890c87988
+		summarizeBy: none
+		sourceColumn: ID Tracker
+
+		annotation SummarizationSetBy = Automatic
+
+	column Initiatives
+		dataType: string
+		lineageTag: d0ed7058-aa23-4735-98f0-5d54643c967b
+		summarizeBy: none
+		sourceColumn: Initiatives
+
+		annotation SummarizationSetBy = Automatic
+
+	column Lead
+		dataType: string
+		lineageTag: 44e08e87-b1d6-4349-9e21-8ca858a6a547
+		summarizeBy: none
+		sourceColumn: Lead
+
+		annotation SummarizationSetBy = Automatic
+
+	column Comments
+		dataType: string
+		lineageTag: 21cfb8f6-6681-4a8c-9543-fda372da0879
+		summarizeBy: none
+		sourceColumn: Comments
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status = ```
+			
+			var ActualMonth = MONTH([SAT Actual])
+			var PlanMonth = MONTH([SAT Plan])
+			var CurrentMonth = MONTH(TODAY())
+			var fx = 
+			    IF(
+			        ISBLANK('DetailedProjects'[SAT Plan]), "No SAT Plan", 
+			        IF(
+			            NOT ISBLANK(ActualMonth),              
+			                IF(ActualMonth <= PlanMonth, "On Track","Delay" ) ,
+			                IF(CurrentMonth <= PlanMonth,"On Track","Delay")
+			        )
+			    )
+			RETURN
+			    fx
+			
+			```
+		lineageTag: cc73df64-a2b9-4d1f-9433-7e379096b463
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Site
+		dataType: string
+		lineageTag: 9ac4fb59-2ab5-4174-a4db-0f527f2bd7a2
+		summarizeBy: none
+		sourceColumn: Site
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'SAT Plan'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: da2b9d37-cce9-4237-b5ae-2089d7988270
+		summarizeBy: none
+		sourceColumn: SAT Plan
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'SAT Actual'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 2e5ebeeb-7146-4411-b7a4-6b0e03d745d0
+		summarizeBy: none
+		sourceColumn: SAT Actual
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Color Tag'
+		dataType: string
+		lineageTag: 54b0630a-3775-4c8f-84ef-f038ff5b7999
+		summarizeBy: none
+		sourceColumn: Color Tag
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Compliance Asset Id'
+		dataType: string
+		lineageTag: 6ba8fa51-35f3-4cc7-97f8-56bcd5caa77b
+		summarizeBy: none
+		sourceColumn: Compliance Asset Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 5cc18fb7-d525-4897-b1e5-87d9c6b6532c
+		summarizeBy: count
+		sourceColumn: ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Modified
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 8a0c5d41-38f5-49fe-98bc-e0e730d63045
+		summarizeBy: none
+		sourceColumn: Modified
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Created
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 965174c1-688e-4e84-8c3b-edb37b6b46e4
+		summarizeBy: none
+		sourceColumn: Created
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition DetailedProjects = m
+		mode: import
+		source =
+				let
+				    Source = SharePoint.Tables("https://legogroup.sharepoint.com/sites/globalprocessingwheel", [Implementation="2.0", ViewMode="All"]),
+				    #"57a704bc-26c2-4675-8669-afbe3cc3b773" = Source{[Id="57a704bc-26c2-4675-8669-afbe3cc3b773"]}[Items],
+				    #"Changed Type" = Table.TransformColumnTypes(#"57a704bc-26c2-4675-8669-afbe3cc3b773",{{"SAT Plan", type date}, {"SAT Actual", type date}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Created By", "Modified By", "Version", "Attachments", "Edit", "Type", "Item Child Count", "Folder Child Count", "Label setting", "Retention label", "Retention label Applied", "Label applied by", "Item is a Record", "App Created By", "App Modified By", "Content Type"}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Removed Columns",{{"Modified", type date}, {"Created", type date}})
+				in
+				    #"Changed Type1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
