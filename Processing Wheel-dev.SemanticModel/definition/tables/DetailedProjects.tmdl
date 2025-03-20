@@ -25,14 +25,6 @@ table DetailedProjects
 
 		annotation SummarizationSetBy = Automatic
 
-	column Lead
-		dataType: string
-		lineageTag: 44e08e87-b1d6-4349-9e21-8ca858a6a547
-		summarizeBy: none
-		sourceColumn: Lead
-
-		annotation SummarizationSetBy = Automatic
-
 	column Comments
 		dataType: string
 		lineageTag: 21cfb8f6-6681-4a8c-9543-fda372da0879
@@ -43,21 +35,20 @@ table DetailedProjects
 
 	column Status = ```
 			
-			var ActualMonth = MONTH([SAT Actual])
-			var PlanMonth = MONTH([SAT Plan])
-			var CurrentMonth = MONTH(TODAY())
-			var fx = 
+			VAR ActualMonth = WEEKNUM([SAT Actual])
+			VAR PlanMonth = WEEKNUM([SAT Plan])
+			VAR CurrentMonth = WEEKNUM(TODAY())
+			VAR fx = 
 			    IF(
-			        ISBLANK('DetailedProjects'[SAT Plan]), "No SAT Plan", 
+			        ISBLANK('DetailedProjects'[SAT Plan]), "🟡", 
 			        IF(
-			            NOT ISBLANK(ActualMonth),              
-			                IF(ActualMonth <= PlanMonth, "On Track","Delay" ) ,
-			                IF(CurrentMonth <= PlanMonth,"On Track","Delay")
+			            ISBLANK(ActualMonth),              
+			                IF(CurrentMonth <= PlanMonth, "🟢", "🔴"),
+			                IF(ActualMonth <= PlanMonth, "🟢", "🔴")
 			        )
 			    )
 			RETURN
 			    fx
-			
 			```
 		lineageTag: cc73df64-a2b9-4d1f-9433-7e379096b463
 		summarizeBy: none
@@ -74,7 +65,7 @@ table DetailedProjects
 
 	column 'SAT Plan'
 		dataType: dateTime
-		formatString: Long Date
+		formatString: m/d/yyyy
 		lineageTag: da2b9d37-cce9-4237-b5ae-2089d7988270
 		summarizeBy: none
 		sourceColumn: SAT Plan
@@ -83,9 +74,11 @@ table DetailedProjects
 
 		annotation UnderlyingDateTimeDataType = Date
 
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
 	column 'SAT Actual'
 		dataType: dateTime
-		formatString: Long Date
+		formatString: mm/dd/yyyy
 		lineageTag: 2e5ebeeb-7146-4411-b7a4-6b0e03d745d0
 		summarizeBy: none
 		sourceColumn: SAT Actual
@@ -94,21 +87,7 @@ table DetailedProjects
 
 		annotation UnderlyingDateTimeDataType = Date
 
-	column 'Color Tag'
-		dataType: string
-		lineageTag: 54b0630a-3775-4c8f-84ef-f038ff5b7999
-		summarizeBy: none
-		sourceColumn: Color Tag
-
-		annotation SummarizationSetBy = Automatic
-
-	column 'Compliance Asset Id'
-		dataType: string
-		lineageTag: 6ba8fa51-35f3-4cc7-97f8-56bcd5caa77b
-		summarizeBy: none
-		sourceColumn: Compliance Asset Id
-
-		annotation SummarizationSetBy = Automatic
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
 
 	column ID
 		dataType: int64
@@ -141,14 +120,71 @@ table DetailedProjects
 
 		annotation UnderlyingDateTimeDataType = Date
 
+	column 'SAT Lead'
+		dataType: string
+		lineageTag: d5a751e0-ce57-450b-a7c1-13d5ebcbc02e
+		summarizeBy: none
+		sourceColumn: SAT Lead
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Implement Lead'
+		dataType: string
+		lineageTag: a2166765-3c25-4b4f-8fd0-7a0d4e7f9330
+		summarizeBy: none
+		sourceColumn: Implement Lead
+
+		annotation SummarizationSetBy = Automatic
+
+	column UpdateOn
+		dataType: dateTime
+		formatString: m/d/yy
+		lineageTag: 5b2cf55a-0969-413d-9508-41b1b8a9fd75
+		summarizeBy: none
+		sourceColumn: UpdateOn
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column SATPlanWk = WEEKNUM('DetailedProjects'[SAT Plan])
+		formatString: 0
+		lineageTag: 0955a888-8332-45f4-8b41-3f22b2e491ea
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column WkActual = WEEKNUM(DetailedProjects[SAT Actual])
+		formatString: 0
+		lineageTag: b32b5326-cb69-4eb5-ab8b-719b9cbe8551
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column UpdatedOnWeek = WEEKNUM('DetailedProjects'[UpdateOn])
+		formatString: 0
+		lineageTag: 09e3dae6-a04e-4fc2-82ff-c0b1efe783cf
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column Todaywk = WEEKNUM(TODAY(),21)
+		formatString: 0
+		lineageTag: 907a3902-f1f6-4827-ab44-df8f7da4d225
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
 	partition DetailedProjects = m
 		mode: import
 		source =
 				let
 				    Source = SharePoint.Tables("https://legogroup.sharepoint.com/sites/globalprocessingwheel", [Implementation="2.0", ViewMode="All"]),
 				    #"57a704bc-26c2-4675-8669-afbe3cc3b773" = Source{[Id="57a704bc-26c2-4675-8669-afbe3cc3b773"]}[Items],
-				    #"Changed Type" = Table.TransformColumnTypes(#"57a704bc-26c2-4675-8669-afbe3cc3b773",{{"SAT Plan", type date}, {"SAT Actual", type date}}),
-				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Created By", "Modified By", "Version", "Attachments", "Edit", "Type", "Item Child Count", "Folder Child Count", "Label setting", "Retention label", "Retention label Applied", "Label applied by", "Item is a Record", "App Created By", "App Modified By", "Content Type"}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"57a704bc-26c2-4675-8669-afbe3cc3b773",{{"SAT Plan", type date}, {"SAT Actual", type date}, {"UpdateOn", type date}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Created By", "Modified By", "Version", "Attachments", "Edit", "Type", "Item Child Count", "Folder Child Count", "Label setting", "Retention label", "Retention label Applied", "Label applied by", "Item is a Record", "App Created By", "App Modified By", "Content Type", "Compliance Asset Id", "Color Tag"}),
 				    #"Changed Type1" = Table.TransformColumnTypes(#"Removed Columns",{{"Modified", type date}, {"Created", type date}})
 				in
 				    #"Changed Type1"

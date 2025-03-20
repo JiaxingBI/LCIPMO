@@ -29,6 +29,13 @@ table dCalendar
 
 		annotation SummarizationSetBy = Automatic
 
+	column WeekNum = WEEKNUM('dCalendar'[Date],2)
+		formatString: 0
+		lineageTag: f54fe988-8f6e-4279-beaa-976b9b6bc790
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
 	partition dCalendar = calculated
 		mode: import
 		source = CALENDARAUTO()

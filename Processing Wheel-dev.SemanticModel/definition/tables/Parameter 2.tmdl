@@ -1,0 +1,50 @@
+table 'Parameter 2'
+	lineageTag: da6fe6c4-31c7-44b4-8b2f-8690de1b6028
+
+	column Parameter
+		lineageTag: 63d07aee-a1a1-4662-9f5a-3312190185e6
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Parameter Order'
+
+		relatedColumnDetails
+			groupByColumn: 'Parameter Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parameter Fields'
+		isHidden
+		lineageTag: a95af98b-23a3-4089-b7a4-e4823644fa3e
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Parameter Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parameter Order'
+		isHidden
+		formatString: 0
+		lineageTag: 9dfe8a6b-aa3c-4728-842a-ee69928ce0e9
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Parameter 2' = calculated
+		mode: import
+		source =
+				{
+				    ("History_Overview.ELT L3", NAMEOF('HistoryOverview'[History_Overview.ELT L3]), 0),
+				    ("History_Overview.ELT Level 5", NAMEOF('HistoryOverview'[History_Overview.ELT Level 5]), 1),
+				    ("History_Overview.IL", NAMEOF('HistoryOverview'[History_Overview.IL]), 2),
+				    ("History_Overview.Platfrom", NAMEOF('HistoryOverview'[History_Overview.Platfrom]), 3)
+				}
+
+	annotation PBI_Id = 3160ba75fc314adc968471d481397128
+

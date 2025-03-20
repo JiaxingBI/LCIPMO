@@ -12,19 +12,24 @@ table Measure
 		formatString: 0.0
 		lineageTag: 367b131c-4b2a-4a27-be41-572413a3fb37
 
-	measure '#A&D Initative' = ```
+	measure 'SAT Status' = ```
 			
-			var curReport = MAX('Weekly Calendar'[Report])
-			var res = 
-			 CALCULATE(
-			    DISTINCTCOUNT('HistoryOverview'[History_Overview.ID_General]),
-			    'HistoryOverview'[History_Overview.O Strategic Initiative]="A&D",
-			    'HistoryOverview'[History_Overview.Report] = curReport
-			    )
+			var Actualwk = WEEKNUM([SAT Actual])
+			var Planwk = WEEKNUM([SAT Plan])
+			var Currentwk = [Parameter Value]
+			var fx = 
+			 IF(
+			        ISBLANK(Planwk), "#FFD700", 
+			        IF(
+			            NOT ISBLANK(Actualwk),              
+			                IF(Actualwk <= Planwk, "#00af4d","#bb2026" ) ,
+			                IF(Currentwk <= Planwk,"#00af4d","#bb2026")
+			        )
+			 )
 			RETURN
-			    res
+			    fx
+			
 			```
-		formatString: 0
 		lineageTag: 4bcea73c-b08b-42ce-8af1-048acd922ecd
 
 	measure '#NAD Initative' =
@@ -186,40 +191,18 @@ table Measure
 			    res
 		lineageTag: 609a17ff-1147-47fd-b2fe-a79e62199cc7
 
-	measure 'Projects Due This Month' =
-			
-			var curMonth = MONTH(TODAY())
-			var projects = COUNTROWS(FILTER('DetailedProjects', MONTH('DetailedProjects'[SAT Plan]) = curMonth))
-			
-			 RETURN
-			    projects
-		formatString: 0
-		lineageTag: 5af29742-0ff0-4733-a7c1-178a018834f6
-
 	measure Version-CurrentVersion = FORMAT(TODAY(),"YYYY-MMM")
 		lineageTag: c37a39b4-b3aa-4a5e-a752-4c103378ca20
 
-	measure 'Projects Delay' =
+	measure Delay = ```
 			
-			var AdjustedActual = IF(ISBLANK([ProjectActual]),TODAY(),[ProjectActual])
-			var projects = COUNTROWS(FILTER('DetailedProjects',[SAT Plan]<AdjustedActual))
+			 COUNTROWS(FILTER('DetailedProjects',[Status]="Delay"))
 			
-			 RETURN
-			    projects
+			```
 		formatString: 0
 		lineageTag: b7d5517e-b2c3-48dd-8f5c-efe80dfaaafb
 
-	measure 'Project Due Next Month' =
-			
-			var _NextMonth = MONTH(TODAY())+1
-			var projects = COUNTROWS(FILTER('DetailedProjects', MONTH('DetailedProjects'[SAT Plan]) = _NextMonth))
-			
-			 RETURN
-			    projects
-		formatString: 0
-		lineageTag: 338c59a2-36a1-44e2-b183-f5a05997ccfe
-
-	measure 'Total Projects' = COUNTROWS('DetailedProjects')
+	measure 'On Track' = COUNTROWS(FILTER('DetailedProjects','DetailedProjects'[Status]="On Track"))
 		formatString: 0
 		lineageTag: 7487da64-aa62-4b01-bb9c-b8170798e278
 
@@ -437,11 +420,52 @@ table Measure
 		lineageTag: c614663e-6313-4be9-8142-770b520e4a30
 		dataCategory: ImageUrl
 
-	measure PlaceHolder = 1
-		formatString: 0
+	measure CellColor = ```
+			
+			VAR EvalWeek = SELECTEDVALUE(dimWeek[WeekNum]) 
+			VAR PlanWk = SELECTEDVALUE(DetailedProjects[SATPlanWk])
+			VAR ActualWk = SELECTEDVALUE(DetailedProjects[WkActual])
+			VAR UpdateWk = SELECTEDVALUE(DetailedProjects[UpdatedOnWeek])
+			VAR TodayWk = Parameter[Parameter Value] 
+			VAR res = 
+			IF(
+			    NOT ISBLANK(ActualWk) && ActualWk <= TodayWk, // Project is completed
+			    IF(
+			        ActualWk <= PlanWk, // On time or early
+			        SWITCH(TRUE(),
+			            EvalWeek <= ActualWk, "#9bc2e6", // Blue up to ActualWk
+			            EvalWeek > ActualWk && EvalWeek <= TodayWk, "#00af4d", // Green from ActualWk+1 to TodayWk
+			            "white" // White after TodayWk
+			        ),
+			        SWITCH(TRUE(), // Delayed
+			            EvalWeek < UpdateWk, "#9bc2e6", // Blue before update
+			            EvalWeek >= UpdateWk && EvalWeek <= ActualWk, "red", // Red during delay
+			            EvalWeek > ActualWk && EvalWeek <= TodayWk, "#00af4d", // Green after ActualWk and before or on TodayWk
+			            "white" // White after TodayWk
+			        )
+			    ),
+			    // Project not completed
+			    IF(
+			        TodayWk <= PlanWk, // On track
+			        SWITCH(TRUE(),
+			            EvalWeek <= TodayWk, "#9bc2e6", // Blue up to TodayWk
+			            "white" // White after
+			        ),
+			        SWITCH(TRUE(), // Delayed (TodayWk > PlanWk)
+			            EvalWeek < UpdateWk, "#9bc2e6", // Blue before update
+			            EvalWeek >= UpdateWk && EvalWeek <= TodayWk, "red", // Red from UpdateWk to TodayWk
+			            "white" // White after TodayWk
+			        )
+			    )
+			)
+			VAR svg = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='15' height='15'><rect width='100%' height='100%' fill='" & res & "'/></svg>"
+			RETURN
+			svg
+			```
 		lineageTag: 9925cec0-9302-4c91-aab9-9d3557b8ff39
+		dataCategory: ImageUrl
 
-	measure 'Total Initiatives' = DISTINCTCOUNT('HistoryOverview'[History_Overview.ID_General])
+	measure 'Total Initiatives' = COUNTROWS('DetailedProjects')
 		formatString: 0
 		lineageTag: bf191b1a-213b-4cc9-838a-68f3cb9ae77c
 
@@ -461,16 +485,6 @@ table Measure
 
 	measure BarDiff = [BarMax]-[BarMin]
 		lineageTag: 8c4502ff-967e-4dfe-9ce4-4c36af5078d7
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	measure _BarUnMet = IF([In Year Net Saving]<[TotalTarget], [BarMax]-[BarMin])
-		lineageTag: 4d6092d7-af23-45c3-95e0-5487da9f6369
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	measure _BarMet = IF([In Year Net Saving]>=[TotalTarget], [BarMax]-[BarMin])
-		lineageTag: 01fe4623-4e87-4bff-9649-ecf7169d5529
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
@@ -541,6 +555,51 @@ table Measure
 			
 			```
 		lineageTag: 9626717b-f1bf-4082-9f93-6117d8ffb69a
+		dataCategory: ImageUrl
+
+	measure CellColor2 = ```
+			
+			VAR EvalWeek = SELECTEDVALUE(dimWeek[WeekNum]) 
+			VAR PlanWk = SELECTEDVALUE(DetailedProjects[SATPlanWk])
+			VAR ActualWk = SELECTEDVALUE(DetailedProjects[WkActual])
+			VAR UpdateWk = SELECTEDVALUE(DetailedProjects[UpdatedOnWeek])
+			VAR TodayWk = Parameter[Parameter Value] 
+			VAR res = 
+			IF(
+			    NOT ISBLANK(ActualWk) && ActualWk <= TodayWk, // Project is completed
+			    IF(
+			        ActualWk <= PlanWk, // On time or early
+			        SWITCH(TRUE(),
+			            EvalWeek <= ActualWk, "#9bc2e6", // Blue up to ActualWk
+			            EvalWeek > ActualWk && EvalWeek <= TodayWk, "#00af4d", // Green from ActualWk+1 to TodayWk
+			            "white" // White after TodayWk
+			        ),
+			        SWITCH(TRUE(), // Delayed
+			            EvalWeek < UpdateWk, "#9bc2e6", // Blue before update
+			            EvalWeek >= UpdateWk && EvalWeek <= ActualWk, "red", // Red during delay
+			            EvalWeek > ActualWk && EvalWeek <= TodayWk, "#00af4d", // Green after ActualWk and before or on TodayWk
+			            "white" // White after TodayWk
+			        )
+			    ),
+			    // Project not completed
+			    IF(
+			        TodayWk <= PlanWk, // On track
+			        SWITCH(TRUE(),
+			            EvalWeek <= TodayWk, "#9bc2e6", // Blue up to TodayWk
+			            "white" // White after
+			        ),
+			        SWITCH(TRUE(), // Delayed (TodayWk > PlanWk)
+			            EvalWeek < UpdateWk, "#9bc2e6", // Blue before update
+			            EvalWeek >= UpdateWk && EvalWeek <= TodayWk, "red", // Red from UpdateWk to TodayWk
+			            "white" // White after TodayWk
+			        )
+			    )
+			)
+			VAR svg = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'><rect width='100%' height='100%' fill='" & res & "'/></svg>"
+			RETURN
+			svg
+			```
+		lineageTag: 814bcc72-98b7-4443-9da7-752624db6fbf
 		dataCategory: ImageUrl
 
 	column Value

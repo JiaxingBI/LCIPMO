@@ -8,7 +8,7 @@ model Model
 
 annotation __PBI_TimeIntelligenceEnabled = 0
 
-annotation PBIDesktopVersion = 2.140.1351.0 (25.02)+9bb96b6a5aee417774126f3416805b86efac121f
+annotation PBIDesktopVersion = 2.140.1577.0 (25.02)+00af0910c5ca19a229c472b0dfc17a2c488f6b0a
 
 annotation PBI_QueryOrder = ["Target-Plant","DetailedProjects","HistoryOverview","Weekly Calendar","IL Sort","Month Sort","Strategic Intiative"]
 
@@ -26,6 +26,9 @@ ref table dCalendar
 ref table 'Month Sort'
 ref table 'Strategic Intiative'
 ref table tblProjectID
+ref table dimWeek
+ref table Parameter
+ref table 'Parameter 2'
 
 ref cultureInfo en-US
 

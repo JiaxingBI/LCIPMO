@@ -1,0 +1,79 @@
+table dimWeek
+	lineageTag: db3ae047-b34e-41bd-87aa-f4403bd9a1ab
+
+	column WeekNum
+		formatString: 0
+		lineageTag: 01c4f994-7e45-43a6-a680-758420f36a1f
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [WeekNum]
+
+		annotation SummarizationSetBy = Automatic
+
+	column WeekStart
+		formatString: General Date
+		lineageTag: b4b0329b-0443-4dac-b22d-b769adc7af76
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [WeekStart]
+
+		annotation SummarizationSetBy = Automatic
+
+	column WeekEnd
+		formatString: General Date
+		lineageTag: 45de35e7-b1ca-4ded-9272-b293e30ab1a0
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [WeekEnd]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month
+		lineageTag: 70467464-59b3-40b4-8d8d-cc3d7bb3b06c
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Month]
+		sortByColumn: MonthNum
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthNum
+		formatString: 0
+		lineageTag: 150e7b4d-e84c-4a9e-8b26-8fc378498ccd
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [MonthNum]
+
+		annotation SummarizationSetBy = Automatic
+
+	hierarchy 'Month Hierarchy'
+		lineageTag: 986a38d8-3a93-4bc3-b585-51a8af27f417
+
+		level Month
+			lineageTag: 13a938fd-d4dd-431c-a689-a68106af779d
+			column: Month
+
+		level WeekNum
+			lineageTag: 693ea266-d539-425b-9ce5-9105260a7da9
+			column: WeekNum
+
+	partition dimWeek = calculated
+		mode: import
+		source = ```
+				
+				VAR BaseDate = DATE(2024, 12, 30) // 
+				VAR res = 
+				SELECTCOLUMNS(
+				    GENERATESERIES(1, 52, 1),  
+				    "WeekNum", [Value],
+				    "WeekStart", BaseDate + ([Value] - 1) * 7,
+				    "WeekEnd", BaseDate + [Value] * 7 - 1,
+				    "Month", FORMAT(BaseDate + ([Value] - 1) * 7+3, "MMM"),
+				    "MonthNum", MONTH(BaseDate + ([Value] - 1) * 7+3)
+				)
+				RETURN
+				    res
+				```
+
+	annotation PBI_Id = eeb2340daec043a0b7c92d646cfaa494
+
