@@ -1,0 +1,63 @@
+table dim_electricityArea
+	lineageTag: 29211a75-1819-42c0-8b27-85fa6971920b
+
+	column Production
+		dataType: string
+		lineageTag: 7c9f0632-0eb2-4253-8326-c24cbb7a30d8
+		summarizeBy: none
+		sourceColumn: Production
+
+		annotation SummarizationSetBy = Automatic
+
+	column Area
+		dataType: string
+		lineageTag: dfd4b5e8-10be-4803-87c2-95bd9dd90dc1
+		summarizeBy: none
+		sourceColumn: Area
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sub-area
+		dataType: string
+		lineageTag: 16d20313-14af-4e1e-a74f-e5b2350e8dcc
+		summarizeBy: none
+		sourceColumn: Sub-area
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cabinets
+		dataType: string
+		lineageTag: 19f11e31-0dfb-4521-8336-edeb5a69f7ee
+		summarizeBy: none
+		sourceColumn: Cabinets
+
+		annotation SummarizationSetBy = Automatic
+
+	column Machines
+		dataType: string
+		lineageTag: 925505ac-02f9-4fd0-bb4c-f5b759ecb2b3
+		summarizeBy: none
+		sourceColumn: Machines
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_electricityArea = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://legogroup.sharepoint.com/sites/JIALCI/Shared%20Documents/General/03_BI/01_Project%20List/02.%20Project%20List/03.%20Energy%20Consumption/Moulding%20Energy%20information20250328.xlsx"), null, true),
+				    Sheet1_Sheet = Source{[Item="Sheet1",Kind="Sheet"]}[Data],
+				    #"Removed Top Rows" = Table.Skip(Sheet1_Sheet,1),
+				    #"Filled Down" = Table.FillDown(#"Removed Top Rows",{"Column1", "Column2"}),
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Filled Down", [PromoteAllScalars=true]),
+				    #"Filtered Rows" = Table.SelectRows(#"Promoted Headers", each ([Area] <> "Toal：" and [Area] <> "Total：")),
+				    #"Split Column by Delimiter" = Table.ExpandListColumn(Table.TransformColumns(#"Filtered Rows", {{"Sub-area", Splitter.SplitTextByDelimiter(",", QuoteStyle.Csv), let itemType = (type nullable text) meta [Serialized.Text = true] in type {itemType}}}), "Sub-area"),
+				    #"Extracted Text After Delimiter" = Table.TransformColumns(#"Split Column by Delimiter", {{"Sub-area", each Text.AfterDelimiter(_, " ", {0, RelativePosition.FromEnd}), type text}}),
+				    #"Lowercased Text" = Table.TransformColumns(#"Extracted Text After Delimiter",{{"Sub-area", each if _ <> "" then  "Molding Line " &  _ else null, type text}})
+				in
+				    #"Lowercased Text"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

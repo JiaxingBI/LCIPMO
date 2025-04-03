@@ -1,0 +1,51 @@
+table Calendar
+	lineageTag: fa57c8f8-4f1e-4907-8bc7-87f781dd1936
+	dataCategory: Time
+
+	column Date
+		isKey
+		formatString: Mm/dd
+		lineageTag: 6d31d7a4-db06-47a2-9066-41f9999c4bdd
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column Year = YEAR('Calendar'[Date])
+		formatString: 0
+		lineageTag: a4c40bc5-494d-4101-bffd-f23203f22319
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month = MONTH('Calendar'[Date])
+		formatString: 0
+		lineageTag: 504f9d31-abb9-4cd5-9d7e-62bcb2264e27
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column YearMonth = FORMAT('Calendar'[Date],"YYYY-MMM")
+		lineageTag: d80250ad-3a52-4873-b982-cff6e2ef8a56
+		summarizeBy: none
+		sortByColumn: YearMonthOrder
+
+		annotation SummarizationSetBy = Automatic
+
+	column YearMonthOrder = 'Calendar'[Year]*100+'Calendar'[Month]
+		isHidden
+		formatString: 0
+		lineageTag: 104f02a7-a33a-4cd3-989e-ba5f7f3045b2
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Calendar = calculated
+		mode: import
+		source = CALENDARAUTO()
+
+	annotation PBI_Id = 99356f6e2cea4aa4beb13e65f9d73ce8
+

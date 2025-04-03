@@ -1,0 +1,126 @@
+table 2025ProductivityTracker
+	lineageTag: 612565c0-f1c6-44c9-b8e4-cc96544bc25e
+
+	column 'Date created'
+		dataType: string
+		lineageTag: 967edce4-97d7-43c4-9dd3-8c762a5193e7
+		summarizeBy: none
+		sourceColumn: Date created
+		sortByColumn: Index
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column Area
+		dataType: string
+		lineageTag: 4ddf325d-638a-47e6-9097-df51b3af9f77
+		summarizeBy: none
+		sourceColumn: Area
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Dept.'
+		dataType: string
+		lineageTag: 16d2c349-2ee6-4bfc-a22d-48cd17a61294
+		summarizeBy: none
+		sourceColumn: Dept.
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Project name'
+		dataType: string
+		lineageTag: 4a69492e-d2ed-467e-88dd-7af7b3b8d5f4
+		summarizeBy: none
+		sourceColumn: Project name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Project leader'
+		dataType: string
+		lineageTag: f17bdbd7-e327-4c47-86c3-daf2711ffc6c
+		summarizeBy: none
+		sourceColumn: Project leader
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Value Type'
+		dataType: string
+		lineageTag: 5671e15c-8ac0-44be-a9b4-3c4686467597
+		summarizeBy: none
+		sourceColumn: Value Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column IL
+		dataType: string
+		lineageTag: 703a869c-7f7c-49c3-b6d7-7a94788677a7
+		summarizeBy: none
+		sourceColumn: IL
+
+		annotation SummarizationSetBy = Automatic
+
+	column Index
+		dataType: int64
+		formatString: 0
+		lineageTag: c772214f-169e-4305-afcc-e0bdbf434db5
+		summarizeBy: sum
+		sourceColumn: Index
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month
+		dataType: int64
+		formatString: 0
+		lineageTag: 1f013875-a8d5-49a8-885d-6d33a5768778
+		summarizeBy: sum
+		sourceColumn: Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		dataType: double
+		lineageTag: 903004fb-ff2c-44b7-8795-c3d43222277c
+		summarizeBy: sum
+		sourceColumn: Value
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Key
+		dataType: string
+		lineageTag: d76bdffc-9c05-4bb5-ab1c-fb9dfe3b79d5
+		summarizeBy: none
+		sourceColumn: Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column JIATarget = RELATED('Table_Productivity_Saving Target'[Fin Target])
+		lineageTag: ee3ab96f-8e40-4a73-9d57-edc1a482cadd
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 2025ProductivityTracker = m
+		mode: import
+		source =
+				let
+				    Source = PowerPlatform.Dataflows([]),
+				    Workspaces = Source{[Id="Workspaces"]}[Data],
+				    #"7c90095b-31de-43da-b11e-e3c19e33be7d" = Workspaces{[workspaceId="7c90095b-31de-43da-b11e-e3c19e33be7d"]}[Data],
+				    #"8b87b6cf-63ec-405d-9c19-2ab933c27890" = #"7c90095b-31de-43da-b11e-e3c19e33be7d"{[dataflowId="8b87b6cf-63ec-405d-9c19-2ab933c27890"]}[Data],
+				    #"ProductivityTracker InYear_" = #"8b87b6cf-63ec-405d-9c19-2ab933c27890"{[entity="ProductivityTracker InYear",version=""]}[Data],
+				    #"Added Custom" = Table.AddColumn(#"ProductivityTracker InYear_", "Key", each [Date created]&"-"&[IL]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Added Custom",{{"Value", type number}, {"Month", Int64.Type}}),
+				    #"Appended Query" = Table.Combine({#"Changed Type", Productivity_PFP}),
+				    #"Trimmed Text" = Table.TransformColumns(#"Appended Query",{{"Value Type", Text.Trim, type text}})
+				in
+				    #"Trimmed Text"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,8 @@
+relationship 9c3b9050-ebb3-5cf0-2b68-9f618e45abe4
+	fromColumn: LFAC_Electricity400v.Date
+	toColumn: Calendar.Date
+
+relationship AutoDetected_5d6b1978-c38c-47c7-a6ee-8659d555e11d
+	fromColumn: LFAC_Electricity400v.SN
+	toColumn: dim_electricity.SN
+

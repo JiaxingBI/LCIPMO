@@ -1,0 +1,127 @@
+table 'Digital_Huddle KPIs'
+	lineageTag: cde15b39-52d9-425e-ba2f-03bd6092dfd4
+	sourceLineageTag: 32eb19ed-a266-47b5-86b3-949a82978046
+
+	column ID
+		dataType: int64
+		isNullable: false
+		formatString: 0
+		lineageTag: 43326d16-31d8-4431-8115-699f426ecd84
+		sourceLineageTag: f159b746-2566-4cba-9462-918e9b59a1f5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column DepartmentID
+		dataType: int64
+		formatString: 0
+		lineageTag: bb394da7-37b1-49ed-b517-814fa3946ea5
+		sourceLineageTag: 9b395941-7ad8-4dab-9f7c-2cfcc283670b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: DepartmentID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Title
+		dataType: string
+		lineageTag: 55cf0e48-b34f-42bd-a38a-6087e41ab115
+		sourceLineageTag: aa5bdc1d-1162-4d46-9837-d4dc74e0d63f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Title
+		sortByColumn: DepartmentID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Target
+		dataType: double
+		formatString: 0.0000
+		lineageTag: 21bf21e8-f342-4c65-960e-bae0eeb5a276
+		sourceLineageTag: c8da6ea3-81a8-4f65-911e-0ae18ed06429
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Target
+
+		annotation SummarizationSetBy = Automatic
+
+	column Green_type
+		dataType: string
+		lineageTag: 6a64ecc6-beba-4d80-ae92-6459301934d2
+		sourceLineageTag: 3a1fbf28-6ffc-450b-ac58-78803ea4d6fc
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Green_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Area
+		dataType: string
+		lineageTag: a07d5260-6825-495c-ae13-c7d070bf2648
+		sourceLineageTag: 84ce67b3-8861-41e8-b2fc-b2a033587ff0
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Area
+
+		annotation SummarizationSetBy = Automatic
+
+	column Last_modified_by_email
+		dataType: string
+		lineageTag: 43c4353e-83b8-404d-9678-049d1874f283
+		sourceLineageTag: b95b83c2-0232-424c-a68d-5f7332fb5a53
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Last_modified_by_email
+
+		annotation SummarizationSetBy = Automatic
+
+	column Last_modified_at
+		dataType: string
+		lineageTag: 3955e1f2-f6bf-4cb1-8efb-162c2e836bcd
+		sourceLineageTag: cfb31b3e-aac3-4379-b4b6-63b60153cfdd
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Last_modified_at
+
+		annotation SummarizationSetBy = Automatic
+
+	column UpdateFrequency
+		dataType: string
+		lineageTag: b5212d90-a8c8-419f-af4e-68d8cc1b31f9
+		sourceLineageTag: 369de0f3-c233-4cba-9670-49ebf13bcbfb
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: UpdateFrequency
+
+		annotation SummarizationSetBy = Automatic
+
+	column owner
+		dataType: string
+		lineageTag: 3aab8ec4-fd76-4928-b897-91117abf0199
+		sourceLineageTag: 56728d0e-8328-4033-b06f-bbdd355d03c6
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: owner
+
+		annotation SummarizationSetBy = Automatic
+
+	column Inactive
+		dataType: string
+		lineageTag: 9d7a44a9-c287-4d97-9778-d66c5baef758
+		sourceLineageTag: 2c5598e3-2d86-4ae4-a8e1-e5cf577163e2
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Inactive
+
+		annotation SummarizationSetBy = User
+
+	partition 'Digital_Huddle KPIs-ab76328a-787b-4784-b307-952c89b49aae' = entity
+		mode: directQuery
+		source
+			entityName: Digital_Huddle KPIs
+			expressionSource: 'DirectQuery 到 AS - JIA Digital huddle - Dataset1'
+
+	annotation PBI_ResultType = Exception
+

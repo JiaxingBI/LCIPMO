@@ -1,0 +1,663 @@
+table _Measure
+	lineageTag: 6bae9b66-860e-47a9-83bd-b28b403c1e2b
+	sourceLineageTag: f3311272-56c7-42f5-aa8d-5fa16b63aaf0
+
+	measure 'KPI coloring' = EXTERNALMEASURE("KPI coloring", INTEGER, "DirectQuery 到 AS - JIA Digital huddle - Dataset1")
+		formatString: 0
+		lineageTag: b8156e01-7e54-4b05-abc9-7cfdc5d777c9
+		sourceLineageTag: 01d69a72-de3a-47c3-b886-b5eb680fae5c
+		dataCategory: Uncategorized
+
+	measure Safety_LTI = EXTERNALMEASURE("Safety_LTI", INTEGER, "DirectQuery 到 AS - JIA Digital huddle - Dataset1")
+		formatString: 0
+		lineageTag: a6ccffe8-15b1-4de2-8e87-d0ae2a05e29f
+		sourceLineageTag: 08fd476f-6166-477e-b3da-f7f586f4eef2
+		dataCategory: Uncategorized
+
+	measure 'Safety_LTI date' = EXTERNALMEASURE("Safety_LTI date", DATETIME, "DirectQuery 到 AS - JIA Digital huddle - Dataset1")
+		lineageTag: aeb47dee-f892-4f62-b9c5-bd2cffb2f85c
+		sourceLineageTag: 90f7db36-2a59-48c8-8e36-0cffe14461a7
+		dataCategory: Uncategorized
+
+	measure PDCA_Card = EXTERNALMEASURE("PDCA_Card", STRING, "DirectQuery 到 AS - JIA Digital huddle - Dataset1")
+		lineageTag: 28552563-f91a-4408-a63b-d043caebbe23
+		sourceLineageTag: 63df806b-6957-4834-ba96-6b35377e8c04
+		dataCategory: Uncategorized
+
+	measure PDCA_Today = EXTERNALMEASURE("PDCA_Today", INTEGER, "DirectQuery 到 AS - JIA Digital huddle - Dataset1")
+		formatString: 0
+		lineageTag: 0a41d570-19a0-4134-8ba2-41a68efe837a
+		sourceLineageTag: 0839d185-ec65-4888-b3bf-1cc4d991d999
+		dataCategory: Uncategorized
+
+	measure GLS_Card = EXTERNALMEASURE("GLS_Card", STRING, "DirectQuery 到 AS - JIA Digital huddle - Dataset1")
+		lineageTag: ace5e238-39a5-48ff-9aa6-ce1286481d10
+		sourceLineageTag: 8f325afc-8750-41d9-a22a-5c7dbdfb7287
+		dataCategory: Uncategorized
+
+	measure GLS_today = EXTERNALMEASURE("GLS_today", INTEGER, "DirectQuery 到 AS - JIA Digital huddle - Dataset1")
+		formatString: 0
+		lineageTag: b7f02a94-4007-4c80-9515-65596cd61e22
+		sourceLineageTag: 161e242d-78ad-431c-b03d-27c7158f0a17
+		dataCategory: Uncategorized
+
+	measure 'KPI_Outbound In Full' = EXTERNALMEASURE("KPI_Outbound In Full", STRING, "DirectQuery 到 AS - JIA Digital huddle - Dataset1")
+		lineageTag: 9a69c14c-cb62-41ed-a421-ab66b9770027
+		sourceLineageTag: 43164d41-1951-4181-9515-4a4188d381ee
+		dataCategory: Uncategorized
+
+	measure KPI_Value = EXTERNALMEASURE("KPI_Value", DOUBLE, "DirectQuery 到 AS - JIA Digital huddle - Dataset1")
+		lineageTag: 04895f25-6674-44cf-8cf5-d01e54d27dca
+		sourceLineageTag: 6126269c-6a56-4db3-b916-0083b2079c10
+		dataCategory: Uncategorized
+
+	measure KPI_Value% = EXTERNALMEASURE("KPI_Value%", DOUBLE, "DirectQuery 到 AS - JIA Digital huddle - Dataset1")
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 8ae34040-4292-4d4e-b8be-eb640ceb3645
+		sourceLineageTag: 25ca6642-ce41-484c-a922-272c9085a63f
+		dataCategory: Uncategorized
+
+	measure KPI_Deviation = EXTERNALMEASURE("KPI_Deviation", DOUBLE, "DirectQuery 到 AS - JIA Digital huddle - Dataset1")
+		lineageTag: 8507a16e-5922-46b9-b100-e5b4ca973a05
+		sourceLineageTag: 44a12021-4fa5-4b5d-b335-63a2e23012c5
+		dataCategory: Uncategorized
+
+	measure KPI_Downtime = EXTERNALMEASURE("KPI_Downtime", STRING, "DirectQuery 到 AS - JIA Digital huddle - Dataset1")
+		lineageTag: 93d16ec0-7d3c-4d05-a04c-20923d45cf77
+		sourceLineageTag: 811fe704-cc27-4858-a627-68c9796dd80a
+		dataCategory: Uncategorized
+
+	measure 'KPI_Comment Value' = EXTERNALMEASURE("KPI_Comment Value", STRING, "DirectQuery 到 AS - JIA Digital huddle - Dataset1")
+		lineageTag: ead92e97-c87d-40b2-8aa7-9e2cb1b01402
+		sourceLineageTag: ab5bc41d-61c8-47d7-a0f4-bb2e6e2fdb69
+		dataCategory: Uncategorized
+
+	measure 'PDCA_Containment Responsible' = EXTERNALMEASURE("PDCA_Containment Responsible", STRING, "DirectQuery 到 AS - JIA Digital huddle - Dataset1")
+		lineageTag: e36e94cd-c9a5-4fc0-a483-06c2a42e1b22
+		sourceLineageTag: 00923606-59eb-4252-88f8-0cb4bc9860d7
+		dataCategory: Uncategorized
+
+	measure 'PDCA_Countermeasure Responsible' = EXTERNALMEASURE("PDCA_Countermeasure Responsible", STRING, "DirectQuery 到 AS - JIA Digital huddle - Dataset1")
+		lineageTag: 080a45f2-5584-4262-9da0-a7344889053f
+		sourceLineageTag: 715ba03c-c9d0-4f14-9abd-138880d2265e
+		dataCategory: Uncategorized
+
+	measure 'PDCA Status' = EXTERNALMEASURE("PDCA Status", INTEGER, "DirectQuery 到 AS - JIA Digital huddle - Dataset1")
+		formatString: 0
+		lineageTag: 626d60fc-7192-4796-b9ad-4bcc37f7bc72
+		sourceLineageTag: 8277f937-85e1-409c-a6cc-062357573942
+		dataCategory: Uncategorized
+
+	measure 'KPI_boarder color_s1' = EXTERNALMEASURE("KPI_boarder color_s1", INTEGER, "DirectQuery 到 AS - JIA Digital huddle - Dataset1")
+		formatString: 0
+		lineageTag: df72a1ec-de47-42a7-aca2-85cc054aaed4
+		sourceLineageTag: c9a1cc7c-c385-4b41-966f-474fc7855298
+		dataCategory: Uncategorized
+
+	measure 'KPI_boarder color_s2' = EXTERNALMEASURE("KPI_boarder color_s2", INTEGER, "DirectQuery 到 AS - JIA Digital huddle - Dataset1")
+		formatString: 0
+		lineageTag: a0970dd2-6aee-4544-8b9d-b48f8ceb4dba
+		sourceLineageTag: 33357b09-4a45-445e-a00b-b011c6d91632
+		dataCategory: Uncategorized
+
+	measure 'KPI_value YTD' = EXTERNALMEASURE("KPI_value YTD", DOUBLE, "DirectQuery 到 AS - JIA Digital huddle - Dataset1")
+		formatString: 0
+		lineageTag: d5fd7018-9948-41b9-a224-e07276f3f566
+		sourceLineageTag: f29afa2a-c433-47ff-81b1-40eb5c72fb99
+		dataCategory: Uncategorized
+
+	measure KPI_FCL/qty = EXTERNALMEASURE("KPI_FCL/qty", STRING, "DirectQuery 到 AS - JIA Digital huddle - Dataset1")
+		lineageTag: fd44c197-ea24-4140-8ca2-525bee4fc6d4
+		sourceLineageTag: 2935b7c1-4da8-43f5-bb30-d2639ac91740
+		dataCategory: Uncategorized
+
+	measure GLS_leader = EXTERNALMEASURE("GLS_leader", STRING, "DirectQuery 到 AS - JIA Digital huddle - Dataset1")
+		lineageTag: d8766cf5-f59e-4cfe-99e5-64b2c2202cba
+		sourceLineageTag: 3a88eb38-6394-4fc4-81f1-96b9822a0657
+		dataCategory: Uncategorized
+
+	measure GLS_participants = EXTERNALMEASURE("GLS_participants", STRING, "DirectQuery 到 AS - JIA Digital huddle - Dataset1")
+		lineageTag: 4b17bd81-dfe2-4233-b964-2dc794123a64
+		sourceLineageTag: bf8196d8-c3f6-4d35-97e5-905f2f4a0960
+		dataCategory: Uncategorized
+
+	measure GLS_due = EXTERNALMEASURE("GLS_due", DATETIME, "DirectQuery 到 AS - JIA Digital huddle - Dataset1")
+		formatString: General Number
+		lineageTag: 736f2599-da83-49b6-a462-72d3d22f8ac1
+		sourceLineageTag: f3c27d57-daba-4fd0-aef0-56a76b05a8cc
+		dataCategory: Uncategorized
+
+	measure 'KPI_last day value' = EXTERNALMEASURE("KPI_last day value", DOUBLE, "DirectQuery 到 AS - JIA Digital huddle - Dataset1")
+		lineageTag: f9cc1333-94d5-498d-90f1-08a94509d803
+		sourceLineageTag: e32ebafb-fe56-4da8-bba5-caf191a4c671
+		dataCategory: Uncategorized
+
+	measure 'PDCA_Countermeasure Coloring' = EXTERNALMEASURE("PDCA_Countermeasure Coloring", INTEGER, "DirectQuery 到 AS - JIA Digital huddle - Dataset1")
+		formatString: 0
+		lineageTag: e405aad9-fa89-486c-8168-4d513a988aaf
+		sourceLineageTag: 3d1a7429-5f12-46cd-a8fc-7f448f434c8d
+		dataCategory: Uncategorized
+
+	measure 'PDCA_Containment Coloring' = EXTERNALMEASURE("PDCA_Containment Coloring", INTEGER, "DirectQuery 到 AS - JIA Digital huddle - Dataset1")
+		formatString: 0
+		lineageTag: 96326362-5f67-4bfd-a973-e34020f245b1
+		sourceLineageTag: 242f8a0c-3b40-4c79-b3b3-3e35b6413793
+		dataCategory: Uncategorized
+
+	measure GLS_Coloring = EXTERNALMEASURE("GLS_Coloring", INTEGER, "DirectQuery 到 AS - JIA Digital huddle - Dataset1")
+		formatString: 0
+		lineageTag: 34cbc3fc-10da-4476-a609-5c16d2a71e7d
+		sourceLineageTag: 5acae975-05e8-499f-8dc6-e90d22ad56dc
+		dataCategory: Uncategorized
+
+	measure 'KPI_breakdown background color PP99' = EXTERNALMEASURE("KPI_breakdown background color PP99", INTEGER, "DirectQuery 到 AS - JIA Digital huddle - Dataset1")
+		formatString: 0
+		lineageTag: b3dc35e7-0b2e-4c4d-baef-cca1deaf1eb9
+		sourceLineageTag: 98387658-0aa5-400d-9ce0-9bf201297953
+		dataCategory: Uncategorized
+
+	measure 'KPI_breakdown background color DSPP' = EXTERNALMEASURE("KPI_breakdown background color DSPP", INTEGER, "DirectQuery 到 AS - JIA Digital huddle - Dataset1")
+		formatString: 0
+		lineageTag: e493cf87-7fc9-4818-bb0f-631b642322f3
+		sourceLineageTag: 956326c3-454f-4f27-aee9-1d21ecf2f4e7
+		dataCategory: Uncategorized
+
+	measure 'KPI_breakdown background color SSPP' = EXTERNALMEASURE("KPI_breakdown background color SSPP", INTEGER, "DirectQuery 到 AS - JIA Digital huddle - Dataset1")
+		formatString: 0
+		lineageTag: 3a3c5a7e-4326-4fe3-b393-c8ec9ee22dd0
+		sourceLineageTag: cf3cb947-f4d3-4043-940b-83ac076207f3
+		dataCategory: Uncategorized
+
+	measure 'Labor Demand (Actual-Planned)' = EXTERNALMEASURE("Labor Demand (Actual-Planned)", DOUBLE, "DirectQuery 到 AS - JIA Digital huddle - Dataset1")
+		formatString: 0
+		lineageTag: 53bc7f52-4f63-4199-81b0-1ec87b54da08
+		sourceLineageTag: d55d8a0c-180c-46de-a931-589a4c6650af
+		dataCategory: Uncategorized
+
+	measure 'Labor Demand Color' = EXTERNALMEASURE("Labor Demand Color", INTEGER, "DirectQuery 到 AS - JIA Digital huddle - Dataset1")
+		formatString: 0
+		lineageTag: 13df6688-5e59-4fb9-ae14-25dd300d2e3c
+		sourceLineageTag: 8107d78e-3f19-4222-a2b3-c8d3d3f92815
+		dataCategory: Uncategorized
+
+	measure Focus_Today = EXTERNALMEASURE("Focus_Today", INTEGER, "DirectQuery 到 AS - JIA Digital huddle - Dataset1")
+		formatString: 0
+		lineageTag: af9d0564-a1cd-4edc-a6ae-bfac7b358e35
+		sourceLineageTag: a1dc0d62-c6fb-44b8-a4c4-0653250d9222
+		dataCategory: Uncategorized
+
+	measure Focus_Card = EXTERNALMEASURE("Focus_Card", STRING, "DirectQuery 到 AS - JIA Digital huddle - Dataset1")
+		lineageTag: 0c68d7cf-4f6c-4b05-ad7c-1986a9337097
+		sourceLineageTag: 84c557c1-a98c-4a77-bfcc-0efa62daca2e
+		dataCategory: Uncategorized
+
+	measure 'PDCA_current month' = month(now())
+		formatString: 0
+		displayFolder: External Measure
+		lineageTag: 2abeb077-2c4b-4377-b0f3-af963f44db51
+
+	measure KPI_TargetFrom_Calculated = EXTERNALMEASURE("KPI_TargetFrom_Calculated", DOUBLE, "DirectQuery 到 AS - JIA Digital huddle - Dataset1")
+		lineageTag: a02b4fe1-657a-4208-8234-d5b9d35c21f4
+		sourceLineageTag: 83ed6b7f-d76c-4b85-8052-a9a1bd0064a9
+		dataCategory: Uncategorized
+
+	measure 'Packing training hours actual' = EXTERNALMEASURE("Packing training hours actual", DOUBLE, "DirectQuery 到 AS - JIA Digital huddle - Dataset1")
+		lineageTag: 97377738-7688-47ed-9704-eb43d177f6d2
+		sourceLineageTag: 349f28d1-8aea-451f-b6a7-8c946c0267b9
+		dataCategory: Uncategorized
+
+	measure 'Packing training hours color' = EXTERNALMEASURE("Packing training hours color", INTEGER, "DirectQuery 到 AS - JIA Digital huddle - Dataset1")
+		formatString: 0
+		lineageTag: 3af1544f-f713-4d1f-985f-39c345e822bc
+		sourceLineageTag: 4749b52e-7ad1-4061-9f87-aaf90eeb01a8
+		dataCategory: Uncategorized
+
+	measure 'Packing training hours plan' = EXTERNALMEASURE("Packing training hours plan", DOUBLE, "DirectQuery 到 AS - JIA Digital huddle - Dataset1")
+		lineageTag: 66ed75f7-8b59-4853-8c50-90644e70f04d
+		sourceLineageTag: a60c20ae-4880-4b10-983f-68e88750ecb9
+		dataCategory: Uncategorized
+
+	measure 'Packing training hours planned lower limit' = EXTERNALMEASURE("Packing training hours planned lower limit", DOUBLE, "DirectQuery 到 AS - JIA Digital huddle - Dataset1")
+		lineageTag: b88f49b8-37d8-4030-ab5e-744482e449a6
+		sourceLineageTag: 7f2f4c25-f35d-4f65-b4f5-e654cda2f167
+		dataCategory: Uncategorized
+
+	measure 'Packing training hours planned upper limit' = EXTERNALMEASURE("Packing training hours planned upper limit", DOUBLE, "DirectQuery 到 AS - JIA Digital huddle - Dataset1")
+		lineageTag: 4968ea4c-b66e-4d33-a6b2-fd4797949e22
+		sourceLineageTag: 1e25b846-101f-494e-a340-a3e7760e1225
+		dataCategory: Uncategorized
+
+	measure KPI_TargetFrom_Calculated% = EXTERNALMEASURE("KPI_TargetFrom_Calculated%", DOUBLE, "DirectQuery 到 AS - JIA Digital huddle - Dataset1")
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 5e2a8585-befa-47a0-8fbe-98ec725e39f6
+		sourceLineageTag: 9d89c9b0-f848-4354-ae9d-30a42d0864d1
+		dataCategory: Uncategorized
+
+	measure 'Packing KPI YTD Value' = EXTERNALMEASURE("Packing KPI YTD Value", DOUBLE, "DirectQuery 到 AS - JIA Digital huddle - Dataset1")
+		lineageTag: b486d3e8-13ef-463d-bd42-42dd62ddc8df
+		sourceLineageTag: 39e07278-0ecc-4e56-87a6-9990264060c1
+		dataCategory: Uncategorized
+
+	measure 'Packing KPI YTD Value%' = EXTERNALMEASURE("Packing KPI YTD Value%", DOUBLE, "DirectQuery 到 AS - JIA Digital huddle - Dataset1")
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: c1e49b09-050f-4d70-8a6c-08afd7b8d413
+		sourceLineageTag: 668d11e4-6d65-418e-9c89-fff55b41ce91
+		dataCategory: Uncategorized
+
+	measure KPI_TargetTo = EXTERNALMEASURE("KPI_TargetTo", DOUBLE, "DirectQuery 到 AS - JIA Digital huddle - Dataset1")
+		lineageTag: 14989c33-acdb-4943-aa4b-e1af213de7a0
+		sourceLineageTag: b87dd0e6-2f84-4b06-94aa-9096765cf31e
+		dataCategory: Uncategorized
+
+	measure KPI_TargetTo% = EXTERNALMEASURE("KPI_TargetTo%", DOUBLE, "DirectQuery 到 AS - JIA Digital huddle - Dataset1")
+		lineageTag: 94be63f4-48f1-4267-9b7c-09f452870faa
+		sourceLineageTag: 8cf93d13-837f-4c5c-a054-18835bf6ab5f
+		dataCategory: Uncategorized
+
+	measure 'Packing Flexibility Color' = EXTERNALMEASURE("Packing Flexibility Color", INTEGER, "DirectQuery 到 AS - JIA Digital huddle - Dataset1")
+		formatString: 0
+		lineageTag: 48af1202-1111-49bb-95b9-c26d36f01e6c
+		sourceLineageTag: f6593795-0d9b-4ca3-adef-6fec86e3c938
+		dataCategory: Uncategorized
+
+	measure 'Packing Flexibility Actual' = EXTERNALMEASURE("Packing Flexibility Actual", DOUBLE, "DirectQuery 到 AS - JIA Digital huddle - Dataset1")
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 702c4a5e-f391-4db8-9143-07256ceeeba5
+		sourceLineageTag: 69beaa10-5cba-4a75-8285-da0915084ed7
+		dataCategory: Uncategorized
+
+	measure 'Packing Flexibility LowerLimit' = EXTERNALMEASURE("Packing Flexibility LowerLimit", DOUBLE, "DirectQuery 到 AS - JIA Digital huddle - Dataset1")
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 20fc3292-523b-4135-8d44-1c57282fe8de
+		sourceLineageTag: 40428997-6c08-4246-9df3-f0476f8692ba
+		dataCategory: Uncategorized
+
+	measure 'Packing Flexibility UpperLimit' = EXTERNALMEASURE("Packing Flexibility UpperLimit", DOUBLE, "DirectQuery 到 AS - JIA Digital huddle - Dataset1")
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: e356bd2a-a06c-420f-9238-7e96159065b2
+		sourceLineageTag: c7057575-454a-4e56-825b-9ff7bb5de654
+		dataCategory: Uncategorized
+
+	measure Productivity_2025 =
+			
+			var YTDActual = CALCULATE([TotalProductivityValue],'2025ProductivityTracker'[Value Type]="Actual",'2025ProductivityTracker'[Month]<= MAX('2025ProductivityTracker'[Index]))
+			var FutureTarget = CALCULATE([TotalProductivityValue],'2025ProductivityTracker'[Value Type]="Target",'2025ProductivityTracker'[Month]>MAX('2025ProductivityTracker'[Index]))
+			var res = YTDActual+FutureTarget
+			RETURN
+			res
+		formatString: 0.00
+		displayFolder: Local Measure\Cards
+		lineageTag: 5f39829e-3e99-4bc5-ae59-75c3a0ca067a
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	measure Productivity_Gap = [Productivity_2025]-[Target]
+		formatString: 0.00
+		displayFolder: Local Measure\Cards
+		lineageTag: 3d6d66ad-5471-4f6d-a921-ca4ba66a7fdf
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	measure Exercise_Target = SUM('ExerciseTime'[Target])
+		formatString: #,0
+		displayFolder: Local Measure\Excercise
+		lineageTag: 1f28c56c-baaf-4aaa-bc73-d604d0e74db7
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	measure Exercise_LastWeekNum = WEEKNUM(NOW())-2
+		formatString: 0
+		displayFolder: Local Measure\Excercise
+		lineageTag: 3f99133c-69a5-4c87-8b11-668643493f27
+
+		changedProperty = Name
+
+	measure Exercise_LastWeekActual = ```
+			
+			---var lastWeekNUm = [Exercise_LastWeekNum]
+			---var res = 
+			  ---  CALCULATE([Exercise_Actual],ExerciseTime[Week]=lastWeekNUm)
+			var placeholder =0
+			RETURN
+			    placeholder
+			```
+		displayFolder: Local Measure\Excercise
+		lineageTag: bd591bc4-a084-43cf-8e67-1d55651a5bbd
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Exercise_Title_WeeklyReview = ```
+			
+			    var numLastWeek = [Exercise_LastWeekNum]
+			    var totalActual = [Exercise_LastWeekActual]
+			    var TotalHours = FORMAT(DIVIDE([Exercise_Actual],60),"#0.0")
+			RETURN
+			    "In WK" & numLastWeek & ",  LCI Team has spent " & totalActual &"mins for Health Builing, and  "& TotalHours &"hrs this year in total" 
+			```
+		displayFolder: Local Measure\Excercise
+		lineageTag: 1490d930-da37-4d93-881d-630062dde5b9
+
+		changedProperty = Name
+
+	measure TotalPfP = 0
+		formatString: 0
+		displayFolder: Local Measure\Cards
+		lineageTag: 73a81d0a-4c54-489c-a0d2-bf1f706e7f43
+
+		changedProperty = Name
+
+	measure Target = 24
+		formatString: 0
+		displayFolder: Local Measure\Cards
+		lineageTag: 9d775002-bbfb-4408-840b-47ee74b5e599
+
+		changedProperty = Name
+
+	measure Exercise_Weekly_Average = ```
+			
+			var AvgMins = AVERAGEX('ExerciseTime',[Exercise_Actual])
+			var WeeklyHrs = TRUNC(DIVIDE(AvgMins,60))
+			var WeeklyMins = FORMAT(AvgMins,"00")- FORMAT(WeeklyHrs*60,"00")
+			RETURN
+			    WeeklyHrs & "hrs : " & WeeklyMins & "mins"
+			
+			```
+		displayFolder: Local Measure\Excercise
+		lineageTag: fd5246cf-28e3-411f-8df5-75d61f96f038
+
+		changedProperty = Name
+
+	measure Exercise_YTDTotal_hrs =
+			
+			var YTDEXE = DIVIDE([Exercise_Actual],60)
+			var YTDHrs = TRUNC(YTDEXE)
+			var YTDMins = FORMAT([Exercise_Actual],"00")- FORMAT(YTDHrs*60,"00")
+			RETURN
+			    YTDHrs& "hrs: "& YTDMins& "mins"
+		displayFolder: Local Measure\Excercise
+		lineageTag: 6a3f2ca8-b21a-45d9-840e-0ca739fc9434
+
+		changedProperty = Name
+
+	measure YMaxiumRange = MAX(ExerciseTime[Actual])*1.5
+		displayFolder: Local Measure\Excercise
+		lineageTag: 25c13a2b-4102-411b-aac6-b9738c195feb
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Details = ```
+			
+			var TotalSavingInIdentity = sum('Table_Productivity_Saving Overall'[Saving in identify])
+			var TotalPfP= CALCULATE(SUM('Table_Productivity_Saving Target'[In Year Benefit]),'Table_Productivity_Saving Target'[Area]="PfP")
+			var total = TotalSavingInIdentity+TotalPfP
+			var Target = [Target]
+			var diff = total-Target
+			var res = IF(diff>0, "▲" & FORMAT(diff,"#.00"),"▼"&FORMAT(diff,"#.00"))
+			RETURN
+			    diff
+			
+			```
+		displayFolder: Local Measure\Cards
+		lineageTag: 77e45b92-5788-4dbb-88b4-88dcde4be6b7
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Details_Color_CF =
+			
+			var diff = [Details]
+			var res = IF(diff>0, "▲" & FORMAT(diff,"#.00"),"▼"&FORMAT(diff,"#.00"))
+			RETURN
+			    res
+		displayFolder: Local Measure\Cards
+		lineageTag: 3755342b-798b-4d72-b7b0-4dff20cdbe7a
+
+		changedProperty = Name
+
+	measure cntFocusItems = COUNTROWS('Weekly Focus_2025')
+		formatString: 0
+		displayFolder: Local Measure\Cards
+		lineageTag: a71e75dd-077c-45b4-a9f5-f5eedc7a606f
+
+		changedProperty = DisplayFolder
+
+		changedProperty = Name
+
+	measure CurrentColor = ```
+			
+			var color = MAX('OfficeStatus'[Color])
+			var svg = 
+			"data:image/svg+xml;utf8,<svg id='isaac' width='50' height = '50' xmlns='http://www.w3.org/2000/svg'>
+			<text x='50%' y='50%' font-size='10' text-anchor='middle' dominant-baseline='central' fill='"&color&"'>■</text>
+			</svg>"
+			
+			RETURN
+			    svg
+			```
+		displayFolder: Local Measure\Cards
+		lineageTag: 248602c6-5d8d-40f9-9443-ce59abc3e472
+		dataCategory: ImageUrl
+
+		changedProperty = Name
+
+		changedProperty = DataCategory
+
+	measure BGColor = MAX('OfficeStatus'[Color])
+		displayFolder: Local Measure\Cards
+		lineageTag: 2b569b7b-db7d-4bf2-a041-26c36295a60e
+
+		changedProperty = Name
+
+	measure OffficeStatus_CurWeek = ```
+			
+			 var StartofThisWeek = MIN('CalendarLocal'[Date])
+			 var EndofThisWeek = MAX('CalendarLocal'[Date])
+			 var formatRange =  FORMAT(StartofThisWeek,"MM/DD") &"~"&FORMAT(EndofThisWeek,"MM/DD")
+			 var Title = "Out of Office Status "
+			 RETURN
+			   Title&formatRange
+			```
+		displayFolder: Local Measure\Cards
+		lineageTag: 1a355457-a702-46ac-997e-5f10fd0d7579
+
+		changedProperty = Name
+
+	measure base64
+		displayFolder: Local Measure\Cards
+		lineageTag: 3c89c3d4-e2a2-4c02-8290-31271b8ed7a2
+
+		changedProperty = Name
+
+		changedProperty = DataCategory
+
+	measure svg_edit =
+			"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-edit' width='48' height='48' viewBox='0 0 24 24' stroke-width='2' stroke='GREEN' fill='none' stroke-linecap='round' stroke-linejoin='round'>
+			  <path stroke='none' d='M0 0h24v24H0z' fill='none'/>
+			  <path d='M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1' />
+			  <path d='M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z' />
+			  <path d='M16 5l3 3' />
+			</svg>"
+		displayFolder: Local Measure\Cards
+		lineageTag: 34e19cc8-ecb5-4f81-b540-81aff2b147c2
+		dataCategory: ImageUrl
+
+		changedProperty = Name
+
+		changedProperty = DataCategory
+
+	measure 'Weely Host' = ```
+			
+			var pre = "Meeting Host: "
+			var curHost = 
+			CALCULATE(
+			    MAX('Meeting host'[Host]), 
+			    FILTER('Meeting host',
+			        'Meeting host'[IsCurrentWeekHost]="T"
+			        )
+			    )
+			
+			RETURN
+			    pre &curHost
+			```
+		displayFolder: Local Measure\Cards
+		lineageTag: 66068704-3ea3-4845-871a-9db59a4512b1
+
+		changedProperty = Name
+
+	measure CF_FirstMondayofTheMonth = ```
+			
+			    IF(
+			            DAY(TODAY()) >= 15 &&
+			            DAY(TODAY()) <= 21 &&
+			            WEEKDAY(TODAY(),3)=1,
+			            "#00e945",
+			            "#f5f5f5"
+			    )
+			```
+		displayFolder: Local Measure
+		lineageTag: e7c692e2-c3f8-450f-b543-bd3058ea4306
+
+		changedProperty = DisplayFolder
+
+		changedProperty = Name
+
+	measure CF_EveryMon = ```
+			
+			 IF(
+			    WEEKDAY(TODAY(),2) =3,
+			        "#00e945",
+			        "#f5f5f5"
+			 )
+			```
+		displayFolder: Local Measure
+		lineageTag: 2404faf4-f6ac-4f63-80f2-d72d85b12331
+
+		changedProperty = DisplayFolder
+
+		changedProperty = Name
+
+	measure TotalProductivityValue = SUM('2025ProductivityTracker'[Value])
+		displayFolder: Local Measure\Cards
+		lineageTag: 4e538bba-d5a1-4b34-a29f-8eb9be47b6a3
+
+		changedProperty = DisplayFolder
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure TargetByArea = IF(NOT(ISINSCOPE('2025ProductivityTracker'[Dept.])),  MAX('2025ProductivityTracker'[JIATarget]))
+		displayFolder: Local Measure\Cards
+		lineageTag: 1bc4e3a4-ca75-4345-91b8-7d63d02e138b
+
+		changedProperty = DisplayFolder
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure GapByArea =
+			if(
+			    ISINSCOPE('2025ProductivityTracker'[Area]),
+			    [Productivity_2025]-[TargetByArea]
+			)
+		displayFolder: Local Measure\Cards
+		lineageTag: f96abcc0-0f40-415d-8975-4d20c4944311
+
+		changedProperty = DisplayFolder
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Productivity_identified = 0
+		formatString: 0
+		displayFolder: Local Measure\Cards
+		lineageTag: 595740a0-bc97-48da-870b-d86e1ae0a2bf
+
+		changedProperty = DisplayFolder
+
+		changedProperty = Name
+
+	measure Target2026 = 99
+		formatString: 0
+		displayFolder: Local Measure\Cards
+		lineageTag: 00fe1a0e-b4e7-40a9-b956-b0269e56c3ae
+
+		changedProperty = DisplayFolder
+
+		changedProperty = Name
+
+	measure Productivity_2025-as =
+			
+			var varActual = CALCULATE([TotalProductivityValue],'Table_IL key'[Value Type]="Actual")
+			var varTarget = CALCULATE([TotalProductivityValue],'Table_IL key'[Value Type]="Target")
+			Var LastMonth = MONTH(TODAY())-1
+			var YTDActual = CALCULATE(varActual,'Table_IL key'[Month]<=LastMonth)
+			var FutureTarget = CALCULATE(varTarget,'Table_IL key'[Month]>1)
+			var res = YTDActual+FutureTarget
+			RETURN
+			FutureTarget
+		formatString: 0.0000
+		lineageTag: 64a67296-0459-481f-920a-4a3e90a2db07
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	measure YTDActual = ```
+			
+			var res = 
+			 CALCULATE([TotalProductivityValue],'2025ProductivityTracker'[Value Type]="Actual",'2025ProductivityTracker'[Month]<=MAX('2025ProductivityTracker'[Index]))
+			RETURN
+			    res
+			```
+		formatString: 0.00
+		displayFolder: Local Measure\Cards
+		lineageTag: 7f112a7a-9223-4b14-86ee-890e7898a1aa
+
+		changedProperty = DisplayFolder
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	measure YTDTarget = ```
+			
+			Var LastMonth = MONTH(TODAY())-1
+			var res = 
+			 CALCULATE([TotalProductivityValue],'Table_IL key'[Value Type]="Target",'Table_IL key'[Month]<=LastMonth)
+			RETURN
+			    res
+			```
+		lineageTag: 0f182c5d-5151-4450-bf0f-830dd5a1dd1a
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition _Measure-36cd6086-41e9-4a14-8164-85c2891a4e8f = entity
+		mode: directQuery
+		source
+			entityName: _Measure
+			expressionSource: 'DirectQuery 到 AS - JIA Digital huddle - Dataset1'
+
+	annotation PBI_ResultType = Exception
+

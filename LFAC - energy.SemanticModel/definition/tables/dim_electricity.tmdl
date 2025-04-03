@@ -1,0 +1,132 @@
+table dim_electricity
+	lineageTag: 5af48e6f-5c2e-4fd6-8dc1-d8a760550e93
+
+	column Cabinet
+		dataType: string
+		lineageTag: 8acebf93-8ffd-4b5d-a0c2-f2f13d76823f
+		summarizeBy: none
+		sourceColumn: Cabinet
+
+		annotation SummarizationSetBy = Automatic
+
+	column SN
+		dataType: string
+		lineageTag: 4e813054-578d-4715-93fd-3664705e7845
+		summarizeBy: none
+		sourceColumn: SN
+
+		annotation SummarizationSetBy = Automatic
+
+	column Meter
+		dataType: string
+		lineageTag: 77479272-da91-40a2-9b77-b4ef1301d5a2
+		summarizeBy: none
+		sourceColumn: Meter
+
+		annotation SummarizationSetBy = Automatic
+
+	column Swithboard
+		dataType: string
+		lineageTag: e5554f11-fa4d-4da3-9d8a-d3df58578c2b
+		summarizeBy: none
+		sourceColumn: Swithboard
+
+		annotation SummarizationSetBy = Automatic
+
+	column 按照属性分
+		dataType: string
+		lineageTag: e04c6a64-959a-4673-a736-542fc3470d49
+		summarizeBy: none
+		sourceColumn: 按照属性分
+
+		annotation SummarizationSetBy = Automatic
+
+	column 按照区域分
+		dataType: string
+		lineageTag: de9c2cb0-2c72-476e-be30-0e49699727d3
+		summarizeBy: none
+		sourceColumn: 按照区域分
+
+		annotation SummarizationSetBy = Automatic
+
+	column Category
+		dataType: string
+		lineageTag: bb35082a-99e3-43c9-b9cd-1ef4aff6c964
+		summarizeBy: none
+		sourceColumn: Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column 用途
+		dataType: string
+		lineageTag: b6a42cea-bed3-41b2-99f5-376cc76eb067
+		summarizeBy: none
+		sourceColumn: 用途
+
+		annotation SummarizationSetBy = Automatic
+
+	column 备注
+		dataType: string
+		lineageTag: 7b747751-bde7-484f-81cf-13c905dca5b1
+		summarizeBy: none
+		sourceColumn: 备注
+
+		annotation SummarizationSetBy = Automatic
+
+	column 区域分类
+		dataType: string
+		lineageTag: 8e78baa3-3676-46aa-8516-0e57c44eadc8
+		summarizeBy: none
+		sourceColumn: 区域分类
+
+		annotation SummarizationSetBy = Automatic
+
+	column 使用区域
+		dataType: string
+		lineageTag: 7ff390f5-3673-4ad8-9ad1-7a2c0a068aa9
+		summarizeBy: none
+		sourceColumn: 使用区域
+
+		annotation SummarizationSetBy = Automatic
+
+	column 功能分类
+		dataType: string
+		lineageTag: 60f9459d-f9e9-4239-b6c6-366aa199e88d
+		summarizeBy: none
+		sourceColumn: 功能分类
+
+		annotation SummarizationSetBy = Automatic
+
+	column Electricity
+		dataType: string
+		lineageTag: c4d8b387-73c7-4078-b80e-47f8885dc3d2
+		summarizeBy: none
+		sourceColumn: Electricity
+
+		annotation SummarizationSetBy = Automatic
+
+	column Category4
+		dataType: string
+		lineageTag: 4c2d0b24-c4dc-4732-a7a3-3698dcac903e
+		summarizeBy: none
+		sourceColumn: Category4
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_electricity = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://legogroup.sharepoint.com/sites/Jiaxing_LFAC/Shared%20Documents/Energy%20Consumption%20Dashboard/Energy%20BI%20-%20electricity%20number.xlsx"), null, true),
+				    #"400v_Sheet" = Source{[Item="400v",Kind="Sheet"]}[Data],
+				    #"Removed Top Rows" = Table.Skip(#"400v_Sheet",1),
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Removed Top Rows", [PromoteAllScalars=true]),
+				    #"Removed Columns" = Table.RemoveColumns(#"Promoted Headers",{"Column15", "Column16", "Column17", "Column18", "Column19", "Column20"}),
+				    #"Filtered Rows" = Table.SelectRows(#"Removed Columns", each ([SN] <> null) and ([Swithboard] <> null))
+				in
+				    #"Filtered Rows"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,75 @@
+table LFAC_Others
+	lineageTag: 8ed187bb-3c01-469f-a0de-026b5892473e
+
+	column Cabinet
+		dataType: string
+		lineageTag: fe4db7a4-824e-4123-a9be-8b3cdb108bb3
+		summarizeBy: none
+		sourceColumn: Cabinet
+
+		annotation SummarizationSetBy = Automatic
+
+	column 能源种类
+		dataType: string
+		lineageTag: a02126ab-46d1-4182-936f-c9e414892b3a
+		summarizeBy: none
+		sourceColumn: 能源种类
+
+		annotation SummarizationSetBy = Automatic
+
+	column Unit
+		dataType: string
+		lineageTag: ac38ba1d-5c94-47b3-aefb-d9e24fa76e94
+		summarizeBy: none
+		sourceColumn: Unit
+
+		annotation SummarizationSetBy = Automatic
+
+	column 备注
+		dataType: string
+		lineageTag: 8137c536-4153-4362-9310-a8c0ecf8d0a4
+		summarizeBy: none
+		sourceColumn: 备注
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 79797767-91ab-4d61-ad98-9ad5de7536fc
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Value
+		dataType: double
+		lineageTag: d070a9c0-81fa-48be-8e93-8a41ed9834f4
+		summarizeBy: sum
+		sourceColumn: Value
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition LFAC_Others = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://legogroup.sharepoint.com/sites/JIALFACTECH/Shared%20Documents/18%20%E8%83%BD%E6%BA%90%E4%BF%A1%E6%81%AF%E7%AE%A1%E7%90%86/01%20Energy%20Data%20%E8%83%BD%E6%BA%90%E6%95%B0%E6%8D%AE/%E8%83%BD%E6%BA%90%E4%B8%AD%E5%BF%83%E6%95%B0%E6%8D%AE%E8%AE%B0%E5%BD%95%E8%A1%A8%202025.xlsx"), null, true),
+				    其他_Sheet = Source{[Item="其他",Kind="Sheet"]}[Data],
+				    #"Removed Top Rows" = Table.Skip(其他_Sheet,1),
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Removed Top Rows", [PromoteAllScalars=true]),
+				    #"Filtered Rows2" = Table.SelectRows(#"Promoted Headers", each ([Cabinet] <> null)),
+				    #"Unpivoted Other Columns" = Table.UnpivotOtherColumns(#"Filtered Rows2", {"Cabinet", "能源种类", "Unit", "备注"}, "Date", "Value"),
+				    #"Filtered Rows" = Table.SelectRows(#"Unpivoted Other Columns", each ([Date] <> "Annual" and [Date] <> "APR" and [Date] <> "AUG" and [Date] <> "DEC" and [Date] <> "FEB" and [Date] <> "JAN" and [Date] <> "JUL" and [Date] <> "JUN" and [Date] <> "MAR" and [Date] <> "MAY" and [Date] <> "NOV" and [Date] <> "OCT" and [Date] <> "SEP")),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Filtered Rows",{{"Date", type date}, {"Value", type number}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

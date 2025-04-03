@@ -1,0 +1,110 @@
+{
+  "config": "{\"version\":\"5.59\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.61\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"useEnhancedTooltips\":true,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY24SU10",
+            "path": "BaseThemes/CY24SU10.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{\"relationships\":[{\"source\":\"e35cc00009282687edba\",\"target\":\"91cf80b0dba300aa05dc\",\"type\":3},{\"source\":\"ffdc08bd979b7012147c\",\"target\":\"91cf80b0dba300aa05dc\",\"type\":1}]}",
+      "displayName": "Page 1",
+      "displayOption": 1,
+      "filters": "[{\"name\":\"c609a554205b854d0ed6\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Calendar\"}},\"Property\":\"Date\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Calendar\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Date\"}},\"Right\":{\"DateSpan\":{\"Expression\":{\"Now\":{}},\"TimeUnit\":3}}}}}]},\"type\":\"RelativeDate\",\"howCreated\":1}]",
+      "height": 720.00,
+      "name": "66e7e6c362e442454cec",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"91cf80b0dba300aa05dc\",\"layouts\":[{\"id\":0,\"position\":{\"x\":4.503371664983549,\"y\":17.26292471577027,\"z\":0,\"width\":743.0563247222856,\"height\":364.0225429195035,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"decompositionTreeVisual\",\"projections\":{\"ExplainBy\":[{\"queryRef\":\"dim_electricity.功能分类\",\"active\":true},{\"queryRef\":\"dim_electricity.Category4\",\"active\":true}],\"Analyze\":[{\"queryRef\":\"_Measure.TotalNumber\"}],\"Tooltips\":[{\"queryRef\":\"_Measure.YTD_Number\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dim_electricity\",\"Type\":0},{\"Name\":\"_\",\"Entity\":\"_Measure\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"功能分类\"},\"Name\":\"dim_electricity.功能分类\",\"NativeReferenceName\":\"Function\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Category4\"},\"Name\":\"dim_electricity.Category4\",\"NativeReferenceName\":\"Details\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Eletricity Usage\"},\"Name\":\"_Measure.TotalNumber\",\"NativeReferenceName\":\"Eletricity Usage\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"YTD_Number\"},\"Name\":\"_Measure.YTD_Number\",\"NativeReferenceName\":\"YTD_Number\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Eletricity Usage\"}}}]},\"expansionStates\":[{\"roles\":[\"ExplainBy\"],\"levels\":[{\"queryRefs\":[\"dim_electricity.功能分类\"],\"isCollapsed\":true,\"identityKeys\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"dim_electricity\"}},\"Property\":\"功能分类\"}}],\"isPinned\":true,\"AIInformation\":{\"method\":\"MaxSplit\",\"disabled\":false}},{\"queryRefs\":[\"dim_electricity.Category4\"],\"isCollapsed\":true,\"identityKeys\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"dim_electricity\"}},\"Property\":\"Category4\"}}],\"isPinned\":true,\"AIInformation\":{\"method\":\"MaxSplit\",\"disabled\":false}}],\"root\":{\"identityValues\":null,\"children\":[{\"identityValues\":[{\"Literal\":{\"Value\":\"'Molding Production'\"}}],\"isToggled\":true}]}}],\"columnProperties\":{\"dim_electricity.功能分类\":{\"displayName\":\"Function\"},\"dim_electricity.Category4\":{\"displayName\":\"Details\"}},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"tree\":[{\"properties\":{\"effectiveBarsPerLevel\":{\"expr\":{\"Literal\":{\"Value\":\"5L\"}}},\"defaultClickAction\":{\"expr\":{\"Literal\":{\"Value\":\"'select'\"}}},\"density\":{\"expr\":{\"Literal\":{\"Value\":\"'dense'\"}}},\"connectorType\":{\"expr\":{\"Literal\":{\"Value\":\"'round'\"}}}}}],\"dataBars\":[{\"properties\":{\"dataBarScalingType\":{\"expr\":{\"Literal\":{\"Value\":\"'parentNode'\"}}},\"dataBarWidthPercent\":{\"expr\":{\"Literal\":{\"Value\":\"124L\"}}}}}],\"analysis\":[{\"properties\":{\"aiMode\":{\"expr\":{\"Literal\":{\"Value\":\"'absolute'\"}}}}}],\"dataLabels\":[{\"properties\":{\"dataLabelFontSize\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}}}}],\"insights\":[{\"properties\":{\"isAINode\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}},\"selector\":{\"data\":[{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"dim_electricity\"}},\"Property\":\"功能分类\"}},\"Right\":{\"Literal\":{\"Value\":\"'Molding Production'\"}}}}}]}},{\"properties\":{\"isAINode\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}},\"selector\":{\"data\":[{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"dim_electricity\"}},\"Property\":\"功能分类\"}},\"Right\":{\"Literal\":{\"Value\":\"'Molding Production'\"}}}}},{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"dim_electricity\"}},\"Property\":\"Category4\"}},\"Right\":{\"Literal\":{\"Value\":\"'Molding line 11,12,13,14'\"}}}}}]}}]}}}",
+          "filters": "[{\"name\":\"025324ea6e4a0700bc70\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"dim_electricity\"}},\"Property\":\"区域分类\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dim_electricity\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"区域分类\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'注塑'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{},\"isHiddenInViewMode\":false}]",
+          "height": 364.02,
+          "width": 743.06,
+          "x": 4.50,
+          "y": 17.26,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"e35cc00009282687edba\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":416.6666666666667,\"z\":2000,\"width\":844.6666666666666,\"height\":251.33333333333334,\"tabOrder\":4000}}],\"singleVisual\":{\"visualType\":\"areaChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Calendar.Date\",\"active\":true}],\"Y\":[{\"queryRef\":\"_Measure.TotalNumber\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Calendar\",\"Type\":0},{\"Name\":\"_\",\"Entity\":\"_Measure\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Date\"},\"Name\":\"Calendar.Date\",\"NativeReferenceName\":\"Date\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Eletricity Usage\"},\"Name\":\"_Measure.TotalNumber\",\"NativeReferenceName\":\"Eletricity Usage\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Date\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"referenceLine\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"displayName\":{\"expr\":{\"Literal\":{\"Value\":\"'Average line 1'\"}}},\"value\":{\"expr\":{\"Aggregation\":{\"Expression\":{\"SelectRef\":{\"ExpressionName\":\"_Measure.TotalNumber\"}},\"Function\":1}}}},\"selector\":{\"metadata\":\"_Measure.TotalNumber\",\"id\":\"1\"}}],\"valueAxis\":[{\"properties\":{\"start\":{\"expr\":{\"Literal\":{\"Value\":\"2000D\"}}}}}],\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"labelDisplayUnits\":{\"expr\":{\"Literal\":{\"Value\":\"1D\"}}}}}],\"y2Axis\":[{\"properties\":{\"secLabelDisplayUnits\":{\"expr\":{\"Literal\":{\"Value\":\"1D\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 251.33,
+          "width": 844.67,
+          "x": 0.00,
+          "y": 416.67,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"ffdc08bd979b7012147c\",\"layouts\":[{\"id\":0,\"position\":{\"x\":850.6666666666666,\"y\":0,\"z\":1000,\"width\":163.33333333333334,\"height\":285.3333333333333,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Calendar.YearMonth\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Calendar\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"YearMonth\"},\"Name\":\"Calendar.YearMonth\",\"NativeReferenceName\":\"YearMonth\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Basic'\"}}}}}],\"general\":[{\"properties\":{}}]}}}",
+          "filters": "[]",
+          "height": 285.33,
+          "width": 163.33,
+          "x": 850.67,
+          "y": 0.00,
+          "z": 1000.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Page 2",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "8c645479ba6844699734",
+      "ordinal": 1,
+      "visualContainers": [],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Page 3",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "a4680edea0604380b82e",
+      "ordinal": 2,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"725e065630ea7291b180\",\"layouts\":[{\"id\":0,\"position\":{\"x\":12.010276650407716,\"y\":14.583907361209368,\"z\":0,\"width\":448.6696205830882,\"height\":300.2569162601929,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"LFAC_electricity.Cabinet\"},{\"queryRef\":\"_Measure.TotalNumber\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"l\",\"Entity\":\"LFAC_Electricity400v\",\"Type\":0},{\"Name\":\"_\",\"Entity\":\"_Measure\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l\"}},\"Property\":\"Cabinet\"},\"Name\":\"LFAC_electricity.Cabinet\",\"NativeReferenceName\":\"Cabinet\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Eletricity Usage\"},\"Name\":\"_Measure.TotalNumber\",\"NativeReferenceName\":\"TotalNumber\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Eletricity Usage\"}}}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 300.26,
+          "width": 448.67,
+          "x": 12.01,
+          "y": 14.58,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"792d0ccc32424d0336de\",\"layouts\":[{\"id\":0,\"position\":{\"x\":381.7552221022452,\"y\":0,\"z\":1000,\"width\":898.197118069777,\"height\":324.27746956100833,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Calendar.YearMonth\"},{\"queryRef\":\"Calendar.Date\"},{\"queryRef\":\"_Measure.YTD_Number\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Calendar\",\"Type\":0},{\"Name\":\"_\",\"Entity\":\"_Measure\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"YearMonth\"},\"Name\":\"Calendar.YearMonth\",\"NativeReferenceName\":\"YearMonth\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Date\"},\"Name\":\"Calendar.Date\",\"NativeReferenceName\":\"Date\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"YTD_Number\"},\"Name\":\"_Measure.YTD_Number\",\"NativeReferenceName\":\"YTD_Number\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 324.28,
+          "width": 898.20,
+          "x": 381.76,
+          "y": 0.00,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"c6b5d32ed3bed8a098b3\",\"layouts\":[{\"id\":0,\"position\":{\"x\":6.755057497475323,\"y\":334.75062709711045,\"z\":2000,\"width\":1129.5957259667068,\"height\":300.97533960973385,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Calendar.YearMonth\"},{\"queryRef\":\"_Measure.TotalNumber\"},{\"queryRef\":\"_Measure.Avg_Number\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Calendar\",\"Type\":0},{\"Name\":\"_\",\"Entity\":\"_Measure\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"YearMonth\"},\"Name\":\"Calendar.YearMonth\",\"NativeReferenceName\":\"YearMonth\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Eletricity Usage\"},\"Name\":\"_Measure.TotalNumber\",\"NativeReferenceName\":\"TotalNumber\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Avg_Number\"},\"Name\":\"_Measure.Avg_Number\",\"NativeReferenceName\":\"Avg_Number\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[{\"name\":\"98a7de5903066b9a38e2\",\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Calendar\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Not\":{\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"YearMonth\"}},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Date\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'2025-Mar'\"}},{\"Literal\":{\"Value\":\"datetime'2025-03-10T00:00:00'\"}}]]}}}}}]},\"type\":\"Exclude\",\"howCreated\":4,\"filterExpressionMetadata\":{\"expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Calendar\"}},\"Property\":\"YearMonth\"}},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Calendar\"}},\"Property\":\"Date\"}}],\"cachedValueItems\":[{\"identities\":[{\"scopeId\":{\"And\":{\"Left\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Calendar\"}},\"Property\":\"YearMonth\"}},\"Right\":{\"Literal\":{\"Value\":\"'2025-Mar'\"}}}},\"Right\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Calendar\"}},\"Property\":\"Date\"}},\"Right\":{\"Literal\":{\"Value\":\"datetime'2025-03-10T00:00:00'\"}}}}}}}],\"valueMap\":{\"0\":\"2025-Mar\",\"1\":\"03/10/2025\"}}]}}]",
+          "height": 300.98,
+          "width": 1129.60,
+          "x": 6.76,
+          "y": 334.75,
+          "z": 2000.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ]
+}

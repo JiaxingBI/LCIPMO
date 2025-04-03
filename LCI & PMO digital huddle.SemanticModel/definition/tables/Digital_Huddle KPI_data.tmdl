@@ -1,0 +1,140 @@
+table 'Digital_Huddle KPI_data'
+	lineageTag: 984adedc-3fd2-49b4-a8a5-b9400cdf0176
+	sourceLineageTag: 005c2a90-2464-46f1-9d9e-5f543bd7c754
+
+	column ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 0a66c121-ae44-49c7-822f-9d519a8671e6
+		sourceLineageTag: c5741bdc-6c0c-4021-93b4-41a971d454e7
+		dataCategory: Uncategorized
+		summarizeBy: count
+		sourceColumn: ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column KPI_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 5d0d518b-b9f2-4a87-8376-f258407126dc
+		sourceLineageTag: 5943f160-eaec-481e-ad7b-013cc7459d6b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: KPI_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 7462cdad-b327-4959-87f8-bf3dcce0027c
+		sourceLineageTag: bfe92c58-58ee-4cd5-a50d-180c804a8ba8
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column Actual_value
+		dataType: double
+		formatString: 0.0000
+		lineageTag: e45044c2-cc4c-443c-9012-c9e415364399
+		sourceLineageTag: 75d6e9d9-5258-443f-b468-d114b571ce7f
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Actual_value
+
+		annotation SummarizationSetBy = Automatic
+
+	column Comment_value
+		dataType: string
+		lineageTag: 92a8ad62-ed7c-4469-bfe3-71fafc2a8e94
+		sourceLineageTag: cadce4a9-e9e1-4d84-b393-f2c76dd10882
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Comment_value
+
+		annotation SummarizationSetBy = Automatic
+
+	column Last_modified_by
+		dataType: string
+		lineageTag: 081c98a1-2366-4779-9d08-867fde235cd2
+		sourceLineageTag: ce999b6a-0080-4007-8184-98dad22665e8
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Last_modified_by
+
+		annotation SummarizationSetBy = Automatic
+
+	column last_modified_at
+		dataType: string
+		lineageTag: ff07e4b8-8a68-40f2-a538-1ee79e452ee8
+		sourceLineageTag: a32d432c-954a-46bd-a48d-191b5752a53d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: last_modified_at
+
+		annotation SummarizationSetBy = Automatic
+
+	column Day
+		dataType: int64
+		formatString: 0
+		lineageTag: 53cab5dc-e891-4ca8-a4bc-bb8113f1a4e3
+		sourceLineageTag: 0aa63f85-7032-4928-87cc-001ea605c57c
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Day
+
+		annotation SummarizationSetBy = Automatic
+
+	column Comment-Number
+		dataType: int64
+		formatString: 0
+		lineageTag: c10615bc-8051-4fc3-a6ca-5778eb53c5e0
+		sourceLineageTag: 7233bd77-7253-458f-8faa-cb22dd4df7e0
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Comment-Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column Target_from
+		dataType: double
+		formatString: 0.0000
+		lineageTag: 3e451e7b-0aec-4eb8-a6f4-cc4543929f1f
+		sourceLineageTag: 9d8087af-9837-4b34-b3d7-b3e2ca3dba76
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Target_from
+
+		annotation SummarizationSetBy = User
+
+	column Target_to
+		dataType: double
+		formatString: 0.0000
+		lineageTag: 28d53dac-35d4-4508-8858-4b2a4dded6fe
+		sourceLineageTag: 2c10d6e3-2ef5-4bf6-ad03-af935315c54f
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Target_to
+
+		annotation SummarizationSetBy = User
+
+	column YTD_value
+		dataType: double
+		lineageTag: c85528ff-ee7e-4c46-b30b-af4717061221
+		sourceLineageTag: d81535e1-0d7b-42f1-aaa4-ff165fa34070
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: YTD_value
+
+		annotation SummarizationSetBy = User
+
+	partition 'Digital_Huddle KPI_data-820dfbd1-70d7-4e8a-babb-b80debf8758c' = entity
+		mode: directQuery
+		source
+			entityName: Digital_Huddle KPI_data
+			expressionSource: 'DirectQuery 到 AS - JIA Digital huddle - Dataset1'
+
+	annotation PBI_ResultType = Exception
+

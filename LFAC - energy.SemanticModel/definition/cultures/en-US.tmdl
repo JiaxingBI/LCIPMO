@@ -1,0 +1,5607 @@
+cultureInfo en-US
+
+	linguisticMetadata =
+			{
+			  "Version": "3.5.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "LFAC_electricity_40_0v": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "LFAC_Electricity400v"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "LFAC electricity 40 0v": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "LFAC_Electricity400v": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "LFAC_electricity_40_0v.cabinet": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "LFAC_Electricity400v",
+			          "ConceptualProperty": "Cabinet"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "cabinet": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "cupboard": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "breakfront": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "dresser": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        }
+			      ]
+			    },
+			    "LFAC_electricity_40_0v.sn": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "LFAC_Electricity400v",
+			          "ConceptualProperty": "SN"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "sn": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "LFAC_electricity_40_0v.area": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "LFAC_Electricity400v",
+			          "ConceptualProperty": "Area"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "area": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "region": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "locale": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "locality": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "neighbourhood": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "district": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "continent": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "field": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "neighborhood": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "section": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "space": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        }
+			      ]
+			    },
+			    "LFAC_electricity_40_0v.function": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "LFAC_Electricity400v",
+			          "ConceptualProperty": "Function"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "function": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "role": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "occupation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "purpose": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "meaning": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "job": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "task": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "utility": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "affair": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "soiree": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "soirée": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        }
+			      ]
+			    },
+			    "LFAC_electricity_40_0v.date": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "LFAC_Electricity400v",
+			          "ConceptualProperty": "Date"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "date": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "moment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "period": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "LFAC_electricity_40_0v.value": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "LFAC_Electricity400v",
+			          "ConceptualProperty": "Value"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "value": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "assessment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "worth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "price": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "cost": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "charge": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "rate": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "importance": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "significance": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "usefulness": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "consequence": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        }
+			      ]
+			    },
+			    "calendar": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Calendar"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "calendar": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "almanac": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "datebook": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "agenda": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "logbook": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "diary": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "schedule": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "timetable": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        }
+			      ]
+			    },
+			    "calendar.date": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Calendar",
+			          "ConceptualProperty": "Date"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "date": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "moment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "period": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "calendar.year": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Calendar",
+			          "ConceptualProperty": "Year"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "year": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "yr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "calendar.month": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Calendar",
+			          "ConceptualProperty": "Month"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "month": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "mth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        }
+			      ]
+			    },
+			    "calendar.year_month": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Calendar",
+			          "ConceptualProperty": "YearMonth"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "year month": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "YearMonth": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "year mth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "yr month": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        }
+			      ]
+			    },
+			    "calendar.year_month_order": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Calendar",
+			          "ConceptualProperty": "YearMonthOrder"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "year month order": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "YearMonthOrder": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "order": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "month order": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "yr month order": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "year mth order": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "mth order": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "year month instruction": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "year month direction": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "year month edict": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "month instruction": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "month direction": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "month edict": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "year month command": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        }
+			      ]
+			    },
+			    "entity__measure": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measure"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "_measure": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "_ degree": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "_ quantity": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "_ quota": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "_ extent": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "_ amount": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "_ portion": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "_ ration": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "_ size": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        }
+			      ]
+			    },
+			    "entity__measure.value": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measure",
+			          "ConceptualProperty": "Value"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "value": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "assessment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "worth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "price": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "cost": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "charge": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "rate": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "importance": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "significance": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "usefulness": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "consequence": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        }
+			      ]
+			    },
+			    "entity__measure.total_number": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measure",
+			          "ConceptualProperty": "Eletricity Usage"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "total number": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "TotalNumber": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "total no": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "aggregate number": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "overall number": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ]
+			    },
+			    "entity__measure.avg_number": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measure",
+			          "ConceptualProperty": "Avg_Number"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "avg number": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Avg_Number": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "avg no": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "average number": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ]
+			    },
+			    "entity__measure.YTD_number": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measure",
+			          "ConceptualProperty": "YTD_Number"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "YTD number": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "YTD_Number": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "ytd no": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "year to date number": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.48
+			          }
+			        }
+			      ]
+			    },
+			    "LFAC_heating_cooling": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "LFAC_HeatingCooling"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "LFAC heating cooling": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "LFAC_HeatingCooling": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "cooling": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "heating cooling": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "lfac heating refrigeration": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "lfac heating preservation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "heating refrigeration": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "heating preservation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "lfac heating chilling": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "lfac heating freezing": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "lfac heating conserving": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "refrigeration": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "preservation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "heating chilling": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        }
+			      ]
+			    },
+			    "LFAC_heating_cooling.date": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "LFAC_HeatingCooling",
+			          "ConceptualProperty": "Date"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "date": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "moment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "period": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "LFAC_heating_cooling.name": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "LFAC_HeatingCooling",
+			          "ConceptualProperty": "Name"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "name": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "title": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "label": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "tag": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        }
+			      ]
+			    },
+			    "LFAC_heating_cooling.value": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "LFAC_HeatingCooling",
+			          "ConceptualProperty": "Value"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "value": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "assessment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "worth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "price": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "cost": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "charge": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "rate": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "importance": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "significance": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "usefulness": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "consequence": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        }
+			      ]
+			    },
+			    "LFAC_heating_cooling.type": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "LFAC_HeatingCooling",
+			          "ConceptualProperty": "Type"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "type": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "genre": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "manner": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "variety": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "brand": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "class": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "kind": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "style": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "form": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "grouping": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        }
+			      ]
+			    },
+			    "LFAC_humidity": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "LFAC_Humidity"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "LFAC humidity": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "LFAC_Humidity": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "humidity": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "lfac moisture": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "lfac moistness": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "lfac dampness": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "lfac clamminess": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "lfac stickiness": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "lfac mugginess": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "lfac wetness": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "moisture": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "moistness": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "dampness": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        }
+			      ]
+			    },
+			    "LFAC_humidity.month": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "LFAC_Humidity",
+			          "ConceptualProperty": "month"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "month": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "mth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        }
+			      ]
+			    },
+			    "LFAC_humidity.day": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "LFAC_Humidity",
+			          "ConceptualProperty": "day"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "day": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "LFAC_humidity.hour": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "LFAC_Humidity",
+			          "ConceptualProperty": "hour"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "hour": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "period": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "era": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "epoch": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "age": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.452
+			          }
+			        }
+			      ]
+			    },
+			    "LFAC_humidity.value": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "LFAC_Humidity",
+			          "ConceptualProperty": "Value"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "value": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "assessment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "worth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "price": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "cost": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "charge": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "rate": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "importance": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "significance": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "usefulness": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "consequence": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        }
+			      ]
+			    },
+			    "dim_heatingcooling_type": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_heatingcooling_type"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "dim heatingcooling type": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "dim_heatingcooling_type": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "dim heatingcooling category": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "dim heatingcooling genre": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "dim heatingcooling manner": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "dim heatingcooling variety": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "dim heatingcooling brand": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "dim heatingcooling class": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "dim heatingcooling kind": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "dim heatingcooling style": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "dim heatingcooling form": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "dim heatingcooling grouping": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        }
+			      ]
+			    },
+			    "dim_heatingcooling_type.type": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_heatingcooling_type",
+			          "ConceptualProperty": "Type"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "type": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "genre": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "manner": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "variety": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "brand": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "class": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "kind": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "style": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "form": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "grouping": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        }
+			      ]
+			    },
+			    "dim_heatingcooling_type.name": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_heatingcooling_type",
+			          "ConceptualProperty": "Name"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "name": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "title": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "label": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "tag": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        }
+			      ],
+			      "NameType": "Name"
+			    },
+			    "LFAC_other": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "LFAC_Others"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "LFAC other": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "LFAC_Others": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "LFAC_other.cabinet": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "LFAC_Others",
+			          "ConceptualProperty": "Cabinet"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "cabinet": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "cupboard": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "breakfront": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "dresser": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        }
+			      ]
+			    },
+			    "LFAC_other.能源种类": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "LFAC_Others",
+			          "ConceptualProperty": "能源种类"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "能源种类": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "LFAC_other.unit": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "LFAC_Others",
+			          "ConceptualProperty": "Unit"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "unit": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "module": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "element": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "entity": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "component": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "constituent": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "item": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "part": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "section": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        }
+			      ]
+			    },
+			    "LFAC_other.备注": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "LFAC_Others",
+			          "ConceptualProperty": "备注"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "备注": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "LFAC_other.date": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "LFAC_Others",
+			          "ConceptualProperty": "Date"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "date": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "moment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "period": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "LFAC_other.value": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "LFAC_Others",
+			          "ConceptualProperty": "Value"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "value": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "assessment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "worth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "price": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "cost": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "charge": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "rate": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "importance": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "significance": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "usefulness": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "consequence": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        }
+			      ]
+			    },
+			    "dim_electricity_area": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_electricityArea"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "dim electricity area": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "dim_electricityArea": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "electricity area": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "dim electricity region": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "dim electricity locale": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "dim electricity locality": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "dim electricity neighbourhood": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "electricity region": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "electricity locale": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "electricity locality": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "electricity neighbourhood": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "dim electricity district": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "dim electricity continent": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        }
+			      ]
+			    },
+			    "dim_electricity_area.production": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_electricityArea",
+			          "ConceptualProperty": "Production"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "production": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "construction": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "creation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "invention": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "fabrication": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "assembly": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "manufacture": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "making": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        }
+			      ]
+			    },
+			    "dim_electricity_area.area": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_electricityArea",
+			          "ConceptualProperty": "Area"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "area": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "region": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "locale": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "locality": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "neighbourhood": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "district": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "continent": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "field": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "neighborhood": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "section": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "space": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        }
+			      ]
+			    },
+			    "dim_electricity_area.subarea": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_electricityArea",
+			          "ConceptualProperty": "Sub-area"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "sub-area": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "sub area": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "sub-region": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "sub-locale": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "sub-locality": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "sub-neighbourhood": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "sub region": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "sub locale": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "sub locality": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "sub neighbourhood": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "sub-district": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "sub-continent": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        }
+			      ]
+			    },
+			    "dim_electricity_area.cabinet": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_electricityArea",
+			          "ConceptualProperty": "Cabinets"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "cabinet": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "cupboard": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "breakfront": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "dresser": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        }
+			      ]
+			    },
+			    "dim_electricity_area.machine": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_electricityArea",
+			          "ConceptualProperty": "Machines"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "machine": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "mechanism": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "engine": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "appliance": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "apparatus": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "contraption": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "device": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "contrivance": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "instrument": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "organization": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "system": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        }
+			      ]
+			    },
+			    "dim_electricity": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_electricity"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "dim electricity": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "dim_electricity": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "dim energy": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "dim voltage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "dim power": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "dim current": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        }
+			      ]
+			    },
+			    "dim_electricity.cabinet": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_electricity",
+			          "ConceptualProperty": "Cabinet"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "cabinet": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "cupboard": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "breakfront": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "dresser": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        }
+			      ]
+			    },
+			    "dim_electricity.sn": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_electricity",
+			          "ConceptualProperty": "SN"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "sn": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "dim_electricity.meter": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_electricity",
+			          "ConceptualProperty": "Meter"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "meter": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "rhythm": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "tempo": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "cadence": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "beat": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "pulse": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "pattern": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "stress": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "measure": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "rhyme": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "gage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.452
+			          }
+			        }
+			      ]
+			    },
+			    "dim_electricity.swithboard": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_electricity",
+			          "ConceptualProperty": "Swithboard"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "swithboard": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "dim_electricity.按照属性分": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_electricity",
+			          "ConceptualProperty": "按照属性分"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "按照属性分": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "dim_electricity.按照区域分": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_electricity",
+			          "ConceptualProperty": "按照区域分"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "按照区域分": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "dim_electricity.category": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_electricity",
+			          "ConceptualProperty": "Category"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "category": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "classification": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "class": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "grouping": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "kind": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        }
+			      ]
+			    },
+			    "dim_electricity.用途": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_electricity",
+			          "ConceptualProperty": "用途"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "用途": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "dim_electricity.备注": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_electricity",
+			          "ConceptualProperty": "备注"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "备注": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "dim_electricity.区域分类": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_electricity",
+			          "ConceptualProperty": "区域分类"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "区域分类": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "dim_electricity.使用区域": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_electricity",
+			          "ConceptualProperty": "使用区域"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "使用区域": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "dim_electricity.功能分类": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_electricity",
+			          "ConceptualProperty": "功能分类"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "功能分类": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Function": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dim_electricity.electricity": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_electricity",
+			          "ConceptualProperty": "Electricity"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "electricity": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "energy": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "voltage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "power": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        }
+			      ]
+			    },
+			    "dim_electricity.category_4": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_electricity",
+			          "ConceptualProperty": "Category4"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "category 4": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Category4": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "classification 4": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "class 4": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "group 4": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "type 4": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "grouping 4": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "kind 4": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "Details": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    }
+			  },
+			  "Relationships": {
+			    "LFAC_electricity_40_0v_has_calendar": {
+			      "Binding": {
+			        "ConceptualEntity": "LFAC_Electricity400v"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "LFAC_electricity_40_0v": {
+			          "Target": {
+			            "Entity": "LFAC_electricity_40_0v"
+			          }
+			        },
+			        "calendar": {
+			          "Target": {
+			            "Entity": "calendar"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "LFAC_electricity_40_0v"
+			            },
+			            "Object": {
+			              "Role": "calendar"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "LFAC_electricity_40_0vs_have_calendars"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "calendar"
+			            },
+			            "Object": {
+			              "Role": "LFAC_electricity_40_0v"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "calendars_have_LFAC_electricity_40_0vs"
+			        }
+			      ]
+			    },
+			    "dim_electricity_has_category_4": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_electricity"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_electricity": {
+			          "Target": {
+			            "Entity": "dim_electricity"
+			          }
+			        },
+			        "dim_electricity.category_4": {
+			          "Target": {
+			            "Entity": "dim_electricity.category_4"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_electricity"
+			            },
+			            "Object": {
+			              "Role": "dim_electricity.category_4"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_electricity_have_category_4"
+			        }
+			      ]
+			    },
+			    "dim_electricity_has_electricity": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_electricity"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_electricity": {
+			          "Target": {
+			            "Entity": "dim_electricity"
+			          }
+			        },
+			        "dim_electricity.electricity": {
+			          "Target": {
+			            "Entity": "dim_electricity.electricity"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_electricity"
+			            },
+			            "Object": {
+			              "Role": "dim_electricity.electricity"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_electricity_have_electricity"
+			        }
+			      ]
+			    },
+			    "dim_electricity_has_功能分类": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_electricity"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_electricity": {
+			          "Target": {
+			            "Entity": "dim_electricity"
+			          }
+			        },
+			        "dim_electricity.功能分类": {
+			          "Target": {
+			            "Entity": "dim_electricity.功能分类"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_electricity"
+			            },
+			            "Object": {
+			              "Role": "dim_electricity.功能分类"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_electricity_have_功能分类"
+			        }
+			      ]
+			    },
+			    "dim_electricity_has_使用区域": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_electricity"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_electricity": {
+			          "Target": {
+			            "Entity": "dim_electricity"
+			          }
+			        },
+			        "dim_electricity.使用区域": {
+			          "Target": {
+			            "Entity": "dim_electricity.使用区域"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_electricity"
+			            },
+			            "Object": {
+			              "Role": "dim_electricity.使用区域"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_electricity_have_使用区域"
+			        }
+			      ]
+			    },
+			    "dim_electricity_has_区域分类": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_electricity"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_electricity": {
+			          "Target": {
+			            "Entity": "dim_electricity"
+			          }
+			        },
+			        "dim_electricity.区域分类": {
+			          "Target": {
+			            "Entity": "dim_electricity.区域分类"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_electricity"
+			            },
+			            "Object": {
+			              "Role": "dim_electricity.区域分类"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_electricity_have_区域分类"
+			        }
+			      ]
+			    },
+			    "dim_electricity_has_备注": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_electricity"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_electricity": {
+			          "Target": {
+			            "Entity": "dim_electricity"
+			          }
+			        },
+			        "dim_electricity.备注": {
+			          "Target": {
+			            "Entity": "dim_electricity.备注"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_electricity"
+			            },
+			            "Object": {
+			              "Role": "dim_electricity.备注"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_electricity_have_备注"
+			        }
+			      ]
+			    },
+			    "dim_electricity_has_用途": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_electricity"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_electricity": {
+			          "Target": {
+			            "Entity": "dim_electricity"
+			          }
+			        },
+			        "dim_electricity.用途": {
+			          "Target": {
+			            "Entity": "dim_electricity.用途"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_electricity"
+			            },
+			            "Object": {
+			              "Role": "dim_electricity.用途"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_electricity_have_用途"
+			        }
+			      ]
+			    },
+			    "dim_electricity_has_category": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_electricity"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_electricity": {
+			          "Target": {
+			            "Entity": "dim_electricity"
+			          }
+			        },
+			        "dim_electricity.category": {
+			          "Target": {
+			            "Entity": "dim_electricity.category"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_electricity"
+			            },
+			            "Object": {
+			              "Role": "dim_electricity.category"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_electricity_have_categories"
+			        }
+			      ]
+			    },
+			    "dim_electricity_has_按照区域分": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_electricity"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_electricity": {
+			          "Target": {
+			            "Entity": "dim_electricity"
+			          }
+			        },
+			        "dim_electricity.按照区域分": {
+			          "Target": {
+			            "Entity": "dim_electricity.按照区域分"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_electricity"
+			            },
+			            "Object": {
+			              "Role": "dim_electricity.按照区域分"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_electricity_have_按照区域分"
+			        }
+			      ]
+			    },
+			    "dim_electricity_has_按照属性分": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_electricity"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_electricity": {
+			          "Target": {
+			            "Entity": "dim_electricity"
+			          }
+			        },
+			        "dim_electricity.按照属性分": {
+			          "Target": {
+			            "Entity": "dim_electricity.按照属性分"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_electricity"
+			            },
+			            "Object": {
+			              "Role": "dim_electricity.按照属性分"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_electricity_have_按照属性分"
+			        }
+			      ]
+			    },
+			    "dim_electricity_has_swithboard": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_electricity"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_electricity": {
+			          "Target": {
+			            "Entity": "dim_electricity"
+			          }
+			        },
+			        "dim_electricity.swithboard": {
+			          "Target": {
+			            "Entity": "dim_electricity.swithboard"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_electricity"
+			            },
+			            "Object": {
+			              "Role": "dim_electricity.swithboard"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_electricity_have_swithboards"
+			        }
+			      ]
+			    },
+			    "dim_electricity_has_meter": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_electricity"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_electricity": {
+			          "Target": {
+			            "Entity": "dim_electricity"
+			          }
+			        },
+			        "dim_electricity.meter": {
+			          "Target": {
+			            "Entity": "dim_electricity.meter"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_electricity"
+			            },
+			            "Object": {
+			              "Role": "dim_electricity.meter"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_electricity_have_meters"
+			        }
+			      ]
+			    },
+			    "dim_electricity_has_sn": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_electricity"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_electricity": {
+			          "Target": {
+			            "Entity": "dim_electricity"
+			          }
+			        },
+			        "dim_electricity.sn": {
+			          "Target": {
+			            "Entity": "dim_electricity.sn"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_electricity"
+			            },
+			            "Object": {
+			              "Role": "dim_electricity.sn"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_electricity_have_sns"
+			        }
+			      ]
+			    },
+			    "dim_electricity_has_cabinet": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_electricity"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_electricity": {
+			          "Target": {
+			            "Entity": "dim_electricity"
+			          }
+			        },
+			        "dim_electricity.cabinet": {
+			          "Target": {
+			            "Entity": "dim_electricity.cabinet"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_electricity"
+			            },
+			            "Object": {
+			              "Role": "dim_electricity.cabinet"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_electricity_have_cabinets"
+			        }
+			      ]
+			    },
+			    "dim_electricity_area_has_machine": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_electricityArea"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_electricity_area": {
+			          "Target": {
+			            "Entity": "dim_electricity_area"
+			          }
+			        },
+			        "dim_electricity_area.machine": {
+			          "Target": {
+			            "Entity": "dim_electricity_area.machine"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_electricity_area"
+			            },
+			            "Object": {
+			              "Role": "dim_electricity_area.machine"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_electricity_areas_have_machines"
+			        }
+			      ]
+			    },
+			    "dim_electricity_area_has_cabinet": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_electricityArea"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_electricity_area": {
+			          "Target": {
+			            "Entity": "dim_electricity_area"
+			          }
+			        },
+			        "dim_electricity_area.cabinet": {
+			          "Target": {
+			            "Entity": "dim_electricity_area.cabinet"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_electricity_area"
+			            },
+			            "Object": {
+			              "Role": "dim_electricity_area.cabinet"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_electricity_areas_have_cabinets"
+			        }
+			      ]
+			    },
+			    "dim_electricity_area_has_subarea": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_electricityArea"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_electricity_area": {
+			          "Target": {
+			            "Entity": "dim_electricity_area"
+			          }
+			        },
+			        "dim_electricity_area.subarea": {
+			          "Target": {
+			            "Entity": "dim_electricity_area.subarea"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_electricity_area"
+			            },
+			            "Object": {
+			              "Role": "dim_electricity_area.subarea"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_electricity_areas_have_subareas"
+			        }
+			      ]
+			    },
+			    "dim_electricity_area_has_area": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_electricityArea"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_electricity_area": {
+			          "Target": {
+			            "Entity": "dim_electricity_area"
+			          }
+			        },
+			        "dim_electricity_area.area": {
+			          "Target": {
+			            "Entity": "dim_electricity_area.area"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_electricity_area"
+			            },
+			            "Object": {
+			              "Role": "dim_electricity_area.area"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_electricity_areas_have_areas"
+			        }
+			      ]
+			    },
+			    "dim_electricity_area_has_production": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_electricityArea"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_electricity_area": {
+			          "Target": {
+			            "Entity": "dim_electricity_area"
+			          }
+			        },
+			        "dim_electricity_area.production": {
+			          "Target": {
+			            "Entity": "dim_electricity_area.production"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_electricity_area"
+			            },
+			            "Object": {
+			              "Role": "dim_electricity_area.production"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_electricity_areas_have_productions"
+			        }
+			      ]
+			    },
+			    "LFAC_other_has_value": {
+			      "Binding": {
+			        "ConceptualEntity": "LFAC_Others"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "LFAC_other": {
+			          "Target": {
+			            "Entity": "LFAC_other"
+			          }
+			        },
+			        "LFAC_other.value": {
+			          "Target": {
+			            "Entity": "LFAC_other.value"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "LFAC_other"
+			            },
+			            "Object": {
+			              "Role": "LFAC_other.value"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "LFAC_others_have_values"
+			        }
+			      ]
+			    },
+			    "LFAC_other_has_date": {
+			      "Binding": {
+			        "ConceptualEntity": "LFAC_Others"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "LFAC_other": {
+			          "Target": {
+			            "Entity": "LFAC_other"
+			          }
+			        },
+			        "LFAC_other.date": {
+			          "Target": {
+			            "Entity": "LFAC_other.date"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "LFAC_other"
+			            },
+			            "Object": {
+			              "Role": "LFAC_other.date"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "LFAC_others_have_dates"
+			        }
+			      ]
+			    },
+			    "LFAC_other_has_备注": {
+			      "Binding": {
+			        "ConceptualEntity": "LFAC_Others"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "LFAC_other": {
+			          "Target": {
+			            "Entity": "LFAC_other"
+			          }
+			        },
+			        "LFAC_other.备注": {
+			          "Target": {
+			            "Entity": "LFAC_other.备注"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "LFAC_other"
+			            },
+			            "Object": {
+			              "Role": "LFAC_other.备注"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "LFAC_others_have_备注"
+			        }
+			      ]
+			    },
+			    "LFAC_other_has_unit": {
+			      "Binding": {
+			        "ConceptualEntity": "LFAC_Others"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "LFAC_other": {
+			          "Target": {
+			            "Entity": "LFAC_other"
+			          }
+			        },
+			        "LFAC_other.unit": {
+			          "Target": {
+			            "Entity": "LFAC_other.unit"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "LFAC_other"
+			            },
+			            "Object": {
+			              "Role": "LFAC_other.unit"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "LFAC_others_have_units"
+			        }
+			      ]
+			    },
+			    "LFAC_other_has_能源种类": {
+			      "Binding": {
+			        "ConceptualEntity": "LFAC_Others"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "LFAC_other": {
+			          "Target": {
+			            "Entity": "LFAC_other"
+			          }
+			        },
+			        "LFAC_other.能源种类": {
+			          "Target": {
+			            "Entity": "LFAC_other.能源种类"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "LFAC_other"
+			            },
+			            "Object": {
+			              "Role": "LFAC_other.能源种类"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "LFAC_others_have_能源种类"
+			        }
+			      ]
+			    },
+			    "LFAC_other_has_cabinet": {
+			      "Binding": {
+			        "ConceptualEntity": "LFAC_Others"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "LFAC_other": {
+			          "Target": {
+			            "Entity": "LFAC_other"
+			          }
+			        },
+			        "LFAC_other.cabinet": {
+			          "Target": {
+			            "Entity": "LFAC_other.cabinet"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "LFAC_other"
+			            },
+			            "Object": {
+			              "Role": "LFAC_other.cabinet"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "LFAC_others_have_cabinets"
+			        }
+			      ]
+			    },
+			    "dim_heatingcooling_type_has_name": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_heatingcooling_type"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_heatingcooling_type": {
+			          "Target": {
+			            "Entity": "dim_heatingcooling_type"
+			          }
+			        },
+			        "dim_heatingcooling_type.name": {
+			          "Target": {
+			            "Entity": "dim_heatingcooling_type.name"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_heatingcooling_type"
+			            },
+			            "Object": {
+			              "Role": "dim_heatingcooling_type.name"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_heatingcooling_types_have_names"
+			        },
+			        {
+			          "Name": {
+			            "Subject": {
+			              "Role": "dim_heatingcooling_type"
+			            },
+			            "Name": {
+			              "Role": "dim_heatingcooling_type.name"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "names_are_names_IDs_of_dim_heatingcooling_types"
+			        }
+			      ]
+			    },
+			    "dim_heatingcooling_type_has_type": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_heatingcooling_type"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_heatingcooling_type": {
+			          "Target": {
+			            "Entity": "dim_heatingcooling_type"
+			          }
+			        },
+			        "dim_heatingcooling_type.type": {
+			          "Target": {
+			            "Entity": "dim_heatingcooling_type.type"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_heatingcooling_type"
+			            },
+			            "Object": {
+			              "Role": "dim_heatingcooling_type.type"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_heatingcooling_types_have_types"
+			        }
+			      ]
+			    },
+			    "LFAC_humidity_has_value": {
+			      "Binding": {
+			        "ConceptualEntity": "LFAC_Humidity"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "LFAC_humidity": {
+			          "Target": {
+			            "Entity": "LFAC_humidity"
+			          }
+			        },
+			        "LFAC_humidity.value": {
+			          "Target": {
+			            "Entity": "LFAC_humidity.value"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "LFAC_humidity"
+			            },
+			            "Object": {
+			              "Role": "LFAC_humidity.value"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "LFAC_humidity_have_values"
+			        }
+			      ]
+			    },
+			    "LFAC_humidity_has_hour": {
+			      "Binding": {
+			        "ConceptualEntity": "LFAC_Humidity"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "LFAC_humidity": {
+			          "Target": {
+			            "Entity": "LFAC_humidity"
+			          }
+			        },
+			        "LFAC_humidity.hour": {
+			          "Target": {
+			            "Entity": "LFAC_humidity.hour"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "LFAC_humidity"
+			            },
+			            "Object": {
+			              "Role": "LFAC_humidity.hour"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "LFAC_humidity_have_hours"
+			        }
+			      ]
+			    },
+			    "LFAC_humidity_has_day": {
+			      "Binding": {
+			        "ConceptualEntity": "LFAC_Humidity"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "LFAC_humidity": {
+			          "Target": {
+			            "Entity": "LFAC_humidity"
+			          }
+			        },
+			        "LFAC_humidity.day": {
+			          "Target": {
+			            "Entity": "LFAC_humidity.day"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "LFAC_humidity"
+			            },
+			            "Object": {
+			              "Role": "LFAC_humidity.day"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "LFAC_humidity_have_days"
+			        }
+			      ]
+			    },
+			    "LFAC_humidity_has_month": {
+			      "Binding": {
+			        "ConceptualEntity": "LFAC_Humidity"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "LFAC_humidity": {
+			          "Target": {
+			            "Entity": "LFAC_humidity"
+			          }
+			        },
+			        "LFAC_humidity.month": {
+			          "Target": {
+			            "Entity": "LFAC_humidity.month"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "LFAC_humidity"
+			            },
+			            "Object": {
+			              "Role": "LFAC_humidity.month"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "LFAC_humidity_have_months"
+			        }
+			      ]
+			    },
+			    "LFAC_heating_cooling_has_type": {
+			      "Binding": {
+			        "ConceptualEntity": "LFAC_HeatingCooling"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "LFAC_heating_cooling": {
+			          "Target": {
+			            "Entity": "LFAC_heating_cooling"
+			          }
+			        },
+			        "LFAC_heating_cooling.type": {
+			          "Target": {
+			            "Entity": "LFAC_heating_cooling.type"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "LFAC_heating_cooling"
+			            },
+			            "Object": {
+			              "Role": "LFAC_heating_cooling.type"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "LFAC_heating_cooling_have_types"
+			        }
+			      ]
+			    },
+			    "LFAC_heating_cooling_has_value": {
+			      "Binding": {
+			        "ConceptualEntity": "LFAC_HeatingCooling"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "LFAC_heating_cooling": {
+			          "Target": {
+			            "Entity": "LFAC_heating_cooling"
+			          }
+			        },
+			        "LFAC_heating_cooling.value": {
+			          "Target": {
+			            "Entity": "LFAC_heating_cooling.value"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "LFAC_heating_cooling"
+			            },
+			            "Object": {
+			              "Role": "LFAC_heating_cooling.value"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "LFAC_heating_cooling_have_values"
+			        }
+			      ]
+			    },
+			    "LFAC_heating_cooling_has_name": {
+			      "Binding": {
+			        "ConceptualEntity": "LFAC_HeatingCooling"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "LFAC_heating_cooling": {
+			          "Target": {
+			            "Entity": "LFAC_heating_cooling"
+			          }
+			        },
+			        "LFAC_heating_cooling.name": {
+			          "Target": {
+			            "Entity": "LFAC_heating_cooling.name"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "LFAC_heating_cooling"
+			            },
+			            "Object": {
+			              "Role": "LFAC_heating_cooling.name"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "LFAC_heating_cooling_have_names"
+			        }
+			      ]
+			    },
+			    "LFAC_heating_cooling_has_date": {
+			      "Binding": {
+			        "ConceptualEntity": "LFAC_HeatingCooling"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "LFAC_heating_cooling": {
+			          "Target": {
+			            "Entity": "LFAC_heating_cooling"
+			          }
+			        },
+			        "LFAC_heating_cooling.date": {
+			          "Target": {
+			            "Entity": "LFAC_heating_cooling.date"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "LFAC_heating_cooling"
+			            },
+			            "Object": {
+			              "Role": "LFAC_heating_cooling.date"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "LFAC_heating_cooling_have_dates"
+			        }
+			      ]
+			    },
+			    "entity__measure_has_YTD_number": {
+			      "Binding": {
+			        "ConceptualEntity": "_Measure"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "entity__measure": {
+			          "Target": {
+			            "Entity": "entity__measure"
+			          }
+			        },
+			        "entity__measure.YTD_number": {
+			          "Target": {
+			            "Entity": "entity__measure.YTD_number"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "entity__measure"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.YTD_number"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_measures_have_YTD_number"
+			        }
+			      ]
+			    },
+			    "LFAC_electricity_40_0v_has_entity__measure_avg_number": {
+			      "Binding": {
+			        "ConceptualEntity": "LFAC_Electricity400v"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "LFAC_electricity_40_0v": {
+			          "Target": {
+			            "Entity": "LFAC_electricity_40_0v"
+			          }
+			        },
+			        "entity__measure.avg_number": {
+			          "Target": {
+			            "Entity": "entity__measure.avg_number"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "LFAC_electricity_40_0v"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.avg_number"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "LFAC_electricity_40_0vs_have_avg_number"
+			        }
+			      ]
+			    },
+			    "LFAC_electricity_40_0v_has_entity__measure_total_number": {
+			      "Binding": {
+			        "ConceptualEntity": "LFAC_Electricity400v"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "LFAC_electricity_40_0v": {
+			          "Target": {
+			            "Entity": "LFAC_electricity_40_0v"
+			          }
+			        },
+			        "entity__measure.total_number": {
+			          "Target": {
+			            "Entity": "entity__measure.total_number"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "LFAC_electricity_40_0v"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.total_number"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "LFAC_electricity_40_0vs_have_total_number"
+			        }
+			      ]
+			    },
+			    "entity__measure_has_value": {
+			      "Binding": {
+			        "ConceptualEntity": "_Measure"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "entity__measure": {
+			          "Target": {
+			            "Entity": "entity__measure"
+			          }
+			        },
+			        "entity__measure.value": {
+			          "Target": {
+			            "Entity": "entity__measure.value"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "entity__measure"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.value"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_measures_have_values"
+			        }
+			      ]
+			    },
+			    "calendar_has_year_month": {
+			      "Binding": {
+			        "ConceptualEntity": "Calendar"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "calendar": {
+			          "Target": {
+			            "Entity": "calendar"
+			          }
+			        },
+			        "calendar.year_month": {
+			          "Target": {
+			            "Entity": "calendar.year_month"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "calendar"
+			            },
+			            "Object": {
+			              "Role": "calendar.year_month"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "calendars_have_year_months"
+			        }
+			      ]
+			    },
+			    "calendar_has_month": {
+			      "Binding": {
+			        "ConceptualEntity": "Calendar"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "calendar": {
+			          "Target": {
+			            "Entity": "calendar"
+			          }
+			        },
+			        "calendar.month": {
+			          "Target": {
+			            "Entity": "calendar.month"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "calendar"
+			            },
+			            "Object": {
+			              "Role": "calendar.month"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "calendars_have_months"
+			        }
+			      ]
+			    },
+			    "calendar_has_year": {
+			      "Binding": {
+			        "ConceptualEntity": "Calendar"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "calendar": {
+			          "Target": {
+			            "Entity": "calendar"
+			          }
+			        },
+			        "calendar.year": {
+			          "Target": {
+			            "Entity": "calendar.year"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "calendar"
+			            },
+			            "Object": {
+			              "Role": "calendar.year"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "calendars_have_years"
+			        }
+			      ]
+			    },
+			    "calendar_has_date": {
+			      "Binding": {
+			        "ConceptualEntity": "Calendar"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "calendar": {
+			          "Target": {
+			            "Entity": "calendar"
+			          }
+			        },
+			        "calendar.date": {
+			          "Target": {
+			            "Entity": "calendar.date"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "calendar"
+			            },
+			            "Object": {
+			              "Role": "calendar.date"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "calendars_have_dates"
+			        }
+			      ]
+			    },
+			    "LFAC_electricity_40_0v_has_value": {
+			      "Binding": {
+			        "ConceptualEntity": "LFAC_Electricity400v"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "LFAC_electricity_40_0v": {
+			          "Target": {
+			            "Entity": "LFAC_electricity_40_0v"
+			          }
+			        },
+			        "LFAC_electricity_40_0v.value": {
+			          "Target": {
+			            "Entity": "LFAC_electricity_40_0v.value"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "LFAC_electricity_40_0v"
+			            },
+			            "Object": {
+			              "Role": "LFAC_electricity_40_0v.value"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "LFAC_electricity_40_0vs_have_values"
+			        }
+			      ]
+			    },
+			    "LFAC_electricity_40_0v_has_date": {
+			      "Binding": {
+			        "ConceptualEntity": "LFAC_Electricity400v"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "LFAC_electricity_40_0v": {
+			          "Target": {
+			            "Entity": "LFAC_electricity_40_0v"
+			          }
+			        },
+			        "LFAC_electricity_40_0v.date": {
+			          "Target": {
+			            "Entity": "LFAC_electricity_40_0v.date"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "LFAC_electricity_40_0v"
+			            },
+			            "Object": {
+			              "Role": "LFAC_electricity_40_0v.date"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "LFAC_electricity_40_0vs_have_dates"
+			        }
+			      ]
+			    },
+			    "LFAC_electricity_40_0v_has_function": {
+			      "Binding": {
+			        "ConceptualEntity": "LFAC_Electricity400v"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "LFAC_electricity_40_0v": {
+			          "Target": {
+			            "Entity": "LFAC_electricity_40_0v"
+			          }
+			        },
+			        "LFAC_electricity_40_0v.function": {
+			          "Target": {
+			            "Entity": "LFAC_electricity_40_0v.function"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "LFAC_electricity_40_0v"
+			            },
+			            "Object": {
+			              "Role": "LFAC_electricity_40_0v.function"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "LFAC_electricity_40_0vs_have_functions"
+			        }
+			      ]
+			    },
+			    "LFAC_electricity_40_0v_has_area": {
+			      "Binding": {
+			        "ConceptualEntity": "LFAC_Electricity400v"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "LFAC_electricity_40_0v": {
+			          "Target": {
+			            "Entity": "LFAC_electricity_40_0v"
+			          }
+			        },
+			        "LFAC_electricity_40_0v.area": {
+			          "Target": {
+			            "Entity": "LFAC_electricity_40_0v.area"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "LFAC_electricity_40_0v"
+			            },
+			            "Object": {
+			              "Role": "LFAC_electricity_40_0v.area"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "LFAC_electricity_40_0vs_have_areas"
+			        }
+			      ]
+			    },
+			    "LFAC_electricity_40_0v_has_cabinet": {
+			      "Binding": {
+			        "ConceptualEntity": "LFAC_Electricity400v"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "LFAC_electricity_40_0v": {
+			          "Target": {
+			            "Entity": "LFAC_electricity_40_0v"
+			          }
+			        },
+			        "LFAC_electricity_40_0v.cabinet": {
+			          "Target": {
+			            "Entity": "LFAC_electricity_40_0v.cabinet"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "LFAC_electricity_40_0v"
+			            },
+			            "Object": {
+			              "Role": "LFAC_electricity_40_0v.cabinet"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "LFAC_electricity_40_0vs_have_cabinets"
+			        }
+			      ]
+			    },
+			    "dim_electricity_area_in_subarea": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_electricityArea"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_electricity_area": {
+			          "Target": {
+			            "Entity": "dim_electricity_area"
+			          }
+			        },
+			        "dim_electricity_area.subarea": {
+			          "Target": {
+			            "Entity": "dim_electricity_area.subarea"
+			          }
+			        }
+			      },
+			      "SemanticSlots": {
+			        "Where": {
+			          "Role": "dim_electricity_area.subarea"
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Preposition": {
+			            "Subject": {
+			              "Role": "dim_electricity_area"
+			            },
+			            "Prepositions": [
+			              {
+			                "in": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "dim_electricity_area.subarea"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_electricity_areas_are_in_subareas"
+			        }
+			      ]
+			    },
+			    "dim_electricity_area_in_area": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_electricityArea"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_electricity_area": {
+			          "Target": {
+			            "Entity": "dim_electricity_area"
+			          }
+			        },
+			        "dim_electricity_area.area": {
+			          "Target": {
+			            "Entity": "dim_electricity_area.area"
+			          }
+			        }
+			      },
+			      "SemanticSlots": {
+			        "Where": {
+			          "Role": "dim_electricity_area.area"
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Preposition": {
+			            "Subject": {
+			              "Role": "dim_electricity_area"
+			            },
+			            "Prepositions": [
+			              {
+			                "in": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "dim_electricity_area.area"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_electricity_areas_are_in_areas"
+			        }
+			      ]
+			    },
+			    "LFAC_electricity_40_0v_in_area": {
+			      "Binding": {
+			        "ConceptualEntity": "LFAC_Electricity400v"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "LFAC_electricity_40_0v": {
+			          "Target": {
+			            "Entity": "LFAC_electricity_40_0v"
+			          }
+			        },
+			        "LFAC_electricity_40_0v.area": {
+			          "Target": {
+			            "Entity": "LFAC_electricity_40_0v.area"
+			          }
+			        }
+			      },
+			      "SemanticSlots": {
+			        "Where": {
+			          "Role": "LFAC_electricity_40_0v.area"
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Preposition": {
+			            "Subject": {
+			              "Role": "LFAC_electricity_40_0v"
+			            },
+			            "Prepositions": [
+			              {
+			                "in": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "LFAC_electricity_40_0v.area"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "LFAC_electricity_40_0vs_are_in_areas"
+			        }
+			      ]
+			    },
+			    "LFAC_electricity_40_0v_has_dim_electricity": {
+			      "Binding": {
+			        "ConceptualEntity": "LFAC_Electricity400v"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "LFAC_electricity_40_0v": {
+			          "Target": {
+			            "Entity": "LFAC_electricity_40_0v"
+			          }
+			        },
+			        "dim_electricity": {
+			          "Target": {
+			            "Entity": "dim_electricity"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "LFAC_electricity_40_0v"
+			            },
+			            "Object": {
+			              "Role": "dim_electricity"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "LFAC_electricity_40_0vs_have_dim_electricity"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_electricity"
+			            },
+			            "Object": {
+			              "Role": "LFAC_electricity_40_0v"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_electricity_have_LFAC_electricity_40_0vs"
+			        }
+			      ]
+			    }
+			  }
+			}
+		contentType: json
+

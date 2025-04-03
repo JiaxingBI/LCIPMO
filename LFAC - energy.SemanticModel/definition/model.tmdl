@@ -1,0 +1,26 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBIDesktopVersion = 2.140.1577.0 (25.02)+00af0910c5ca19a229c472b0dfc17a2c488f6b0a
+
+annotation PBI_QueryOrder = ["LFAC_Electricity400v","LFAC_HeatingCooling","LFAC_Humidity","dim_heatingcooling_type","LFAC_Others","dim_electricityArea","dim_electricity"]
+
+ref table LFAC_Electricity400v
+ref table Calendar
+ref table _Measure
+ref table LFAC_HeatingCooling
+ref table LFAC_Humidity
+ref table dim_heatingcooling_type
+ref table LFAC_Others
+ref table dim_electricityArea
+ref table dim_electricity
+
+ref cultureInfo en-US
+
