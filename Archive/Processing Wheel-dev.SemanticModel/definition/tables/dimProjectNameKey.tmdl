@@ -1,0 +1,104 @@
+table dimProjectNameKey
+	isHidden
+	lineageTag: d57b735a-4c11-4c47-84bf-c502d224ff79
+
+	column Category
+		dataType: string
+		isHidden
+		lineageTag: 781efef7-b3c2-46e1-a2c0-9c98658bcef9
+		summarizeBy: none
+		sourceColumn: Category
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Site '
+		dataType: string
+		isHidden
+		lineageTag: d81b8a04-7bc1-48ef-87ff-a54eec745903
+		summarizeBy: none
+		sourceColumn: "Site "
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column #
+		dataType: string
+		isHidden
+		lineageTag: cbb78deb-fa2d-4693-b12e-3a76f5fc9c58
+		summarizeBy: none
+		sourceColumn: #
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ID Tracker'
+		dataType: string
+		isHidden
+		lineageTag: 0022b997-2e14-4323-8293-908873522e44
+		summarizeBy: none
+		sourceColumn: ID Tracker
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Initiatives
+		dataType: string
+		isHidden
+		lineageTag: 6ce20e6c-c941-47ef-8086-137a34427176
+		summarizeBy: none
+		sourceColumn: Initiatives
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID
+		dataType: string
+		isHidden
+		lineageTag: 380b56d4-9ff5-4ec1-82d2-7142673d44a7
+		summarizeBy: none
+		sourceColumn: ID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Name_JIA
+		dataType: string
+		isHidden
+		lineageTag: 35e5bb9a-14ab-427e-a037-9ff3a874275b
+		summarizeBy: none
+		sourceColumn: Name_JIA
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Name_AnD
+		dataType: string
+		isHidden
+		lineageTag: 439cb1ba-171b-4ea0-a8cc-0944009abc90
+		summarizeBy: none
+		sourceColumn: Name_AnD
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dimProjectNameKey = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("rVdtc+I2EP4rO3wiM3eNDdgm108M3PVIIHHD3HU66X1QbBHU2rIry0npr+/Kkl8AG9NrZxiLwbvPs+9anp4Gs8V7fzl4N7j/1TxHeNieN1HnV5axhEO2zySNAb+tGWdhEkWwoySEkAaJIFKJ/JZb1shVItuISJAsohrOxkN9vr17GtyfkI0NmYMnPAsW/IH69C+IkzCPALaJgMUXf/UA/mYBwySXaS6B8UBQklEgPITPc8jIK+MvV7X53XwTw+fiOU9eqQCZQCroK+USQhKTFwrJFiLG40RCSoTMakNL2EPUR+36okB2xzd4rhc++MoXExU/IgGFkTVy4MASLYq/j2FNeE4i9bqQ6+FxPXuqfkK3U8G4RD8ETRVLjI5oFUcTdMn0OGIVIeqyrlBxKw/OOduSh9vlDIrET11PYfkiCWiWoaGwIs+YcrrdsoBRHuyBxanAPNVued35VbhuA3fJQyZoICEm6D1DB4IkkxiFMA+KotWa087Urh7WYDcAf1p/9D/Ao9KnkGF1UF0iWJGqgBKx16o3bTaidRWwPZ3cKKF7+qbiJbHO42yomgsW2F3XuuY37CUm1z73ryClQskQjsSNkCBxmRCEt/9fxIOAHFs/PZkOqlf/xCphcg/BjmJBIJRqW1MXa7ZlQLKMxs/RXiOqXp2ZqvsA3wE3q+GM9qbW/tloz9u0l5+WtXZLnqxGli6vT9Qd/yuFPuo5SUnAJNvXQ2/45VMT5Aq04qSWbggbdw9VOnj1s2ReJQE2TLMycC4Ws1kmSQTDW1ZMXFRyLpfup72kZ1HDvUD0Ir7P5G8iQngjWDa6s40qinnFe1EI/HIi0I/9kVPxsjfXk347rX7uQXAsVQYPckdFNsSGnEBAhNhDcWdRGfxggq+LRL15wDftXVthOuUQGy6SNy5ZTK+zQJD0+hFvVlWtjQT+CJu2AYfB5nhJFilW1y9eKYQJY4xtGfzy6LTFmbqj8u7gvuKNCkzSyLFtN8dDu+j5+0eRdZmgsMMQW+uVKp/yLQlkLlQQhpvVBn6vyts+mFIX6HSnFT8bFe/O4fsecHRT3KtCFuhQDPMUheE5CfelPc1VpKK5Wy30U19YnmeN/zvb3WLVur7VZGZZtNT0aSmiTIs1d7JDjKOdYzI42TkKFn0h4Vfje5fMeQLXnagC/Up3LIhodU1qWbOPnbw8D4l1PDlfg3ermdZ0Bn3rkhLt8aBv70MVs5ad2/uOEqnWOuP+5TsxqrauYrgzDRqbkzd1xoMLNydUai23GtIUUommRk8TTUu1/gOoMcbGLBXIO862NIOtSGJcExgnkGEHRAxjMJzX8zbHWRnBbc51oq40Umsf1jxlRHeEYwArXLWZ+AJH7wUMk/MMbnOk1DckbjoE/6Gl5RaopZ2WHtRQRz3onfZXUZ0Vb733t8qcJ8CGGZ/vgorH622Yku4oNt9Vz6ha/RH49g8=", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Category = _t, #"Site " = _t, #"#" = _t, #"ID Tracker" = _t, Initiatives = _t, ID = _t, Name_JIA = _t, Name_AnD = _t])
+				in
+				    Source
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+

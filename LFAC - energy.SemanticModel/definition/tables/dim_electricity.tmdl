@@ -117,7 +117,7 @@ table dim_electricity
 		mode: import
 		source =
 				let
-				    Source = Excel.Workbook(Web.Contents("https://legogroup.sharepoint.com/sites/Jiaxing_LFAC/Shared%20Documents/Energy%20Consumption%20Dashboard/Energy%20BI%20-%20electricity%20number.xlsx"), null, true),
+				    Source = Excel.Workbook(Web.Contents("https://legogroup.sharepoint.com/sites/JIALCI/Shared%20Documents/General/03_BI/01_Project%20List/02.%20Project%20List/03.%20Energy%20Consumption/Energy%20BI%20-%20electricity%20number.xlsx"), null, true),
 				    #"400v_Sheet" = Source{[Item="400v",Kind="Sheet"]}[Data],
 				    #"Removed Top Rows" = Table.Skip(#"400v_Sheet",1),
 				    #"Promoted Headers" = Table.PromoteHeaders(#"Removed Top Rows", [PromoteAllScalars=true]),

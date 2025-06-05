@@ -72,9 +72,10 @@ table Productivity_PFP
 				    #"Added Custom" = Table.AddColumn(pfp_, "Key", each [Month Name] &"-"& [IL LEVEL]),
 				    #"Removed Columns" = Table.RemoveColumns(#"Added Custom",{"Date created"}),
 				    #"Added Custom1" = Table.AddColumn(#"Removed Columns", "Value Type", each "PFP"),
-				    #"Renamed Columns" = Table.RenameColumns(#"Added Custom1",{{"IL LEVEL", "IL"}, {"TECHNOLOGY", "Area"}, {"Month Name", "Date created"}, {"PfP", "Value"}})
+				    #"Renamed Columns" = Table.RenameColumns(#"Added Custom1",{{"IL LEVEL", "IL"}, {"TECHNOLOGY", "Area"}, {"Month Name", "Date created"}, {"PfP", "Value"}}),
+				    #"Cleaned Text" = Table.TransformColumns(#"Renamed Columns",{{"Area", each "PFP"} })
 				in
-				    #"Renamed Columns"
+				    #"Cleaned Text"
 
 	annotation PBI_NavigationStepName = Navigation
 

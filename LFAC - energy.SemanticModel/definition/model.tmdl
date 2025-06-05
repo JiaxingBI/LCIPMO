@@ -8,19 +8,21 @@ model Model
 
 annotation __PBI_TimeIntelligenceEnabled = 0
 
-annotation PBIDesktopVersion = 2.140.1577.0 (25.02)+00af0910c5ca19a229c472b0dfc17a2c488f6b0a
+annotation PBIDesktopVersion = 2.143.878.0 (25.05)+b20aa3b866ec1b70879135a4e60e4b1301c75b21
 
-annotation PBI_QueryOrder = ["LFAC_Electricity400v","LFAC_HeatingCooling","LFAC_Humidity","dim_heatingcooling_type","LFAC_Others","dim_electricityArea","dim_electricity"]
+annotation PBI_QueryOrder = ["LFAC_Electricity400v","LFAC_Humidity","dim_heatingcooling_type","LFAC_Others","dim_electricityArea","dim_electricity","LFAC_Aircompressor","LFAC_Gas","LFAC_Water"]
 
 ref table LFAC_Electricity400v
 ref table Calendar
 ref table _Measure
-ref table LFAC_HeatingCooling
 ref table LFAC_Humidity
 ref table dim_heatingcooling_type
 ref table LFAC_Others
 ref table dim_electricityArea
 ref table dim_electricity
+ref table LFAC_Aircompressor
+ref table LFAC_Gas
+ref table LFAC_Water
 
 ref cultureInfo en-US
 

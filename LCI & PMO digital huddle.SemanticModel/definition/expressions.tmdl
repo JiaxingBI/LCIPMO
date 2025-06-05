@@ -11,3 +11,5 @@ expression 'DirectQuery 到 AS - JIA Digital huddle - Dataset1' =
 
 	annotation PBI_IncludeFutureArtifacts = True
 
+	annotation PBI_RemovedChildren = [{"remoteItemId":{"analysisServicesObject":{"sourceName":null,"sourceLineageTag":"5841e772-c05b-4dcc-9c15-1f056316fb49"}},"objectType":"Table"}]
+

@@ -1,0 +1,45 @@
+table Productivity_Target
+	lineageTag: 7d9b8a5a-3926-4f4d-81e3-5a8ab69e899f
+
+	column Area
+		dataType: string
+		lineageTag: 8e67ce1a-70f5-4bb9-8b2d-9dfaaac827de
+		summarizeBy: none
+		sourceColumn: Area
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fin Target'
+		dataType: double
+		lineageTag: bd44b2e8-948d-4431-a27c-c3dc369acb53
+		summarizeBy: none
+		sourceColumn: Fin Target
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Index
+		dataType: string
+		lineageTag: d0407f36-ebaa-4de5-9006-9cb9a77b36b0
+		summarizeBy: none
+		sourceColumn: Index
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Productivity_Target = m
+		mode: import
+		source =
+				let
+				    Source = PowerPlatform.Dataflows([]),
+				    Workspaces = Source{[Id="Workspaces"]}[Data],
+				    #"7c90095b-31de-43da-b11e-e3c19e33be7d" = Workspaces{[workspaceId="7c90095b-31de-43da-b11e-e3c19e33be7d"]}[Data],
+				    #"8b87b6cf-63ec-405d-9c19-2ab933c27890" = #"7c90095b-31de-43da-b11e-e3c19e33be7d"{[dataflowId="8b87b6cf-63ec-405d-9c19-2ab933c27890"]}[Data],
+				    FinTarget_ = #"8b87b6cf-63ec-405d-9c19-2ab933c27890"{[entity="FinTarget",version=""]}[Data]
+				in
+				    FinTarget_
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

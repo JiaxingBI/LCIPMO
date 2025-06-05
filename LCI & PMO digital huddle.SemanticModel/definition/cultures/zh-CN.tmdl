@@ -56,27 +56,6 @@ cultureInfo zh-CN
 			        }
 			      ]
 			    },
-			    "archive.filter": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Archive",
-			          "ConceptualProperty": "Filter"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Open/Closed": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
-			    },
 			    "digital_huddle_pdca.containment_check_date": {
 			      "Definition": {
 			        "Binding": {
@@ -180,23 +159,13 @@ cultureInfo zh-CN
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "_Measure",
-			          "ConceptualProperty": "Productivity_2025"
+			          "ConceptualProperty": "Productivity_InYear"
 			        }
 			      },
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "InYear": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        },
-			        {
-			          "Indentified Oppo.": {
+			          "Indentified": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -214,19 +183,7 @@ cultureInfo zh-CN
 			          "ConceptualProperty": "TargetByArea"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Target": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "table_measure.gapbyarea": {
 			      "Definition": {
@@ -260,6 +217,162 @@ cultureInfo zh-CN
 			      "Terms": [
 			        {
 			          "YTD Actual": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table_measure.targetbyarea2": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measure",
+			          "ConceptualProperty": "TargetByArea2"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "archive.filter": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Archive",
+			          "ConceptualProperty": "Filter"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Open/Closed": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table_measure.gapforsupporting": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measure",
+			          "ConceptualProperty": "GapforSupporting"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Gap": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "productivity_inyear.target_jia": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Productivity_InYear",
+			          "ConceptualProperty": "Target_JIA"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Target": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table_measure.productivity_inyear_nopfp": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measure",
+			          "ConceptualProperty": "Productivity_InYear_Nopfp"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Productivity_InYear": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "productivity_inyear.date_created": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Productivity_InYear",
+			          "ConceptualProperty": "Date created"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Month": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table_measure.pro_jiatarget": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measure",
+			          "ConceptualProperty": "Pro_JIATarget"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Target": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table_measure.gapbyarea_prod": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measure",
+			          "ConceptualProperty": "GapByArea_Prod"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Gap": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",

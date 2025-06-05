@@ -4,7 +4,7 @@ table Calendar
 
 	column Date
 		isKey
-		formatString: Mm/dd
+		formatString: mm/dd/yyyy
 		lineageTag: 6d31d7a4-db06-47a2-9066-41f9999c4bdd
 		summarizeBy: none
 		isNameInferred
@@ -12,19 +12,19 @@ table Calendar
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation PBI_FormatHint = {"isCustom":true}
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
 
 	column Year = YEAR('Calendar'[Date])
 		formatString: 0
 		lineageTag: a4c40bc5-494d-4101-bffd-f23203f22319
-		summarizeBy: none
+		summarizeBy: sum
 
 		annotation SummarizationSetBy = Automatic
 
 	column Month = MONTH('Calendar'[Date])
 		formatString: 0
 		lineageTag: 504f9d31-abb9-4cd5-9d7e-62bcb2264e27
-		summarizeBy: none
+		summarizeBy: sum
 
 		annotation SummarizationSetBy = Automatic
 
@@ -39,7 +39,7 @@ table Calendar
 		isHidden
 		formatString: 0
 		lineageTag: 104f02a7-a33a-4cd3-989e-ba5f7f3045b2
-		summarizeBy: none
+		summarizeBy: sum
 
 		annotation SummarizationSetBy = Automatic
 

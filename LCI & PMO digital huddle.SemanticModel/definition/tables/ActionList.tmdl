@@ -81,11 +81,11 @@ table ActionList
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'high risk '
+	column Column11
 		dataType: string
-		lineageTag: f86c715f-d407-4fd5-b599-bdec9d96bb15
+		lineageTag: f2fb27be-a0b6-4387-b523-972dc00c0af4
 		summarizeBy: none
-		sourceColumn: "high risk "
+		sourceColumn: Column11
 
 		annotation SummarizationSetBy = Automatic
 
@@ -95,7 +95,8 @@ table ActionList
 				let
 				    Source = Excel.Workbook(Web.Contents("https://legogroup.sharepoint.com/sites/JIALCI/Shared%20Documents/General/01_Department%20Info/01_Digital%20Huddle/06_KPI/2025/DigitalHuddle/P_Weekly%20Focus.xlsx"), null, true),
 				    ActionLog_Sheet = Source{[Item="ActionLog",Kind="Sheet"]}[Data],
-				    #"Promoted Headers" = Table.PromoteHeaders(ActionLog_Sheet, [PromoteAllScalars=true]),
+				    #"Removed Top Rows" = Table.Skip(ActionLog_Sheet,5),
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Removed Top Rows", [PromoteAllScalars=true]),
 				    #"Filtered Rows" = Table.SelectRows(#"Promoted Headers", each ([#"Action Log "] <> null))
 				in
 				    #"Filtered Rows"

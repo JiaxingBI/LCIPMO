@@ -35,7 +35,7 @@ table LFAC_Others
 
 	column Date
 		dataType: dateTime
-		formatString: Long Date
+		formatString: m/d/yyyy
 		lineageTag: 79797767-91ab-4d61-ad98-9ad5de7536fc
 		summarizeBy: none
 		sourceColumn: Date
@@ -43,6 +43,8 @@ table LFAC_Others
 		annotation SummarizationSetBy = Automatic
 
 		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
 
 	column Value
 		dataType: double
@@ -65,9 +67,10 @@ table LFAC_Others
 				    #"Filtered Rows2" = Table.SelectRows(#"Promoted Headers", each ([Cabinet] <> null)),
 				    #"Unpivoted Other Columns" = Table.UnpivotOtherColumns(#"Filtered Rows2", {"Cabinet", "能源种类", "Unit", "备注"}, "Date", "Value"),
 				    #"Filtered Rows" = Table.SelectRows(#"Unpivoted Other Columns", each ([Date] <> "Annual" and [Date] <> "APR" and [Date] <> "AUG" and [Date] <> "DEC" and [Date] <> "FEB" and [Date] <> "JAN" and [Date] <> "JUL" and [Date] <> "JUN" and [Date] <> "MAR" and [Date] <> "MAY" and [Date] <> "NOV" and [Date] <> "OCT" and [Date] <> "SEP")),
-				    #"Changed Type" = Table.TransformColumnTypes(#"Filtered Rows",{{"Date", type date}, {"Value", type number}})
+				    #"Changed Type" = Table.TransformColumnTypes(#"Filtered Rows",{{"Date", type date}, {"Value", type number}}),
+				    #"Removed Errors" = Table.RemoveRowsWithErrors(#"Changed Type", {"Date"})
 				in
-				    #"Changed Type"
+				    #"Removed Errors"
 
 	annotation PBI_NavigationStepName = Navigation
 

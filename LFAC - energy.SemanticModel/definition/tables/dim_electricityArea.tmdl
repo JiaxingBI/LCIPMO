@@ -25,19 +25,19 @@ table dim_electricityArea
 
 		annotation SummarizationSetBy = Automatic
 
-	column Cabinets
-		dataType: string
-		lineageTag: 19f11e31-0dfb-4521-8336-edeb5a69f7ee
-		summarizeBy: none
-		sourceColumn: Cabinets
-
-		annotation SummarizationSetBy = Automatic
-
 	column Machines
 		dataType: string
 		lineageTag: 925505ac-02f9-4fd0-bb4c-f5b759ecb2b3
 		summarizeBy: none
 		sourceColumn: Machines
+
+		annotation SummarizationSetBy = Automatic
+
+	column Meters
+		dataType: string
+		lineageTag: 74938859-d0cf-4cdf-a8f3-fe030f09222b
+		summarizeBy: none
+		sourceColumn: Meters
 
 		annotation SummarizationSetBy = Automatic
 

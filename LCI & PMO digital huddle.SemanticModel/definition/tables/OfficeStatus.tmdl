@@ -11,6 +11,7 @@ table OfficeStatus
 			        "#0070C0","Annual Leave",
 			        "#000000","Business Trip",
 			        "#FFFF00","Special Events",
+			        "#a684b5","WFH Half Day",
 			        "Training")
 			        
 			```

@@ -1,0 +1,136 @@
+table canteen
+	lineageTag: ace7654b-2fe3-47cc-bd23-1c2c67e04be5
+
+	measure durations(hrs) = SUM('canteen'[间隔(分钟)])/60
+		lineageTag: c9280ee5-309d-4adc-ae41-77bcfc3645f7
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure %分类 =
+			
+			var TotalMin =CALCULATE(SUM(canteen[间隔(分钟)]),ALL(canteen))
+			VAR curMin = SUM(canteen[间隔(分钟)])
+			var pct = DIVIDE(curMin,TotalMin)
+			RETURN
+			    pct
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 55eb0648-7c82-4804-8482-662793a4d111
+
+	column Name
+		dataType: string
+		lineageTag: 0ee0361c-1822-4122-83a5-1a46632a588e
+		summarizeBy: none
+		sourceColumn: Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 序号
+		dataType: string
+		lineageTag: 2d0a12bb-eeea-47ed-b43a-073e1866291e
+		summarizeBy: none
+		sourceColumn: 序号
+
+		annotation SummarizationSetBy = Automatic
+
+	column 开始时间
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: 767812af-232a-4a2a-919a-72defc0c1f1e
+		summarizeBy: none
+		sourceColumn: 开始时间
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column 结束时间
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: 42fac512-73d5-4571-9d5a-d8af2eb1d1e8
+		summarizeBy: none
+		sourceColumn: 结束时间
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column 时间间隔
+		dataType: string
+		lineageTag: 7f2b2cfb-c0bf-4c04-ad54-ccca9239045d
+		summarizeBy: none
+		sourceColumn: 时间间隔
+
+		annotation SummarizationSetBy = Automatic
+
+	column 间隔(分钟)
+		dataType: double
+		formatString: 0.00
+		lineageTag: 5f029e6c-58dc-4703-a56d-cef64c30374f
+		summarizeBy: sum
+		sourceColumn: 间隔(分钟)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 动作内容
+		dataType: string
+		lineageTag: 6b123dce-f4c0-41bc-957f-d0b293da7688
+		summarizeBy: none
+		sourceColumn: 动作内容
+
+		annotation SummarizationSetBy = Automatic
+
+	column 分类
+		dataType: string
+		lineageTag: e2dc3d11-f003-480f-9fd5-462bb3f9d327
+		summarizeBy: none
+		sourceColumn: 分类
+
+		annotation SummarizationSetBy = Automatic
+
+	column 备注
+		dataType: string
+		lineageTag: cd8b8305-7ac0-489c-babc-662deb2f68f6
+		summarizeBy: none
+		sourceColumn: 备注
+
+		annotation SummarizationSetBy = Automatic
+
+	column 活动类别
+		dataType: string
+		lineageTag: d584bfa4-5521-4e70-9f57-aee509d16928
+		summarizeBy: none
+		sourceColumn: 活动类别
+
+		annotation SummarizationSetBy = Automatic
+
+	partition canteen = m
+		mode: import
+		source =
+				let
+				    Source = SharePoint.Contents("https://legogroup.sharepoint.com/sites/Jiaxing_LFAC/", [ApiVersion = 15]),
+				    #"Shared Documents" = Source{[Name="Shared Documents"]}[Content],
+				    IFM = #"Shared Documents"{[Name="IFM"]}[Content],
+				    #"IFM Productivity" = IFM{[Name="IFM Productivity"]}[Content],
+				    Catering = #"IFM Productivity"{[Name="Catering"]}[Content],
+				    #"Filtered Rows" = Table.SelectRows(Catering, each ([Name] = "Data collection sheet20250408.xlsx")),
+				    #"Added Custom" = Table.AddColumn(#"Filtered Rows", "Custom", each Excel.Workbook([Content],true)),
+				    #"Data collection sheet20250408 xlsx" = #"Added Custom"{[Name="Data collection sheet20250408.xlsx"]}[Custom],
+				    #"Filtered Rows1" = Table.SelectRows(#"Data collection sheet20250408 xlsx", each ([Kind] = "Sheet") and ([Name] <> "Detail1" and [Name] <> "余桂华饼图" and [Name] <> "分类" and [Name] <> "化月梅透视" and [Name] <> "唐新春饼图" and [Name] <> "张凤菊饼图" and [Name] <> "杨菊红饼图" and [Name] <> "王小平透视" and [Name] <> "董玉饼图")),
+				    Custom1 = Table.AddColumn(#"Filtered Rows1","col", each Table.PromoteHeaders(Table.RemoveFirstN(_[Data],1))),
+				    #"Removed Columns1" = Table.RemoveColumns(Custom1,{"Data", "Item", "Kind", "Hidden"}),
+				    #"Expanded col" = Table.ExpandTableColumn(#"Removed Columns1", "col", {"序号", "日期", "开始时间", "结束时间", "时间间隔", "动作内容", "分类", "备注"}, {"序号", "日期", "开始时间", "结束时间", "时间间隔", "动作内容", "分类", "备注"}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Expanded col",{{"日期", type date}, {"开始时间", type time}, {"结束时间", type time}}),
+				    #"Added Custom1" = Table.AddColumn(#"Changed Type", "间隔(分钟)", each Duration.TotalMinutes([结束时间]-[开始时间])),
+				    #"Reordered Columns" = Table.ReorderColumns(#"Added Custom1",{"Name", "序号", "日期", "开始时间", "结束时间", "时间间隔", "间隔(分钟)", "动作内容", "分类", "备注"}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Reordered Columns",{{"间隔(分钟)", type number}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type1",{"日期"}),
+				    筛选的行 = Table.SelectRows(#"Removed Columns", each ([分类] <> null)),
+				    合并的查询 = Table.NestedJoin(筛选的行, {"分类"}, Sheet1, {"分类"}, "Sheet1", JoinKind.LeftOuter),
+				    #"展开的“Sheet1”" = Table.ExpandTableColumn(合并的查询, "Sheet1", {"活动类别"}, {"活动类别"})
+				in
+				    #"展开的“Sheet1”"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

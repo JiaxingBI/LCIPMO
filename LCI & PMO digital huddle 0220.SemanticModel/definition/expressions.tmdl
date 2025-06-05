@@ -1,0 +1,13 @@
+expression 'DirectQuery 到 AS - JIA Digital huddle - Dataset1' =
+		let
+		    Source = AnalysisServices.Database("powerbi://api.powerbi.com/v1.0/myorg/JIA%20Digital%20Huddle", "JIA Digital huddle - Dataset1"),
+		    Cubes = Table.Combine(Source[Data]),
+		    Cube = Cubes{0}[Data]
+		in
+		    Cube
+	lineageTag: 9a563a5a-4cbf-4ca9-82ee-381b0a2ca6c9
+
+	annotation PBI_ResultType = Exception
+
+	annotation PBI_IncludeFutureArtifacts = True
+
