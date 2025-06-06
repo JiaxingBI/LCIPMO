@@ -373,6 +373,10 @@ table Measure
 			```
 		lineageTag: 6c343e26-be12-409d-b2e9-5bb7b8bebe54
 
+	measure TotalProjectedYE = SUM('DetailedProjects'[Projected YE Saving])
+		formatString: 0.0
+		lineageTag: 7b696003-0be6-4ba1-9b91-a176c4e5e87e
+
 	column Value
 		isHidden
 		lineageTag: fa2034d7-e55c-4c51-ada6-ee54f1e8af81
