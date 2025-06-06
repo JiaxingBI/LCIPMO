@@ -94,13 +94,13 @@
             "type": 100
           },
           {
-            "name": "Frame_49746865996529032.png",
-            "path": "Frame_49746865996529032.png",
+            "name": "Frame_162849371234576977.svg",
+            "path": "Frame_162849371234576977.svg",
             "type": 100
           },
           {
-            "name": "Frame_96507197259200157.png",
-            "path": "Frame_96507197259200157.png",
+            "name": "Frame_49746865996529032.png",
+            "path": "Frame_49746865996529032.png",
             "type": 100
           },
           {
@@ -232,9 +232,9 @@
       "width": 3000.00
     },
     {
-      "config": "{\"relationships\":[{\"source\":\"308c56dd392a83bba059\",\"target\":\"e8471a7c9ec189d014ba\",\"type\":1},{\"source\":\"47e6e63020c5595b3a1c\",\"target\":\"f479978fba4ae4c27801\",\"type\":3},{\"source\":\"47e6e63020c5595b3a1c\",\"target\":\"f50aae797e740120e0e2\",\"type\":3},{\"source\":\"f50aae797e740120e0e2\",\"target\":\"3ee8433f8e80dd6043a4\",\"type\":3},{\"source\":\"f50aae797e740120e0e2\",\"target\":\"f479978fba4ae4c27801\",\"type\":3},{\"source\":\"f479978fba4ae4c27801\",\"target\":\"f50aae797e740120e0e2\",\"type\":3},{\"source\":\"77332b1153c0c059e0c0\",\"target\":\"79d945ec22c586de7c04\",\"type\":3},{\"source\":\"77332b1153c0c059e0c0\",\"target\":\"5ade076b3e456d86c1ca\",\"type\":3},{\"source\":\"77332b1153c0c059e0c0\",\"target\":\"187f7ff1cc4049794b75\",\"type\":3},{\"source\":\"0c555cd045a330ab0adc\",\"target\":\"ec5a0f9ccd40511c5e50\",\"type\":3},{\"source\":\"0c555cd045a330ab0adc\",\"target\":\"308c56dd392a83bba059\",\"type\":1},{\"source\":\"4e08cc987b60d8565a40\",\"target\":\"308c56dd392a83bba059\",\"type\":1},{\"source\":\"4e08cc987b60d8565a40\",\"target\":\"ec5a0f9ccd40511c5e50\",\"type\":3},{\"source\":\"0c555cd045a330ab0adc\",\"target\":\"77332b1153c0c059e0c0\",\"type\":3}],\"objects\":{\"background\":[{\"properties\":{\"color\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#F0F3F7'\"}}}}},\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}},\"image\":{\"image\":{\"name\":{\"expr\":{\"Literal\":{\"Value\":\"'Frame 9.png'\"}}},\"url\":{\"expr\":{\"ResourcePackageItem\":{\"PackageName\":\"RegisteredResources\",\"PackageType\":1,\"ItemName\":\"Frame_96507197259200157.png\"}}},\"scaling\":{\"expr\":{\"Literal\":{\"Value\":\"'Fit'\"}}}}}}}],\"outspacePane\":[{\"properties\":{\"foregroundColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":1,\"Percent\":0}}}}}}}],\"filterCard\":[{\"properties\":{\"foregroundColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":1,\"Percent\":0}}}}}},\"selector\":{\"id\":\"Available\"}}]}}",
+      "config": "{\"relationships\":[{\"source\":\"308c56dd392a83bba059\",\"target\":\"e8471a7c9ec189d014ba\",\"type\":1},{\"source\":\"47e6e63020c5595b3a1c\",\"target\":\"f479978fba4ae4c27801\",\"type\":3},{\"source\":\"47e6e63020c5595b3a1c\",\"target\":\"f50aae797e740120e0e2\",\"type\":3},{\"source\":\"f50aae797e740120e0e2\",\"target\":\"3ee8433f8e80dd6043a4\",\"type\":3},{\"source\":\"f50aae797e740120e0e2\",\"target\":\"f479978fba4ae4c27801\",\"type\":3},{\"source\":\"f479978fba4ae4c27801\",\"target\":\"f50aae797e740120e0e2\",\"type\":3},{\"source\":\"77332b1153c0c059e0c0\",\"target\":\"79d945ec22c586de7c04\",\"type\":3},{\"source\":\"77332b1153c0c059e0c0\",\"target\":\"5ade076b3e456d86c1ca\",\"type\":3},{\"source\":\"77332b1153c0c059e0c0\",\"target\":\"187f7ff1cc4049794b75\",\"type\":3},{\"source\":\"0c555cd045a330ab0adc\",\"target\":\"ec5a0f9ccd40511c5e50\",\"type\":3},{\"source\":\"0c555cd045a330ab0adc\",\"target\":\"308c56dd392a83bba059\",\"type\":1},{\"source\":\"4e08cc987b60d8565a40\",\"target\":\"308c56dd392a83bba059\",\"type\":1},{\"source\":\"4e08cc987b60d8565a40\",\"target\":\"ec5a0f9ccd40511c5e50\",\"type\":3},{\"source\":\"0c555cd045a330ab0adc\",\"target\":\"77332b1153c0c059e0c0\",\"type\":3}],\"objects\":{\"background\":[{\"properties\":{\"color\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#F0F3F7'\"}}}}},\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}},\"image\":{\"image\":{\"name\":{\"expr\":{\"Literal\":{\"Value\":\"'Frame 16.svg'\"}}},\"url\":{\"expr\":{\"ResourcePackageItem\":{\"PackageName\":\"RegisteredResources\",\"PackageType\":1,\"ItemName\":\"Frame_162849371234576977.svg\"}}},\"scaling\":{\"expr\":{\"Literal\":{\"Value\":\"'Fill'\"}}}}}}}],\"outspacePane\":[{\"properties\":{\"foregroundColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":1,\"Percent\":0}}}}}}}],\"filterCard\":[{\"properties\":{\"foregroundColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":1,\"Percent\":0}}}}}},\"selector\":{\"id\":\"Available\"}}],\"displayArea\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Middle'\"}}}}}]}}",
       "displayName": "Overview",
-      "displayOption": 1,
+      "displayOption": 3,
       "filters": "[{\"name\":\"377a3feee4a35d161264\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Weekly Calendar\"}},\"Property\":\"Monthly review\"}},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{}},{\"name\":\"c374a723ea0745aa3718\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Weekly Calendar\"}},\"Property\":\"Year\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"w\",\"Entity\":\"Weekly Calendar\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"w\"}},\"Property\":\"Year\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"2025L\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{}},{\"name\":\"e4a17b8f998ca8bc6489\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Weekly Calendar\"}},\"Property\":\"Date\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"w\",\"Entity\":\"Weekly Calendar\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Not\":{\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"w\"}},\"Property\":\"Date\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"datetime'2024-12-30T00:00:00'\"}}]]}}}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{\"general\":[{\"properties\":{\"isInvertedSelectionMode\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}]",
       "height": 1000.00,
       "name": "7054fcefad00b1977116",
@@ -473,7 +473,7 @@
           "z": 5000.00
         }
       ],
-      "width": 1360.00
+      "width": 1700.00
     },
     {
       "config": "{\"objects\":{\"outspacePane\":[{\"properties\":{\"width\":{\"expr\":{\"Literal\":{\"Value\":\"203L\"}}}}}],\"background\":[{\"properties\":{\"image\":{\"image\":{\"name\":{\"expr\":{\"Literal\":{\"Value\":\"'1080x1920.svg'\"}}},\"url\":{\"expr\":{\"ResourcePackageItem\":{\"PackageName\":\"RegisteredResources\",\"PackageType\":1,\"ItemName\":\"1080x192002105222422741304.svg\"}}},\"scaling\":{\"expr\":{\"Literal\":{\"Value\":\"'Fit'\"}}}}},\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}}}}]},\"type\":0}",
