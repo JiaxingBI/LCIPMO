@@ -1,0 +1,28 @@
+table Others
+	lineageTag: 433310fd-2dd6-4923-bb6f-a9055a591521
+
+	column Others
+		dataType: string
+		lineageTag: adbe8492-a3ae-4955-81d0-e771e1ee6e48
+		summarizeBy: none
+		sourceColumn: Others
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Others = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://legogroup.sharepoint.com/sites/JIALCI/Shared%20Documents/General/01_Department%20Info/01_Digital%20Huddle/06_KPI/2021/Others_Others.xlsx"), null, true),
+				    Others_Sheet = Source{[Item="Others",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(Others_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Others", type text}, {"Column2", type any}, {"Column3", type any}, {"Column4", type any}}),
+				    #"Removed Other Columns" = Table.SelectColumns(#"Changed Type",{"Others"}),
+				    #"Filtered Rows" = Table.SelectRows(#"Removed Other Columns", each ([Others] <>null))
+				in
+				    #"Filtered Rows"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

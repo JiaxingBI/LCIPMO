@@ -8,11 +8,11 @@ model Model
 
 annotation __PBI_TimeIntelligenceEnabled = 0
 
-annotation PBIDesktopVersion = 2.140.1205.0 (25.02)+2ab3defe107764e1cf486b42122d9362df7f34ea
+annotation PBIDesktopVersion = 2.143.1204.0 (25.05)+23c84aace645781dd62b8a26eb0418c7e6a84b72
 
-annotation PBI_QueryOrder = ["Target-Plant","DetailedProjects","HistoryOverview","Weekly Calendar","IL Sort","Month Sort","Strategic Intiative"]
+annotation PBI_QueryOrder = ["Target-Plant","DetailedProjects","HistoryOverview","Weekly Calendar","IL Sort","Month Sort","Strategic Intiative","RemoveFiristLetter","Saving_3sites"]
 
-annotation PBI_ProTooling = ["DaxQueryView_Desktop","DevMode"]
+annotation PBI_ProTooling = ["DaxQueryView_Desktop"]
 
 annotation __TEdtr = 1
 
@@ -25,7 +25,8 @@ ref table Measure
 ref table dCalendar
 ref table 'Month Sort'
 ref table 'Strategic Intiative'
-ref table tblProjectID
+ref table dimWeek
+ref table Saving_3sites
 
 ref cultureInfo en-US
 

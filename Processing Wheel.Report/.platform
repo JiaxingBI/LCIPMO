@@ -2,7 +2,8 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
   "metadata": {
     "type": "Report",
-    "displayName": "Processing Wheel"
+    "displayName": "Processing Wheel",
+    "description": "https://legogroup.sharepoint.com/:p:/s/JIALCI/EfT8-OOrknZIjGyLmZDr8R8BkHfTp7q5fKyWxN3gEYwA1w?email=ProcessingWheel%40int"
   },
   "config": {
     "version": "2.0",

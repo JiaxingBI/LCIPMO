@@ -1,0 +1,225 @@
+{
+  "config": "{\"version\":\"5.64\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.61\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"useEnhancedTooltips\":true,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}],\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY24SU10",
+            "path": "BaseThemes/CY24SU10.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{}",
+      "displayName": "Water",
+      "displayOption": 3,
+      "filters": "[]",
+      "height": 1080.00,
+      "name": "4319a7c37e70dd33f467",
+      "ordinal": 4,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"508afe8e8a38118a1ccb\",\"layouts\":[{\"id\":0,\"position\":{\"x\":41.42857142857143,\"y\":540,\"z\":2000,\"width\":1177.142857142857,\"height\":497.14285714285717,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"pivotTable\",\"projections\":{\"Rows\":[{\"queryRef\":\"Calendar.Date\",\"active\":true}],\"Columns\":[{\"queryRef\":\"LFAC_Water.Cabinet\",\"active\":true}],\"Values\":[{\"queryRef\":\"Sum(LFAC_Water.Value)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Calendar\",\"Type\":0},{\"Name\":\"l1\",\"Entity\":\"LFAC_Water\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Date\"},\"Name\":\"Calendar.Date\",\"NativeReferenceName\":\"Date\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l1\"}},\"Property\":\"Cabinet\"},\"Name\":\"LFAC_Water.Cabinet\",\"NativeReferenceName\":\"Cabinet\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l1\"}},\"Property\":\"Value\"}},\"Function\":0},\"Name\":\"Sum(LFAC_Water.Value)\",\"NativeReferenceName\":\"Sum of Value\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Date\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"values\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"15D\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 497.14,
+          "width": 1177.14,
+          "x": 41.43,
+          "y": 540.00,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"5b1c92192ee1bb0a477b\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1335.7142857142858,\"y\":54.28571428571429,\"z\":1000,\"width\":467.14285714285717,\"height\":497.14285714285717,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"LFAC_Water.Cabinet\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"l\",\"Entity\":\"LFAC_Water\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l\"}},\"Property\":\"Cabinet\"},\"Name\":\"LFAC_Water.Cabinet\",\"NativeReferenceName\":\"Cabinet\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Basic'\"}}}}}],\"general\":[{\"properties\":{}}],\"pendingChangesIcon\":[{\"properties\":{\"size\":{\"expr\":{\"Literal\":{\"Value\":\"30D\"}}}}}],\"items\":[{\"properties\":{\"textSize\":{\"expr\":{\"Literal\":{\"Value\":\"30D\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 497.14,
+          "width": 467.14,
+          "x": 1335.71,
+          "y": 54.29,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"f63550d831ac85c3c435\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"z\":0,\"width\":1177.2121212121212,\"height\":496.4848484848485,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"stackedAreaChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Calendar.Date\",\"active\":true}],\"Series\":[{\"queryRef\":\"LFAC_Water.Cabinet\"}],\"Y\":[{\"queryRef\":\"Sum(LFAC_Water.Value)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Calendar\",\"Type\":0},{\"Name\":\"l1\",\"Entity\":\"LFAC_Water\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Date\"},\"Name\":\"Calendar.Date\",\"NativeReferenceName\":\"Date\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l1\"}},\"Property\":\"Cabinet\"},\"Name\":\"LFAC_Water.Cabinet\",\"NativeReferenceName\":\"Cabinet\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l1\"}},\"Property\":\"Value\"}},\"Function\":0},\"Name\":\"Sum(LFAC_Water.Value)\",\"NativeReferenceName\":\"Sum of Value\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Date\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 496.48,
+          "width": 1177.21,
+          "x": 0.00,
+          "y": 0.00,
+          "z": 0.00
+        }
+      ],
+      "width": 1920.00
+    },
+    {
+      "config": "{\"relationships\":[{\"source\":\"e35cc00009282687edba\",\"target\":\"91cf80b0dba300aa05dc\",\"type\":3},{\"source\":\"ffdc08bd979b7012147c\",\"target\":\"91cf80b0dba300aa05dc\",\"type\":1}]}",
+      "displayName": "Eletricity",
+      "displayOption": 3,
+      "filters": "[{\"name\":\"c609a554205b854d0ed6\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Calendar\"}},\"Property\":\"Date\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Calendar\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Date\"}},\"Right\":{\"DateSpan\":{\"Expression\":{\"Now\":{}},\"TimeUnit\":3}}}}}]},\"type\":\"RelativeDate\",\"howCreated\":1}]",
+      "height": 1080.00,
+      "name": "66e7e6c362e442454cec",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"91cf80b0dba300aa05dc\",\"layouts\":[{\"id\":0,\"position\":{\"x\":176.25,\"y\":0,\"z\":0,\"width\":805,\"height\":381.25,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"decompositionTreeVisual\",\"projections\":{\"ExplainBy\":[{\"queryRef\":\"dim_electricity.功能分类\",\"active\":true},{\"queryRef\":\"dim_electricity.Category4\",\"active\":true}],\"Analyze\":[{\"queryRef\":\"_Measure.TotalNumber\"}],\"Tooltips\":[{\"queryRef\":\"_Measure.YTD_Number\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dim_electricity\",\"Type\":0},{\"Name\":\"_\",\"Entity\":\"_Measure\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"功能分类\"},\"Name\":\"dim_electricity.功能分类\",\"NativeReferenceName\":\"Function\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Category4\"},\"Name\":\"dim_electricity.Category4\",\"NativeReferenceName\":\"Details\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Eletricity Usage\"},\"Name\":\"_Measure.TotalNumber\",\"NativeReferenceName\":\"Eletricity Usage\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"YTD_Number\"},\"Name\":\"_Measure.YTD_Number\",\"NativeReferenceName\":\"YTD_Number\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Eletricity Usage\"}}}]},\"expansionStates\":[{\"roles\":[\"ExplainBy\"],\"levels\":[{\"queryRefs\":[\"dim_electricity.功能分类\"],\"isCollapsed\":true,\"identityKeys\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"dim_electricity\"}},\"Property\":\"功能分类\"}}],\"isPinned\":true,\"AIInformation\":{\"method\":\"MaxSplit\",\"disabled\":false}},{\"queryRefs\":[\"dim_electricity.Category4\"],\"isCollapsed\":true,\"identityKeys\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"dim_electricity\"}},\"Property\":\"Category4\"}}],\"isPinned\":true,\"AIInformation\":{\"method\":\"MaxSplit\",\"disabled\":false}}],\"root\":{\"identityValues\":null,\"children\":[{\"identityValues\":[{\"Literal\":{\"Value\":\"'Molding Production'\"}}],\"isToggled\":true}]}}],\"columnProperties\":{\"dim_electricity.功能分类\":{\"displayName\":\"Function\"},\"dim_electricity.Category4\":{\"displayName\":\"Details\"}},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"tree\":[{\"properties\":{\"effectiveBarsPerLevel\":{\"expr\":{\"Literal\":{\"Value\":\"5L\"}}},\"defaultClickAction\":{\"expr\":{\"Literal\":{\"Value\":\"'select'\"}}},\"density\":{\"expr\":{\"Literal\":{\"Value\":\"'dense'\"}}},\"connectorType\":{\"expr\":{\"Literal\":{\"Value\":\"'round'\"}}}}}],\"dataBars\":[{\"properties\":{\"dataBarScalingType\":{\"expr\":{\"Literal\":{\"Value\":\"'parentNode'\"}}},\"dataBarWidthPercent\":{\"expr\":{\"Literal\":{\"Value\":\"124L\"}}}}}],\"analysis\":[{\"properties\":{\"aiMode\":{\"expr\":{\"Literal\":{\"Value\":\"'absolute'\"}}}}}],\"dataLabels\":[{\"properties\":{\"dataLabelFontSize\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}}}}],\"insights\":[{\"properties\":{\"isAINode\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}},\"selector\":{\"data\":[{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"dim_electricity\"}},\"Property\":\"功能分类\"}},\"Right\":{\"Literal\":{\"Value\":\"'Molding Production'\"}}}}}]}},{\"properties\":{\"isAINode\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}},\"selector\":{\"data\":[{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"dim_electricity\"}},\"Property\":\"功能分类\"}},\"Right\":{\"Literal\":{\"Value\":\"'Molding Production'\"}}}}},{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"dim_electricity\"}},\"Property\":\"Category4\"}},\"Right\":{\"Literal\":{\"Value\":\"'Molding line 15,16,17,18'\"}}}}}]}}]}}}",
+          "filters": "[{\"name\":\"025324ea6e4a0700bc70\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"dim_electricity\"}},\"Property\":\"区域分类\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dim_electricity\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"区域分类\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'注塑'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{},\"isHiddenInViewMode\":false}]",
+          "height": 381.25,
+          "width": 805.00,
+          "x": 176.25,
+          "y": 0.00,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"e35cc00009282687edba\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":416.25,\"z\":2000,\"width\":1247.5,\"height\":272.5,\"tabOrder\":4000}}],\"singleVisual\":{\"visualType\":\"areaChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Calendar.Date\",\"active\":true}],\"Y\":[{\"queryRef\":\"_Measure.TotalNumber\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Calendar\",\"Type\":0},{\"Name\":\"_\",\"Entity\":\"_Measure\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Date\"},\"Name\":\"Calendar.Date\",\"NativeReferenceName\":\"Date\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Eletricity Usage\"},\"Name\":\"_Measure.TotalNumber\",\"NativeReferenceName\":\"Eletricity Usage\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Date\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"referenceLine\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"displayName\":{\"expr\":{\"Literal\":{\"Value\":\"'Average line 1'\"}}},\"value\":{\"expr\":{\"Aggregation\":{\"Expression\":{\"SelectRef\":{\"ExpressionName\":\"_Measure.TotalNumber\"}},\"Function\":1}}}},\"selector\":{\"metadata\":\"_Measure.TotalNumber\",\"id\":\"1\"}}],\"valueAxis\":[{\"properties\":{\"start\":{\"expr\":{\"Literal\":{\"Value\":\"2000D\"}}}}}],\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"labelDisplayUnits\":{\"expr\":{\"Literal\":{\"Value\":\"1D\"}}}}}],\"y2Axis\":[{\"properties\":{\"secLabelDisplayUnits\":{\"expr\":{\"Literal\":{\"Value\":\"1D\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 272.50,
+          "width": 1247.50,
+          "x": 0.00,
+          "y": 416.25,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"ffdc08bd979b7012147c\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"z\":1000,\"width\":152.5,\"height\":381.25,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Calendar.YearMonth\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Calendar\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"YearMonth\"},\"Name\":\"Calendar.YearMonth\",\"NativeReferenceName\":\"YearMonth\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Basic'\"}}}}}],\"general\":[{\"properties\":{}}]}}}",
+          "filters": "[]",
+          "height": 381.25,
+          "width": 152.50,
+          "x": 0.00,
+          "y": 0.00,
+          "z": 1000.00
+        }
+      ],
+      "width": 1920.00
+    },
+    {
+      "config": "{}",
+      "displayName": "AirCompressor",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 1080.00,
+      "name": "8c645479ba6844699734",
+      "ordinal": 1,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"24006ed32a369b908bce\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1118.75,\"y\":386.25,\"z\":2000,\"width\":666.25,\"height\":566.25,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Calendar.Date\",\"active\":true}],\"Y\":[{\"queryRef\":\"Max(LFAC_Aircompressor.输入比功率)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Calendar\",\"Type\":0},{\"Name\":\"l\",\"Entity\":\"LFAC_Aircompressor\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Date\"},\"Name\":\"Calendar.Date\",\"NativeReferenceName\":\"Date\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l\"}},\"Property\":\"输入比功率\"}},\"Function\":4},\"Name\":\"Max(LFAC_Aircompressor.输入比功率)\",\"NativeReferenceName\":\"Max of 输入比功率\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Date\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"lineStyles\":[{\"properties\":{\"strokeColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":2,\"Percent\":0}}}}}},\"selector\":{\"data\":[{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Calendar\"}},\"Property\":\"Date\"}},\"Right\":{\"Literal\":{\"Value\":\"datetime'2025-03-23T00:00:00'\"}}}}}]}},{\"properties\":{\"segmentAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}},\"segmentGradient\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"lineChartType\":{\"expr\":{\"Literal\":{\"Value\":\"'smooth'\"}}},\"interpolationSmooth\":{\"expr\":{\"Literal\":{\"Value\":\"'monotoneX'\"}}},\"areaShow\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"areaMatchStrokeColor\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}},{\"properties\":{\"strokeColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":9,\"Percent\":0}}}}},\"strokeTransparency\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}}},\"selector\":{\"data\":[{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Calendar\"}},\"Property\":\"Date\"}},\"Right\":{\"Literal\":{\"Value\":\"datetime'2025-01-26T00:00:00'\"}}}}}]}}],\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":2,\"Percent\":0}}}}}},\"selector\":{\"metadata\":\"Max(LFAC_Aircompressor.输入比功率)\"}},{\"properties\":{\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"57D\"}}}}}],\"categoryAxis\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"showAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"valueAxis\":[{\"properties\":{\"showAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"12D\"}}},\"color\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":1,\"Percent\":0}}}}},\"labelPrecision\":{\"expr\":{\"Literal\":{\"Value\":\"2L\"}}},\"enableDetailDataLabel\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'每周输入比功率 kw/(m³/min)'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 566.25,
+          "width": 666.25,
+          "x": 1118.75,
+          "y": 386.25,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"b4d98e05f7adb5cce63b\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":436.25,\"z\":1000,\"width\":792.5,\"height\":406.25,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"pivotTable\",\"projections\":{\"Rows\":[{\"queryRef\":\"Calendar.Date\",\"active\":true}],\"Columns\":[{\"queryRef\":\"LFAC_Aircompressor.Location\",\"active\":true}],\"Values\":[{\"queryRef\":\"Sum(LFAC_Aircompressor.气电比)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Calendar\",\"Type\":0},{\"Name\":\"l\",\"Entity\":\"LFAC_Aircompressor\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Date\"},\"Name\":\"Calendar.Date\",\"NativeReferenceName\":\"Date\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l\"}},\"Property\":\"Location\"},\"Name\":\"LFAC_Aircompressor.Location\",\"NativeReferenceName\":\"Location\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l\"}},\"Property\":\"气电比\"}},\"Function\":0},\"Name\":\"Sum(LFAC_Aircompressor.气电比)\",\"NativeReferenceName\":\"Sum of 气电比\"}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'每周气电比（m³/kwh）'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 406.25,
+          "width": 792.50,
+          "x": 0.00,
+          "y": 436.25,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"ccdbbe37b0409ec05430\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":842,\"width\":793,\"height\":150,\"z\":3000,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 150.00,
+          "width": 793.00,
+          "x": 0.00,
+          "y": 842.00,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"e1f2de215a4f14d40df0\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"z\":0,\"width\":1920,\"height\":421.25,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Calendar.Date\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(LFAC_Aircompressor.Value)\"}],\"Rows\":[{\"queryRef\":\"LFAC_Aircompressor.Location\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Calendar\",\"Type\":0},{\"Name\":\"l\",\"Entity\":\"LFAC_Aircompressor\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Date\"},\"Name\":\"Calendar.Date\",\"NativeReferenceName\":\"Date\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l\"}},\"Property\":\"Value\"}},\"Function\":0},\"Name\":\"Sum(LFAC_Aircompressor.Value)\",\"NativeReferenceName\":\"Sum of Value\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l\"}},\"Property\":\"Location\"},\"Name\":\"LFAC_Aircompressor.Location\",\"NativeReferenceName\":\"Location\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Date\"}}},{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l\"}},\"Property\":\"Location\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"smallMultiplesLayout\":[{\"properties\":{\"columnCount\":{\"expr\":{\"Literal\":{\"Value\":\"5L\"}}},\"rowCount\":{\"expr\":{\"Literal\":{\"Value\":\"2L\"}}}}}],\"subheader\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"position\":{\"expr\":{\"Literal\":{\"Value\":\"'top'\"}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}}}],\"valueAxis\":[{\"properties\":{\"sharedAxis\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"scaleToFit\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"categoryAxis\":[{\"properties\":{\"invertAxis\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"showAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"axisType\":{\"expr\":{\"Literal\":{\"Value\":\"'Scalar'\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'每周压缩空气用量（m³）'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 421.25,
+          "width": 1920.00,
+          "x": 0.00,
+          "y": 0.00,
+          "z": 0.00
+        }
+      ],
+      "width": 1920.00
+    },
+    {
+      "config": "{}",
+      "displayName": "gas",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 1080.00,
+      "name": "a4680edea0604380b82e",
+      "ordinal": 2,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"97a220b729c4fe6428f2\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"z\":0,\"width\":1177.2121212121212,\"height\":496.4848484848485,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"stackedAreaChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Calendar.Date\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(LFAC_Gas.Value)\"}],\"Series\":[{\"queryRef\":\"LFAC_Gas.Cabinet\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Calendar\",\"Type\":0},{\"Name\":\"l\",\"Entity\":\"LFAC_Gas\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Date\"},\"Name\":\"Calendar.Date\",\"NativeReferenceName\":\"Date\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l\"}},\"Property\":\"Value\"}},\"Function\":0},\"Name\":\"Sum(LFAC_Gas.Value)\",\"NativeReferenceName\":\"Sum of Value\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l\"}},\"Property\":\"Cabinet\"},\"Name\":\"LFAC_Gas.Cabinet\",\"NativeReferenceName\":\"Cabinet\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Date\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 496.48,
+          "width": 1177.21,
+          "x": 0.00,
+          "y": 0.00,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"a412bbe5db39de6a402b\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":551.7874516652114,\"z\":1000,\"width\":1279.840339279032,\"height\":528.7963078458276,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"pivotTable\",\"projections\":{\"Rows\":[{\"queryRef\":\"Calendar.Date\",\"active\":true}],\"Values\":[{\"queryRef\":\"Sum(LFAC_Gas.Value)\"}],\"Columns\":[{\"queryRef\":\"LFAC_Gas.Cabinet\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Calendar\",\"Type\":0},{\"Name\":\"l\",\"Entity\":\"LFAC_Gas\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Date\"},\"Name\":\"Calendar.Date\",\"NativeReferenceName\":\"Date\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l\"}},\"Property\":\"Value\"}},\"Function\":0},\"Name\":\"Sum(LFAC_Gas.Value)\",\"NativeReferenceName\":\"Sum of Value\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l\"}},\"Property\":\"Cabinet\"},\"Name\":\"LFAC_Gas.Cabinet\",\"NativeReferenceName\":\"Cabinet\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Date\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"grid\":[{\"properties\":{\"textSize\":{\"expr\":{\"Literal\":{\"Value\":\"20D\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 528.80,
+          "width": 1279.84,
+          "x": 0.00,
+          "y": 551.79,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"bf4ab45062b390a60fc4\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1322.757141075215,\"y\":42.91680179618311,\"z\":2000,\"width\":467.48659099413743,\"height\":496.60870649869025,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"LFAC_Gas.Cabinet\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"l\",\"Entity\":\"LFAC_Gas\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l\"}},\"Property\":\"Cabinet\"},\"Name\":\"LFAC_Gas.Cabinet\",\"NativeReferenceName\":\"Cabinet\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Basic'\"}}}}}],\"general\":[{\"properties\":{}}],\"items\":[{\"properties\":{\"textSize\":{\"expr\":{\"Literal\":{\"Value\":\"20D\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 496.61,
+          "width": 467.49,
+          "x": 1322.76,
+          "y": 42.92,
+          "z": 2000.00
+        }
+      ],
+      "width": 1920.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Motan",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 1080.00,
+      "name": "c5d67f75038d9ef8fcf4",
+      "ordinal": 3,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"326aa5e4b5b32c305afe\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"z\":0,\"width\":1066.7890732194087,\"height\":390.33853062242736,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"stackedAreaChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Calendar.Date\",\"active\":true}],\"Y\":[{\"queryRef\":\"_Measure.Eletricity Usage\"}],\"Series\":[{\"queryRef\":\"dim_electricity.Category4\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Calendar\",\"Type\":0},{\"Name\":\"_\",\"Entity\":\"_Measure\",\"Type\":0},{\"Name\":\"d\",\"Entity\":\"dim_electricity\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Date\"},\"Name\":\"Calendar.Date\",\"NativeReferenceName\":\"Date\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Eletricity Usage\"},\"Name\":\"_Measure.Eletricity Usage\",\"NativeReferenceName\":\"Eletricity Usage\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Category4\"},\"Name\":\"dim_electricity.Category4\",\"NativeReferenceName\":\"Category4\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Date\"}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{}}}",
+          "filters": "[{\"name\":\"025324ea6e4a0700bc70\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"dim_electricity\"}},\"Property\":\"区域分类\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dim_electricity\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"区域分类\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'注塑'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{},\"isHiddenInViewMode\":false},{\"name\":\"63b900bfe141e243b9fa\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"dim_electricity\"}},\"Property\":\"Category4\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dim_electricity\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Category4\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'M3 MOTAN'\"}}],[{\"Literal\":{\"Value\":\"'M1&2 MOTAN'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":0,\"objects\":{}}]",
+          "height": 390.34,
+          "width": 1066.79,
+          "x": 0.00,
+          "y": 0.00,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"ae80e10ac2cac4335bba\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1115.5130754357335,\"y\":16.850650686340387,\"z\":1000,\"width\":164.01300001371308,\"height\":285.3376849553639,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Calendar.YearMonth\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Calendar\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"YearMonth\"},\"Name\":\"Calendar.YearMonth\",\"NativeReferenceName\":\"YearMonth\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Basic'\"}}}}}],\"general\":[{\"properties\":{}}]}}}",
+          "filters": "[]",
+          "height": 285.34,
+          "width": 164.01,
+          "x": 1115.51,
+          "y": 16.85,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"f62866efed548317c1f7\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":435.2989896470001,\"z\":2000,\"width\":1174.0810777098666,\"height\":590.1060246975178,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"pivotTable\",\"projections\":{\"Rows\":[{\"queryRef\":\"Calendar.Date\",\"active\":true}],\"Values\":[{\"queryRef\":\"_Measure.Eletricity Usage\"}],\"Columns\":[{\"queryRef\":\"dim_electricity.Category4\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Calendar\",\"Type\":0},{\"Name\":\"_\",\"Entity\":\"_Measure\",\"Type\":0},{\"Name\":\"d\",\"Entity\":\"dim_electricity\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Date\"},\"Name\":\"Calendar.Date\",\"NativeReferenceName\":\"Date\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Eletricity Usage\"},\"Name\":\"_Measure.Eletricity Usage\",\"NativeReferenceName\":\"Eletricity Usage\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Category4\"},\"Name\":\"dim_electricity.Category4\",\"NativeReferenceName\":\"Category4\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Date\"}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"values\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"15D\"}}}}}]}}}",
+          "filters": "[{\"name\":\"025324ea6e4a0700bc70\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"dim_electricity\"}},\"Property\":\"区域分类\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dim_electricity\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"区域分类\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'注塑'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{},\"isHiddenInViewMode\":false},{\"name\":\"63b900bfe141e243b9fa\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"dim_electricity\"}},\"Property\":\"Category4\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dim_electricity\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Category4\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'M3 MOTAN'\"}}],[{\"Literal\":{\"Value\":\"'M1&2 MOTAN'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":0,\"objects\":{}}]",
+          "height": 590.11,
+          "width": 1174.08,
+          "x": 0.00,
+          "y": 435.30,
+          "z": 2000.00
+        }
+      ],
+      "width": 1920.00
+    }
+  ]
+}

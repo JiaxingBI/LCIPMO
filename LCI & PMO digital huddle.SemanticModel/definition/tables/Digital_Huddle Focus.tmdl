@@ -1,0 +1,178 @@
+table 'Digital_Huddle Focus'
+	isHidden
+	lineageTag: d49d3412-599e-4394-b4bb-2a7a957c507a
+	sourceLineageTag: b50a2307-8769-4aeb-b1ac-14ffffe7349b
+
+	column Status
+		dataType: string
+		isHidden
+		lineageTag: 9600d73b-2351-4933-8c60-3d04037d5370
+		sourceLineageTag: 8f6eb84f-2b77-4436-b922-cfb60d5984e1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Status
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Department
+		dataType: string
+		isHidden
+		lineageTag: b3360854-e842-4b18-8ad0-102b1d098ffa
+		sourceLineageTag: 62b5d52a-a2c7-44ba-badb-789734ae3762
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Department
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Required_Time
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: c2b82294-e282-43b7-bc22-f11dfcd86767
+		sourceLineageTag: 7d9047b5-28e6-4f90-b51a-a6b7372f9894
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Required_Time
+
+		variation 变体
+			isDefault
+			relationship: d9dc447b-dc02-4b40-9ab9-887046e29b29
+			defaultHierarchy: LocalDateTable_4cb90060-8b4f-495c-b5a2-ff30ad69a203.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Outstanding_Issue
+		dataType: string
+		isHidden
+		lineageTag: 7807cda9-7fc9-4e86-b1dd-884434516f45
+		sourceLineageTag: 2c2c3c69-90d6-4534-b152-064805077e4c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Outstanding_Issue
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Success_Criteria
+		dataType: string
+		isHidden
+		lineageTag: f64a5e5f-e01d-48c9-b65d-b4edee82696a
+		sourceLineageTag: 935e213c-669f-4cff-ab03-881a413ca09b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Success_Criteria
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Owner
+		dataType: string
+		isHidden
+		lineageTag: edb84469-1973-42e6-89bb-3f869e62bda7
+		sourceLineageTag: 3cf6196a-89f9-47dd-8e85-bcadd8a199ee
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Owner
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Support
+		dataType: string
+		isHidden
+		lineageTag: 6be47c4c-100b-44e0-a911-91dcbb16da26
+		sourceLineageTag: 11d4a5af-d5d5-47cb-87dd-46589819c660
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Support
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Action
+		dataType: string
+		isHidden
+		lineageTag: 93b84b3b-29b4-4242-af27-a5f3e3d977a1
+		sourceLineageTag: baba79e3-1b7f-406e-8217-b001b7b6ec6c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Action
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID
+		dataType: int64
+		isHidden
+		isNullable: false
+		formatString: 0
+		lineageTag: d1acf94a-9378-4255-9e3c-0ca253c19227
+		sourceLineageTag: 5f1deefa-0477-45e3-a826-ff43620fb4c3
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: ID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Last_Modified_Time
+		dataType: dateTime
+		isHidden
+		formatString: General Number
+		lineageTag: 3d0bedfb-03ff-43be-a2a8-2c2019971880
+		sourceLineageTag: 1c837155-e20f-4f59-9905-cba173d51c27
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Last_Modified_Time
+
+		variation 变体
+			isDefault
+			relationship: 8b32446e-6047-4671-8b86-9f1a0a0c137f
+			defaultHierarchy: LocalDateTable_5ff2e4dc-788f-489f-8a06-41716277b3d3.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Due_Date
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: 5cc10afd-f1aa-4eed-995a-78f4aa44caaf
+		sourceLineageTag: 0f2c42a3-4d79-4936-99d4-1d250786277a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Due_Date
+
+		variation 变体
+			isDefault
+			relationship: d5c48b63-7b02-456d-bea8-6238bc399537
+			defaultHierarchy: LocalDateTable_21a8e5c6-98ca-4d53-b49b-69151599e111.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Digital_Huddle Focus-1a5d4f15-e5ca-43c8-8c02-b7a3a28be1e8' = entity
+		mode: directQuery
+		source
+			entityName: Digital_Huddle Focus
+			expressionSource: 'DirectQuery 到 AS - JIA Digital huddle - Dataset1'
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Exception
+

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Processing Wheel-dev"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "94c4f8d6-c6ac-9bae-40af-98a6e804ebd1"
+  }
+}

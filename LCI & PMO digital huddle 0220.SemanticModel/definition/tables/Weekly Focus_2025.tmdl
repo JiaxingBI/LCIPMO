@@ -1,0 +1,78 @@
+table 'Weekly Focus_2025'
+	lineageTag: 0956afa2-728c-4ec2-a949-e18367144b0e
+
+	column Focus
+		dataType: string
+		lineageTag: cef95234-1f7e-43e4-a439-36180295c98a
+		summarizeBy: none
+		sourceColumn: Focus
+
+		annotation SummarizationSetBy = Automatic
+
+	column DateKey =
+			
+			var YearStart = DATE(2024,1,1)
+			var res = YearStart+([WeekNo]-1)*7-WEEKDAY(YearStart,2)+1
+			RETURN
+			    res
+		isHidden
+		formatString: Short Date
+		lineageTag: 36496585-1d11-44d2-be50-2272c66ef4df
+		summarizeBy: none
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 90002410-ce5f-42d2-b2cf-2cd6a8d8b72c
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Week
+		dataType: string
+		lineageTag: d093043c-8a68-44f5-9327-5bfb511e5512
+		summarizeBy: none
+		sourceColumn: Week
+
+		annotation SummarizationSetBy = Automatic
+
+	column Name
+		dataType: string
+		lineageTag: 03ca42d3-31be-4626-bf4e-325e8a3b7752
+		summarizeBy: none
+		sourceColumn: Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Details
+		dataType: string
+		lineageTag: 46df1197-0ab5-4d44-bba9-defa3bb9b98c
+		summarizeBy: none
+		sourceColumn: Details
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Weekly Focus_2025' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://legogroup.sharepoint.com/sites/JIALCI/Shared%20Documents/General/01_Department%20Info/01_Digital%20Huddle/06_KPI/2025/DigitalHuddle/P_Weekly%20Focus.xlsx"), null, true),
+				    #"Weekly Focus_2025_Sheet" = Source{[Item="Weekly Focus_2025",Kind="Sheet"]}[Data],
+				    #"Removed Columns" = Table.RemoveColumns(#"Weekly Focus_2025_Sheet",{"Column11", "Column12", "Column13"}),
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Removed Columns", [PromoteAllScalars=true]),
+				    #"Unpivoted Other Columns" = Table.UnpivotOtherColumns(#"Promoted Headers", {"Date", "Week", "Focus"}, "Name", "Details"),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Unpivoted Other Columns",{{"Date", type date}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

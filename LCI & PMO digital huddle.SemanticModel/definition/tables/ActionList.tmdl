@@ -1,0 +1,107 @@
+table ActionList
+	lineageTag: 91ba019f-931d-4567-87d4-6483907d8612
+
+	column 'SN.'
+		dataType: string
+		lineageTag: a9311717-8859-4bb2-b1d3-742c6fc075a6
+		summarizeBy: none
+		sourceColumn: SN.
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Action Log '
+		dataType: string
+		lineageTag: 61ad6422-8555-495a-bcde-a310dff94cc7
+		summarizeBy: none
+		sourceColumn: "Action Log "
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Responsible '
+		dataType: string
+		lineageTag: a59d0018-3b5d-4961-b590-e2b9eef774c7
+		summarizeBy: none
+		sourceColumn: "Responsible "
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Due Date'
+		dataType: string
+		lineageTag: 4a113651-9f46-4591-899c-3ce919bb57ca
+		summarizeBy: none
+		sourceColumn: Due Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Status '
+		dataType: string
+		lineageTag: c3209c18-c292-4a2f-9c78-2a1ffa132d65
+		summarizeBy: none
+		sourceColumn: "Status "
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Comments/Decision '
+		dataType: string
+		lineageTag: 0bb76376-fce3-4445-8643-1d5dec59fe57
+		summarizeBy: none
+		sourceColumn: "Comments/Decision "
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Start Date'
+		dataType: string
+		lineageTag: 7a91364a-99ff-4977-8bc7-feeb9eacc2a9
+		summarizeBy: none
+		sourceColumn: Start Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Weekly or Daily'
+		dataType: string
+		lineageTag: bfd27b7d-c42d-4c42-9a7b-0132d1989bd1
+		summarizeBy: none
+		sourceColumn: Weekly or Daily
+
+		annotation SummarizationSetBy = Automatic
+
+	column Priority
+		dataType: string
+		lineageTag: d4545c8a-addc-4c3d-b4e6-e7ae9bbdeb38
+		summarizeBy: none
+		sourceColumn: Priority
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column10
+		dataType: string
+		lineageTag: 3d5b9b31-e583-4e5f-bf1b-1f171aefb2a4
+		summarizeBy: none
+		sourceColumn: Column10
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column11
+		dataType: string
+		lineageTag: f2fb27be-a0b6-4387-b523-972dc00c0af4
+		summarizeBy: none
+		sourceColumn: Column11
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ActionList = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://legogroup.sharepoint.com/sites/JIALCI/Shared%20Documents/General/01_Department%20Info/01_Digital%20Huddle/06_KPI/2025/DigitalHuddle/P_Weekly%20Focus.xlsx"), null, true),
+				    ActionLog_Sheet = Source{[Item="ActionLog",Kind="Sheet"]}[Data],
+				    #"Removed Top Rows" = Table.Skip(ActionLog_Sheet,5),
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Removed Top Rows", [PromoteAllScalars=true]),
+				    #"Filtered Rows" = Table.SelectRows(#"Promoted Headers", each ([#"Action Log "] <> null))
+				in
+				    #"Filtered Rows"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
