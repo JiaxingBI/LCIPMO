@@ -75,10 +75,10 @@
   "sections": [
     {
       "config": "{\"relationships\":[{\"source\":\"a54ec1b7f0651945908b\",\"target\":\"9e866d47af32eca0927f\",\"type\":1},{\"source\":\"a54ec1b7f0651945908b\",\"target\":\"2ac1941713a5730328aa\",\"type\":1},{\"source\":\"9e866d47af32eca0927f\",\"target\":\"a54ec1b7f0651945908b\",\"type\":1},{\"source\":\"9e866d47af32eca0927f\",\"target\":\"2ac1941713a5730328aa\",\"type\":1},{\"source\":\"2ac1941713a5730328aa\",\"target\":\"9e866d47af32eca0927f\",\"type\":1},{\"source\":\"2ac1941713a5730328aa\",\"target\":\"a54ec1b7f0651945908b\",\"type\":1}],\"objects\":{\"background\":[{\"properties\":{\"image\":{\"image\":{\"name\":{\"expr\":{\"Literal\":{\"Value\":\"'Access.png'\"}}},\"url\":{\"expr\":{\"ResourcePackageItem\":{\"PackageName\":\"RegisteredResources\",\"PackageType\":1,\"ItemName\":\"Access06775862739973448.png\"}}},\"scaling\":{\"expr\":{\"Literal\":{\"Value\":\"'Fit'\"}}}}},\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}}}}]}}",
-      "displayName": "Access Issue",
+      "displayName": "Access Issue test git",
       "displayOption": 1,
       "filters": "[]",
-      "height": 2000.00,
+      "height": 3840,
       "name": "05e74f0358e9a6a4a4c7",
       "ordinal": 6,
       "visualContainers": [
@@ -87,8 +87,8 @@
           "filters": "[{\"name\":\"1d3978db36b8273d967f\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Access Issue\"}},\"Property\":\"AccessCategory\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"a\",\"Entity\":\"Access Issue\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"a\"}},\"Property\":\"AccessCategory\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Vehicle'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{}}]",
           "height": 435.30,
           "width": 590.11,
-          "x": 0.77,
-          "y": 0.84,
+          "x": 0  ,
+          "y": 0,
           "z": 2000.00
         },
         {
