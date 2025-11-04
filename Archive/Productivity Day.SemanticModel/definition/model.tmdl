@@ -6,15 +6,15 @@ model Model
 		legacyRedirects
 		returnErrorValuesAsNull
 
-annotation PBI_QueryOrder = ["Productivty","2025 Identify"]
+annotation PBI_QueryOrder = ["Productivity","2026Identify"]
 
 annotation __PBI_TimeIntelligenceEnabled = 1
 
 annotation __PBIService_Versioning_SaveVersion = ca383ade-6352-4494-8dc1-32b071eebfba
 
-ref table Productivty
-ref table '2025 Identify'
 ref table Measure
+ref table Productivity
+ref table 2026Identify
 
 ref cultureInfo en-US
 

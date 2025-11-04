@@ -2,28 +2,573 @@ cultureInfo en-US
 
 	linguisticMetadata =
 			{
-			  "Version": "3.5.0",
+			  "Version": "4.1.0",
 			  "Language": "en-US",
 			  "Entities": {
-			    "productivty": {
+			    "measure": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Productivty"
+			          "ConceptualEntity": "Measure"
 			        }
 			      },
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "productivty": {
+			          "measure": {
 			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "degree": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "quota": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "extent": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "portion": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "ration": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "size": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
 			          }
 			        }
 			      ]
 			    },
-			    "productivty.year": {
+			    "measure.value": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Productivty",
+			          "ConceptualEntity": "Measure",
+			          "ConceptualProperty": "Value"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "value": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "assessment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "worth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "price": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "cost": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "charge": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "rate": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "importance": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "significance": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "usefulness": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "consequence": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        }
+			      ]
+			    },
+			    "measure.identified_2025": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Measure",
+			          "ConceptualProperty": "Identified_2025"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "identified 2025": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Identified_2025": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "measure.target_2025": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Measure",
+			          "ConceptualProperty": "Target_2025"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "target 2025": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Target_2025": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "focus 2025": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "goal 2025": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "objective 2025": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ]
+			    },
+			    "measure.target_2024": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Measure",
+			          "ConceptualProperty": "Target_2024"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "target 2024": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Target_2024": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "focus 2024": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "goal 2024": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "objective 2024": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ]
+			    },
+			    "measure.identified_2024": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Measure",
+			          "ConceptualProperty": "Identified_2024"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "identified 2024": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Identified_2024": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "measure.target_2023": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Measure",
+			          "ConceptualProperty": "Target_2023"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "target 2023": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Target_2023": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "focus 2023": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "goal 2023": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "objective 2023": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ]
+			    },
+			    "measure.identified_2023": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Measure",
+			          "ConceptualProperty": "Identified_2023"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "identified 2023": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Identified_2023": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "measure.identified_2026": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Measure",
+			          "ConceptualProperty": "Identified_2026"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "identified 2026": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Identified_2026": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "measure.target_2026": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Measure",
+			          "ConceptualProperty": "Target_2026"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "target 2026": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Target_2026": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "focus 2026": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "goal 2026": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "objective 2026": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ]
+			    },
+			    "productivity": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Productivity"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "productivity": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "efficiency": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "production": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "throughput": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "output": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "yield": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        }
+			      ]
+			    },
+			    "productivity.year": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Productivity",
 			          "ConceptualProperty": "Year"
 			        }
 			      },
@@ -46,10 +591,10 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "productivty.number_of_intiatives": {
+			    "productivity.number_of_intiatives": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Productivty",
+			          "ConceptualEntity": "Productivity",
 			          "ConceptualProperty": "Number of intiatives"
 			        }
 			      },
@@ -109,10 +654,10 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "productivty.actual": {
+			    "productivity.actual": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Productivty",
+			          "ConceptualEntity": "Productivity",
 			          "ConceptualProperty": "Actual"
 			        }
 			      },
@@ -155,10 +700,10 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "productivty.target": {
+			    "productivity.target": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Productivty",
+			          "ConceptualEntity": "Productivity",
 			          "ConceptualProperty": "Target"
 			        }
 			      },
@@ -201,10 +746,10 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "productivty.site": {
+			    "productivity.site": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Productivty",
+			          "ConceptualEntity": "Productivity",
 			          "ConceptualProperty": "Site"
 			        }
 			      },
@@ -287,11 +832,117 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "productivty.deparment": {
+			    "productivity.result": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Productivty",
-			          "ConceptualProperty": "Deparment"
+			          "ConceptualEntity": "Productivity",
+			          "ConceptualProperty": "Result"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "result": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "consequence": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "outcome": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "upshot": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "product": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "effect": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "end": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "mark": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.452
+			          }
+			        },
+			        {
+			          "grade": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.452
+			          }
+			        },
+			        {
+			          "score": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.452
+			          }
+			        }
+			      ]
+			    },
+			    "productivity.department": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Productivity",
+			          "ConceptualProperty": "Department"
 			        }
 			      },
 			      "State": "Generated",
@@ -300,91 +951,12 @@ cultureInfo en-US
 			      },
 			      "Terms": [
 			        {
-			          "deparment": {
-			            "State": "Generated"
-			          }
-			        }
-			      ]
-			    },
-			    "productivty.actual_savings": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Productivty",
-			          "ConceptualProperty": "ActualSavings"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "actual savings": {
+			          "department": {
 			            "State": "Generated"
 			          }
 			        },
 			        {
-			          "ActualSavings": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.99
-			          }
-			        },
-			        {
-			          "savings": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "real savings": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.582
-			          }
-			        },
-			        {
-			          "existent savings": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.582
-			          }
-			        },
-			        {
-			          "tangible savings": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.582
-			          }
-			        },
-			        {
-			          "actual investment": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.5
-			          }
-			        },
-			        {
-			          "actual money": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.5
-			          }
-			        },
-			        {
-			          "investment": {
+			          "subdivision": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -394,7 +966,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "money": {
+			          "division": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -404,86 +976,116 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "actual reserve": {
+			          "unit": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.485
+			            "Weight": 0.491
 			          }
 			        },
 			        {
-			          "actual fund": {
+			          "section": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.485
+			            "Weight": 0.476
 			          }
 			        },
 			        {
-			          "actual hoard": {
+			          "branch": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.485
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "sector": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "responsibility": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "specialty": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "realm": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "area": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.452
 			          }
 			        }
 			      ]
 			    },
-			    "productivty.fist_label": {
+			    "productivity.actual_saving": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Productivty",
-			          "ConceptualProperty": "FistLabel"
+			          "ConceptualEntity": "Productivity",
+			          "ConceptualProperty": "ActualSaving"
 			        }
 			      },
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "fist label": {
+			          "actual saving": {
 			            "State": "Generated"
 			          }
 			        },
 			        {
-			          "FistLabel": {
+			          "ActualSaving": {
 			            "Type": "Noun",
 			            "State": "Generated",
 			            "Weight": 0.99
 			          }
 			        },
 			        {
-			          "label": {
+			          "saving": {
 			            "State": "Generated",
 			            "Weight": 0.97
 			          }
 			        },
 			        {
-			          "fist sticker": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.75
-			          }
-			        },
-			        {
-			          "sticker": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.736
-			          }
-			        },
-			        {
-			          "fist tag": {
+			          "real saving": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -493,7 +1095,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "fist decal": {
+			          "existent saving": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -503,51 +1105,91 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "tag": {
+			          "tangible saving": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.714
+			            "Weight": 0.727
 			          }
 			        },
 			        {
-			          "decal": {
+			          "good": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.714
+			            "Weight": 0.476
 			          }
 			        },
 			        {
-			          "fist name tag": {
+			          "convertible": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.589
+			            "Weight": 0.476
 			          }
 			        },
 			        {
-			          "name tag": {
+			          "equivalent": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.571
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "redeeming": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.452
+			          }
+			        },
+			        {
+			          "positive": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.452
+			          }
+			        },
+			        {
+			          "abiding": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.452
+			          }
+			        },
+			        {
+			          "restorative": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.452
 			          }
 			        }
 			      ]
 			    },
-			    "productivty.JIA_actual": {
+			    "productivity.JIA_actual": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Productivty",
+			          "ConceptualEntity": "Productivity",
 			          "ConceptualProperty": "JIA_Actual"
 			        }
 			      },
@@ -594,139 +1236,69 @@ cultureInfo en-US
 			            },
 			            "Weight": 0.727
 			          }
-			        },
-			        {
-			          "Actual": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
 			        }
 			      ]
 			    },
-			    "productivty.Title_ActualSavingsBySite_department": {
+			    "productivity.label": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Productivty",
-			          "ConceptualProperty": "Title_ActualSavingsBySite Department"
+			          "ConceptualEntity": "Productivity",
+			          "ConceptualProperty": "Label"
 			        }
 			      },
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "Title_ActualSavingsBySite department": {
+			          "label": {
 			            "State": "Generated"
 			          }
 			        },
 			        {
-			          "title_actualsavingsbysite subdivision": {
+			          "sticker": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.5
+			            "Weight": 0.736
 			          }
 			        },
 			        {
-			          "title_actualsavingsbysite division": {
+			          "tag": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.5
+			            "Weight": 0.714
 			          }
 			        },
 			        {
-			          "title_actualsavingsbysite unit": {
+			          "decal": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.5
+			            "Weight": 0.714
 			          }
 			        },
 			        {
-			          "title_actualsavingsbysite section": {
+			          "name tag": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.485
-			          }
-			        },
-			        {
-			          "title_actualsavingsbysite branch": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.485
-			          }
-			        },
-			        {
-			          "title_actualsavingsbysite sector": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.485
-			          }
-			        },
-			        {
-			          "title_actualsavingsbysite responsibility": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.475
-			          }
-			        },
-			        {
-			          "title_actualsavingsbysite specialty": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.475
-			          }
-			        },
-			        {
-			          "title_actualsavingsbysite realm": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.475
-			          }
-			        },
-			        {
-			          "title_actualsavingsbysite area": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.461
+			            "Weight": 0.571
 			          }
 			        }
 			      ]
 			    },
-			    "productivty.JIA_target": {
+			    "productivity.JIA_target": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Productivty",
+			          "ConceptualEntity": "Productivity",
 			          "ConceptualProperty": "JIA_Target"
 			        }
 			      },
@@ -786,10 +1358,10 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "productivty.bar": {
+			    "productivity.bar": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Productivty",
+			          "ConceptualEntity": "Productivity",
 			          "ConceptualProperty": "Bar"
 			        }
 			      },
@@ -802,33 +1374,10 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "productivty.bar_un_met": {
+			    "productivity.marker_value": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Productivty",
-			          "ConceptualProperty": "BarUnMet"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "bar un met": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "BarUnMet": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.99
-			          }
-			        }
-			      ]
-			    },
-			    "productivty.marker_value": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Productivty",
+			          "ConceptualEntity": "Productivity",
 			          "ConceptualProperty": "MarkerValue"
 			        }
 			      },
@@ -847,12 +1396,6 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "value": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
 			          "marker assessment": {
 			            "Type": "Noun",
 			            "State": "Suggested",
@@ -860,16 +1403,6 @@ cultureInfo en-US
 			              "Agent": "Thesaurus"
 			            },
 			            "Weight": 0.5
-			          }
-			        },
-			        {
-			          "assessment": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
 			          }
 			        },
 			        {
@@ -923,41 +1456,51 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "worth": {
+			          "marker importance": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.476
+			            "Weight": 0.475
 			          }
 			        },
 			        {
-			          "price": {
+			          "marker significance": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.476
+			            "Weight": 0.475
 			          }
 			        },
 			        {
-			          "cost": {
+			          "marker usefulness": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.476
+			            "Weight": 0.475
+			          }
+			        },
+			        {
+			          "marker consequence": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
 			          }
 			        }
 			      ]
 			    },
-			    "productivty.bar_met": {
+			    "productivity.bar_met": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Productivty",
+			          "ConceptualEntity": "Productivity",
 			          "ConceptualProperty": "BarMet"
 			        }
 			      },
@@ -977,242 +1520,111 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "productivty.title_TvA": {
+			    "productivity.bar_un_met": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Productivty",
-			          "ConceptualProperty": "Title TvA"
+			          "ConceptualEntity": "Productivity",
+			          "ConceptualProperty": "BarUnMet"
 			        }
 			      },
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "title TvA": {
+			          "bar un met": {
 			            "State": "Generated"
 			          }
 			        },
 			        {
-			          "TvA": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "designation tva": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.6
-			          }
-			        },
-			        {
-			          "name tva": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.582
-			          }
-			        },
-			        {
-			          "award tva": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.582
-			          }
-			        },
-			        {
-			          "call tva": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.582
-			          }
-			        },
-			        {
-			          "heading tva": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.582
-			          }
-			        },
-			        {
-			          "label tva": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.582
-			          }
-			        }
-			      ]
-			    },
-			    "productivty.CF_font_color": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Productivty",
-			          "ConceptualProperty": "CF_FontColor"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "CF font color": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "CF_FontColor": {
+			          "BarUnMet": {
 			            "Type": "Noun",
 			            "State": "Generated",
 			            "Weight": 0.99
 			          }
-			        },
-			        {
-			          "color": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "font color": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "cf font hue": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.508
-			          }
-			        },
-			        {
-			          "font hue": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.5
-			          }
-			        },
-			        {
-			          "cf font tint": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.492
-			          }
-			        },
-			        {
-			          "cf font shade": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.492
-			          }
-			        },
-			        {
-			          "cf font dye": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.492
-			          }
-			        },
-			        {
-			          "cf font paint": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.492
-			          }
-			        },
-			        {
-			          "cf font pigment": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.492
-			          }
-			        },
-			        {
-			          "hue": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "font tint": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.485
-			          }
-			        },
-			        {
-			          "font shade": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.485
-			          }
 			        }
 			      ]
 			    },
-			    "v2025_Identify2025_identify": {
+			    "productivity.title": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "2025 Identify"
+			          "ConceptualEntity": "Productivity",
+			          "ConceptualProperty": "Title"
 			        }
 			      },
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "2025 identify": {
+			          "title": {
 			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "designation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "award": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "call": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "heading": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
 			          }
 			        }
 			      ]
 			    },
-			    "v2025_Identify2025_identify.dept": {
+			    "entity_2026_identify": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "2025 Identify",
+			          "ConceptualEntity": "2026Identify"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "2026 identify": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "2026Identify": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "entity_2026_identify.dept": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "2026Identify",
 			          "ConceptualProperty": "Dept"
 			        }
 			      },
@@ -1225,10 +1637,10 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "v2025_Identify2025_identify.target": {
+			    "entity_2026_identify.target": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "2025 Identify",
+			          "ConceptualEntity": "2026Identify",
 			          "ConceptualProperty": "Target"
 			        }
 			      },
@@ -1271,10 +1683,10 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "v2025_Identify2025_identify.identify": {
+			    "entity_2026_identify.identify": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "2025 Identify",
+			          "ConceptualEntity": "2026Identify",
 			          "ConceptualProperty": "Identify"
 			        }
 			      },
@@ -1287,10 +1699,10 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "v2025_Identify2025_identify.il_02": {
+			    "entity_2026_identify.il_02": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "2025 Identify",
+			          "ConceptualEntity": "2026Identify",
 			          "ConceptualProperty": "IL 0-2"
 			        }
 			      },
@@ -1309,10 +1721,10 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "v2025_Identify2025_identify.il_35": {
+			    "entity_2026_identify.il_35": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "2025 Identify",
+			          "ConceptualEntity": "2026Identify",
 			          "ConceptualProperty": "IL 3-5"
 			        }
 			      },
@@ -1331,10 +1743,10 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "v2025_Identify2025_identify.gap": {
+			    "entity_2026_identify.gap": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "2025 Identify",
+			          "ConceptualEntity": "2026Identify",
 			          "ConceptualProperty": "GAP"
 			        }
 			      },
@@ -1446,23 +1858,256 @@ cultureInfo en-US
 			          }
 			        }
 			      ]
+			    },
+			    "measure.identify_V_target": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Measure",
+			          "ConceptualProperty": "IdentifyVTarget"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "identify V target": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "IdentifyVTarget": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "identify v focus": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "identify v goal": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "identify v objective": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        }
+			      ]
+			    },
+			    "productivity.intiative": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Productivity",
+			          "ConceptualProperty": "Intiative"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "intiative": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "measure.JIA_actual_no_LFAC": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Measure",
+			          "ConceptualProperty": "JIA_Actual_No_LFAC"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "JIA actual no LFAC": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "JIA_Actual_No_LFAC": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "LFAC": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "no LFAC": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "actual no LFAC": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "jia real no lfac": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "jia existent no lfac": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "jia tangible no lfac": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "jia actual number lfac": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "real no lfac": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "existent no lfac": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "tangible no lfac": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "actual number lfac": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "number lfac": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "Actual_No_LFAC": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "entity_2026_identify.identify_2026": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "2026Identify",
+			          "ConceptualProperty": "Identify2026"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "identify 2026": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Identify2026": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
 			    }
 			  },
 			  "Relationships": {
-			    "productivty_has_v2025_Identify2025_identify": {
+			    "entity_2026_identify_has_identify_2026": {
 			      "Binding": {
-			        "ConceptualEntity": "Productivty"
+			        "ConceptualEntity": "2026Identify"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "productivty": {
+			        "entity_2026_identify": {
 			          "Target": {
-			            "Entity": "productivty"
+			            "Entity": "entity_2026_identify"
 			          }
 			        },
-			        "v2025_Identify2025_identify": {
+			        "entity_2026_identify.identify_2026": {
 			          "Target": {
-			            "Entity": "v2025_Identify2025_identify"
+			            "Entity": "entity_2026_identify.identify_2026"
 			          }
 			        }
 			      },
@@ -1470,45 +2115,32 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "productivty"
+			              "Role": "entity_2026_identify"
 			            },
 			            "Object": {
-			              "Role": "v2025_Identify2025_identify"
+			              "Role": "entity_2026_identify.identify_2026"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "productivties_have_2025_identify"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "v2025_Identify2025_identify"
-			            },
-			            "Object": {
-			              "Role": "productivty"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "Phrasing2025_identify_have_productivties"
+			          "ID": "Phrasing2026_identify_have_identify_2026"
 			        }
 			      ]
 			    },
-			    "v2025_Identify2025_identify_has_gap": {
+			    "productivity_has_measure_JIA_actual_no_LFAC": {
 			      "Binding": {
-			        "ConceptualEntity": "2025 Identify"
+			        "ConceptualEntity": "Productivity"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "v2025_Identify2025_identify": {
+			        "productivity": {
 			          "Target": {
-			            "Entity": "v2025_Identify2025_identify"
+			            "Entity": "productivity"
 			          }
 			        },
-			        "v2025_Identify2025_identify.gap": {
+			        "measure.JIA_actual_no_LFAC": {
 			          "Target": {
-			            "Entity": "v2025_Identify2025_identify.gap"
+			            "Entity": "measure.JIA_actual_no_LFAC"
 			          }
 			        }
 			      },
@@ -1516,32 +2148,32 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "v2025_Identify2025_identify"
+			              "Role": "productivity"
 			            },
 			            "Object": {
-			              "Role": "v2025_Identify2025_identify.gap"
+			              "Role": "measure.JIA_actual_no_LFAC"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "Phrasing2025_identify_have_gaps"
+			          "ID": "productivities_have_JIA_actual_no_LFAC"
 			        }
 			      ]
 			    },
-			    "v2025_Identify2025_identify_has_il_35": {
+			    "productivity_has_intiative": {
 			      "Binding": {
-			        "ConceptualEntity": "2025 Identify"
+			        "ConceptualEntity": "Productivity"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "v2025_Identify2025_identify": {
+			        "productivity": {
 			          "Target": {
-			            "Entity": "v2025_Identify2025_identify"
+			            "Entity": "productivity"
 			          }
 			        },
-			        "v2025_Identify2025_identify.il_35": {
+			        "productivity.intiative": {
 			          "Target": {
-			            "Entity": "v2025_Identify2025_identify.il_35"
+			            "Entity": "productivity.intiative"
 			          }
 			        }
 			      },
@@ -1549,32 +2181,32 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "v2025_Identify2025_identify"
+			              "Role": "productivity"
 			            },
 			            "Object": {
-			              "Role": "v2025_Identify2025_identify.il_35"
+			              "Role": "productivity.intiative"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "Phrasing2025_identify_have_il_35"
+			          "ID": "productivities_have_intiative"
 			        }
 			      ]
 			    },
-			    "v2025_Identify2025_identify_has_il_02": {
+			    "entity_2026_identify_has_productivity_intiative": {
 			      "Binding": {
-			        "ConceptualEntity": "2025 Identify"
+			        "ConceptualEntity": "2026Identify"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "v2025_Identify2025_identify": {
+			        "entity_2026_identify": {
 			          "Target": {
-			            "Entity": "v2025_Identify2025_identify"
+			            "Entity": "entity_2026_identify"
 			          }
 			        },
-			        "v2025_Identify2025_identify.il_02": {
+			        "productivity.intiative": {
 			          "Target": {
-			            "Entity": "v2025_Identify2025_identify.il_02"
+			            "Entity": "productivity.intiative"
 			          }
 			        }
 			      },
@@ -1582,32 +2214,32 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "v2025_Identify2025_identify"
+			              "Role": "entity_2026_identify"
 			            },
 			            "Object": {
-			              "Role": "v2025_Identify2025_identify.il_02"
+			              "Role": "productivity.intiative"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "Phrasing2025_identify_have_il_02"
+			          "ID": "Phrasing2026_identify_have_intiative"
 			        }
 			      ]
 			    },
-			    "v2025_Identify2025_identify_has_identify": {
+			    "entity_2026_identify_has_measure_identify_V_target": {
 			      "Binding": {
-			        "ConceptualEntity": "2025 Identify"
+			        "ConceptualEntity": "2026Identify"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "v2025_Identify2025_identify": {
+			        "entity_2026_identify": {
 			          "Target": {
-			            "Entity": "v2025_Identify2025_identify"
+			            "Entity": "entity_2026_identify"
 			          }
 			        },
-			        "v2025_Identify2025_identify.identify": {
+			        "measure.identify_V_target": {
 			          "Target": {
-			            "Entity": "v2025_Identify2025_identify.identify"
+			            "Entity": "measure.identify_V_target"
 			          }
 			        }
 			      },
@@ -1615,32 +2247,63 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "v2025_Identify2025_identify"
+			              "Role": "entity_2026_identify"
 			            },
 			            "Object": {
-			              "Role": "v2025_Identify2025_identify.identify"
+			              "Role": "measure.identify_V_target"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "Phrasing2025_identify_have_identify"
+			          "ID": "Phrasing2026_identify_have_identify_V_target"
+			        },
+			        {
+			          "Verb": {
+			            "Subject": {
+			              "Role": "entity_2026_identify"
+			            },
+			            "Verbs": [
+			              {
+			                "identify": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "PrepositionalPhrases": [
+			              {
+			                "Prepositions": [
+			                  {
+			                    "V": {
+			                      "State": "Generated"
+			                    }
+			                  }
+			                ],
+			                "Object": {
+			                  "Role": "measure.identify_V_target"
+			                }
+			              }
+			            ]
+			          },
+			          "State": "Generated",
+			          "Weight": 0.95,
+			          "ID": "Phrasing2026_identify_identify_V_identify_V_target"
 			        }
 			      ]
 			    },
-			    "v2025_Identify2025_identify_has_target": {
+			    "entity_2026_identify_has_gap": {
 			      "Binding": {
-			        "ConceptualEntity": "2025 Identify"
+			        "ConceptualEntity": "2026Identify"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "v2025_Identify2025_identify": {
+			        "entity_2026_identify": {
 			          "Target": {
-			            "Entity": "v2025_Identify2025_identify"
+			            "Entity": "entity_2026_identify"
 			          }
 			        },
-			        "v2025_Identify2025_identify.target": {
+			        "entity_2026_identify.gap": {
 			          "Target": {
-			            "Entity": "v2025_Identify2025_identify.target"
+			            "Entity": "entity_2026_identify.gap"
 			          }
 			        }
 			      },
@@ -1648,32 +2311,32 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "v2025_Identify2025_identify"
+			              "Role": "entity_2026_identify"
 			            },
 			            "Object": {
-			              "Role": "v2025_Identify2025_identify.target"
+			              "Role": "entity_2026_identify.gap"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "Phrasing2025_identify_have_targets"
+			          "ID": "Phrasing2026_identify_have_gaps"
 			        }
 			      ]
 			    },
-			    "v2025_Identify2025_identify_has_dept": {
+			    "entity_2026_identify_has_il_35": {
 			      "Binding": {
-			        "ConceptualEntity": "2025 Identify"
+			        "ConceptualEntity": "2026Identify"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "v2025_Identify2025_identify": {
+			        "entity_2026_identify": {
 			          "Target": {
-			            "Entity": "v2025_Identify2025_identify"
+			            "Entity": "entity_2026_identify"
 			          }
 			        },
-			        "v2025_Identify2025_identify.dept": {
+			        "entity_2026_identify.il_35": {
 			          "Target": {
-			            "Entity": "v2025_Identify2025_identify.dept"
+			            "Entity": "entity_2026_identify.il_35"
 			          }
 			        }
 			      },
@@ -1681,32 +2344,32 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "v2025_Identify2025_identify"
+			              "Role": "entity_2026_identify"
 			            },
 			            "Object": {
-			              "Role": "v2025_Identify2025_identify.dept"
+			              "Role": "entity_2026_identify.il_35"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "Phrasing2025_identify_have_depts"
+			          "ID": "Phrasing2026_identify_have_il_35"
 			        }
 			      ]
 			    },
-			    "productivty_has_CF_font_color": {
+			    "entity_2026_identify_has_il_02": {
 			      "Binding": {
-			        "ConceptualEntity": "Productivty"
+			        "ConceptualEntity": "2026Identify"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "productivty": {
+			        "entity_2026_identify": {
 			          "Target": {
-			            "Entity": "productivty"
+			            "Entity": "entity_2026_identify"
 			          }
 			        },
-			        "productivty.CF_font_color": {
+			        "entity_2026_identify.il_02": {
 			          "Target": {
-			            "Entity": "productivty.CF_font_color"
+			            "Entity": "entity_2026_identify.il_02"
 			          }
 			        }
 			      },
@@ -1714,32 +2377,32 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "productivty"
+			              "Role": "entity_2026_identify"
 			            },
 			            "Object": {
-			              "Role": "productivty.CF_font_color"
+			              "Role": "entity_2026_identify.il_02"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "productivties_have_CF_font_color"
+			          "ID": "Phrasing2026_identify_have_il_02"
 			        }
 			      ]
 			    },
-			    "productivty_has_title_TvA": {
+			    "entity_2026_identify_has_identify": {
 			      "Binding": {
-			        "ConceptualEntity": "Productivty"
+			        "ConceptualEntity": "2026Identify"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "productivty": {
+			        "entity_2026_identify": {
 			          "Target": {
-			            "Entity": "productivty"
+			            "Entity": "entity_2026_identify"
 			          }
 			        },
-			        "productivty.title_TvA": {
+			        "entity_2026_identify.identify": {
 			          "Target": {
-			            "Entity": "productivty.title_TvA"
+			            "Entity": "entity_2026_identify.identify"
 			          }
 			        }
 			      },
@@ -1747,32 +2410,32 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "productivty"
+			              "Role": "entity_2026_identify"
 			            },
 			            "Object": {
-			              "Role": "productivty.title_TvA"
+			              "Role": "entity_2026_identify.identify"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "productivties_have_title_TvA"
+			          "ID": "Phrasing2026_identify_have_identify"
 			        }
 			      ]
 			    },
-			    "productivty_has_bar_met": {
+			    "entity_2026_identify_has_target": {
 			      "Binding": {
-			        "ConceptualEntity": "Productivty"
+			        "ConceptualEntity": "2026Identify"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "productivty": {
+			        "entity_2026_identify": {
 			          "Target": {
-			            "Entity": "productivty"
+			            "Entity": "entity_2026_identify"
 			          }
 			        },
-			        "productivty.bar_met": {
+			        "entity_2026_identify.target": {
 			          "Target": {
-			            "Entity": "productivty.bar_met"
+			            "Entity": "entity_2026_identify.target"
 			          }
 			        }
 			      },
@@ -1780,32 +2443,32 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "productivty"
+			              "Role": "entity_2026_identify"
 			            },
 			            "Object": {
-			              "Role": "productivty.bar_met"
+			              "Role": "entity_2026_identify.target"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "productivties_have_bar_met"
+			          "ID": "Phrasing2026_identify_have_targets"
 			        }
 			      ]
 			    },
-			    "productivty_has_marker_value": {
+			    "entity_2026_identify_has_dept": {
 			      "Binding": {
-			        "ConceptualEntity": "Productivty"
+			        "ConceptualEntity": "2026Identify"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "productivty": {
+			        "entity_2026_identify": {
 			          "Target": {
-			            "Entity": "productivty"
+			            "Entity": "entity_2026_identify"
 			          }
 			        },
-			        "productivty.marker_value": {
+			        "entity_2026_identify.dept": {
 			          "Target": {
-			            "Entity": "productivty.marker_value"
+			            "Entity": "entity_2026_identify.dept"
 			          }
 			        }
 			      },
@@ -1813,32 +2476,32 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "productivty"
+			              "Role": "entity_2026_identify"
 			            },
 			            "Object": {
-			              "Role": "productivty.marker_value"
+			              "Role": "entity_2026_identify.dept"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "productivties_have_marker_value"
+			          "ID": "Phrasing2026_identify_have_depts"
 			        }
 			      ]
 			    },
-			    "productivty_has_bar_un_met": {
+			    "productivity_has_title": {
 			      "Binding": {
-			        "ConceptualEntity": "Productivty"
+			        "ConceptualEntity": "Productivity"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "productivty": {
+			        "productivity": {
 			          "Target": {
-			            "Entity": "productivty"
+			            "Entity": "productivity"
 			          }
 			        },
-			        "productivty.bar_un_met": {
+			        "productivity.title": {
 			          "Target": {
-			            "Entity": "productivty.bar_un_met"
+			            "Entity": "productivity.title"
 			          }
 			        }
 			      },
@@ -1846,32 +2509,32 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "productivty"
+			              "Role": "productivity"
 			            },
 			            "Object": {
-			              "Role": "productivty.bar_un_met"
+			              "Role": "productivity.title"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "productivties_have_bar_un_met"
+			          "ID": "productivities_have_title"
 			        }
 			      ]
 			    },
-			    "productivty_has_bar": {
+			    "productivity_has_bar_un_met": {
 			      "Binding": {
-			        "ConceptualEntity": "Productivty"
+			        "ConceptualEntity": "Productivity"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "productivty": {
+			        "productivity": {
 			          "Target": {
-			            "Entity": "productivty"
+			            "Entity": "productivity"
 			          }
 			        },
-			        "productivty.bar": {
+			        "productivity.bar_un_met": {
 			          "Target": {
-			            "Entity": "productivty.bar"
+			            "Entity": "productivity.bar_un_met"
 			          }
 			        }
 			      },
@@ -1879,32 +2542,32 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "productivty"
+			              "Role": "productivity"
 			            },
 			            "Object": {
-			              "Role": "productivty.bar"
+			              "Role": "productivity.bar_un_met"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "productivties_have_bar"
+			          "ID": "productivities_have_bar_un_met"
 			        }
 			      ]
 			    },
-			    "productivty_has_JIA_target": {
+			    "productivity_has_bar_met": {
 			      "Binding": {
-			        "ConceptualEntity": "Productivty"
+			        "ConceptualEntity": "Productivity"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "productivty": {
+			        "productivity": {
 			          "Target": {
-			            "Entity": "productivty"
+			            "Entity": "productivity"
 			          }
 			        },
-			        "productivty.JIA_target": {
+			        "productivity.bar_met": {
 			          "Target": {
-			            "Entity": "productivty.JIA_target"
+			            "Entity": "productivity.bar_met"
 			          }
 			        }
 			      },
@@ -1912,32 +2575,32 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "productivty"
+			              "Role": "productivity"
 			            },
 			            "Object": {
-			              "Role": "productivty.JIA_target"
+			              "Role": "productivity.bar_met"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "productivties_have_JIA_target"
+			          "ID": "productivities_have_bar_met"
 			        }
 			      ]
 			    },
-			    "productivty_has_Title_ActualSavingsBySite_department": {
+			    "productivity_has_marker_value": {
 			      "Binding": {
-			        "ConceptualEntity": "Productivty"
+			        "ConceptualEntity": "Productivity"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "productivty": {
+			        "productivity": {
 			          "Target": {
-			            "Entity": "productivty"
+			            "Entity": "productivity"
 			          }
 			        },
-			        "productivty.Title_ActualSavingsBySite_department": {
+			        "productivity.marker_value": {
 			          "Target": {
-			            "Entity": "productivty.Title_ActualSavingsBySite_department"
+			            "Entity": "productivity.marker_value"
 			          }
 			        }
 			      },
@@ -1945,32 +2608,32 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "productivty"
+			              "Role": "productivity"
 			            },
 			            "Object": {
-			              "Role": "productivty.Title_ActualSavingsBySite_department"
+			              "Role": "productivity.marker_value"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "productivties_have_Title_ActualSavingsBySite_department"
+			          "ID": "productivities_have_marker_value"
 			        }
 			      ]
 			    },
-			    "productivty_has_JIA_actual": {
+			    "productivity_has_bar": {
 			      "Binding": {
-			        "ConceptualEntity": "Productivty"
+			        "ConceptualEntity": "Productivity"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "productivty": {
+			        "productivity": {
 			          "Target": {
-			            "Entity": "productivty"
+			            "Entity": "productivity"
 			          }
 			        },
-			        "productivty.JIA_actual": {
+			        "productivity.bar": {
 			          "Target": {
-			            "Entity": "productivty.JIA_actual"
+			            "Entity": "productivity.bar"
 			          }
 			        }
 			      },
@@ -1978,32 +2641,32 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "productivty"
+			              "Role": "productivity"
 			            },
 			            "Object": {
-			              "Role": "productivty.JIA_actual"
+			              "Role": "productivity.bar"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "productivties_have_JIA_actual"
+			          "ID": "productivities_have_bar"
 			        }
 			      ]
 			    },
-			    "productivty_has_fist_label": {
+			    "productivity_has_JIA_target": {
 			      "Binding": {
-			        "ConceptualEntity": "Productivty"
+			        "ConceptualEntity": "Productivity"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "productivty": {
+			        "productivity": {
 			          "Target": {
-			            "Entity": "productivty"
+			            "Entity": "productivity"
 			          }
 			        },
-			        "productivty.fist_label": {
+			        "productivity.JIA_target": {
 			          "Target": {
-			            "Entity": "productivty.fist_label"
+			            "Entity": "productivity.JIA_target"
 			          }
 			        }
 			      },
@@ -2011,32 +2674,32 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "productivty"
+			              "Role": "productivity"
 			            },
 			            "Object": {
-			              "Role": "productivty.fist_label"
+			              "Role": "productivity.JIA_target"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "productivties_have_fist_label"
+			          "ID": "productivities_have_JIA_target"
 			        }
 			      ]
 			    },
-			    "productivty_has_actual_savings": {
+			    "productivity_has_label": {
 			      "Binding": {
-			        "ConceptualEntity": "Productivty"
+			        "ConceptualEntity": "Productivity"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "productivty": {
+			        "productivity": {
 			          "Target": {
-			            "Entity": "productivty"
+			            "Entity": "productivity"
 			          }
 			        },
-			        "productivty.actual_savings": {
+			        "productivity.label": {
 			          "Target": {
-			            "Entity": "productivty.actual_savings"
+			            "Entity": "productivity.label"
 			          }
 			        }
 			      },
@@ -2044,32 +2707,32 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "productivty"
+			              "Role": "productivity"
 			            },
 			            "Object": {
-			              "Role": "productivty.actual_savings"
+			              "Role": "productivity.label"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "productivties_have_actual_savings"
+			          "ID": "productivities_have_label"
 			        }
 			      ]
 			    },
-			    "productivty_has_note": {
+			    "productivity_has_JIA_actual": {
 			      "Binding": {
-			        "ConceptualEntity": "Productivty"
+			        "ConceptualEntity": "Productivity"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "productivty": {
+			        "productivity": {
 			          "Target": {
-			            "Entity": "productivty"
+			            "Entity": "productivity"
 			          }
 			        },
-			        "productivty.note": {
+			        "productivity.JIA_actual": {
 			          "Target": {
-			            "Entity": "productivty.note"
+			            "Entity": "productivity.JIA_actual"
 			          }
 			        }
 			      },
@@ -2077,32 +2740,32 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "productivty"
+			              "Role": "productivity"
 			            },
 			            "Object": {
-			              "Role": "productivty.note"
+			              "Role": "productivity.JIA_actual"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "productivties_have_notes"
+			          "ID": "productivities_have_JIA_actual"
 			        }
 			      ]
 			    },
-			    "productivty_has_site": {
+			    "productivity_has_actual_saving": {
 			      "Binding": {
-			        "ConceptualEntity": "Productivty"
+			        "ConceptualEntity": "Productivity"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "productivty": {
+			        "productivity": {
 			          "Target": {
-			            "Entity": "productivty"
+			            "Entity": "productivity"
 			          }
 			        },
-			        "productivty.site": {
+			        "productivity.actual_saving": {
 			          "Target": {
-			            "Entity": "productivty.site"
+			            "Entity": "productivity.actual_saving"
 			          }
 			        }
 			      },
@@ -2110,32 +2773,32 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "productivty"
+			              "Role": "productivity"
 			            },
 			            "Object": {
-			              "Role": "productivty.site"
+			              "Role": "productivity.actual_saving"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "productivties_have_sites"
+			          "ID": "productivities_have_actual_saving"
 			        }
 			      ]
 			    },
-			    "productivty_has_target": {
+			    "productivity_has_result": {
 			      "Binding": {
-			        "ConceptualEntity": "Productivty"
+			        "ConceptualEntity": "Productivity"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "productivty": {
+			        "productivity": {
 			          "Target": {
-			            "Entity": "productivty"
+			            "Entity": "productivity"
 			          }
 			        },
-			        "productivty.target": {
+			        "productivity.result": {
 			          "Target": {
-			            "Entity": "productivty.target"
+			            "Entity": "productivity.result"
 			          }
 			        }
 			      },
@@ -2143,32 +2806,32 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "productivty"
+			              "Role": "productivity"
 			            },
 			            "Object": {
-			              "Role": "productivty.target"
+			              "Role": "productivity.result"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "productivties_have_targets"
+			          "ID": "productivities_have_results"
 			        }
 			      ]
 			    },
-			    "productivty_has_actual": {
+			    "productivity_has_site": {
 			      "Binding": {
-			        "ConceptualEntity": "Productivty"
+			        "ConceptualEntity": "Productivity"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "productivty": {
+			        "productivity": {
 			          "Target": {
-			            "Entity": "productivty"
+			            "Entity": "productivity"
 			          }
 			        },
-			        "productivty.actual": {
+			        "productivity.site": {
 			          "Target": {
-			            "Entity": "productivty.actual"
+			            "Entity": "productivity.site"
 			          }
 			        }
 			      },
@@ -2176,32 +2839,32 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "productivty"
+			              "Role": "productivity"
 			            },
 			            "Object": {
-			              "Role": "productivty.actual"
+			              "Role": "productivity.site"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "productivties_have_actuals"
+			          "ID": "productivities_have_sites"
 			        }
 			      ]
 			    },
-			    "productivty_has_number_of_intiatives": {
+			    "productivity_has_target": {
 			      "Binding": {
-			        "ConceptualEntity": "Productivty"
+			        "ConceptualEntity": "Productivity"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "productivty": {
+			        "productivity": {
 			          "Target": {
-			            "Entity": "productivty"
+			            "Entity": "productivity"
 			          }
 			        },
-			        "productivty.number_of_intiatives": {
+			        "productivity.target": {
 			          "Target": {
-			            "Entity": "productivty.number_of_intiatives"
+			            "Entity": "productivity.target"
 			          }
 			        }
 			      },
@@ -2209,32 +2872,32 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "productivty"
+			              "Role": "productivity"
 			            },
 			            "Object": {
-			              "Role": "productivty.number_of_intiatives"
+			              "Role": "productivity.target"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "productivties_have_number_of_intiatives"
+			          "ID": "productivities_have_targets"
 			        }
 			      ]
 			    },
-			    "productivty_has_year": {
+			    "productivity_has_actual": {
 			      "Binding": {
-			        "ConceptualEntity": "Productivty"
+			        "ConceptualEntity": "Productivity"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "productivty": {
+			        "productivity": {
 			          "Target": {
-			            "Entity": "productivty"
+			            "Entity": "productivity"
 			          }
 			        },
-			        "productivty.year": {
+			        "productivity.actual": {
 			          "Target": {
-			            "Entity": "productivty.year"
+			            "Entity": "productivity.actual"
 			          }
 			        }
 			      },
@@ -2242,17 +2905,372 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "productivty"
+			              "Role": "productivity"
 			            },
 			            "Object": {
-			              "Role": "productivty.year"
+			              "Role": "productivity.actual"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "productivties_have_years"
+			          "ID": "productivities_have_actuals"
 			        }
 			      ]
+			    },
+			    "productivity_has_number_of_intiatives": {
+			      "Binding": {
+			        "ConceptualEntity": "Productivity"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "productivity": {
+			          "Target": {
+			            "Entity": "productivity"
+			          }
+			        },
+			        "productivity.number_of_intiatives": {
+			          "Target": {
+			            "Entity": "productivity.number_of_intiatives"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "productivity"
+			            },
+			            "Object": {
+			              "Role": "productivity.number_of_intiatives"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "productivities_have_number_of_intiatives"
+			        }
+			      ]
+			    },
+			    "productivity_has_year": {
+			      "Binding": {
+			        "ConceptualEntity": "Productivity"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "productivity": {
+			          "Target": {
+			            "Entity": "productivity"
+			          }
+			        },
+			        "productivity.year": {
+			          "Target": {
+			            "Entity": "productivity.year"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "productivity"
+			            },
+			            "Object": {
+			              "Role": "productivity.year"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "productivities_have_years"
+			        }
+			      ]
+			    },
+			    "productivity_has_measure_target_2026": {
+			      "Binding": {
+			        "ConceptualEntity": "Productivity"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "productivity": {
+			          "Target": {
+			            "Entity": "productivity"
+			          }
+			        },
+			        "measure.target_2026": {
+			          "Target": {
+			            "Entity": "measure.target_2026"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "productivity"
+			            },
+			            "Object": {
+			              "Role": "measure.target_2026"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "productivities_have_target_2026"
+			        }
+			      ]
+			    },
+			    "productivity_has_measure_identified_2026": {
+			      "Binding": {
+			        "ConceptualEntity": "Productivity"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "productivity": {
+			          "Target": {
+			            "Entity": "productivity"
+			          }
+			        },
+			        "measure.identified_2026": {
+			          "Target": {
+			            "Entity": "measure.identified_2026"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "productivity"
+			            },
+			            "Object": {
+			              "Role": "measure.identified_2026"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "productivities_have_identified_2026"
+			        }
+			      ]
+			    },
+			    "productivity_has_measure_identified_2024": {
+			      "Binding": {
+			        "ConceptualEntity": "Productivity"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "productivity": {
+			          "Target": {
+			            "Entity": "productivity"
+			          }
+			        },
+			        "measure.identified_2024": {
+			          "Target": {
+			            "Entity": "measure.identified_2024"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "productivity"
+			            },
+			            "Object": {
+			              "Role": "measure.identified_2024"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "productivities_have_identified_2024"
+			        }
+			      ]
+			    },
+			    "productivity_has_measure_target_2024": {
+			      "Binding": {
+			        "ConceptualEntity": "Productivity"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "productivity": {
+			          "Target": {
+			            "Entity": "productivity"
+			          }
+			        },
+			        "measure.target_2024": {
+			          "Target": {
+			            "Entity": "measure.target_2024"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "productivity"
+			            },
+			            "Object": {
+			              "Role": "measure.target_2024"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "productivities_have_target_2024"
+			        }
+			      ]
+			    },
+			    "productivity_has_measure_target_2025": {
+			      "Binding": {
+			        "ConceptualEntity": "Productivity"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "productivity": {
+			          "Target": {
+			            "Entity": "productivity"
+			          }
+			        },
+			        "measure.target_2025": {
+			          "Target": {
+			            "Entity": "measure.target_2025"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "productivity"
+			            },
+			            "Object": {
+			              "Role": "measure.target_2025"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "productivities_have_target_2025"
+			        }
+			      ]
+			    },
+			    "productivity_has_measure_identified_2025": {
+			      "Binding": {
+			        "ConceptualEntity": "Productivity"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "productivity": {
+			          "Target": {
+			            "Entity": "productivity"
+			          }
+			        },
+			        "measure.identified_2025": {
+			          "Target": {
+			            "Entity": "measure.identified_2025"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "productivity"
+			            },
+			            "Object": {
+			              "Role": "measure.identified_2025"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "productivities_have_identified_2025"
+			        }
+			      ]
+			    },
+			    "measure_has_value": {
+			      "Binding": {
+			        "ConceptualEntity": "Measure"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "measure": {
+			          "Target": {
+			            "Entity": "measure"
+			          }
+			        },
+			        "measure.value": {
+			          "Target": {
+			            "Entity": "measure.value"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "measure"
+			            },
+			            "Object": {
+			              "Role": "measure.value"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "measures_have_values"
+			        }
+			      ]
+			    },
+			    "productivity_has_entity_2026_identify": {
+			      "Binding": {
+			        "ConceptualEntity": "Productivity"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "productivity": {
+			          "Target": {
+			            "Entity": "productivity"
+			          }
+			        },
+			        "entity_2026_identify": {
+			          "Target": {
+			            "Entity": "entity_2026_identify"
+			          },
+			          "Nouns": [
+			            {
+			              "department": {
+			                "State": "Generated"
+			              }
+			            }
+			          ]
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "productivity"
+			            },
+			            "Object": {
+			              "Role": "entity_2026_identify"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "productivities_have_2026_identify"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "entity_2026_identify"
+			            },
+			            "Object": {
+			              "Role": "productivity"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing2026_identify_have_productivities"
+			        }
+			      ]
+			    }
+			  },
+			  "Agents": {
+			    "Internal": {
+			      "Version": "1.1.0"
 			    }
 			  }
 			}
