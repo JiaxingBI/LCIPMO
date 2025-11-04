@@ -1,0 +1,34 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		fastCombine
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBIDesktopVersion = 2.144.878.0 (25.06)+9cca29236de5114792f4d7188221f91ad4a5cc50
+
+annotation PBI_QueryOrder = ["LFAC_Electricity400v","LFAC_Humidity","dim_heatingcooling_type","LFAC_Others","dim_electricityArea","dim_electricity","LFAC_Aircompressor","LFAC_Gas","LFAC_Water","Summary","Moulding Hour Summary","Produced Weight Summary","400V 电表"]
+
+ref table LFAC_Electricity400v
+ref table Calendar
+ref table _Measure
+ref table LFAC_Humidity
+ref table dim_heatingcooling_type
+ref table LFAC_Others
+ref table dim_electricityArea
+ref table dim_electricity
+ref table LFAC_Aircompressor
+ref table LFAC_Gas
+ref table LFAC_Water
+ref table Summary
+ref table 'Moulding Hour Summary'
+ref table 'Produced Weight Summary'
+ref table '400V 电表'
+ref table FACT
+
+ref cultureInfo en-US
+

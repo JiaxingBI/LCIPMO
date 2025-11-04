@@ -1,0 +1,109 @@
+table 'Project Tracker'
+	lineageTag: 63ce2e15-b7c0-41fc-a46e-4957d4fc95bd
+
+	column 'No.'
+		dataType: int64
+		formatString: 0
+		lineageTag: 7d5030d2-286d-45b4-adf4-2ed2a57f8298
+		summarizeBy: none
+		sourceColumn: No.
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Project Name'
+		dataType: string
+		lineageTag: 6e84518d-645b-4fce-9e83-d7219d2bd708
+		summarizeBy: none
+		sourceColumn: Project Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		dataType: string
+		lineageTag: e04d0a87-1d50-411b-943f-e2e8b715878e
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Original Plan To Handover (Date)'
+		dataType: string
+		lineageTag: 96b8988b-f193-4504-b01d-31ea49885dda
+		summarizeBy: none
+		sourceColumn: Original Plan To Handover (Date)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Adjusted Plan To Handover (Date)'
+		dataType: string
+		lineageTag: 13aa0e77-6429-4465-82ee-f52fdbfe65b0
+		summarizeBy: none
+		sourceColumn: Adjusted Plan To Handover (Date)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Actual Handover (Date)'
+		dataType: string
+		lineageTag: eb4dc67b-0bab-4e2b-b3b9-b7bb3148e777
+		summarizeBy: none
+		sourceColumn: Actual Handover (Date)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'GLS/Reviewed By'
+		dataType: string
+		lineageTag: 41e18e5b-4b3c-4138-87e0-fa039fabf148
+		summarizeBy: none
+		sourceColumn: GLS/Reviewed By
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Confirmed By'
+		dataType: string
+		lineageTag: d78536af-5dcd-44bf-ab44-0971fb45469c
+		summarizeBy: none
+		sourceColumn: Confirmed By
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Remark '
+		dataType: string
+		lineageTag: 80643f8f-ef76-442a-a587-b1e8585b76e2
+		summarizeBy: none
+		sourceColumn: "Remark "
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status_light = ```
+			SWITCH(
+			    TRUE(),
+			    'Project Tracker'[Status]="Handover 
+			Completed","🟢",
+			    'Project Tracker'[Status]="In Construction","🟢",
+			    'Project Tracker'[Status]="Delay","🔴",
+			    'Project Tracker'[Status]="Ongoing","🟢",
+			    BLANK())
+			```
+		lineageTag: 8c079e68-bd53-4523-9859-e25d461377ad
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Project Tracker' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://legogroup.sharepoint.com/sites/JIALCI/Shared%20Documents/General/03_BI/01_Project%20List/02.%20Project%20List/09.%20Security%20Digital%20Huddle/Security%20Huddle%20Update.xlsx"), null, true),
+				    #"Project Tracker_Sheet" = Source{[Item="Project Tracker",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Project Tracker_Sheet", [PromoteAllScalars=true]),
+				    #"Promoted Headers2" = Table.PromoteHeaders(#"Promoted Headers", [PromoteAllScalars=true]),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Promoted Headers2",{{"No.", Int64.Type}, {"Project Name", type text}, {"Status", type text}, {"Original Plan To Handover#(lf) (Date)", type any}, {"Adjusted Plan To Handover (Date)", type any}, {"Actual Handover (Date)", type any}, {"GLS/Reviewed By", type text}, {"Confirmed By", type text}, {"Remark ", type text}, {"Column10", type any}, {"Column11", type any}, {"Column12", type any}, {"Column13", type any}, {"Column14", type any}, {"Column15", type any}, {"Column16", type any}, {"Column17", type any}}),
+				    #"Removed Blank Rows" = Table.SelectRows(#"Changed Type1", each not List.IsEmpty(List.RemoveMatchingItems(Record.FieldValues(_), {"", null}))),
+				    #"Removed Columns" = Table.RemoveColumns(#"Removed Blank Rows",{"Column10", "Column11", "Column12", "Column13", "Column14", "Column15", "Column16", "Column17"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

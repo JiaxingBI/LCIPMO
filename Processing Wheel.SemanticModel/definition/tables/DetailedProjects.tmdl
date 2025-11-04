@@ -6,11 +6,7 @@ table DetailedProjects
 			VAR Actualwk = [WkActual]
 			VAR Planwk = [WKPlan]
 			VAR Currentwk = WEEKNUM(TODAY())
-			VAR Phase = 
-			    IF(
-			        ISBLANK([SAT Actual]), "Phase 1",
-			        IF (Actualwk > Currentwk, "Phase 1", "Phase 2")
-			    )
+			VAR Phase = [_Phase]
 			VAR fx = 
 			    IF(
 			        ISBLANK('DetailedProjects'[SAT Plan]), "🟡", 
@@ -28,7 +24,7 @@ table DetailedProjects
 			                
 			                /* Phase 2: Only consider savings */
 			                IF(
-			                    [2025 Planned Saving] <= [Projected YE Saving], "🟢", "🔴"
+			                    [2025 Saving] <= [Projected YE Saving], "🟢", "🔴"
 			                )
 			        )
 			    )
@@ -94,7 +90,7 @@ table DetailedProjects
 
 	column 'SAT Plan'
 		dataType: dateTime
-		formatString: m/d/yy
+		formatString: m/d/yyyy
 		lineageTag: f4e82026-752f-4eaa-b759-85ccf0301be0
 		summarizeBy: none
 		sourceColumn: SAT Plan
@@ -134,7 +130,7 @@ table DetailedProjects
 
 		annotation SummarizationSetBy = Automatic
 
-	column '2025 Planned Saving'
+	column '2025 Saving'
 		dataType: double
 		lineageTag: 036d29b8-79e1-46a9-b165-95b17673b3d5
 		summarizeBy: sum
@@ -169,7 +165,7 @@ table DetailedProjects
 	column _Phase =
 			IF(
 			        ISBLANK([SAT Actual]), "Phase 1",
-			        IF ([WkActual] > WEEKNUM(TODAY()), "Phase 1", "Phase 2")
+			        IF ([WkActual] >= WEEKNUM(TODAY()), "Phase 1", "Phase 2")
 			    )
 		lineageTag: df191855-b0d4-438c-b419-50f0b59ac99b
 		summarizeBy: none

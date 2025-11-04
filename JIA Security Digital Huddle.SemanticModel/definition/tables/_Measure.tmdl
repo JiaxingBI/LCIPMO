@@ -1,0 +1,994 @@
+table _Measure
+	lineageTag: 7a99534e-d1f6-4bc1-92e4-57d0787aaf80
+
+	measure CurrentYearWeek = ```
+			
+			VAR _Year = YEAR( TODAY() ) 
+			VAR _Week = WEEKNUM( TODAY(), 2 )              // 以周一为每周第一天
+			VAR _WeekPadded =
+			    IF( _Week < 10,
+			        "0" & _Week,
+			        _Week
+			    )
+			RETURN
+			    _Year & "-W" & _WeekPadded
+			
+			```
+		lineageTag: 8e4886ce-c655-4259-86c9-af1f8477c2d9
+
+	measure IncidentFindingESPA =
+			
+			VAR T=FILTER(
+			    'Incident Finding',
+			    'Incident Finding'[FindingCategory]="Incident Finding (ESPA)"
+			    )
+			VAR cnt=COUNTROWS(T)
+			VAR res=IF(cnt=BLANK(),0,cnt)
+			RETURN res
+		formatString: 0
+		lineageTag: 475d14ec-e9fa-4560-9e1b-3f105e188c3c
+
+	measure 'IncidentFinding nonESPA' =
+			
+			VAR T=FILTER(
+			    'Incident Finding',
+			    'Incident Finding'[FindingCategory]="Incident Finding (Non-ESPA)")
+			VAR cnt=COUNTROWS(T)
+			VAR res=IF(cnt=BLANK(),0,cnt)
+			RETURN res
+		formatString: 0
+		lineageTag: e44e8fe7-6060-4091-8cd2-271c3e520164
+
+	measure IncidentFindingESPA2 =
+			
+			VAR T=FILTER(
+			    'Incident Finding',
+			    'Incident Finding'[FindingCategory]="Incident Finding (ESPA)"
+			    &&
+			    'Incident Finding'[ESPAFindingArea_num]=2
+			    )
+			VAR cnt=COUNTROWS(T)
+			VAR res=IF(cnt=BLANK(),0,cnt)
+			RETURN res
+		formatString: 0
+		lineageTag: aef77b26-bc2a-4379-8635-eebd1c015d8a
+
+	measure DisplayValue = ```
+			
+			VAR v = [IncidentFindingESPA]
+			RETURN
+			  -- 如果 v = 0 或者大于 0，都把它格式化成字符串
+			  IF(
+			    NOT( ISBLANK(v) ),
+			    BLANK(),   -- “0” 保留整数，无小数
+			    0             -- 如果你真的要隐藏完全不存在的分类，可返回 BLANK()
+			  )
+			
+			```
+		lineageTag: 44d0342f-1351-4b18-ad84-f2b596d42ff8
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure AbnormalFindingESPA =
+			
+			VAR T=FILTER(
+			    'Abnormal Finding',
+			    'Abnormal Finding'[FindingCategory]="Abnormal Finding (ESPA)"
+			    )
+			VAR cnt=COUNTROWS(T)
+			VAR res=IF(cnt=BLANK(),BLANK(),cnt)
+			RETURN res
+		formatString: 0
+		lineageTag: d737cc35-25f2-4db9-91ba-4b0dc1730562
+
+	measure AbnormalFindingNonESPA =
+			
+			VAR T=FILTER(
+			    'Abnormal Finding',
+			    'Abnormal Finding'[FindingCategory]="Abnormal Finding (Non-ESPA)"
+			    )
+			VAR cnt=COUNTROWS(T)
+			VAR res=IF(cnt=BLANK(),BLANK(),cnt)
+			RETURN res
+		formatString: 0
+		lineageTag: cc555972-e30a-4028-91e0-df122037841f
+
+	measure Alarm_fire_True =
+			
+			VAR alarm_T=FILTER(
+			    'Alarm Response',
+			    'Alarm Response'[Equipment]="Fire Alarm"
+			    &&
+			    'Alarm Response'[Alarm/ False Alarm]="Alarm"
+			)
+			VAR cnt=CALCULATE(SUM('Alarm Response'[Times]),alarm_T)
+			RETURN cnt
+		formatString: 0
+		lineageTag: 568cd2b8-b135-4bf3-b0b7-8eca3c123236
+
+	measure Alarm_NorthEast_False =
+			
+			VAR T=
+			CALCULATE(
+			    SUM('Alarm Response'[Times]),
+			    FILTER(
+			    'Alarm Response',
+			    'Alarm Response'[Location]="防区1"
+			    &&
+			    'Alarm Response'[Alarm/ False Alarm]="False Alarm"
+			    )
+			)
+			RETURN T
+		formatString: 0
+		lineageTag: ac327a3f-0601-4718-938c-25ee9db6ec99
+
+	measure Alarm_Interlock_False =
+			
+			VAR alarm_T=FILTER(
+			    'Alarm Response',
+			    'Alarm Response'[Equipment]="Interlock"
+			    &&
+			    'Alarm Response'[Alarm/ False Alarm]="False Alarm"
+			)
+			VAR cnt=CALCULATE(SUM('Alarm Response'[Times]),alarm_T)
+			RETURN cnt
+		formatString: 0
+		lineageTag: b389447f-903c-4499-8aa8-5c5f7a9e9217
+
+	measure Alarm_Interlock_True =
+			
+			VAR alarm_T=FILTER(
+			    'Alarm Response',
+			    'Alarm Response'[Equipment]="Interlock"
+			    &&
+			    'Alarm Response'[Alarm/ False Alarm]="Alarm"
+			)
+			VAR cnt=CALCULATE(SUM('Alarm Response'[Times]),alarm_T)
+			RETURN cnt
+		formatString: 0
+		lineageTag: 6a029fcb-b71b-420f-b742-258cd5b7c37e
+
+	measure Alarm_Radar_False =
+			
+			VAR alarm_T=FILTER(
+			    'Alarm Response',
+			    'Alarm Response'[Alarm Type]="Radar Alarm"
+			    &&
+			    'Alarm Response'[Alarm/ False Alarm]="False Alarm"
+			)
+			VAR cnt=CALCULATE(sum('Alarm Response'[Times]),alarm_T)
+			RETURN cnt
+		formatString: 0
+		lineageTag: 338fc38b-0b9a-4a31-9b55-26bcc97bbb0b
+
+	measure Alarm_Radar_True =
+			
+			VAR alarm_T=FILTER(
+			    'Alarm Response',
+			    'Alarm Response'[Alarm Type]="Radar Alarm"
+			    &&
+			    'Alarm Response'[Alarm/ False Alarm]="Alarm"
+			)
+			VAR cnt=CALCULATE(sum('Alarm Response'[Times]),alarm_T)
+			RETURN cnt
+		formatString: 0
+		lineageTag: 721bfb46-89af-41c2-b9e6-2114eb2b281a
+
+	measure Alarm_Elevator_False =
+			
+			VAR alarm_T=FILTER(
+			    'Alarm Response',
+			    'Alarm Response'[Equipment]="Elevator"
+			    &&
+			    'Alarm Response'[Alarm/ False Alarm]="False Alarm"
+			)
+			VAR cnt=CALCULATE(SUM('Alarm Response'[Times]),alarm_T)
+			RETURN cnt
+		formatString: 0
+		lineageTag: 683a11c9-f816-4430-a270-b35016b6b084
+
+	measure Alarm_Elevator_True =
+			
+			VAR alarm_T=FILTER(
+			    'Alarm Response',
+			    'Alarm Response'[Equipment]="Elevator"
+			    &&
+			    'Alarm Response'[Alarm/ False Alarm]="Alarm"
+			)
+			VAR cnt=CALCULATE(SUM('Alarm Response'[Times]),alarm_T)
+			RETURN cnt
+		formatString: 0
+		lineageTag: 9bbff5e1-cfad-405b-a4fa-21b91a988511
+
+	measure Alarm_False =
+			
+			VAR alarm_T=FILTER(
+			    'Alarm Response',
+			    'Alarm Response'[Alarm/ False Alarm]="False Alarm"
+			)
+			VAR cnt=CALCULATE(SUM('Alarm Response'[Times]),alarm_T)
+			RETURN cnt
+		formatString: 0
+		lineageTag: d0de51cd-88e3-4b51-b531-b350dc15512a
+
+	measure Alarm_True =
+			
+			VAR alarm_T=FILTER(
+			    'Alarm Response',
+			    'Alarm Response'[Alarm/ False Alarm]="Alarm"
+			)
+			VAR cnt=CALCULATE(sum('Alarm Response'[Times]),alarm_T)
+			VAR res=IF(cnt=BLANK(),0,cnt)
+			RETURN res
+		formatString: 0
+		lineageTag: ddcfbfcd-72cc-41a5-9cb4-c080a9fd7130
+
+	measure Complaint_ESPA =
+			
+			var cnt=COUNTROWS(
+			    FILTER(
+			    'Complaint To Aden (Q7)',
+			    'Complaint To Aden (Q7)'[Type]="Complaint"&&
+			    'Complaint To Aden (Q7)'[Scope]="ESPA"
+			    ))
+			VAR res=IF(cnt=BLANK(),0,cnt)
+			RETURN res
+		formatString: 0
+		lineageTag: b1cff5d1-d815-44b5-a9c3-7a31a3fc8b2e
+
+	measure Appreciation_ESPA =
+			
+			VAR cnt=COUNTROWS(FILTER('Complaint To Aden (Q7)','Complaint To Aden (Q7)'[Type]="Appreciation"&&'Complaint To Aden (Q7)'[Scope]="ESPA"))
+			VAR res=IF(cnt=BLANK(),0,cnt)
+			RETURN res
+		formatString: 0
+		lineageTag: 19a3ba18-79ff-4647-95dd-569c02419bb0
+
+	measure '% SMF' =
+			
+			DIVIDE(
+			  CALCULATE(
+			    SUM('S&M Malfunction'[Done]) + SUM('S&M Malfunction'[Pending])
+			  ),
+			
+			  CALCULATE(
+			    SUM('S&M Malfunction'[Done])
+			    + SUM('S&M Malfunction'[Pending])
+			    + SUM('S&M Malfunction'[Ongoing])
+			    + SUM('S&M Malfunction'[New])
+			  ),
+			  0
+			)
+		formatString: 0%;-0%;0%
+		lineageTag: 5874647d-7940-4134-845a-e3c2c16d47a9
+
+	measure penetration_pass = ```
+			
+			var total = 
+			IF(COUNTROWS( 'Penetration Test' )>0,COUNTROWS( 'Penetration Test' ),0)
+			var ng = [penetration_failed]
+			RETURN
+			    total-ng
+			```
+		formatString: 0
+		lineageTag: 7605e92f-2d35-4f26-8429-319e6f65c6c8
+
+	measure CrsisEx_Target =
+			
+			COUNTROWS('Crisis Excercise')
+		formatString: 0
+		lineageTag: de6f5a36-2996-4bb8-a92e-0a5235a0c7e2
+
+	measure CrsisEx_finish =
+			
+			COUNTROWS(
+			    FILTER(
+			        'Crisis Excercise','Crisis Excercise'[Progress]="Closed"&&NOT(ISBLANK('Crisis Excercise'[Progress]))
+			    )
+			)
+		formatString: 0
+		lineageTag: e1aae93c-729e-47e5-8c79-d97d4b70bb18
+
+	measure penetration_failed =
+			
+			var failed = COUNTROWS( FILTER('Penetration Test','Penetration Test'[Penetration_Result]="Failed"))
+			var res = IF(failed>0,failed,0)
+			RETURN
+			    res
+		formatString: 0
+		lineageTag: c9fd062d-5f16-41d5-bd10-90015c650d71
+
+	measure penetration_pct =
+			
+			VAR fenzi=IF([penetration_failed]=0,[penetration_pass],[penetration_failed])
+			RETURN DIVIDE(fenzi,[penetration_pass])
+		formatString: 0%;-0%;0%
+		lineageTag: bb880f1c-d6b3-454e-9da5-c6bd19bf14b7
+
+	measure PDCA_update = ```
+			
+			var thisweekMonday= TODAY()
+			                   - WEEKDAY(TODAY(), 2)  
+			                   + 1
+			VAR ThisWeekSunday= ThisWeekMonday + 6
+			VAR RowsThisWeek =
+			    CALCULATE(
+			        COUNTROWS('Digital_Huddle PDCA'),
+			        'Digital_Huddle PDCA'[Date_of_record] >= ThisWeekMonday,
+			        'Digital_Huddle PDCA'[Date_of_record] <= ThisWeekSunday
+			    )
+			VAR Light=IF(
+			    RowsThisWeek>0,
+			    UNICHAR(128308),   // 
+			    ""    // 🟢  
+			)
+			RETURN Light
+			```
+		lineageTag: 155fcad7-9561-4a19-bc8a-a5723b5affcd
+
+	measure IncifindESPA = ```
+			var LastDataDate =
+			CALCULATE(
+			    MAX('Incident Finding'[Date]),
+			    FILTER(
+			        'Incident Finding',
+			        'Incident Finding'[FindingCategory]="Incident Finding (ESPA)"
+			    )
+			)
+			VAR Istoday= IF(
+			    (LastDataDate = TODAY())||(LastDataDate = TODAY()-1),
+			    1,
+			    0
+			)
+			VAR Light=SWITCH(
+			    Istoday,
+			    1, UNICHAR(128308),   // 
+			    0,"🟢"    // 🟢  
+			)
+			RETURN Light
+			    
+			```
+		displayFolder: Title
+		lineageTag: 6a06a6b9-019e-49f2-a344-45c1aeb6fc7a
+
+	measure Incifind = ```
+			
+			var LastDataDate =
+			CALCULATE(
+			    MAX('Incident Finding'[Date]),
+			    FILTER(
+			        'Incident Finding',
+			        'Incident Finding'[FindingCategory]="Incident Finding (Non-ESPA)" || 'Incident Finding'[FindingCategory]="Incident Finding (ESPA)"
+			    )
+			)
+			VAR Istoday= IF(
+			    (LastDataDate = TODAY())||(LastDataDate = TODAY()-1),
+			    1,
+			    0
+			)
+			VAR Light=SWITCH(
+			    Istoday,
+			    1, UNICHAR(128308),   // 
+			    0,"🟢"    // 🟢  
+			)
+			RETURN Light
+			    
+			```
+		displayFolder: Title
+		lineageTag: 5358fafa-9deb-4eed-9d34-7cbb5759ff2e
+
+	measure AbFindESPA = ```
+			var LastDataDate =
+			CALCULATE(
+			    MAX('Abnormal Finding'[Date]),
+			    FILTER(
+			        'Abnormal Finding',
+			        'Abnormal Finding'[FindingCategory]="Abnormal Finding (ESPA)"||
+			        'Abnormal Finding'[FindingCategory]="Abnormal Finding (Non-ESPA)"
+			    )
+			)
+			VAR Istoday= IF(
+			    (LastDataDate = TODAY())||(LastDataDate = TODAY()-1),
+			    1,
+			    0
+			)
+			VAR Light=SWITCH(
+			    Istoday,
+			    1, UNICHAR(128308),   // 🔴
+			    0, "🟢"    // 🟢  
+			)
+			RETURN Light
+			    
+			```
+		displayFolder: Title
+		lineageTag: d10f5fd6-f9f1-4d48-8d49-84027f797800
+
+	measure AbFindNonESPA = ```
+			var LastDataDate =
+			CALCULATE(
+			    MAX('Abnormal Finding'[Date]),
+			    FILTER(
+			        'Abnormal Finding',
+			        'Abnormal Finding'[FindingCategory]="Abnormal Finding (Non-ESPA)"
+			    )
+			)
+			VAR Istoday= IF(
+			    (LastDataDate = TODAY())||(LastDataDate = TODAY()-1),
+			    1,
+			    0
+			)
+			VAR Light=SWITCH(
+			    Istoday,
+			    1, UNICHAR(128308),   // 
+			    0, "🟢"    // 🟢  
+			)
+			RETURN Light
+			    
+			```
+		displayFolder: Title
+		lineageTag: 2b94c7f0-e393-430c-8b6c-cac6dd31366a
+
+	measure Alarm = ```
+			
+			var LastDataDate =
+			    MAX('Alarm Response'[Date])
+			VAR Istoday= IF(
+			    (LastDataDate = TODAY()-1)||(LastDataDate = TODAY()),
+			    1,
+			    0
+			)
+			VAR Light=SWITCH(
+			    Istoday,
+			    1, UNICHAR(128308),   // 
+			    0, "🟢"    // 🟢  
+			)
+			RETURN Light
+			    
+			```
+		displayFolder: Title
+		lineageTag: 775ef8b1-a3c9-4f24-8943-8cbd5a3459f1
+
+	measure ComplainLight = ```
+			
+			var LastDataDate =
+			CALCULATE(
+			    MAX('Complaint To Aden (Q7)'[Date])
+			)
+			VAR Istoday= IF(
+			    (LastDataDate = TODAY())||(LastDataDate = TODAY()-1),
+			    1,
+			    0
+			)
+			VAR Light=SWITCH(
+			    Istoday,
+			    1, UNICHAR(128308),   // 
+			    0, "🟢"    // 🟢  
+			)
+			RETURN Light
+			    
+			```
+		displayFolder: Title
+		lineageTag: 9836c16f-a589-45c0-8fdd-bccaac8dba32
+
+	measure AccessIssue = ```
+			var LastDataDate =
+			    MAX('Access Issue'[Date])
+			
+			VAR Istoday= IF(
+			    (LastDataDate = TODAY())||(LastDataDate = TODAY()-1),
+			    1,
+			    0
+			)
+			VAR Light=SWITCH(
+			    Istoday,
+			    1, UNICHAR(128308),   // 
+			    0, "🟢"    // 🟢  
+			)
+			RETURN Light
+			    
+			```
+		displayFolder: Title
+		lineageTag: 9bb086a7-bb1a-4998-b720-86e3910e0c7c
+
+	measure penetration = ```
+			
+			var LastDataDate =
+			CALCULATE(
+			    MAX('Penetration Test'[Date])
+			    )
+			VAR Istoday= IF(
+			   (LastDataDate = TODAY()-1)||(LastDataDate = TODAY()),
+			    1,
+			    0
+			)
+			VAR Light=SWITCH(
+			    Istoday,
+			    1, UNICHAR(128308),   // 
+			    0,"🟢"    // 
+			)
+			RETURN Light
+			    
+			```
+		displayFolder: Title
+		lineageTag: aac14512-19b6-4d54-a5d9-01d9c5594bf0
+
+	measure SecurityTraining = ```
+			var LastDataDate =
+			CALCULATE(
+			    MAX('LEGO Security Training'[Created]),
+			    NOT(ISBLANK('LEGO Security Training'[Trainer]))
+			)
+			VAR Isyesterday= IF(
+			        LastDataDate=TODAY()-1,
+			    1,
+			    0
+			)
+			VAR Light=SWITCH(
+			    Isyesterday,
+			    1, UNICHAR(128308),   // 
+			    0,"🟢"    // 🟢 
+			)
+			RETURN Light
+			    
+			```
+		displayFolder: Title
+		lineageTag: c1108788-a239-4263-8ae3-4abaa80db60c
+
+	measure 'Accumulated Days without LTI' =
+			
+			var LatestIssueDate =
+			CALCULATE(
+			    MAX('Digital_Huddle KPI_data'[Date]),
+			    FILTER('Digital_Huddle KPI_data','Digital_Huddle KPI_data'[Actual_value]>=3)
+			    )
+			var AdjustedStartDate =
+			IF(
+			    ISBLANK(LatestIssueDate),
+			    MIN('Digital_Huddle KPI_data'[Date]),
+			    LatestIssueDate)
+			var CountDays =
+			DATEDIFF(AdjustedStartDate,MAX('Digital_Huddle KPI_data'[Date]),DAY)+1
+			RETURN
+			CountDays
+		formatString: 0
+		lineageTag: beaf3525-7549-454d-a488-4f79ef521e91
+
+	measure AccessIssue_Light = ```
+			
+			var LastDataDate = MAX('Access Issue'[Date])
+			VAR Isyesterday= IF(
+			    (LastDataDate = TODAY()-1),
+			    1,
+			    0
+			)
+			VAR Light=SWITCH(
+			    Isyesterday,
+			    1, UNICHAR(128308),   // 
+			    0,"🟢"    // 🟢  
+			)
+			RETURN Light
+			```
+		lineageTag: 87eafdaa-867c-4b30-a2dd-b04bb744a8a6
+
+	measure ProjectOpen =
+			
+			COUNTROWS(
+			    FILTER('Project Tracker',
+			    'Project Tracker'[Status]<>"Handover Completed"))
+		formatString: 0
+		lineageTag: dacf6252-7110-4e23-839f-f9aec6415bdf
+
+	measure Project_closed =
+			
+			COUNTROWS(
+			    FILTER('Project Tracker',
+			    'Project Tracker'[Status]="Handover Completed"))
+		formatString: 0
+		lineageTag: 0a57afe6-fc4f-454f-a2b7-61af86f7e87f
+
+	measure CurrentWeek =
+			
+			VAR _Week = WEEKNUM( TODAY(), 2 )              // 以周一为每周第一天
+			VAR _WeekPadded =
+			    IF( _Week < 10,
+			        "0" & _Week,
+			        _Week
+			    )
+			RETURN
+			    "WK" & _WeekPadded
+		lineageTag: 90eedba0-9c37-419d-b31a-de7872ae24d0
+
+	measure ShowFilterFlag = ```
+			
+			VAR TodayDate  = TODAY()
+			VAR WeekDayNum = WEEKDAY(TodayDate,2)   -- 2：周一=1，周日=7
+			VAR CurDate    = MAX('dDate'[Date])
+			VAR PrevWorkday =TodayDate - 1                        -- 其他工作日 → 上一个工作日
+			var res = 
+			IF(
+			    -- 周一：显示上周五、周六、周日
+			    WeekDayNum = 1 && CurDate IN { TodayDate - 3, TodayDate - 2, TodayDate - 1 },
+			    1,
+			    -- 周二~周五：显示上一个工作日
+			    IF(WeekDayNum > 1 && WeekDayNum <= 5 && CurDate = PrevWorkday, 1, 0)
+			)
+			RETURN INT(res)
+			```
+		lineageTag: 1de3ce2f-c728-43ff-854b-25e5b6b278d4
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure SCL_colorbar =
+			
+			IF(MAX('SCL Availability'[Availability])>=0.98,
+			"#00af4d",
+			"#d54550"
+			)
+		lineageTag: 0aaa38e0-894e-42da-8bf2-079ccc7b9eda
+
+	measure CCTV_colorbar =
+			
+			IF(MAX('CCTV Availability'[Availability])>=0.98,
+			"#00af4d",
+			"#d54550"
+			)
+		lineageTag: e94b8d3c-f1cb-4302-a7bd-a34920c642d2
+
+	measure Crisis_colorbar = ```
+			
+			VAR T= 
+			FILTER(
+			    'Crisis Excercise',
+			    'Crisis Excercise'[Progress]="Closed"
+			)
+			VAR cnt=
+			COUNTROWS(T)
+			RETURN IF(cnt>=1,
+			"#00ae4d",
+			"#d54550"
+			)
+			```
+		lineageTag: 05945030-bca3-4cf2-b95d-f8936d450caa
+
+	measure Alarm_Elevator =
+			
+			VAR alarm_T=FILTER(
+			    'Alarm Response',
+			    'Alarm Response'[Equipment]="Elevator"
+			)
+			VAR cnt=CALCULATE(SUM('Alarm Response'[Times]),'Alarm Response'[Equipment]="Elevator")
+			RETURN cnt
+		formatString: 0
+		lineageTag: 2ce7c3ce-23f6-4933-a7e3-3ebdf20dff53
+
+	measure Alarm_fire =
+			
+			VAR alarm_T=FILTER(
+			    'Alarm Response',
+			    'Alarm Response'[Equipment]="Fire Alarm"
+			)
+			VAR cnt=CALCULATE(SUM('Alarm Response'[Times]),'Alarm Response'[Equipment]="Fire Alarm")
+			RETURN cnt
+		formatString: 0
+		lineageTag: 72c02f21-bb9c-4ba4-8a05-d38471fe3382
+
+	measure Alarm_Interlock =
+			
+			VAR alarm_T=FILTER(
+			    'Alarm Response',
+			    'Alarm Response'[Equipment]="Interlock"
+			)
+			VAR cnt=CALCULATE(SUM('Alarm Response'[Times]), 'Alarm Response'[Equipment]="Interlock")
+			RETURN cnt
+		formatString: 0
+		lineageTag: a7e2c535-890e-4ae4-989e-5ee2a55c8609
+
+	measure Alarm_Radar =
+			
+			VAR alarm_T=FILTER(
+			    'Alarm Response',
+			    'Alarm Response'[Equipment]="Radar Alarm"
+			)
+			VAR cnt=CALCULATE(sum('Alarm Response'[Times]),'Alarm Response'[Equipment]="Radar Alarm")
+			RETURN cnt
+		formatString: 0
+		lineageTag: acf3c054-a982-4975-81ae-a6867ecf46f2
+
+	measure SM_Light = ```
+			
+			VAR new=
+			if(
+			    MAX('S&M Malfunction'[New])<>0,
+			    1,
+			    0
+			)
+			VAR Light=SWITCH(
+			    new,
+			    1, UNICHAR(128308),   // 
+			    0,"🟢"    // 🟢  
+			)
+			RETURN Light
+			```
+		lineageTag: 785b8ca5-23f6-4eb0-98c2-73e0f133e7ec
+
+	measure 'JIA Accumulated Days without LTI' =
+			
+			var LatestIssueDate =
+			CALCULATE(
+			    MAX('Digital_Huddle KPI_data'[Date]),
+			    FILTER('Digital_Huddle KPI_data','Digital_Huddle KPI_data'[Actual_value]>=3)
+			    )
+			var AdjustedStartDate =
+			    IF(
+			        ISBLANK(LatestIssueDate),
+			        MIN('Digital_Huddle KPI_data'[Date]),
+			        LatestIssueDate)
+			var CountDays =
+			    DATEDIFF(AdjustedStartDate,TODAY(),DAY)
+			RETURN
+			CountDays
+		formatString: 0
+		lineageTag: 17114047-d9b9-4857-a154-ca4d21d79d2b
+
+	measure GLS_light = ```
+			
+			var HasToday=
+			    CALCULATE(
+			        COUNTROWS('2025 GLS PLAN'),
+			        '2025 GLS PLAN'[Date]=TODAY()
+			    )
+			
+			VAR Istoday= IF(
+			    HasToday>0,
+			    1,
+			    0
+			)
+			VAR Light=SWITCH(
+			    Istoday,
+			    1, UNICHAR(128308),   // 
+			    0, "🟢"    // 🟢  
+			)
+			RETURN Light
+			```
+		lineageTag: 56c2b537-8d6b-4f17-ab0e-2b60fa33dd5e
+
+	measure Appreciation_NonESPA =
+			
+			VAR cnt=COUNTROWS(FILTER('Complaint To Aden (Q7)','Complaint To Aden (Q7)'[Type]="Appreciation"&&'Complaint To Aden (Q7)'[Scope]="Non-ESPA"))
+			VAR res=IF(cnt=BLANK(),0,cnt)
+			RETURN res
+		formatString: 0
+		lineageTag: 5b4b80ae-ad6d-4b6e-8fe7-4bc5ba9a5294
+
+	measure Complaint_NonESPA =
+			
+			var cnt=COUNTROWS(
+			    FILTER(
+			    'Complaint To Aden (Q7)',
+			    'Complaint To Aden (Q7)'[Type]="Complaint"&&
+			    'Complaint To Aden (Q7)'[Scope]="Non-ESPA"
+			    ))
+			VAR res=IF(cnt=BLANK(),0,cnt)
+			RETURN res
+		formatString: 0
+		lineageTag: 402942e9-1499-4d5c-8be8-0bce8b8104d7
+
+	measure IncidentFinding =
+			
+			VAR T=FILTER(
+			    'Incident Finding',
+			    'Incident Finding'[FindingCategory]="Incident Finding (ESPA)"||'Incident Finding'[FindingCategory]="Incident Finding (Non-ESPA)"
+			    )
+			VAR cnt=COUNTROWS(T)
+			VAR res=IF(cnt=BLANK(),0,cnt)
+			RETURN res
+		formatString: 0
+		lineageTag: f53a95f9-ff81-4234-8002-bdb8c7058c2f
+
+	measure AbnormalFinding =
+			
+			VAR T=FILTER(
+			    'Abnormal Finding',
+			    'Abnormal Finding'[FindingCategory]="Abnormal Finding (ESPA)"||'Abnormal Finding'[FindingCategory]="Abnormal Finding (Non-ESPA)"
+			    )
+			VAR cnt=COUNTROWS(T)
+			VAR res=IF(cnt=BLANK(),0,cnt)
+			RETURN res
+		formatString: 0
+		lineageTag: ad6e5ad1-02af-4bda-8dc0-87e523e6cd34
+
+	measure 'PDCA_Containment Responsible' = SUBSTITUTE(SUBSTITUTE(MAX('Digital_Huddle PDCA'[Containment_Responsible]),"@LEGO.com",""),"."," ")
+		lineageTag: 55144253-8543-4a85-b63e-a8395da614fc
+
+	measure 'PDCA_Countermeasure Responsible' = SUBSTITUTE(SUBSTITUTE(MAX('Digital_Huddle PDCA'[Countermeasure_Responsible]),"@LEGO.com",""),"."," ")
+		lineageTag: 6f0471cc-56a7-4fab-856f-73721878e731
+
+	measure 'PDCA_Containment Coloring' = if(AND(AND(ISBLANK(max('Digital_Huddle PDCA'[Containment_Check_date]))=FALSE,DATEDIFF(MAX('Digital_Huddle PDCA'[Containment_Check_date]),TODAY(),DAY)>=0),MAX('Digital_Huddle PDCA'[Containment_Status])<4),2,1)  ---- 2 means red
+		formatString: 0
+		lineageTag: 5375ef3a-91e2-4291-b0dc-8cf4dd9d74a2
+
+	measure 'PDCA_Countermeasure Coloring' = if(AND(AND(ISBLANK(max('Digital_Huddle PDCA'[Countermeasure_Act_date]))=FALSE,DATEDIFF(MAX('Digital_Huddle PDCA'[Countermeasure_Act_date]),TODAY(),DAY)>=0),MAX('Digital_Huddle PDCA'[Countermeasure_Status])<4),2,1)   --- 2 means red
+		formatString: 0
+		lineageTag: 17f1016a-fe1a-4bc8-8d60-b50b6ea10a6e
+
+	measure 'PDCA Count& Open' = ```
+			
+			var TotalOpen =
+			    COUNTROWS(
+			        FILTER('Digital_Huddle PDCA',
+			            'Digital_Huddle PDCA'[Department_ID]=43  &&
+			            'Digital_Huddle PDCA'[Archived]=False
+			            )
+			        )
+			var DueToday =
+			        COUNTROWS(
+			            FILTER(
+			                'Digital_Huddle PDCA',
+			                'Digital_Huddle PDCA'[Department_ID]=43  && 
+			                'Digital_Huddle PDCA'[Archived]=False && 
+			                ('Digital_Huddle PDCA'[Containment_Check_date] =TODAY() ||'Digital_Huddle PDCA'[Countermeasure_Act_date]=TODAY()
+			                    )
+			                )
+			)
+			var Res =  "Due Today: " & DueToday & " Total Open: " & TotalOpen 
+			RETURN
+			    Res
+			```
+		lineageTag: 9bb312a7-2dd3-475b-a40c-6774cf5bb620
+
+	measure AlarmTotalCard =
+			
+			"Total:"&[cnt_total]&"       "&"True:"&[cnt_True]&"      "&"False:"&[cnt_False]
+		lineageTag: 86db26aa-ee46-42f5-8f75-d4a908f9d121
+
+	measure 'Night Light' = ```
+			
+			var LastDataDate =
+			CALCULATE(
+			    MAX('Night Inspection_detail'[WHEN])
+			)
+			VAR Istoday= IF(
+			    (LastDataDate = TODAY())||(LastDataDate = TODAY()-1),
+			    1,
+			    0
+			)
+			VAR Light=SWITCH(
+			    Istoday,
+			    1, UNICHAR(128308),   // 
+			    0, "🟢"    // 🟢  
+			)
+			RETURN Light
+			    
+			```
+		lineageTag: 1c97dcd4-b29a-4586-b8fb-2f58f219895a
+
+	measure GLS_ThisWeek = ```
+			
+			 var thisWeekStart = CALCULATE(MIN(dDate[Date]),dDate[IsCurrentWeek]="Current Week")
+			 var thisWeekEnd = CALCULATE(MAX(dDate[Date]),dDate[IsCurrentWeek]="Current Week")
+			 var GLSThisWEeek = COUNTROWS(FILTER('2025 GLS PLAN','2025 GLS PLAN'[Date]>=thisWeekStart&&'2025 GLS PLAN'[Date]<=thisWeekEnd && '2025 GLS PLAN'[Status]<>"Closed"))
+			 RETURN
+			 IF(ISBLANK(GLSThisWEeek),0,GLSThisWEeek)
+			
+			```
+		formatString: 0
+		lineageTag: 68d75c1b-cb4a-4f42-8efc-f5f28fa1d4ed
+
+	measure Measure
+		lineageTag: 546c1c71-3bef-49d2-8a63-0b116e0522b3
+
+		annotation 43dbc3e8-3a1c-4b6f-9923-b49ff7d6691c = True
+
+	measure GLS_OpenThisYear = ```
+			
+			COUNTROWS(FILTER('2025 GLS PLAN','2025 GLS PLAN'[When] =YEAR(TODAY()) &&'2025 GLS PLAN'[Status]="Open"))
+			
+			
+			```
+		formatString: 0
+		lineageTag: 0f8287ed-1d7e-4011-87dc-85a21484cf3e
+
+	measure 全场停车率 = ```
+			
+			CONCATENATEX(
+			    FILTER(
+			        'ParkingRate',
+			            ParkingRate[Location] in {"南区","北区","新移印","MM4"}
+			        &&  ParkingRate[Value]>0.9
+			    ),
+			    ParkingRate[Location]&"  "& FORMAT(ParkingRate[Value],"0%"),
+			    UNICHAR(10)
+			)
+			
+			```
+		lineageTag: e947c055-e699-4f26-b16a-9867e7a3b9ed
+
+	measure 北区非机动车辆溢出数 = ```
+			CALCULATE(MAX('ParkingRate'[Value]),ParkingRate[Location]="北非机动车棚") 
+			```
+		formatString: 0
+		lineageTag: 1ed30a0a-9d02-4efd-895d-5981e7994580
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 南区非机动车棚停车率 = ```
+			
+			CONCATENATEX(
+			    FILTER(
+			        'ParkingRate',
+			            ParkingRate[Location] in {"早高峰后","晚高峰后"}
+			        &&  ParkingRate[Value]>0.9
+			    ),
+			    ParkingRate[Location]&"  "& FORMAT(ParkingRate[Value],"0%"),
+			    UNICHAR(10)
+			)
+			
+			```
+		lineageTag: ccdc1b13-ad08-42f1-aa65-81282d82c2f6
+
+	measure 'Access Issue Times' = ```
+			
+			var totalIssue = SUM('Access Issue'[Access Times])
+			var res = IF( totalIssue>0,totalIssue,0) 
+			RETURN
+			    res
+			```
+		formatString: 0
+		lineageTag: 44c32d53-aa06-42c6-9d4c-610e5afb88b5
+
+	measure SecurityTraningTimes =
+			
+			var totaltimes =  SUM('LEGO Security Training'[Times])
+			var res = IF(totaltimes>0,totaltimes,0)
+			RETURN
+			res
+		formatString: 0
+		lineageTag: b98bae80-9eab-4254-bb9c-421ac89601f4
+
+	measure Crisisclose = COUNTROWS(FILTER('Crisis Excercise','Crisis Excercise'[Progress]="Closed"))
+		formatString: 0
+		lineageTag: 5c39c066-0b90-4e1b-8ad0-b45ef6b443bd
+
+	measure CrisisOpen = COUNTROWS(FILTER('Crisis Excercise','Crisis Excercise'[Progress]<>"Closed"))
+		formatString: 0
+		lineageTag: 7260b821-b16f-4449-8a61-2e0ca25d3eeb
+
+	measure CardA_Display =
+			
+			VAR selCount =
+			    COUNTROWS( VALUES( 'dDate'[IsCurrentWeek] ) )
+			VAR totalCount =
+			    COUNTROWS( ALL( 'dDate'[IsCurrentWeek] ) )
+			VAR selText =
+			    CONCATENATEX(
+			        VALUES( 'dDate'[IsCurrentWeek] ),
+			        'dDate'[IsCurrentWeek],
+			        ", "
+			    )
+			RETURN
+			IF(
+			    totalCount = 0,
+			    BLANK(),
+			    IF(
+			        selCount = totalCount,
+			        "All",
+			        selText
+			    )
+			)
+		lineageTag: ed95f949-6f45-443a-abcc-2e925a1019e3
+
+	column Column
+		formatString: 0
+		lineageTag: ad3f307a-c628-464c-af44-6a61cc60496b
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Column]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _Measure = calculated
+		mode: import
+		source = Row("Column", BLANK())
+
+	annotation PBI_Id = cdd8a6e620a94e16b4ea7a44245de7f4
+

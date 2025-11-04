@@ -366,7 +366,7 @@ table Measure
 
 	measure 'Planned Savings' = ```
 			
-			 var project = SUM(DetailedProjects[2025 Planned Saving])
+			 var project = SUM(DetailedProjects[2025 Saving])
 			 var res = "Planned Savings: "& FORMAT(project,"0.0")
 			 RETURN
 			    res

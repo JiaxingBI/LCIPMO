@@ -1,0 +1,84 @@
+relationship 7f852bfc-3848-a1b3-2604-eb51c7e1e835
+	fromColumn: 'Digital_Huddle KPI_data'.KPI_ID
+	toColumn: 'Digital_Huddle PDCA'.ID
+
+relationship 527ad912-475f-de17-0c7f-ad210aba28cb
+	fromColumn: Security_D.Date
+	toColumn: dDate.Date
+
+relationship a28625f7-731d-d172-342c-c92a9fb55424
+	fromColumn: Security_Q.Date
+	toColumn: dDate.Date
+
+relationship 38fbc6ef-e4b0-9b38-577a-ef7e7853ccdb
+	fromColumn: 'Abnormal Finding'.Date
+	toColumn: dDate.Date
+
+relationship 4d357ae0-775e-adf0-f23a-b0100f5e9fca
+	fromColumn: 'Access Issue'.Date
+	toColumn: dDate.Date
+
+relationship 3f63d4cc-37ae-7513-781e-e270bda0008e
+	fromColumn: 'Alarm Response'.Date
+	toColumn: dDate.Date
+
+relationship 6e81416b-4f84-8173-e9e0-b808155e4430
+	fromColumn: 'Complaint & Appreciation'.Date
+	toColumn: dDate.Date
+
+relationship c178841b-a5ff-524d-a291-ed03991de03c
+	fromColumn: 'Incident Finding'.Date
+	toColumn: dDate.Date
+
+relationship baaa08e8-5de9-d242-ba8b-d4e888585d20
+	fromColumn: 'Visitors Today'.Date
+	toColumn: dDate.Date
+
+relationship 1dc3fa77-0176-ab20-1dbc-78309053d09a
+	fromColumn: 'S&M Malfunction'.Date
+	toColumn: dDate.Date
+
+relationship c337eb4f-da68-a97c-1bad-c51945b599a1
+	fromColumn: '2025 GLS PLAN'.Date
+	toColumn: dDate.Date
+
+relationship 997c43e8-a049-b395-8213-61e4b3013094
+	fromColumn: 'Complaint To Aden (Q7)'.Date
+	toColumn: dDate.Date
+
+relationship 8a4326d4-2130-cbdf-9ab5-94e293287665
+	fromColumn: 'Night Inspection'.Date
+	toColumn: dDate.Date
+
+relationship 060602f3-c48f-f067-a8f0-c1c570e5b46f
+	fromColumn: 'Digital_Huddle KPI_data'.Date
+	toColumn: dDate.Date
+
+relationship 95ed63c8-fbb3-6f26-16a2-66f166a51ea3
+	fromColumn: 'Crisis Excercise'.'Planned Month'
+	toColumn: dDate.Date
+
+relationship 49f068e3-7998-bf25-1fc9-19495370a1ab
+	fromColumn: 'Penetration Test'.Date
+	toColumn: dDate.Date
+
+relationship 5d883951-2996-06e3-cc0b-0b5a37814dd1
+	fromColumn: 'Penetration Test'.'Penetration Area'
+	toColumn: dPene.dPene
+
+relationship 1ddc5185-fb9a-81e5-c899-2d5977a35b5d
+	fromColumn: 'Digital_Huddle PDCA'.Archived
+	toColumn: Archive.Archive
+
+relationship c02dc010-1cc9-3a89-91ee-98735206f5ea
+	fromColumn: 'Digital_Huddle GLS'.Archived
+	toColumn: Archive.Archive
+
+relationship bc529eb7-c88d-4285-8539-964590c9bc2d
+	fromColumn: 'LEGO Security Training'.Date
+	toColumn: dDate.Date
+
+relationship 0fa55da7-4541-a5ac-d25d-9de5f1a22e24
+	fromColumn: 'Alarm Response'.LocationEng
+	toColumn: dAlarmArea.LocationEng
+

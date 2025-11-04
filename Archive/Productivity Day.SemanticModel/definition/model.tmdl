@@ -10,12 +10,11 @@ annotation PBI_QueryOrder = ["Productivty","2025 Identify"]
 
 annotation __PBI_TimeIntelligenceEnabled = 1
 
-annotation PBIDesktopVersion = 2.138.1004.0 (24.11)
-
 annotation __PBIService_Versioning_SaveVersion = ca383ade-6352-4494-8dc1-32b071eebfba
 
 ref table Productivty
 ref table '2025 Identify'
+ref table Measure
 
 ref cultureInfo en-US
 

@@ -1,0 +1,70 @@
+table 'Digital_Huddle Departments'
+	isHidden
+	lineageTag: 80edbf17-7316-4a97-bc06-c5591520c654
+
+	column ID
+		dataType: int64
+		isHidden
+		isNullable: false
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 0ea5eff4-cfbc-4327-a751-d704119f2417
+		summarizeBy: count
+		sourceColumn: ID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Department
+		dataType: string
+		isHidden
+		isNullable: false
+		sourceProviderType: nvarchar(50)
+		lineageTag: a567f0c7-88cc-41e1-ac65-2542033c1d62
+		summarizeBy: none
+		sourceColumn: Department
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column FunctionalArea
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(50)
+		lineageTag: e4daf221-b4f1-4df3-ac8f-b07979438eca
+		summarizeBy: none
+		sourceColumn: FunctionalArea
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sorting
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(30)
+		lineageTag: a02a5854-eaf4-4098-b802-8f03307e8083
+		summarizeBy: none
+		sourceColumn: Sorting
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Digital_Huddle Departments' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("btmstdfdevbiman.database.windows.net", "Digital_Huddle_JIA"),
+				    dbo_Digital_Huddle.Departments = Source{[Schema="dbo",Item="Digital_Huddle.Departments"]}[Data]
+				in
+				    dbo_Digital_Huddle.Departments
+
+	changedProperty = IsHidden
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

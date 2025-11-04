@@ -3,9 +3,12 @@ table LFAC_Electricity400v
 
 	column Cabinet
 		dataType: string
+		isHidden
 		lineageTag: b82f3c18-58d6-4ede-bfc3-f15035fb362b
 		summarizeBy: none
 		sourceColumn: Cabinet
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -15,30 +18,35 @@ table LFAC_Electricity400v
 		summarizeBy: none
 		sourceColumn: SN
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
-	column Area
+	column 使用区域
 		dataType: string
 		lineageTag: d132b89c-b1c8-42fe-8078-4ae9f6de773f
 		summarizeBy: none
-		sourceColumn: Area
+		sourceColumn: 使用区域
 
 		annotation SummarizationSetBy = Automatic
 
-	column Function
+	column 功能分类
 		dataType: string
 		lineageTag: e2117324-56e5-439a-8d3a-3e81c6f96dbf
 		summarizeBy: none
-		sourceColumn: Function
+		sourceColumn: 功能分类
 
 		annotation SummarizationSetBy = Automatic
 
 	column Date
 		dataType: dateTime
+		isHidden
 		formatString: m/d/yyyy
 		lineageTag: 2faac42e-355e-4f7d-a393-14f2b760d12b
 		summarizeBy: none
 		sourceColumn: Date
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -47,7 +55,7 @@ table LFAC_Electricity400v
 		annotation PBI_FormatHint = {"isDateTimeCustom":true}
 
 	column Value
-		dataType: int64
+		dataType: double
 		formatString: 0
 		lineageTag: 4b38cd39-5394-449d-9df9-fb76542c98c3
 		summarizeBy: sum
@@ -62,16 +70,19 @@ table LFAC_Electricity400v
 				    Source = Excel.Workbook(Web.Contents("https://legogroup.sharepoint.com/sites/JIALFACTECH/Shared%20Documents/18%20%E8%83%BD%E6%BA%90%E4%BF%A1%E6%81%AF%E7%AE%A1%E7%90%86/01%20Energy%20Data%20%E8%83%BD%E6%BA%90%E6%95%B0%E6%8D%AE/%E8%83%BD%E6%BA%90%E4%B8%AD%E5%BF%83%E6%95%B0%E6%8D%AE%E8%AE%B0%E5%BD%95%E8%A1%A8%202025.xlsx"), null, true),
 				    #"400V 电表_Sheet" = Source{[Item="400V 电表",Kind="Sheet"]}[Data],
 				    #"Removed Top Rows" = Table.Skip(#"400V 电表_Sheet",1),
-				    #"Promoted Headers" = Table.PromoteHeaders(#"Removed Top Rows", [PromoteAllScalars=true]),
-				    #"Filtered Rows1" = Table.SelectRows(#"Promoted Headers", each ([SN] <> null)),
+				    #"Filtered Rows" = Table.SelectRows(#"Removed Top Rows", each ([Column2] <> null)),
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Filtered Rows", [PromoteAllScalars=true]),
+				    #"Filtered Rows1" = Table.SelectRows(#"Promoted Headers", each ([SN] <> null) and ([Annual] <> 0)),
 				    #"Filled Down" = Table.FillDown(#"Filtered Rows1",{"Cabinet"}),
 				    #"Unpivoted Other Columns" = Table.UnpivotOtherColumns(#"Filled Down", {"功能分类", "使用区域", "SN", "Cabinet"}, "Date", "Value"),
-				    #"Filtered Rows" = Table.SelectRows(#"Unpivoted Other Columns", each ([Date] <> "Annual" and [Date] <> "APR" and [Date] <> "AUG" and [Date] <> "DEC" and [Date] <> "FEB" and [Date] <> "JAN" and [Date] <> "JUL" and [Date] <> "JUN" and [Date] <> "MAR" and [Date] <> "MAY" and [Date] <> "NOV" and [Date] <> "OCT" and [Date] <> "SEP")),
-				    #"Changed Type" = Table.TransformColumnTypes(#"Filtered Rows",{{"Date", type date}, {"Value", Int64.Type}}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Unpivoted Other Columns",{{"Date", type date}}),
+				    #"Removed Errors" = Table.RemoveRowsWithErrors(#"Changed Type1", {"Date"}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Removed Errors",{{"Date", type date}, {"Value", Int64.Type}}),
 				    #"Replaced Errors" = Table.ReplaceErrorValues(#"Changed Type", {{"Value", 0}}),
-				    #"Renamed Columns" = Table.RenameColumns(#"Replaced Errors",{{"使用区域", "Area"}, {"功能分类", "Function"}})
+				    #"Filtered Rows2" = Table.SelectRows(#"Replaced Errors", each ([功能分类] <> null)),
+				    #"Appended Query" = Table.Combine({#"Filtered Rows2", LFAC_EC冷机10kv})
 				in
-				    #"Renamed Columns"
+				    #"Appended Query"
 
 	annotation PBI_NavigationStepName = Navigation
 

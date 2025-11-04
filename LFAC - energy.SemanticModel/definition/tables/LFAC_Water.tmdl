@@ -60,9 +60,15 @@ table LFAC_Water
 				let
 				    Source = LFAC_Others,
 				    #"Filtered Rows" = Table.SelectRows(Source, each ([能源种类] = "City water")),
-				    #"Removed Errors" = Table.RemoveRowsWithErrors(#"Filtered Rows", {"Date"})
+				    #"Removed Errors" = Table.RemoveRowsWithErrors(#"Filtered Rows", {"Date"}),
+				    #"Replaced Value" = Table.ReplaceValue(#"Removed Errors","工厂总用水","工厂总用水Level 1",Replacer.ReplaceValue,{"Cabinet"}),
+				    #"Replaced Value2" = Table.ReplaceValue(#"Replaced Value","UTS总用水","UTS 总用水Level 3",Replacer.ReplaceValue,{"Cabinet"}),
+				    #"Replaced Value1" = Table.ReplaceValue(#"Replaced Value2","生活用水","生活用水 Level 2",Replacer.ReplaceValue,{"Cabinet"}),
+				    #"Replaced Value4" = Table.ReplaceValue(#"Replaced Value1","南北厨房用水","南北厨房用水 Level 3",Replacer.ReplaceValue,{"Cabinet"}),
+				    #"Replaced Value5" = Table.ReplaceValue(#"Replaced Value4","工艺绿化用水总","工艺绿化用水 Level 2",Replacer.ReplaceValue,{"Cabinet"}),
+				    #"Replaced Value3" = Table.ReplaceValue(#"Replaced Value5","生活用水总","生活用水（不包括UTS）Level 3",Replacer.ReplaceText,{"Cabinet"})
 				in
-				    #"Removed Errors"
+				    #"Replaced Value3"
 
 	annotation PBI_NavigationStepName = Navigation
 

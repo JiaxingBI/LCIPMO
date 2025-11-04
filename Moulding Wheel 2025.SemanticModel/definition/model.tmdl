@@ -1,0 +1,23 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: zh-CN
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBI_QueryOrder = ["Overall tracker","Target_Plant"]
+
+annotation PBI_ProTooling = ["DaxQueryView_Desktop"]
+
+ref table 'Overall tracker'
+ref table dDate
+ref table Measure
+ref table 'TotalValues_Overall Tracker'
+ref table Target_Plant
+ref table ProjectStatus
+
+ref cultureInfo en-US
+

@@ -1,0 +1,33 @@
+table dAreaNumKey
+	lineageTag: 126a54db-cbc5-4a6d-b8be-226c52012cdd
+
+	column Area
+		dataType: string
+		lineageTag: 811766f8-2300-4581-82b2-41499ba0f171
+		summarizeBy: none
+		sourceColumn: Area
+
+		annotation SummarizationSetBy = Automatic
+
+	column No
+		dataType: string
+		lineageTag: bc5b4c2b-b6da-4356-a346-1c96c4c1a046
+		summarizeBy: none
+		sourceColumn: No
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dAreaNumKey = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45WCnB0VtJRcvYzMDQwVIrVQREwQhcwRhcwQRcwRRcwAwv4hnvABMwhAj4uEAFjqLVIAkboAhBbPJzCIQJGUC1IAkboAsboAhhmWEBcGuQPE4A43dUZZqsxCt8I6hMw/9nGhc82bHm+eiZYyN/NzdPZFeY/CyxilphihgZYxCD+8g/xcA0KhoiZGmATM0YVe9oz/WnjnBd7lz1bPAtDNTDEn/ZPfD5l67M5u5517MeQN0E3DewSIyy2mmDRi+k6EwNsek1RxfSxONPwcUMjJARhDGCwxQIA", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Area = _t, No = _t])
+				in
+				    Source
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,212 @@
+table 'Alarm Response'
+	lineageTag: eb3d42e8-c4c2-44a0-b7c1-e25fb2da8f58
+
+	measure Defense345 =
+			
+			IF(
+			    MAX('Alarm Response'[Location])="防区3"||MAX('Alarm Response'[Location])="防区4"||MAX('Alarm Response'[Location])="防区5",
+			    1,
+			    0
+			)
+		formatString: 0
+		lineageTag: 79968169-e89b-4abc-a62f-98f20cadb237
+
+	measure Defense8910 =
+			
+			IF(
+			    MAX('Alarm Response'[Location])="防区8"||MAX('Alarm Response'[Location])="防区9"||MAX('Alarm Response'[Location])="防区10",
+			    1,
+			    0
+			)
+		formatString: 0
+		lineageTag: 7be50d94-29e0-4443-964e-b72a004c8b79
+
+	measure AlarmCount = ```
+			
+			    SUM('Alarm Response'[Times])
+			
+			
+			
+			```
+		formatString: 0
+		lineageTag: b60d917e-8af4-40f2-8ffd-c2438d63b989
+
+	measure cnt_True =
+			
+			VAR noblank=
+			CALCULATE(
+			    SUM('Alarm Response'[Times]),
+			    FILTER(
+			        'Alarm Response',
+			        'Alarm Response'[Alarm Type] <> "误报数"&&'Alarm Response'[Alarm/ False Alarm]="Alarm"
+			    )
+			)
+			Var blankk=
+			IF(noblank=BLANK(),0,noblank)
+			RETURN blankk
+		formatString: 0
+		lineageTag: a7127d39-a61e-43ba-91c7-5557319f524d
+
+	measure cnt_False =
+			
+			VAR noblank=
+			CALCULATE(
+			    SUM('Alarm Response'[Times]),
+			    FILTER(
+			        'Alarm Response',
+			        'Alarm Response'[Alarm Type] <> "误报数"&&'Alarm Response'[Alarm/ False Alarm]="False Alarm"
+			    )
+			)
+			Var blankk=
+			IF(noblank=BLANK(),0,noblank)
+			RETURN blankk
+		formatString: 0
+		lineageTag: f6db39c7-eeb0-4ac4-a332-2c0e24ff88f2
+
+	measure cnt_total = [cnt_False]+[cnt_True]
+		formatString: 0
+		lineageTag: 341c31e0-a775-49bd-8ef8-62397788cce7
+
+	column Findings
+		dataType: string
+		lineageTag: 7c7d7260-bd1c-4469-91b6-287c1784348d
+		summarizeBy: none
+		sourceColumn: Findings
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		lineageTag: e4b392ef-63fc-4509-8c45-6fe2bf8ac45b
+		summarizeBy: none
+		sourceColumn: Date
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column FindingCategory
+		dataType: string
+		lineageTag: 2db98b00-00a2-4696-9d1b-5567bb871ae1
+		summarizeBy: none
+		sourceColumn: FindingCategory
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Alarm/ False Alarm'
+		dataType: string
+		lineageTag: f016eacc-91c7-4bcf-8384-83a489e6c0f6
+		summarizeBy: none
+		sourceColumn: Alarm/ False Alarm
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Alarm Type'
+		dataType: string
+		lineageTag: 1beb8368-f852-4c9f-8657-7c52972808fc
+		summarizeBy: none
+		sourceColumn: Alarm Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column DayOfMonth
+		dataType: string
+		lineageTag: 46a93354-9eef-4f2e-aa60-286aff9a77f9
+		summarizeBy: none
+		sourceColumn: DayOfMonth
+
+		annotation SummarizationSetBy = Automatic
+
+	column Weekname
+		dataType: string
+		lineageTag: f330a536-e0ce-45e2-b914-695f45735024
+		summarizeBy: none
+		sourceColumn: Weekname
+
+		annotation SummarizationSetBy = Automatic
+
+	column Radar_Location
+		dataType: string
+		lineageTag: 6335e9e1-cccf-4b6e-af29-59ca53222fb0
+		summarizeBy: none
+		sourceColumn: Radar_Location
+
+		annotation SummarizationSetBy = Automatic
+
+	column Times
+		dataType: int64
+		formatString: 0
+		lineageTag: 88c5bceb-c890-42b4-bd20-f99f7fa4f605
+		summarizeBy: sum
+		sourceColumn: Times
+
+		annotation SummarizationSetBy = Automatic
+
+	column Location
+		dataType: string
+		lineageTag: 72fd15f7-83be-474b-861b-69721c024a6f
+		summarizeBy: none
+		sourceColumn: Location
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column T/F =
+			
+			IF(
+			    'Alarm Response'[Alarm/ False Alarm]="Alarm",
+			    "🔴",
+			    "🟠"
+			)
+		lineageTag: 067c27f1-cce9-47e2-8985-c3e4fa5e7783
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column LocationEng
+		dataType: string
+		isHidden
+		lineageTag: 7181d3a4-02ad-415e-8568-c9693a8f95d0
+		summarizeBy: none
+		sourceColumn: LocationEng
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Equipment
+		dataType: string
+		lineageTag: a184575c-4215-4951-bb29-aea0d2cf64df
+		summarizeBy: none
+		sourceColumn: Equipment
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Alarm Response' = m
+		mode: import
+		source =
+				let
+				    Source = Security_Q,
+				    #"Filtered Rows" = Table.SelectRows(Source, each ([FindingCategory] = "Alarm Response")),
+				    #"Removed Other Columns" = Table.SelectColumns(#"Filtered Rows",{"Findings", "Date", "FindingCategory", "Alarm/ False Alarm", "Alarm Type", "Radar_Location", "Times", "Equipment", "Weekname", "DayOfMonth"}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Removed Other Columns",{{"Times", Int64.Type}}),
+				    #"Duplicated Column" = Table.DuplicateColumn(#"Changed Type", "Radar_Location", "Radar_Location - Copy"),
+				    #"Split Column by Delimiter" = Table.SplitColumn(#"Duplicated Column", "Radar_Location - Copy", Splitter.SplitTextByDelimiter("-", QuoteStyle.Csv), {"Radar_Location - Copy.1", "Radar_Location - Copy.2"}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Split Column by Delimiter",{"Radar_Location - Copy.2"}),
+				    #"Cleaned Text" = Table.TransformColumns(#"Removed Columns",{{"Radar_Location - Copy.1", Text.Clean, type text}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Cleaned Text",{{"Radar_Location - Copy.1", "Location"}}),
+				    #"Duplicated Column1" = Table.DuplicateColumn(#"Renamed Columns", "Location", "Location - Copy"),
+				    #"Renamed Columns1" = Table.RenameColumns(#"Duplicated Column1",{{"Location - Copy", "LocationEng"}}),
+				    #"Replaced Value" = Table.ReplaceValue(#"Renamed Columns1","防区","Area ",Replacer.ReplaceText,{"LocationEng"})
+				in
+				    #"Replaced Value"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

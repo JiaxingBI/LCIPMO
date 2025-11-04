@@ -1,0 +1,83 @@
+table 'Manned Guards Training (Non-ESPA)'
+	lineageTag: a26462bb-47f8-497f-b865-e60e17596ce2
+
+	column 培训场次
+		dataType: int64
+		formatString: 0
+		lineageTag: 12d45ebe-bd7b-4705-800e-4a01b407fda5
+		summarizeBy: sum
+		sourceColumn: 培训场次
+
+		annotation SummarizationSetBy = Automatic
+
+	column 培训时间
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 48fb0fe3-27f9-40fa-a81a-518d1c888504
+		summarizeBy: none
+		sourceColumn: 培训时间
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 培训地点
+		dataType: string
+		lineageTag: 90d93541-0f00-4a6e-b4fa-5626e6657ea7
+		summarizeBy: none
+		sourceColumn: 培训地点
+
+		annotation SummarizationSetBy = Automatic
+
+	column 培训主题
+		dataType: string
+		lineageTag: f2bd4bfd-ebdb-4f5f-8486-612cff684e03
+		summarizeBy: none
+		sourceColumn: 培训主题
+
+		annotation SummarizationSetBy = Automatic
+
+	column 授课人
+		dataType: string
+		lineageTag: eeec3894-8d9c-4a24-a40e-b30824c0e284
+		summarizeBy: none
+		sourceColumn: 授课人
+
+		annotation SummarizationSetBy = Automatic
+
+	column 参加人数
+		dataType: int64
+		formatString: 0
+		lineageTag: 8015e1be-7aef-48b1-a18a-89857e298a3d
+		summarizeBy: sum
+		sourceColumn: 参加人数
+
+		annotation SummarizationSetBy = Automatic
+
+	column 培训通过率
+		dataType: double
+		formatString: 0%;-0%;0%
+		lineageTag: a1c187f5-fe9f-4f6e-a2dd-db2b89c011a4
+		summarizeBy: sum
+		sourceColumn: 培训通过率
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Manned Guards Training (Non-ESPA)' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://legogroup.sharepoint.com/sites/JIALCI/Shared%20Documents/General/03_BI/01_Project%20List/02.%20Project%20List/09.%20Security%20Digital%20Huddle/%E5%9F%B9%E8%AE%AD&%E4%BD%93%E8%83%BD%E8%AE%AD%E7%BB%83(Non-ESPA).xlsx"), null, true),
+				    Table1_Table = Source{[Item="MannedGuardsTrainingNonESPA",Kind="Table"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(Table1_Table,{{"培训场次", Int64.Type}, {"培训时间", type date}, {"培训地点", type text}, {"培训主题", type text}, {"授课人", type text}, {"参加人数", Int64.Type}, {"培训通过率", type any}}),
+				    #"Filtered Rows" = Table.SelectRows(#"Changed Type", each ([培训场次] <> null)),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Filtered Rows",{{"培训通过率", type number}}),
+				    #"Replaced Errors" = Table.ReplaceErrorValues(#"Changed Type1", {{"培训通过率", null}}),
+				    #"Changed Type2" = Table.TransformColumnTypes(#"Replaced Errors",{{"培训通过率", Percentage.Type}})
+				in
+				    #"Changed Type2"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Exception
+

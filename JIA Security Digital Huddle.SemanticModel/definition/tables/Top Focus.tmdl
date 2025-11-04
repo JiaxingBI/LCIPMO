@@ -1,0 +1,97 @@
+table 'Top Focus'
+	lineageTag: ad9524ee-fb8b-442c-807c-99cad36e0536
+
+	column 'No.'
+		dataType: string
+		lineageTag: 0877d2fd-5a2f-4d2e-a2c0-ea5d26bd00b9
+		summarizeBy: none
+		sourceColumn: No.
+
+		annotation SummarizationSetBy = Automatic
+
+	column WeekStartDate =
+			
+			VAR FirstDayOfYear = DATE(2025, 1, 1)
+			VAR DayOfWeekFirstDay = WEEKDAY(FirstDayOfYear, 2)  // 2表示周一=1
+			VAR DaysToAdd = ('Top Focus'[WeekNum] - 1) * 7 - (DayOfWeekFirstDay - 1)
+			RETURN
+			IF(
+			    CONTAINSSTRING('Top Focus'[QMW], "WK"),
+			    FirstDayOfYear + DaysToAdd,
+			    BLANK()
+			)
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 22133945-e594-4667-9cd1-8d081111eb0f
+		summarizeBy: none
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column WeekNum
+		dataType: string
+		lineageTag: ee18b0bd-0dcd-49ef-8b8a-14fb8a5cc443
+		summarizeBy: none
+		sourceColumn: WeekNum
+
+		annotation SummarizationSetBy = Automatic
+
+	column When
+		dataType: string
+		lineageTag: 3b32566e-6d1d-4aa0-b931-879fba7c225a
+		summarizeBy: none
+		sourceColumn: When
+
+		annotation SummarizationSetBy = Automatic
+
+	column QMW
+		dataType: string
+		lineageTag: 14bbd976-5bf6-4d86-89b1-f0ec97af6d8d
+		summarizeBy: none
+		sourceColumn: QMW
+
+		annotation SummarizationSetBy = Automatic
+
+	column What
+		dataType: string
+		lineageTag: 9304b13d-89a0-4196-ac6f-a4bcd08872eb
+		summarizeBy: none
+		sourceColumn: What
+
+		annotation SummarizationSetBy = Automatic
+
+	column Index = [QMW]&"-"&[No.]
+		lineageTag: 61ee53a7-214a-43a0-a344-944b130e7e6b
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Top Focus' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://legogroup.sharepoint.com/sites/CHJiaxingSecurity/Shared%20Documents/00%20Digital%20Huddle/Security%20Huddle%20Update.xlsx")),
+				    #"Top Focus_Sheet" = Source{[Item="Top Focus",Kind="Sheet"]}[Data],
+				    #"Removed Top Rows1" = Table.Skip(#"Top Focus_Sheet",1),
+				    #"Promoted Headers1" = Table.PromoteHeaders(#"Removed Top Rows1", [PromoteAllScalars=true]),
+				    #"Removed Blank Rows1" = Table.SelectRows(#"Promoted Headers1", each not List.IsEmpty(List.RemoveMatchingItems(Record.FieldValues(_), {"", null}))),
+				    #"Renamed Columns" = Table.RenameColumns(#"Removed Blank Rows1", {"Column2", "QMW"}),
+				    #"Filled Down" = Table.FillDown(#"Renamed Columns",{"When", "QMW", "No.", "What"}),
+				    #"Trimmed Text" = Table.TransformColumns(#"Filled Down",{{"What", Text.Trim, type text}}),
+				    #"Added Custom" = Table.AddColumn(#"Trimmed Text", "WeekNum", each let
+				            txt = [QMW]
+				        in
+				            if Text.StartsWith(txt, "WK") then
+				                try Number.From(Text.Middle(txt, 2)) otherwise null
+				            else
+				                null)
+				in
+				    #"Added Custom"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

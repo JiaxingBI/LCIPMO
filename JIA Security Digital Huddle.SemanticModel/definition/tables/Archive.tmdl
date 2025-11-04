@@ -1,0 +1,33 @@
+table Archive
+	lineageTag: 67a2ecc2-5477-4fdf-8b45-c29d46c3d1d1
+
+	column Archive
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 876f11e4-47c3-4e66-95e8-7fb93f0593bf
+		summarizeBy: none
+		sourceColumn: Archive
+
+		annotation SummarizationSetBy = Automatic
+
+	column Filter
+		dataType: string
+		lineageTag: 85bc6e53-5205-48fc-a868-3a81c0806077
+		summarizeBy: none
+		sourceColumn: Filter
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Archive = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45WcnP0CXZV0lHyL0jNU4rViVYKCQoF8Z1z8otTU5RiYwE=", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Archive = _t, Filter = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Archive", type logical}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

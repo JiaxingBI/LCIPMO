@@ -1,0 +1,73 @@
+table 'Attendance & Absence(Non-ESPA)'
+	lineageTag: 2235d537-46b7-4629-9eab-bad4a3d5d730
+
+	column 'Shift 班次'
+		dataType: string
+		lineageTag: bc9414f4-539a-489b-863b-74e12768d97c
+		summarizeBy: none
+		sourceColumn: Shift 班次
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Position 岗位'
+		dataType: string
+		lineageTag: f457a88b-1269-4ef1-b8f1-1cd8b28230e3
+		summarizeBy: none
+		sourceColumn: Position 岗位
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Name 姓名'
+		dataType: string
+		lineageTag: 110ef264-9cf8-4ba6-8824-3db0871b7194
+		summarizeBy: none
+		sourceColumn: Name 姓名
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Photo 照片'
+		dataType: string
+		lineageTag: 99578585-a73c-4c0a-a100-d260e61e786a
+		summarizeBy: none
+		sourceColumn: Photo 照片
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Status 状态'
+		dataType: string
+		lineageTag: bbf41234-8ef5-4304-8a87-7a9cea008af4
+		summarizeBy: none
+		sourceColumn: Status 状态
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Support Staff '
+		dataType: string
+		lineageTag: db9e26cc-7619-452b-b59b-ab8eb8d561f3
+		summarizeBy: none
+		sourceColumn: "Support Staff "
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Note 备注'
+		dataType: string
+		lineageTag: f9b1009b-d8a1-4f73-b6f7-f525f61ffca5
+		summarizeBy: none
+		sourceColumn: Note 备注
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Attendance & Absence(Non-ESPA)' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://legogroup.sharepoint.com/sites/JIALCI/Shared%20Documents/General/03_BI/01_Project%20List/02.%20Project%20List/09.%20Security%20Digital%20Huddle/Security%20Huddle%20Update.xlsx"), null, true),
+				    #"Attendance & Absence(Non-ESPA)_Sheet" = Source{[Item="Attendance & Absence(Non-ESPA)",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Attendance & Absence(Non-ESPA)_Sheet", [PromoteAllScalars=true])
+				in
+				    #"Promoted Headers"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

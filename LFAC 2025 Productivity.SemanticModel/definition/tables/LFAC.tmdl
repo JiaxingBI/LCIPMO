@@ -1,0 +1,161 @@
+table LFAC
+	lineageTag: f4c70548-bf69-43fc-9ec6-b7314e6f3f15
+
+	column Version
+		dataType: int64
+		formatString: 0
+		lineageTag: e5d8a5e8-4997-4ec2-a556-d4e313d20acc
+		summarizeBy: none
+		sourceColumn: Version
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'No.'
+		dataType: string
+		lineageTag: 3bacbf8f-0d2d-4f58-9175-e0f96da1d34f
+		summarizeBy: none
+		sourceColumn: No.
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Project name'
+		dataType: string
+		lineageTag: 2948e831-fc89-4138-97f3-ef5fe8846294
+		summarizeBy: none
+		sourceColumn: Project name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Project leader'
+		dataType: string
+		lineageTag: 18316f93-21c6-463a-8642-3702559e98a2
+		summarizeBy: none
+		sourceColumn: Project leader
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Saving updater'
+		dataType: string
+		lineageTag: 8ada442e-b4b2-43b5-92a8-b6ee974742b4
+		summarizeBy: none
+		sourceColumn: Saving updater
+
+		annotation SummarizationSetBy = Automatic
+
+	column Category
+		dataType: string
+		lineageTag: d7c43d3f-019b-4fcf-80d9-a1006fcf47c8
+		summarizeBy: none
+		sourceColumn: Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Value Type'
+		dataType: string
+		lineageTag: 9d42cef6-24d8-4572-b577-f872ddc7663b
+		summarizeBy: none
+		sourceColumn: Value Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tracker Category'
+		dataType: string
+		lineageTag: 4585a6b5-2517-413c-b76b-75ff0a89bc23
+		summarizeBy: none
+		sourceColumn: Tracker Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthNum
+		dataType: int64
+		formatString: 0
+		lineageTag: 554d0397-df0f-40d9-94b8-635cf6abdbb6
+		summarizeBy: sum
+		sourceColumn: MonthNum
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		dataType: double
+		lineageTag: 6ce0bbeb-c512-44a9-9f1c-4371d66d9a0f
+		summarizeBy: sum
+		sourceColumn: Value
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column IL
+		dataType: string
+		lineageTag: 1cef53c5-d65c-4b01-b0fb-9fa67ce70de7
+		summarizeBy: none
+		sourceColumn: IL
+
+		annotation SummarizationSetBy = Automatic
+
+	column VersionMonth
+		dataType: string
+		lineageTag: 6408b027-379a-4f30-9934-1a35116f599f
+		summarizeBy: none
+		sourceColumn: VersionMonth
+
+		annotation SummarizationSetBy = Automatic
+
+	partition LFAC = m
+		mode: import
+		source =
+				let
+				    Source = SharePoint.Contents("https://legogroup.sharepoint.com/sites/Productivity2020", [ApiVersion = 15]),
+				    #"Shared Documents" = Source{[Name="Shared Documents"]}[Content],
+				    General = #"Shared Documents"{[Name="General"]}[Content],
+				    #"Overall Productivity tracker" = General{[Name="Overall Productivity tracker"]}[Content],
+				    #"2025 Locked" = #"Overall Productivity tracker"{[Name="2025 Locked"]}[Content],
+				    #"Filtered Rows" = Table.SelectRows(#"2025 Locked", each ([Name] <> "LFAC Productivity Tracker - Feb 2025.xlsx")),
+				    #"Added Custom" = Table.AddColumn(#"Filtered Rows", "Custom", each Excel.Workbook([Content])),
+				    #"Removed Other Columns" = Table.SelectColumns(#"Added Custom",{"Date created", "Custom"}),
+				    #"Extracted Month" = Table.TransformColumns(#"Removed Other Columns",{{"Date created", Date.Month, Int64.Type}}),
+				    #"Subtracted from Column" = Table.TransformColumns(#"Extracted Month", {{"Date created", each _ - 1, type number}}),
+				    #"Expanded Custom" = Table.ExpandTableColumn(#"Subtracted from Column", "Custom", {"Name", "Data", "Item", "Kind", "Hidden"}, {"Name", "Data", "Item", "Kind", "Hidden"}),
+				    #"Filtered Rows1" = Table.SelectRows(#"Expanded Custom", each ([Name] = "LFAC calculation")),
+				    #"Removed Columns" = Table.RemoveColumns(#"Filtered Rows1",{"Name", "Item", "Kind", "Hidden"}),
+				    #"Expanded Data" = Table.ExpandTableColumn(#"Removed Columns", "Data", {"Column1", "Column2", "Column3", "Column4", "Column5", "Column6", "Column7", "Column8", "Column9", "Column10", "Column11", "Column12", "Column13", "Column14", "Column15", "Column16", "Column17", "Column18", "Column19", "Column20", "Column21", "Column22", "Column23", "Column24", "Column25", "Column26", "Column27", "Column28", "Column29", "Column30", "Column31", "Column32", "Column33", "Column34", "Column35", "Column36", "Column37", "Column38", "Column39", "Column40", "Column41", "Column42"}, {"Column1", "Column2", "Column3", "Column4", "Column5", "Column6", "Column7", "Column8", "Column9", "Column10", "Column11", "Column12", "Column13", "Column14", "Column15", "Column16", "Column17", "Column18", "Column19", "Column20", "Column21", "Column22", "Column23", "Column24", "Column25", "Column26", "Column27", "Column28", "Column29", "Column30", "Column31", "Column32", "Column33", "Column34", "Column35", "Column36", "Column37", "Column38", "Column39", "Column40", "Column41", "Column42"}),
+				    #"Filtered Rows5" = Table.SelectRows(#"Expanded Data", each true),
+				    #"Grouped Rows" = Table.Group(#"Filtered Rows5", {"Date created", "Column1"}, {{"Count", each _}}, GroupKind.Local, (x, y) => Number.From(y[Column1] = "Saving tracker(MDKK)")),
+				    #"Removed Top Rows" = Table.Skip(#"Grouped Rows",1),
+				    #"Removed Columns1" = Table.RemoveColumns(#"Removed Top Rows",{"Column1", "Date created"}),
+				    #"Expanded Count" = Table.ExpandTableColumn(#"Removed Columns1", "Count", {"Date created", "Column1", "Column2", "Column3", "Column4", "Column5", "Column6", "Column7", "Column8", "Column9", "Column10", "Column11", "Column12", "Column13", "Column14", "Column15", "Column16", "Column17", "Column18", "Column19", "Column20", "Column21", "Column22", "Column23", "Column24", "Column25", "Column26", "Column27", "Column28", "Column29", "Column30", "Column31", "Column32", "Column33", "Column34", "Column35", "Column36", "Column37", "Column38", "Column39", "Column40", "Column41", "Column42"}, {"Date created", "Column1", "Column2", "Column3", "Column4", "Column5", "Column6", "Column7", "Column8", "Column9", "Column10", "Column11", "Column12", "Column13", "Column14", "Column15", "Column16", "Column17", "Column18", "Column19", "Column20", "Column21", "Column22", "Column23", "Column24", "Column25", "Column26", "Column27", "Column28", "Column29", "Column30", "Column31", "Column32", "Column33", "Column34", "Column35", "Column36", "Column37", "Column38", "Column39", "Column40", "Column41", "Column42"}),
+				    #"Removed Columns2" = Table.RemoveColumns(#"Expanded Count",{"Column23", "Column24", "Column25", "Column26", "Column27", "Column28", "Column29", "Column30", "Column31", "Column32", "Column33", "Column34", "Column35", "Column36", "Column37", "Column38", "Column39", "Column40", "Column41", "Column42"}),
+				    #"Filtered Rows6" = Table.SelectRows(#"Removed Columns2", each true),
+				    #"Filtered Rows2" = Table.SelectRows(#"Filtered Rows6", each ([Column21] <> null)),
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Filtered Rows2", [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"3", Int64.Type}, {"No.", type any}, {"Project name", type text}, {"Project leader", type text}, {"Saving updater", type text}, {"Category", type text}, {"Value Type", type text}, {"1", type number}, {"2", type number}, {"3_1", type number}, {"4", type number}, {"5", type number}, {"6", type number}, {"7", type number}, {"8", type number}, {"9", type number}, {"10", type number}, {"11", type number}, {"12", type number}, {"YTD Saving#(lf)(m DKK)", type text}, {"Total Target#(lf)(m DKK)", type any}, {"Tracker Category", type text}}),
+				    #"Filtered Rows3" = Table.SelectRows(#"Changed Type", each ([Tracker Category] <> "Tracker Category")),
+				    #"Renamed Columns" = Table.RenameColumns(#"Filtered Rows3",{{"3", "Version"}}),
+				    #"Filtered Rows4" = Table.SelectRows(#"Renamed Columns", each true),
+				    #"Filled Down" = Table.FillDown(#"Filtered Rows4",{"No.", "Project name", "Project leader", "Saving updater", "Category"}),
+				    #"Removed Columns3" = Table.RemoveColumns(#"Filled Down",{"YTD Saving#(lf)(m DKK)", "Total Target#(lf)(m DKK)"}),
+				    #"Renamed Columns1" = Table.RenameColumns(#"Removed Columns3",{{"3_1", "3"}}),
+				    #"Replaced Value" = Table.ReplaceValue(#"Renamed Columns1",null,0,Replacer.ReplaceValue,{"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"}),
+				    #"Unpivoted Columns" = Table.UnpivotOtherColumns(#"Replaced Value", {"Version", "No.", "Project name", "Project leader", "Saving updater", "Category", "Value Type", "Tracker Category", "IL"}, "Attribute", "Value"),
+				    #"Renamed Columns2" = Table.RenameColumns(#"Unpivoted Columns",{{"Attribute", "MonthNum"}}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Renamed Columns2",{{"MonthNum", Int64.Type}}),
+				    #"Added Custom1" = Table.AddColumn(#"Changed Type1", "VersionMonth", each if [Version] = 1 then "January"
+				         else if [Version] = 2 then "February"
+				         else if [Version] = 3 then "March"
+				         else if [Version] = 4 then "April"
+				         else if [Version] = 5 then "May"
+				         else if [Version] = 6 then "June"
+				         else if [Version] = 7 then "July"
+				         else if [Version] = 8 then "August"
+				         else if [Version] = 9 then "September"
+				         else if [Version] = 10 then "October"
+				         else if [Version] = 11 then "November"
+				         else if [Version] = 12 then "December"
+				         else "Unknown")
+				in
+				    #"Added Custom1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,197 @@
+table 'Visitors Today'
+	lineageTag: 63af9e0a-ea9f-461e-8daa-87c8c6dd19cb
+
+	measure Period =
+			
+			VAR curDate = TODAY()
+			VAR startD = MAX('Visitors Today'[StartDate_])
+			VAR finalD = MAX('Visitors Today'[FinalDate_])
+			RETURN
+			IF(curDate >= startD && curDate <= finalD, 1, 0)
+		formatString: 0
+		lineageTag: 21dead70-f982-4eeb-8eae-11868a953942
+
+	column Time
+		dataType: string
+		lineageTag: 6434c4ac-7551-48a7-aa27-c89da4d92117
+		summarizeBy: none
+		sourceColumn: Time
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Visitors From'
+		dataType: string
+		lineageTag: f60566a9-5c2b-432d-ada5-f8a1498a2079
+		summarizeBy: none
+		sourceColumn: Visitors From
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Visitor Qty '
+		dataType: string
+		lineageTag: 8cb0185f-682a-447a-b5d2-110ffc92e4c0
+		summarizeBy: none
+		sourceColumn: "Visitor Qty "
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Location '
+		dataType: string
+		lineageTag: a7667347-fbe9-4174-8dc7-2fbb26f199d8
+		summarizeBy: none
+		sourceColumn: "Location "
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Visting Area'
+		dataType: string
+		lineageTag: 0c01fa05-128a-454e-863b-9fefecc9a11e
+		summarizeBy: none
+		sourceColumn: Visting Area
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Security Request'
+		dataType: string
+		lineageTag: 991f9c71-f97c-4b1b-b7d6-c971779a179c
+		summarizeBy: none
+		sourceColumn: Security Request
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'LEGO Department'
+		dataType: string
+		lineageTag: 06d92d77-0352-4437-b525-18134890800b
+		summarizeBy: none
+		sourceColumn: LEGO Department
+
+		annotation SummarizationSetBy = Automatic
+
+	column N
+		dataType: int64
+		formatString: 0
+		lineageTag: 9603ba7c-7a17-41db-86c5-1e701d761e00
+		summarizeBy: sum
+		sourceColumn: N
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Enter Position'
+		dataType: string
+		lineageTag: 801f67fd-4ead-4b6f-8e43-16b132d96c4d
+		summarizeBy: none
+		sourceColumn: Enter Position
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ESPA Escort'
+		dataType: string
+		lineageTag: 0103310c-d21d-4bdd-a92f-a28003cb51c1
+		summarizeBy: none
+		sourceColumn: ESPA Escort
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Non-ESPA Escort'
+		dataType: string
+		lineageTag: afe05348-c377-46c3-b789-b6927a407a32
+		summarizeBy: none
+		sourceColumn: Non-ESPA Escort
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'LEGO HOST'
+		dataType: string
+		lineageTag: 8bf5dec3-d1b1-484e-8f7f-bab8f4488b18
+		summarizeBy: none
+		sourceColumn: LEGO HOST
+
+		annotation SummarizationSetBy = Automatic
+
+	column ' Contact PersonEleanor Xiang :13252319198'
+		dataType: string
+		lineageTag: cdb925ad-4510-483a-a1bb-ef27320c4dff
+		summarizeBy: none
+		sourceColumn: " Contact PersonEleanor Xiang :13252319198"
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: string
+		isHidden
+		lineageTag: 6c0aef20-72a7-4faa-8c3b-db3f80894946
+		summarizeBy: none
+		sourceColumn: Date
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column StartDate_
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 12472019-a55e-431a-b7bf-05d8ccad3060
+		summarizeBy: none
+		sourceColumn: StartDate_
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column FinalDate_
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 8d184260-50a6-4f2d-8ea6-559001972478
+		summarizeBy: none
+		sourceColumn: FinalDate_
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition 'Visitors Today' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://legogroup.sharepoint.com/sites/CHJiaxingSecurity/Shared%20Documents/00%20Digital%20Huddle/Security%20Huddle%20Update.xlsx"), null, true),
+				    #"Visitor(s) Today_Sheet" = Source{[Item="Visitor(s) Today",Kind="Sheet"]}[Data],
+				    #"Removed Top Rows" = Table.Skip(#"Visitor(s) Today_Sheet",1),
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Removed Top Rows", [PromoteAllScalars=true]),
+				    #"Removed Blank Rows" = Table.SelectRows(#"Promoted Headers", each not List.IsEmpty(List.RemoveMatchingItems(Record.FieldValues(_), {"", null}))),
+				    #"Duplicated Column" = Table.DuplicateColumn(#"Removed Blank Rows", "Date", "Date - Copy"),
+				    #"Trimmed Text" = Table.TransformColumns(Table.TransformColumnTypes(#"Duplicated Column", {{"Date - Copy", type text}}, "zh-CN"), {{"Date - Copy", Text.Trim, type text}}),
+				    #"Split Column by Delimiter" = Table.SplitColumn(#"Trimmed Text", "Date - Copy", Splitter.SplitTextByEachDelimiter({"-"}, QuoteStyle.Csv, false), {"Date - Copy.1", "Date - Copy.2"}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Split Column by Delimiter",{{"Date - Copy.1", "Start Date"},{"Date - Copy.2", "Final Date"}}),
+				
+				    #"Has 4 Digit Year" = Table.AddColumn(#"Renamed Columns", "HasYear", each Text.Length(Text.Select([Start Date], {"0".."9"})) >= 4),
+				    #"Added Custom" = Table.AddColumn(#"Has 4 Digit Year", "HasYear2", each Text.Length(Text.Select([Final Date], {"0".."9"})) >= 4),
+				
+				    #"SlashToSpace" = Table.AddColumn(#"Added Custom", "Norm2", each Text.Replace([Start Date], "/", " ")),
+				    #"Added Custom1" = Table.AddColumn(SlashToSpace, "Norm", each Text.Replace([Final Date], "/", " ")),
+				
+				    CurrentYearText = Text.From(Date.Year(DateTime.LocalNow())),
+				    #"Add Year If Missing" = Table.AddColumn(#"Added Custom1", "NormWithYear",
+				        each if [HasYear] then Text.Trim([Norm2]) else Text.Trim([Norm2] & " " & CurrentYearText), type text),
+				    #"Added Custom2" = Table.AddColumn(#"Add Year If Missing", "NormwithYear.1", each if [HasYear] then Text.Trim([Norm]) else Text.Trim([Norm] & " " & CurrentYearText)),
+				    #"Try Parse NormWithYear" = Table.AddColumn(#"Added Custom2", "Parsed",
+				        each try Date.FromText([NormWithYear], "en-US") otherwise null, type nullable date),
+				    #"Added Custom3" = Table.AddColumn(#"Try Parse NormWithYear", "Parse2", each try Date.FromText([NormwithYear.1], "en-US") otherwise null),
+				
+				    #"Fallback Parse Original" = Table.AddColumn(#"Added Custom3", "ParsedFallback",
+				        each if [Parsed] = null then (try Date.FromText([Date]) otherwise null) else [Parsed], type nullable date),
+				    #"Added Custom4" = Table.AddColumn(#"Fallback Parse Original", "ParseFallBack2", each if [Parsed] = null then (try Date.FromText([Date]) otherwise null) else [Parsed]),
+				
+				    #"Final Date Column" = Table.AddColumn(#"Added Custom4", "StartDate_", each if [Parsed] <> null then [Parsed] else [ParsedFallback]),
+				    #"Added Conditional Column" = Table.AddColumn(#"Final Date Column", "FinalDate_", each if [Parse2] <> null then [Parse2] else [ParseFallBack2]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Added Conditional Column",{{"FinalDate_", type date}, {"StartDate_", type date}}),
+				    colsToKeep = List.Distinct(List.Combine({Table.ColumnNames(#"Removed Blank Rows"), {"FinalDate_","StartDate_"}})),
+				    #"Keep Original + Final" = Table.SelectColumns(#"Changed Type", List.Intersect({Table.ColumnNames(#"Changed Type"), colsToKeep})),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Keep Original + Final",{{"N", Int64.Type}}),
+				    #"Trimmed Text1" = Table.TransformColumns(#"Changed Type1",{{"LEGO HOST", Text.Trim, type text}, {" Contact Person#(lf)Eleanor Xiang :13252319198", Text.Trim, type text}, {"LEGO Department", Text.Trim, type text}})
+				in
+				    #"Trimmed Text1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

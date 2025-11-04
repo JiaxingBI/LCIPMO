@@ -2,7 +2,7 @@ cultureInfo en-US
 
 	linguisticMetadata =
 			{
-			  "Version": "3.5.0",
+			  "Version": "4.1.0",
 			  "Language": "en-US",
 			  "Entities": {
 			    "LFAC_electricity_40_0v": {
@@ -92,234 +92,34 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "LFAC_electricity_40_0v.area": {
+			    "LFAC_electricity_40_0v.使用区域": {
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "LFAC_Electricity400v",
-			          "ConceptualProperty": "Area"
+			          "ConceptualProperty": "使用区域"
 			        }
 			      },
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "area": {
+			          "使用区域": {
 			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "region": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.736
-			          }
-			        },
-			        {
-			          "locale": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.736
-			          }
-			        },
-			        {
-			          "locality": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.736
-			          }
-			        },
-			        {
-			          "neighbourhood": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.736
-			          }
-			        },
-			        {
-			          "district": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.714
-			          }
-			        },
-			        {
-			          "continent": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.714
-			          }
-			        },
-			        {
-			          "field": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.714
-			          }
-			        },
-			        {
-			          "neighborhood": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.714
-			          }
-			        },
-			        {
-			          "section": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.714
-			          }
-			        },
-			        {
-			          "space": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.714
 			          }
 			        }
 			      ]
 			    },
-			    "LFAC_electricity_40_0v.function": {
+			    "LFAC_electricity_40_0v.功能分类": {
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "LFAC_Electricity400v",
-			          "ConceptualProperty": "Function"
+			          "ConceptualProperty": "功能分类"
 			        }
 			      },
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "function": {
+			          "功能分类": {
 			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "role": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "occupation": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "purpose": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "meaning": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "job": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "task": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "utility": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "affair": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.466
-			          }
-			        },
-			        {
-			          "soiree": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.466
-			          }
-			        },
-			        {
-			          "soirée": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.466
 			          }
 			        }
 			      ]
@@ -473,362 +273,6 @@ cultureInfo en-US
 			              "Agent": "Thesaurus"
 			            },
 			            "Weight": 0.466
-			          }
-			        }
-			      ]
-			    },
-			    "calendar": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Calendar"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "calendar": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "almanac": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "datebook": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "agenda": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "logbook": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "diary": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "schedule": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "timetable": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        }
-			      ]
-			    },
-			    "calendar.date": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Calendar",
-			          "ConceptualProperty": "Date"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "date": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "moment": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.736
-			          }
-			        },
-			        {
-			          "period": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.714
-			          }
-			        }
-			      ],
-			      "SemanticType": "Time"
-			    },
-			    "calendar.year": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Calendar",
-			          "ConceptualProperty": "Year"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "year": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "yr": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.736
-			          }
-			        }
-			      ],
-			      "SemanticType": "Time"
-			    },
-			    "calendar.month": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Calendar",
-			          "ConceptualProperty": "Month"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "month": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "mth": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.736
-			          }
-			        }
-			      ]
-			    },
-			    "calendar.year_month": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Calendar",
-			          "ConceptualProperty": "YearMonth"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "year month": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "YearMonth": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.99
-			          }
-			        },
-			        {
-			          "year mth": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.75
-			          }
-			        },
-			        {
-			          "yr month": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.6
-			          }
-			        }
-			      ]
-			    },
-			    "calendar.year_month_order": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Calendar",
-			          "ConceptualProperty": "YearMonthOrder"
-			        }
-			      },
-			      "State": "Generated",
-			      "Visibility": {
-			        "Value": "Hidden"
-			      },
-			      "Terms": [
-			        {
-			          "year month order": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "YearMonthOrder": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.99
-			          }
-			        },
-			        {
-			          "order": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "month order": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "yr month order": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.609
-			          }
-			        },
-			        {
-			          "year mth order": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.609
-			          }
-			        },
-			        {
-			          "mth order": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.6
-			          }
-			        },
-			        {
-			          "year month instruction": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.508
-			          }
-			        },
-			        {
-			          "year month direction": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.508
-			          }
-			        },
-			        {
-			          "year month edict": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.508
-			          }
-			        },
-			        {
-			          "month instruction": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.5
-			          }
-			        },
-			        {
-			          "month direction": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.5
-			          }
-			        },
-			        {
-			          "month edict": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.5
-			          }
-			        },
-			        {
-			          "year month command": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.492
 			          }
 			        }
 			      ]
@@ -1044,7 +488,7 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "entity__measure.total_number": {
+			    "entity__measure.eletricity_usage": {
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "_Measure",
@@ -1054,45 +498,108 @@ cultureInfo en-US
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "total number": {
+			          "eletricity usage": {
 			            "State": "Generated"
 			          }
 			        },
 			        {
-			          "TotalNumber": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.99
-			          }
-			        },
-			        {
-			          "total no": {
+			          "eletricity tradition": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.727
+			            "Weight": 0.5
 			          }
 			        },
 			        {
-			          "aggregate number": {
+			          "eletricity procedure": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.582
+			            "Weight": 0.5
 			          }
 			        },
 			        {
-			          "overall number": {
+			          "eletricity convention": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.582
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "eletricity norm": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "eletricity practice": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "eletricity custom": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "eletricity habit": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "eletricity treatment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
+			          }
+			        },
+			        {
+			          "eletricity manipulation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
+			          }
+			        },
+			        {
+			          "eletricity handling": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.461
 			          }
 			        }
 			      ]
@@ -2149,236 +1656,213 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "dim_electricity_area": {
+			    "entity__measure.占比": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "dim_electricityArea"
+			          "ConceptualEntity": "_Measure",
+			          "ConceptualProperty": "占比%"
 			        }
 			      },
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "dim electricity area": {
+			          "占比%": {
 			            "State": "Generated"
 			          }
 			        },
 			        {
-			          "dim_electricityArea": {
+			          "占比 percentage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "占比 pct": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        }
+			      ]
+			    },
+			    "entity__measure.running_total": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measure",
+			          "ConceptualProperty": "RunningTotal"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "running total": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "RunningTotal": {
 			            "Type": "Noun",
 			            "State": "Generated",
 			            "Weight": 0.99
 			          }
 			        },
 			        {
-			          "electricity area": {
+			          "running aggregate": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "running overall": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        }
+			      ]
+			    },
+			    "entity__measure.selected_now": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measure",
+			          "ConceptualProperty": "SelectedNow"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "selected now": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "SelectedNow": {
+			            "Type": "Noun",
 			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "dim electricity region": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.762
-			          }
-			        },
-			        {
-			          "dim electricity locale": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.762
-			          }
-			        },
-			        {
-			          "dim electricity locality": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.762
-			          }
-			        },
-			        {
-			          "dim electricity neighbourhood": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.762
-			          }
-			        },
-			        {
-			          "electricity region": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.75
-			          }
-			        },
-			        {
-			          "electricity locale": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.75
-			          }
-			        },
-			        {
-			          "electricity locality": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.75
-			          }
-			        },
-			        {
-			          "electricity neighbourhood": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.75
-			          }
-			        },
-			        {
-			          "dim electricity district": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.739
-			          }
-			        },
-			        {
-			          "dim electricity continent": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.739
+			            "Weight": 0.99
 			          }
 			        }
 			      ]
 			    },
-			    "dim_electricity_area.production": {
+			    "entity__measure.label_accum": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "dim_electricityArea",
-			          "ConceptualProperty": "Production"
+			          "ConceptualEntity": "_Measure",
+			          "ConceptualProperty": "LabelAccum"
 			        }
 			      },
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "production": {
+			          "label accum": {
 			            "State": "Generated"
 			          }
 			        },
 			        {
-			          "construction": {
+			          "LabelAccum": {
 			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
+			            "State": "Generated",
+			            "Weight": 0.99
 			          }
 			        },
 			        {
-			          "creation": {
+			          "sticker accum": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.491
+			            "Weight": 0.6
 			          }
 			        },
 			        {
-			          "invention": {
+			          "tag accum": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.491
+			            "Weight": 0.582
 			          }
 			        },
 			        {
-			          "fabrication": {
+			          "decal accum": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.491
+			            "Weight": 0.582
 			          }
 			        },
 			        {
-			          "assembly": {
+			          "name tag accum": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "manufacture": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "making": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
+			            "Weight": 0.471
 			          }
 			        }
 			      ]
 			    },
-			    "dim_electricity_area.area": {
+			    "LFAC_aircompressor": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "dim_electricityArea",
-			          "ConceptualProperty": "Area"
+			          "ConceptualEntity": "LFAC_Aircompressor"
 			        }
 			      },
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "area": {
+			          "LFAC aircompressor": {
 			            "State": "Generated"
 			          }
 			        },
 			        {
-			          "region": {
+			          "LFAC_Aircompressor": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "LFAC_aircompressor.date": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "LFAC_Aircompressor",
+			          "ConceptualProperty": "Date"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "date": {
+			            "Type": "Noun",
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "moment": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -2388,13 +1872,30 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "locale": {
+			          "period": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.736
+			            "Weight": 0.714
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "LFAC_aircompressor.location": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "LFAC_Aircompressor",
+			          "ConceptualProperty": "Location"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "location": {
+			            "State": "Generated"
 			          }
 			        },
 			        {
@@ -2408,7 +1909,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "neighbourhood": {
+			          "placement": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -2418,7 +1919,27 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "district": {
+			          "scene": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "venue": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "address": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -2428,7 +1949,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "continent": {
+			          "place": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -2438,7 +1959,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "field": {
+			          "position": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -2448,7 +1969,419 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "neighborhood": {
+			          "setting": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "site": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "spot": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        }
+			      ]
+			    },
+			    "LFAC_aircompressor.value": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "LFAC_Aircompressor",
+			          "ConceptualProperty": "Value"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "value": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "assessment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "worth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "price": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "cost": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "charge": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "rate": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "importance": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "significance": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "usefulness": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "consequence": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        }
+			      ]
+			    },
+			    "LFAC_gas": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "LFAC_Gas"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "LFAC gas": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "LFAC_Gas": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "gas": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "lfac air": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "lfac vapor": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "lfac fume": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "lfac smoke": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "air": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "vapor": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "fume": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "smoke": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "lfac blast": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.461
+			          }
+			        },
+			        {
+			          "lfac thrill": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.461
+			          }
+			        }
+			      ]
+			    },
+			    "LFAC_gas.cabinet": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "LFAC_Gas",
+			          "ConceptualProperty": "Cabinet"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "cabinet": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "cupboard": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "breakfront": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "dresser": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        }
+			      ]
+			    },
+			    "LFAC_gas.能源种类": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "LFAC_Gas",
+			          "ConceptualProperty": "能源种类"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "能源种类": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "LFAC_gas.unit": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "LFAC_Gas",
+			          "ConceptualProperty": "Unit"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "unit": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "module": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "element": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "entity": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "component": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "constituent": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "item": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "part": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -2466,9 +2399,458 @@ cultureInfo en-US
 			            },
 			            "Weight": 0.714
 			          }
+			        }
+			      ]
+			    },
+			    "LFAC_gas.备注": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "LFAC_Gas",
+			          "ConceptualProperty": "备注"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "备注": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "LFAC_gas.date": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "LFAC_Gas",
+			          "ConceptualProperty": "Date"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "date": {
+			            "Type": "Noun",
+			            "State": "Generated"
+			          }
 			        },
 			        {
-			          "space": {
+			          "moment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "period": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "LFAC_gas.value": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "LFAC_Gas",
+			          "ConceptualProperty": "Value"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "value": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "assessment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "worth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "price": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "cost": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "charge": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "rate": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "importance": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "significance": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "usefulness": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "consequence": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        }
+			      ]
+			    },
+			    "LFAC_water": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "LFAC_Water"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "LFAC water": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "LFAC_Water": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "water": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "aquatic": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "marine": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "sea": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "river": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "lfac rainwater": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
+			          }
+			        },
+			        {
+			          "lfac seawater": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
+			          }
+			        },
+			        {
+			          "lfac H2O": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
+			          }
+			        },
+			        {
+			          "rainwater": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "seawater": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "H2O": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        }
+			      ]
+			    },
+			    "LFAC_water.cabinet": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "LFAC_Water",
+			          "ConceptualProperty": "Cabinet"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "cabinet": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "cupboard": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "breakfront": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "dresser": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        }
+			      ]
+			    },
+			    "LFAC_water.能源种类": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "LFAC_Water",
+			          "ConceptualProperty": "能源种类"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "能源种类": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "LFAC_water.unit": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "LFAC_Water",
+			          "ConceptualProperty": "Unit"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "unit": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "module": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "element": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "entity": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "component": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "constituent": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "item": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "part": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "section": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -2479,144 +2861,75 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "dim_electricity_area.subarea": {
+			    "LFAC_water.备注": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "dim_electricityArea",
-			          "ConceptualProperty": "Sub-area"
+			          "ConceptualEntity": "LFAC_Water",
+			          "ConceptualProperty": "备注"
 			        }
 			      },
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "sub-area": {
+			          "备注": {
 			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "sub area": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "sub-region": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.762
-			          }
-			        },
-			        {
-			          "sub-locale": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.762
-			          }
-			        },
-			        {
-			          "sub-locality": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.762
-			          }
-			        },
-			        {
-			          "sub-neighbourhood": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.762
-			          }
-			        },
-			        {
-			          "sub region": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.75
-			          }
-			        },
-			        {
-			          "sub locale": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.75
-			          }
-			        },
-			        {
-			          "sub locality": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.75
-			          }
-			        },
-			        {
-			          "sub neighbourhood": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.75
-			          }
-			        },
-			        {
-			          "sub-district": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.739
-			          }
-			        },
-			        {
-			          "sub-continent": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.739
 			          }
 			        }
 			      ]
 			    },
-			    "dim_electricity_area.machine": {
+			    "LFAC_water.date": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "dim_electricityArea",
-			          "ConceptualProperty": "Machines"
+			          "ConceptualEntity": "LFAC_Water",
+			          "ConceptualProperty": "Date"
 			        }
 			      },
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "machine": {
+			          "date": {
 			            "State": "Generated"
 			          }
 			        },
 			        {
-			          "mechanism": {
+			          "moment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "period": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "LFAC_water.value": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "LFAC_Water",
+			          "ConceptualProperty": "Value"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "value": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "assessment": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -2626,67 +2939,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "engine": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "appliance": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "apparatus": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "contraption": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "device": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "contrivance": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "instrument": {
+			          "worth": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -2696,7 +2949,47 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "organization": {
+			          "price": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "cost": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "charge": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "rate": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "importance": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -2706,7 +2999,27 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "system": {
+			          "significance": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "usefulness": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "consequence": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -2717,10 +3030,480 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
+			    "dim_electricity.功能分类": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Electricity Area",
+			          "ConceptualProperty": "功能分类"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "功能分类": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "dim_electricity.category_4": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Electricity Area",
+			          "ConceptualProperty": "Category4"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "category 4": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Category4": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "classification 4": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "class 4": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "group 4": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "type 4": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "grouping 4": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "kind 4": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "_": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "entity__measure.entity_2_0kv_electricy_usage": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measure",
+			          "ConceptualProperty": "20kvElectricyUsage"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "2 0kv electricy usage": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "20kvElectricyUsage": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "2 0kv electricy tradition": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.514
+			          }
+			        },
+			        {
+			          "2 0kv electricy procedure": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.514
+			          }
+			        },
+			        {
+			          "2 0kv electricy convention": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.514
+			          }
+			        },
+			        {
+			          "2 0kv electricy norm": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.514
+			          }
+			        },
+			        {
+			          "2 0kv electricy practice": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.499
+			          }
+			        },
+			        {
+			          "2 0kv electricy custom": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.499
+			          }
+			        },
+			        {
+			          "2 0kv electricy habit": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.499
+			          }
+			        },
+			        {
+			          "2 0kv electricy treatment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.489
+			          }
+			        },
+			        {
+			          "2 0kv electricy manipulation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.489
+			          }
+			        },
+			        {
+			          "2 0kv electricy handling": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.474
+			          }
+			        }
+			      ]
+			    },
+			    "entity__measure.光伏发电量": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measure",
+			          "ConceptualProperty": "光伏发电量"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "光伏发电量": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "entity__measure.measure": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measure",
+			          "ConceptualProperty": "Measure"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "measure": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "degree": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "quota": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "extent": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "portion": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "ration": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "size": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        }
+			      ]
+			    },
+			    "entity__measure.entity_2_0kv用电量": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measure",
+			          "ConceptualProperty": "20kv用电量"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "2 0kv用电量": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "20kv用电量": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "entity__measure.air_compressor_electricty_usage": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measure",
+			          "ConceptualProperty": "AirCompressorElectrictyUsage"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "air compressor electricty usage": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "AirCompressorElectrictyUsage": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "air compressor electricty tradition": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.514
+			          }
+			        },
+			        {
+			          "air compressor electricty procedure": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.514
+			          }
+			        },
+			        {
+			          "air compressor electricty convention": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.514
+			          }
+			        },
+			        {
+			          "air compressor electricty norm": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.514
+			          }
+			        },
+			        {
+			          "air compressor electricty practice": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.499
+			          }
+			        },
+			        {
+			          "air compressor electricty custom": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.499
+			          }
+			        },
+			        {
+			          "air compressor electricty habit": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.499
+			          }
+			        },
+			        {
+			          "air compressor electricty treatment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.489
+			          }
+			        },
+			        {
+			          "air compressor electricty manipulation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.489
+			          }
+			        },
+			        {
+			          "air compressor electricty handling": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.474
+			          }
+			        }
+			      ]
+			    },
 			    "dim_electricity": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "dim_electricity"
+			          "ConceptualEntity": "Electricity Area"
 			        }
 			      },
 			      "State": "Generated",
@@ -2782,7 +3565,7 @@ cultureInfo en-US
 			    "dim_electricity.cabinet": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "dim_electricity",
+			          "ConceptualEntity": "Electricity Area",
 			          "ConceptualProperty": "Cabinet"
 			        }
 			      },
@@ -2828,7 +3611,7 @@ cultureInfo en-US
 			    "dim_electricity.sn": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "dim_electricity",
+			          "ConceptualEntity": "Electricity Area",
 			          "ConceptualProperty": "SN"
 			        }
 			      },
@@ -2844,7 +3627,7 @@ cultureInfo en-US
 			    "dim_electricity.meter": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "dim_electricity",
+			          "ConceptualEntity": "Electricity Area",
 			          "ConceptualProperty": "Meter"
 			        }
 			      },
@@ -2926,16 +3709,6 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "measure": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
 			          "rhyme": {
 			            "Type": "Noun",
 			            "State": "Suggested",
@@ -2954,13 +3727,23 @@ cultureInfo en-US
 			            },
 			            "Weight": 0.452
 			          }
+			        },
+			        {
+			          "gauge": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.452
+			          }
 			        }
 			      ]
 			    },
 			    "dim_electricity.swithboard": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "dim_electricity",
+			          "ConceptualEntity": "Electricity Area",
 			          "ConceptualProperty": "Swithboard"
 			        }
 			      },
@@ -2976,7 +3759,7 @@ cultureInfo en-US
 			    "dim_electricity.按照属性分": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "dim_electricity",
+			          "ConceptualEntity": "Electricity Area",
 			          "ConceptualProperty": "按照属性分"
 			        }
 			      },
@@ -2992,7 +3775,7 @@ cultureInfo en-US
 			    "dim_electricity.按照区域分": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "dim_electricity",
+			          "ConceptualEntity": "Electricity Area",
 			          "ConceptualProperty": "按照区域分"
 			        }
 			      },
@@ -3008,7 +3791,7 @@ cultureInfo en-US
 			    "dim_electricity.category": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "dim_electricity",
+			          "ConceptualEntity": "Electricity Area",
 			          "ConceptualProperty": "Category"
 			        }
 			      },
@@ -3064,7 +3847,7 @@ cultureInfo en-US
 			    "dim_electricity.用途": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "dim_electricity",
+			          "ConceptualEntity": "Electricity Area",
 			          "ConceptualProperty": "用途"
 			        }
 			      },
@@ -3080,7 +3863,7 @@ cultureInfo en-US
 			    "dim_electricity.备注": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "dim_electricity",
+			          "ConceptualEntity": "Electricity Area",
 			          "ConceptualProperty": "备注"
 			        }
 			      },
@@ -3096,7 +3879,7 @@ cultureInfo en-US
 			    "dim_electricity.区域分类": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "dim_electricity",
+			          "ConceptualEntity": "Electricity Area",
 			          "ConceptualProperty": "区域分类"
 			        }
 			      },
@@ -3112,7 +3895,7 @@ cultureInfo en-US
 			    "dim_electricity.使用区域": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "dim_electricity",
+			          "ConceptualEntity": "Electricity Area",
 			          "ConceptualProperty": "使用区域"
 			        }
 			      },
@@ -3125,36 +3908,10 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "dim_electricity.功能分类": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "dim_electricity",
-			          "ConceptualProperty": "功能分类"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "功能分类": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "Function": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
-			    },
 			    "dim_electricity.electricity": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "dim_electricity",
+			          "ConceptualEntity": "Electricity Area",
 			          "ConceptualProperty": "Electricity"
 			        }
 			      },
@@ -3197,29 +3954,193 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "dim_electricity.category_4": {
+			    "d_date": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "dim_electricity",
-			          "ConceptualProperty": "Category4"
+			          "ConceptualEntity": "dDate"
 			        }
 			      },
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "category 4": {
+			          "d date": {
 			            "State": "Generated"
 			          }
 			        },
 			        {
-			          "Category4": {
+			          "dDate": {
 			            "Type": "Noun",
 			            "State": "Generated",
 			            "Weight": 0.99
 			          }
 			        },
 			        {
-			          "classification 4": {
+			          "d moment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "d period": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        }
+			      ]
+			    },
+			    "d_date.date": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dDate",
+			          "ConceptualProperty": "Date"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "date": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "moment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "period": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "d_date.year": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dDate",
+			          "ConceptualProperty": "Year"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "year": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "yr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        }
+			      ]
+			    },
+			    "d_date.month": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dDate",
+			          "ConceptualProperty": "Month"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "month": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "mth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        }
+			      ]
+			    },
+			    "d_date.month_name": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dDate",
+			          "ConceptualProperty": "Month Name"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "month name": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "month nickname": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "month title": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "month label": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "month tag": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "mth name": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -3227,59 +4148,61 @@ cultureInfo en-US
 			            },
 			            "Weight": 0.6
 			          }
+			        }
+			      ]
+			    },
+			    "d_date.quarter": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dDate",
+			          "ConceptualProperty": "Quarter"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "quarter": {
+			            "State": "Generated"
+			          }
 			        },
 			        {
-			          "class 4": {
+			          "qtr": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.582
+			            "Weight": 0.818
+			          }
+			        }
+			      ]
+			    },
+			    "d_date.week_of_year": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dDate",
+			          "ConceptualProperty": "Week of Year"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "week of year": {
+			            "State": "Generated"
 			          }
 			        },
 			        {
-			          "group 4": {
+			          "week of yr": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.582
+			            "Weight": 0.609
 			          }
 			        },
 			        {
-			          "type 4": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.582
-			          }
-			        },
-			        {
-			          "grouping 4": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.582
-			          }
-			        },
-			        {
-			          "kind 4": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.582
-			          }
-			        },
-			        {
-			          "Details": {
+			          "_": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -3289,10 +4212,1119 @@ cultureInfo en-US
 			          }
 			        }
 			      ]
+			    },
+			    "d_date.week_of_month": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dDate",
+			          "ConceptualProperty": "Week of Month"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "week of month": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "week of mth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        }
+			      ]
+			    },
+			    "d_date.day": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dDate",
+			          "ConceptualProperty": "Day"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "day": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "d_date.day_of_week": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dDate",
+			          "ConceptualProperty": "Day of Week"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "day of week": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "d_date.day_of_year": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dDate",
+			          "ConceptualProperty": "Day of Year"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "day of year": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "day of yr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        }
+			      ]
+			    },
+			    "d_date.day_name": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dDate",
+			          "ConceptualProperty": "Day Name"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "day name": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "day nickname": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "day title": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "day label": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "day tag": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        }
+			      ]
+			    },
+			    "d_date.year_month": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dDate",
+			          "ConceptualProperty": "YearMonth"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "year month": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "YearMonth": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "year mth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "yr month": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        }
+			      ]
+			    },
+			    "d_date.year_month_order": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dDate",
+			          "ConceptualProperty": "YearMonthOrder"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "year month order": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "YearMonthOrder": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "order": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "month order": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "yr month order": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "year mth order": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "mth order": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "year month instruction": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "year month direction": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "year month edict": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "month instruction": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "month direction": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "month edict": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "year month command": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        }
+			      ]
+			    },
+			    "d_date.day_desc": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dDate",
+			          "ConceptualProperty": "Day_Desc"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "day desc": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Day_Desc": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "day description": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        }
+			      ]
+			    },
+			    "LFAC_2_0kv": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "LFAC_20kv"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "LFAC 2 0kv": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "LFAC_20kv": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "LFAC_2_0kv.cabinet": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "LFAC_20kv",
+			          "ConceptualProperty": "Cabinet"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "cabinet": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "cupboard": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "breakfront": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "dresser": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        }
+			      ]
+			    },
+			    "LFAC_2_0kv.date": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "LFAC_20kv",
+			          "ConceptualProperty": "Date"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "date": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "moment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "period": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "LFAC_2_0kv.value": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "LFAC_20kv",
+			          "ConceptualProperty": "Value"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "value": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "assessment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "worth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "price": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "cost": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "charge": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "rate": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "importance": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "significance": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "usefulness": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "consequence": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        }
+			      ]
+			    },
+			    "LFAC_aircompressor_electricity_usage": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "LFAC_Aircompressor_ElectricityUsage"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "LFAC aircompressor electricity usage": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "LFAC_Aircompressor_ElectricityUsage": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "lfac aircompressor electricity tradition": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.514
+			          }
+			        },
+			        {
+			          "lfac aircompressor electricity procedure": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.514
+			          }
+			        },
+			        {
+			          "lfac aircompressor electricity convention": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.514
+			          }
+			        },
+			        {
+			          "lfac aircompressor electricity norm": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.514
+			          }
+			        },
+			        {
+			          "lfac aircompressor electricity practice": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.499
+			          }
+			        },
+			        {
+			          "lfac aircompressor electricity custom": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.499
+			          }
+			        },
+			        {
+			          "lfac aircompressor electricity habit": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.499
+			          }
+			        },
+			        {
+			          "lfac aircompressor electricity treatment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.489
+			          }
+			        },
+			        {
+			          "lfac aircompressor electricity manipulation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.489
+			          }
+			        },
+			        {
+			          "lfac aircompressor electricity handling": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.474
+			          }
+			        }
+			      ]
+			    },
+			    "LFAC_aircompressor_electricity_usage.air_compressor_power_usage": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "LFAC_Aircompressor_ElectricityUsage",
+			          "ConceptualProperty": "AirCompressor_PowerUsage"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "air compressor power usage": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "AirCompressor_PowerUsage": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "usage": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "power usage": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "compressor power usage": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "air compressor power tradition": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.514
+			          }
+			        },
+			        {
+			          "air compressor power procedure": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.514
+			          }
+			        },
+			        {
+			          "air compressor power convention": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.514
+			          }
+			        },
+			        {
+			          "air compressor power norm": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.514
+			          }
+			        },
+			        {
+			          "compressor power tradition": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "compressor power procedure": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "compressor power convention": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "compressor power norm": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "power tradition": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "power procedure": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        }
+			      ]
+			    },
+			    "LFAC_aircompressor_electricity_usage.date": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "LFAC_Aircompressor_ElectricityUsage",
+			          "ConceptualProperty": "Date"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "date": {
+			            "Type": "Noun",
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "moment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "period": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
 			    }
 			  },
 			  "Relationships": {
-			    "LFAC_electricity_40_0v_has_calendar": {
+			    "LFAC_2_0kv_has_d_date": {
+			      "Binding": {
+			        "ConceptualEntity": "LFAC_20kv"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "LFAC_2_0kv": {
+			          "Target": {
+			            "Entity": "LFAC_2_0kv"
+			          }
+			        },
+			        "d_date": {
+			          "Target": {
+			            "Entity": "d_date"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "LFAC_2_0kv"
+			            },
+			            "Object": {
+			              "Role": "d_date"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "LFAC_2_0kvs_have_d_dates"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_date"
+			            },
+			            "Object": {
+			              "Role": "LFAC_2_0kv"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_dates_have_LFAC_2_0kvs"
+			        }
+			      ]
+			    },
+			    "LFAC_water_has_d_date": {
+			      "Binding": {
+			        "ConceptualEntity": "LFAC_Water"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "LFAC_water": {
+			          "Target": {
+			            "Entity": "LFAC_water"
+			          }
+			        },
+			        "d_date": {
+			          "Target": {
+			            "Entity": "d_date"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "LFAC_water"
+			            },
+			            "Object": {
+			              "Role": "d_date"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "LFAC_waters_have_d_dates"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_date"
+			            },
+			            "Object": {
+			              "Role": "LFAC_water"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_dates_have_LFAC_waters"
+			        }
+			      ]
+			    },
+			    "LFAC_gas_has_d_date": {
+			      "Binding": {
+			        "ConceptualEntity": "LFAC_Gas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "LFAC_gas": {
+			          "Target": {
+			            "Entity": "LFAC_gas"
+			          }
+			        },
+			        "d_date": {
+			          "Target": {
+			            "Entity": "d_date"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "LFAC_gas"
+			            },
+			            "Object": {
+			              "Role": "d_date"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "LFAC_gasses_have_d_dates"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_date"
+			            },
+			            "Object": {
+			              "Role": "LFAC_gas"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_dates_have_LFAC_gasses"
+			        }
+			      ]
+			    },
+			    "LFAC_aircompressor_has_d_date": {
+			      "Binding": {
+			        "ConceptualEntity": "LFAC_Aircompressor"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "LFAC_aircompressor": {
+			          "Target": {
+			            "Entity": "LFAC_aircompressor"
+			          }
+			        },
+			        "d_date": {
+			          "Target": {
+			            "Entity": "d_date"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "LFAC_aircompressor"
+			            },
+			            "Object": {
+			              "Role": "d_date"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "LFAC_aircompressors_have_d_dates"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_date"
+			            },
+			            "Object": {
+			              "Role": "LFAC_aircompressor"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_dates_have_LFAC_aircompressors"
+			        }
+			      ]
+			    },
+			    "LFAC_other_has_d_date": {
+			      "Binding": {
+			        "ConceptualEntity": "LFAC_Others"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "LFAC_other": {
+			          "Target": {
+			            "Entity": "LFAC_other"
+			          }
+			        },
+			        "d_date": {
+			          "Target": {
+			            "Entity": "d_date"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "LFAC_other"
+			            },
+			            "Object": {
+			              "Role": "d_date"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "LFAC_others_have_d_dates"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_date"
+			            },
+			            "Object": {
+			              "Role": "LFAC_other"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_dates_have_LFAC_others"
+			        }
+			      ]
+			    },
+			    "LFAC_electricity_40_0v_has_d_date": {
 			      "Binding": {
 			        "ConceptualEntity": "LFAC_Electricity400v"
 			      },
@@ -3303,9 +5335,9 @@ cultureInfo en-US
 			            "Entity": "LFAC_electricity_40_0v"
 			          }
 			        },
-			        "calendar": {
+			        "d_date": {
 			          "Target": {
-			            "Entity": "calendar"
+			            "Entity": "d_date"
 			          }
 			        }
 			      },
@@ -3316,17 +5348,17 @@ cultureInfo en-US
 			              "Role": "LFAC_electricity_40_0v"
 			            },
 			            "Object": {
-			              "Role": "calendar"
+			              "Role": "d_date"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "LFAC_electricity_40_0vs_have_calendars"
+			          "ID": "LFAC_electricity_40_0vs_have_d_dates"
 			        },
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "calendar"
+			              "Role": "d_date"
 			            },
 			            "Object": {
 			              "Role": "LFAC_electricity_40_0v"
@@ -3334,46 +5366,686 @@ cultureInfo en-US
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "calendars_have_LFAC_electricity_40_0vs"
+			          "ID": "d_dates_have_LFAC_electricity_40_0vs"
 			        }
 			      ]
 			    },
-			    "dim_electricity_has_category_4": {
+			    "LFAC_electricity_40_0v_has_dim_electricity": {
 			      "Binding": {
-			        "ConceptualEntity": "dim_electricity"
+			        "ConceptualEntity": "LFAC_Electricity400v"
 			      },
 			      "State": "Generated",
 			      "Roles": {
+			        "LFAC_electricity_40_0v": {
+			          "Target": {
+			            "Entity": "LFAC_electricity_40_0v"
+			          }
+			        },
 			        "dim_electricity": {
 			          "Target": {
 			            "Entity": "dim_electricity"
 			          }
-			        },
-			        "dim_electricity.category_4": {
-			          "Target": {
-			            "Entity": "dim_electricity.category_4"
-			          }
 			        }
 			      },
 			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "LFAC_electricity_40_0v"
+			            },
+			            "Object": {
+			              "Role": "dim_electricity"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "LFAC_electricity_40_0vs_have_dim_electricity"
+			        },
 			        {
 			          "Attribute": {
 			            "Subject": {
 			              "Role": "dim_electricity"
 			            },
 			            "Object": {
-			              "Role": "dim_electricity.category_4"
+			              "Role": "LFAC_electricity_40_0v"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "dim_electricity_have_category_4"
+			          "ID": "dim_electricity_have_LFAC_electricity_40_0vs"
+			        }
+			      ]
+			    },
+			    "LFAC_aircompressor_electricity_usage_has_air_compressor_power_usage": {
+			      "Binding": {
+			        "ConceptualEntity": "LFAC_Aircompressor_ElectricityUsage"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "LFAC_aircompressor_electricity_usage": {
+			          "Target": {
+			            "Entity": "LFAC_aircompressor_electricity_usage"
+			          }
+			        },
+			        "LFAC_aircompressor_electricity_usage.air_compressor_power_usage": {
+			          "Target": {
+			            "Entity": "LFAC_aircompressor_electricity_usage.air_compressor_power_usage"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "LFAC_aircompressor_electricity_usage"
+			            },
+			            "Object": {
+			              "Role": "LFAC_aircompressor_electricity_usage.air_compressor_power_usage"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "LFAC_aircompressor_electricity_usages_have_air_compressor_power_usages"
+			        }
+			      ]
+			    },
+			    "LFAC_2_0kv_has_value": {
+			      "Binding": {
+			        "ConceptualEntity": "LFAC_20kv"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "LFAC_2_0kv": {
+			          "Target": {
+			            "Entity": "LFAC_2_0kv"
+			          }
+			        },
+			        "LFAC_2_0kv.value": {
+			          "Target": {
+			            "Entity": "LFAC_2_0kv.value"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "LFAC_2_0kv"
+			            },
+			            "Object": {
+			              "Role": "LFAC_2_0kv.value"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "LFAC_2_0kvs_have_values"
+			        }
+			      ]
+			    },
+			    "LFAC_2_0kv_has_date": {
+			      "Binding": {
+			        "ConceptualEntity": "LFAC_20kv"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "LFAC_2_0kv": {
+			          "Target": {
+			            "Entity": "LFAC_2_0kv"
+			          }
+			        },
+			        "LFAC_2_0kv.date": {
+			          "Target": {
+			            "Entity": "LFAC_2_0kv.date"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "LFAC_2_0kv"
+			            },
+			            "Object": {
+			              "Role": "LFAC_2_0kv.date"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "LFAC_2_0kvs_have_dates"
+			        }
+			      ]
+			    },
+			    "LFAC_2_0kv_has_cabinet": {
+			      "Binding": {
+			        "ConceptualEntity": "LFAC_20kv"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "LFAC_2_0kv": {
+			          "Target": {
+			            "Entity": "LFAC_2_0kv"
+			          }
+			        },
+			        "LFAC_2_0kv.cabinet": {
+			          "Target": {
+			            "Entity": "LFAC_2_0kv.cabinet"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "LFAC_2_0kv"
+			            },
+			            "Object": {
+			              "Role": "LFAC_2_0kv.cabinet"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "LFAC_2_0kvs_have_cabinets"
+			        }
+			      ]
+			    },
+			    "d_date_has_day_desc": {
+			      "Binding": {
+			        "ConceptualEntity": "dDate"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "d_date": {
+			          "Target": {
+			            "Entity": "d_date"
+			          }
+			        },
+			        "d_date.day_desc": {
+			          "Target": {
+			            "Entity": "d_date.day_desc"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_date"
+			            },
+			            "Object": {
+			              "Role": "d_date.day_desc"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_dates_have_day_descs"
+			        }
+			      ]
+			    },
+			    "d_date_has_current_month": {
+			      "Binding": {
+			        "ConceptualEntity": "dDate"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "d_date": {
+			          "Target": {
+			            "Entity": "d_date"
+			          }
+			        },
+			        "d_date.current_month": {
+			          "Target": {
+			            "Entity": "d_date.current_month"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_date"
+			            },
+			            "Object": {
+			              "Role": "d_date.current_month"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_dates_have_current_months"
+			        }
+			      ]
+			    },
+			    "d_date_has_current_year": {
+			      "Binding": {
+			        "ConceptualEntity": "dDate"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "d_date": {
+			          "Target": {
+			            "Entity": "d_date"
+			          }
+			        },
+			        "d_date.current_year": {
+			          "Target": {
+			            "Entity": "d_date.current_year"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_date"
+			            },
+			            "Object": {
+			              "Role": "d_date.current_year"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_dates_have_current_years"
+			        }
+			      ]
+			    },
+			    "d_date_has_year_month": {
+			      "Binding": {
+			        "ConceptualEntity": "dDate"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "d_date": {
+			          "Target": {
+			            "Entity": "d_date"
+			          }
+			        },
+			        "d_date.year_month": {
+			          "Target": {
+			            "Entity": "d_date.year_month"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_date"
+			            },
+			            "Object": {
+			              "Role": "d_date.year_month"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_dates_have_year_months"
+			        }
+			      ]
+			    },
+			    "d_date_has_day_name": {
+			      "Binding": {
+			        "ConceptualEntity": "dDate"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "d_date": {
+			          "Target": {
+			            "Entity": "d_date"
+			          }
+			        },
+			        "d_date.day_name": {
+			          "Target": {
+			            "Entity": "d_date.day_name"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_date"
+			            },
+			            "Object": {
+			              "Role": "d_date.day_name"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_dates_have_day_names"
+			        }
+			      ]
+			    },
+			    "d_date_has_day_of_year": {
+			      "Binding": {
+			        "ConceptualEntity": "dDate"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "d_date": {
+			          "Target": {
+			            "Entity": "d_date"
+			          }
+			        },
+			        "d_date.day_of_year": {
+			          "Target": {
+			            "Entity": "d_date.day_of_year"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_date"
+			            },
+			            "Object": {
+			              "Role": "d_date.day_of_year"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_dates_have_day_of_year"
+			        }
+			      ]
+			    },
+			    "d_date_has_day_of_week": {
+			      "Binding": {
+			        "ConceptualEntity": "dDate"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "d_date": {
+			          "Target": {
+			            "Entity": "d_date"
+			          }
+			        },
+			        "d_date.day_of_week": {
+			          "Target": {
+			            "Entity": "d_date.day_of_week"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_date"
+			            },
+			            "Object": {
+			              "Role": "d_date.day_of_week"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_dates_have_day_of_week"
+			        }
+			      ]
+			    },
+			    "d_date_has_day": {
+			      "Binding": {
+			        "ConceptualEntity": "dDate"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "d_date": {
+			          "Target": {
+			            "Entity": "d_date"
+			          }
+			        },
+			        "d_date.day": {
+			          "Target": {
+			            "Entity": "d_date.day"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_date"
+			            },
+			            "Object": {
+			              "Role": "d_date.day"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_dates_have_days"
+			        }
+			      ]
+			    },
+			    "d_date_has_week_of_month": {
+			      "Binding": {
+			        "ConceptualEntity": "dDate"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "d_date": {
+			          "Target": {
+			            "Entity": "d_date"
+			          }
+			        },
+			        "d_date.week_of_month": {
+			          "Target": {
+			            "Entity": "d_date.week_of_month"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_date"
+			            },
+			            "Object": {
+			              "Role": "d_date.week_of_month"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_dates_have_week_of_month"
+			        }
+			      ]
+			    },
+			    "d_date_has_week_of_year": {
+			      "Binding": {
+			        "ConceptualEntity": "dDate"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "d_date": {
+			          "Target": {
+			            "Entity": "d_date"
+			          }
+			        },
+			        "d_date.week_of_year": {
+			          "Target": {
+			            "Entity": "d_date.week_of_year"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_date"
+			            },
+			            "Object": {
+			              "Role": "d_date.week_of_year"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_dates_have_week_of_year"
+			        }
+			      ]
+			    },
+			    "d_date_has_quarter": {
+			      "Binding": {
+			        "ConceptualEntity": "dDate"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "d_date": {
+			          "Target": {
+			            "Entity": "d_date"
+			          }
+			        },
+			        "d_date.quarter": {
+			          "Target": {
+			            "Entity": "d_date.quarter"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_date"
+			            },
+			            "Object": {
+			              "Role": "d_date.quarter"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_dates_have_quarters"
+			        }
+			      ]
+			    },
+			    "d_date_has_month_name": {
+			      "Binding": {
+			        "ConceptualEntity": "dDate"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "d_date": {
+			          "Target": {
+			            "Entity": "d_date"
+			          }
+			        },
+			        "d_date.month_name": {
+			          "Target": {
+			            "Entity": "d_date.month_name"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_date"
+			            },
+			            "Object": {
+			              "Role": "d_date.month_name"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_dates_have_month_names"
+			        }
+			      ]
+			    },
+			    "d_date_has_month": {
+			      "Binding": {
+			        "ConceptualEntity": "dDate"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "d_date": {
+			          "Target": {
+			            "Entity": "d_date"
+			          }
+			        },
+			        "d_date.month": {
+			          "Target": {
+			            "Entity": "d_date.month"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_date"
+			            },
+			            "Object": {
+			              "Role": "d_date.month"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_dates_have_months"
+			        }
+			      ]
+			    },
+			    "d_date_has_year": {
+			      "Binding": {
+			        "ConceptualEntity": "dDate"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "d_date": {
+			          "Target": {
+			            "Entity": "d_date"
+			          }
+			        },
+			        "d_date.year": {
+			          "Target": {
+			            "Entity": "d_date.year"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_date"
+			            },
+			            "Object": {
+			              "Role": "d_date.year"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_dates_have_years"
+			        }
+			      ]
+			    },
+			    "d_date_has_date": {
+			      "Binding": {
+			        "ConceptualEntity": "dDate"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "d_date": {
+			          "Target": {
+			            "Entity": "d_date"
+			          }
+			        },
+			        "d_date.date": {
+			          "Target": {
+			            "Entity": "d_date.date"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_date"
+			            },
+			            "Object": {
+			              "Role": "d_date.date"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_dates_have_dates"
 			        }
 			      ]
 			    },
 			    "dim_electricity_has_electricity": {
 			      "Binding": {
-			        "ConceptualEntity": "dim_electricity"
+			        "ConceptualEntity": "Electricity Area"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -3404,42 +6076,9 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "dim_electricity_has_功能分类": {
-			      "Binding": {
-			        "ConceptualEntity": "dim_electricity"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_electricity": {
-			          "Target": {
-			            "Entity": "dim_electricity"
-			          }
-			        },
-			        "dim_electricity.功能分类": {
-			          "Target": {
-			            "Entity": "dim_electricity.功能分类"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_electricity"
-			            },
-			            "Object": {
-			              "Role": "dim_electricity.功能分类"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_electricity_have_功能分类"
-			        }
-			      ]
-			    },
 			    "dim_electricity_has_使用区域": {
 			      "Binding": {
-			        "ConceptualEntity": "dim_electricity"
+			        "ConceptualEntity": "Electricity Area"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -3472,7 +6111,7 @@ cultureInfo en-US
 			    },
 			    "dim_electricity_has_区域分类": {
 			      "Binding": {
-			        "ConceptualEntity": "dim_electricity"
+			        "ConceptualEntity": "Electricity Area"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -3505,7 +6144,7 @@ cultureInfo en-US
 			    },
 			    "dim_electricity_has_备注": {
 			      "Binding": {
-			        "ConceptualEntity": "dim_electricity"
+			        "ConceptualEntity": "Electricity Area"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -3538,7 +6177,7 @@ cultureInfo en-US
 			    },
 			    "dim_electricity_has_用途": {
 			      "Binding": {
-			        "ConceptualEntity": "dim_electricity"
+			        "ConceptualEntity": "Electricity Area"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -3571,7 +6210,7 @@ cultureInfo en-US
 			    },
 			    "dim_electricity_has_category": {
 			      "Binding": {
-			        "ConceptualEntity": "dim_electricity"
+			        "ConceptualEntity": "Electricity Area"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -3604,7 +6243,7 @@ cultureInfo en-US
 			    },
 			    "dim_electricity_has_按照区域分": {
 			      "Binding": {
-			        "ConceptualEntity": "dim_electricity"
+			        "ConceptualEntity": "Electricity Area"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -3637,7 +6276,7 @@ cultureInfo en-US
 			    },
 			    "dim_electricity_has_按照属性分": {
 			      "Binding": {
-			        "ConceptualEntity": "dim_electricity"
+			        "ConceptualEntity": "Electricity Area"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -3670,7 +6309,7 @@ cultureInfo en-US
 			    },
 			    "dim_electricity_has_swithboard": {
 			      "Binding": {
-			        "ConceptualEntity": "dim_electricity"
+			        "ConceptualEntity": "Electricity Area"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -3703,7 +6342,7 @@ cultureInfo en-US
 			    },
 			    "dim_electricity_has_meter": {
 			      "Binding": {
-			        "ConceptualEntity": "dim_electricity"
+			        "ConceptualEntity": "Electricity Area"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -3736,7 +6375,7 @@ cultureInfo en-US
 			    },
 			    "dim_electricity_has_sn": {
 			      "Binding": {
-			        "ConceptualEntity": "dim_electricity"
+			        "ConceptualEntity": "Electricity Area"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -3769,7 +6408,7 @@ cultureInfo en-US
 			    },
 			    "dim_electricity_has_cabinet": {
 			      "Binding": {
-			        "ConceptualEntity": "dim_electricity"
+			        "ConceptualEntity": "Electricity Area"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -3800,20 +6439,20 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "dim_electricity_area_has_machine": {
+			    "LFAC_aircompressor_electricity_usage_has_entity__measure_air_compressor_electricty_usage": {
 			      "Binding": {
-			        "ConceptualEntity": "dim_electricityArea"
+			        "ConceptualEntity": "LFAC_Aircompressor_ElectricityUsage"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "dim_electricity_area": {
+			        "LFAC_aircompressor_electricity_usage": {
 			          "Target": {
-			            "Entity": "dim_electricity_area"
+			            "Entity": "LFAC_aircompressor_electricity_usage"
 			          }
 			        },
-			        "dim_electricity_area.machine": {
+			        "entity__measure.air_compressor_electricty_usage": {
 			          "Target": {
-			            "Entity": "dim_electricity_area.machine"
+			            "Entity": "entity__measure.air_compressor_electricty_usage"
 			          }
 			        }
 			      },
@@ -3821,32 +6460,32 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "dim_electricity_area"
+			              "Role": "LFAC_aircompressor_electricity_usage"
 			            },
 			            "Object": {
-			              "Role": "dim_electricity_area.machine"
+			              "Role": "entity__measure.air_compressor_electricty_usage"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "dim_electricity_areas_have_machines"
+			          "ID": "LFAC_aircompressor_electricity_usages_have_air_compressor_electricty_usage"
 			        }
 			      ]
 			    },
-			    "dim_electricity_area_has_cabinet": {
+			    "LFAC_2_0kv_has_entity__measure_entity_2_0kv用电量": {
 			      "Binding": {
-			        "ConceptualEntity": "dim_electricityArea"
+			        "ConceptualEntity": "LFAC_20kv"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "dim_electricity_area": {
+			        "LFAC_2_0kv": {
 			          "Target": {
-			            "Entity": "dim_electricity_area"
+			            "Entity": "LFAC_2_0kv"
 			          }
 			        },
-			        "dim_electricity_area.cabinet": {
+			        "entity__measure.entity_2_0kv用电量": {
 			          "Target": {
-			            "Entity": "dim_electricity_area.cabinet"
+			            "Entity": "entity__measure.entity_2_0kv用电量"
 			          }
 			        }
 			      },
@@ -3854,32 +6493,32 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "dim_electricity_area"
+			              "Role": "LFAC_2_0kv"
 			            },
 			            "Object": {
-			              "Role": "dim_electricity_area.cabinet"
+			              "Role": "entity__measure.entity_2_0kv用电量"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "dim_electricity_areas_have_cabinets"
+			          "ID": "LFAC_2_0kvs_have_2_0kv用电量"
 			        }
 			      ]
 			    },
-			    "dim_electricity_area_has_subarea": {
+			    "entity__measure_has_measure": {
 			      "Binding": {
-			        "ConceptualEntity": "dim_electricityArea"
+			        "ConceptualEntity": "_Measure"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "dim_electricity_area": {
+			        "entity__measure": {
 			          "Target": {
-			            "Entity": "dim_electricity_area"
+			            "Entity": "entity__measure"
 			          }
 			        },
-			        "dim_electricity_area.subarea": {
+			        "entity__measure.measure": {
 			          "Target": {
-			            "Entity": "dim_electricity_area.subarea"
+			            "Entity": "entity__measure.measure"
 			          }
 			        }
 			      },
@@ -3887,32 +6526,32 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "dim_electricity_area"
+			              "Role": "entity__measure"
 			            },
 			            "Object": {
-			              "Role": "dim_electricity_area.subarea"
+			              "Role": "entity__measure.measure"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "dim_electricity_areas_have_subareas"
+			          "ID": "Phrasing_measures_have_measure"
 			        }
 			      ]
 			    },
-			    "dim_electricity_area_has_area": {
+			    "LFAC_2_0kv_has_entity__measure_光伏发电量": {
 			      "Binding": {
-			        "ConceptualEntity": "dim_electricityArea"
+			        "ConceptualEntity": "LFAC_20kv"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "dim_electricity_area": {
+			        "LFAC_2_0kv": {
 			          "Target": {
-			            "Entity": "dim_electricity_area"
+			            "Entity": "LFAC_2_0kv"
 			          }
 			        },
-			        "dim_electricity_area.area": {
+			        "entity__measure.光伏发电量": {
 			          "Target": {
-			            "Entity": "dim_electricity_area.area"
+			            "Entity": "entity__measure.光伏发电量"
 			          }
 			        }
 			      },
@@ -3920,32 +6559,32 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "dim_electricity_area"
+			              "Role": "LFAC_2_0kv"
 			            },
 			            "Object": {
-			              "Role": "dim_electricity_area.area"
+			              "Role": "entity__measure.光伏发电量"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "dim_electricity_areas_have_areas"
+			          "ID": "LFAC_2_0kvs_have_光伏发电量"
 			        }
 			      ]
 			    },
-			    "dim_electricity_area_has_production": {
+			    "LFAC_2_0kv_has_entity__measure_entity_2_0kv_electricy_usage": {
 			      "Binding": {
-			        "ConceptualEntity": "dim_electricityArea"
+			        "ConceptualEntity": "LFAC_20kv"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "dim_electricity_area": {
+			        "LFAC_2_0kv": {
 			          "Target": {
-			            "Entity": "dim_electricity_area"
+			            "Entity": "LFAC_2_0kv"
 			          }
 			        },
-			        "dim_electricity_area.production": {
+			        "entity__measure.entity_2_0kv_electricy_usage": {
 			          "Target": {
-			            "Entity": "dim_electricity_area.production"
+			            "Entity": "entity__measure.entity_2_0kv_electricy_usage"
 			          }
 			        }
 			      },
@@ -3953,15 +6592,840 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "dim_electricity_area"
+			              "Role": "LFAC_2_0kv"
 			            },
 			            "Object": {
-			              "Role": "dim_electricity_area.production"
+			              "Role": "entity__measure.entity_2_0kv_electricy_usage"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "dim_electricity_areas_have_productions"
+			          "ID": "LFAC_2_0kvs_have_2_0kv_electricy_usage"
+			        }
+			      ]
+			    },
+			    "dim_electricity_has_category_4": {
+			      "Binding": {
+			        "ConceptualEntity": "Electricity Area"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_electricity": {
+			          "Target": {
+			            "Entity": "dim_electricity"
+			          }
+			        },
+			        "dim_electricity.category_4": {
+			          "Target": {
+			            "Entity": "dim_electricity.category_4"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_electricity"
+			            },
+			            "Object": {
+			              "Role": "dim_electricity.category_4"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_electricity_have_category_4"
+			        }
+			      ]
+			    },
+			    "dim_electricity_has_功能分类": {
+			      "Binding": {
+			        "ConceptualEntity": "Electricity Area"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_electricity": {
+			          "Target": {
+			            "Entity": "dim_electricity"
+			          }
+			        },
+			        "dim_electricity.功能分类": {
+			          "Target": {
+			            "Entity": "dim_electricity.功能分类"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_electricity"
+			            },
+			            "Object": {
+			              "Role": "dim_electricity.功能分类"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_electricity_have_功能分类"
+			        }
+			      ]
+			    },
+			    "LFAC_water_has_value": {
+			      "Binding": {
+			        "ConceptualEntity": "LFAC_Water"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "LFAC_water": {
+			          "Target": {
+			            "Entity": "LFAC_water"
+			          }
+			        },
+			        "LFAC_water.value": {
+			          "Target": {
+			            "Entity": "LFAC_water.value"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "LFAC_water"
+			            },
+			            "Object": {
+			              "Role": "LFAC_water.value"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "LFAC_waters_have_values"
+			        }
+			      ]
+			    },
+			    "LFAC_water_has_date": {
+			      "Binding": {
+			        "ConceptualEntity": "LFAC_Water"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "LFAC_water": {
+			          "Target": {
+			            "Entity": "LFAC_water"
+			          }
+			        },
+			        "LFAC_water.date": {
+			          "Target": {
+			            "Entity": "LFAC_water.date"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "LFAC_water"
+			            },
+			            "Object": {
+			              "Role": "LFAC_water.date"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "LFAC_waters_have_dates"
+			        }
+			      ]
+			    },
+			    "LFAC_water_has_备注": {
+			      "Binding": {
+			        "ConceptualEntity": "LFAC_Water"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "LFAC_water": {
+			          "Target": {
+			            "Entity": "LFAC_water"
+			          }
+			        },
+			        "LFAC_water.备注": {
+			          "Target": {
+			            "Entity": "LFAC_water.备注"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "LFAC_water"
+			            },
+			            "Object": {
+			              "Role": "LFAC_water.备注"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "LFAC_waters_have_备注"
+			        }
+			      ]
+			    },
+			    "LFAC_water_has_unit": {
+			      "Binding": {
+			        "ConceptualEntity": "LFAC_Water"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "LFAC_water": {
+			          "Target": {
+			            "Entity": "LFAC_water"
+			          }
+			        },
+			        "LFAC_water.unit": {
+			          "Target": {
+			            "Entity": "LFAC_water.unit"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "LFAC_water"
+			            },
+			            "Object": {
+			              "Role": "LFAC_water.unit"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "LFAC_waters_have_units"
+			        }
+			      ]
+			    },
+			    "LFAC_water_has_能源种类": {
+			      "Binding": {
+			        "ConceptualEntity": "LFAC_Water"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "LFAC_water": {
+			          "Target": {
+			            "Entity": "LFAC_water"
+			          }
+			        },
+			        "LFAC_water.能源种类": {
+			          "Target": {
+			            "Entity": "LFAC_water.能源种类"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "LFAC_water"
+			            },
+			            "Object": {
+			              "Role": "LFAC_water.能源种类"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "LFAC_waters_have_能源种类"
+			        }
+			      ]
+			    },
+			    "LFAC_water_has_cabinet": {
+			      "Binding": {
+			        "ConceptualEntity": "LFAC_Water"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "LFAC_water": {
+			          "Target": {
+			            "Entity": "LFAC_water"
+			          }
+			        },
+			        "LFAC_water.cabinet": {
+			          "Target": {
+			            "Entity": "LFAC_water.cabinet"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "LFAC_water"
+			            },
+			            "Object": {
+			              "Role": "LFAC_water.cabinet"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "LFAC_waters_have_cabinets"
+			        }
+			      ]
+			    },
+			    "LFAC_gas_has_value": {
+			      "Binding": {
+			        "ConceptualEntity": "LFAC_Gas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "LFAC_gas": {
+			          "Target": {
+			            "Entity": "LFAC_gas"
+			          }
+			        },
+			        "LFAC_gas.value": {
+			          "Target": {
+			            "Entity": "LFAC_gas.value"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "LFAC_gas"
+			            },
+			            "Object": {
+			              "Role": "LFAC_gas.value"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "LFAC_gasses_have_values"
+			        }
+			      ]
+			    },
+			    "LFAC_gas_has_备注": {
+			      "Binding": {
+			        "ConceptualEntity": "LFAC_Gas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "LFAC_gas": {
+			          "Target": {
+			            "Entity": "LFAC_gas"
+			          }
+			        },
+			        "LFAC_gas.备注": {
+			          "Target": {
+			            "Entity": "LFAC_gas.备注"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "LFAC_gas"
+			            },
+			            "Object": {
+			              "Role": "LFAC_gas.备注"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "LFAC_gasses_have_备注"
+			        }
+			      ]
+			    },
+			    "LFAC_gas_has_unit": {
+			      "Binding": {
+			        "ConceptualEntity": "LFAC_Gas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "LFAC_gas": {
+			          "Target": {
+			            "Entity": "LFAC_gas"
+			          }
+			        },
+			        "LFAC_gas.unit": {
+			          "Target": {
+			            "Entity": "LFAC_gas.unit"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "LFAC_gas"
+			            },
+			            "Object": {
+			              "Role": "LFAC_gas.unit"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "LFAC_gasses_have_units"
+			        }
+			      ]
+			    },
+			    "LFAC_gas_has_能源种类": {
+			      "Binding": {
+			        "ConceptualEntity": "LFAC_Gas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "LFAC_gas": {
+			          "Target": {
+			            "Entity": "LFAC_gas"
+			          }
+			        },
+			        "LFAC_gas.能源种类": {
+			          "Target": {
+			            "Entity": "LFAC_gas.能源种类"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "LFAC_gas"
+			            },
+			            "Object": {
+			              "Role": "LFAC_gas.能源种类"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "LFAC_gasses_have_能源种类"
+			        }
+			      ]
+			    },
+			    "LFAC_gas_has_cabinet": {
+			      "Binding": {
+			        "ConceptualEntity": "LFAC_Gas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "LFAC_gas": {
+			          "Target": {
+			            "Entity": "LFAC_gas"
+			          }
+			        },
+			        "LFAC_gas.cabinet": {
+			          "Target": {
+			            "Entity": "LFAC_gas.cabinet"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "LFAC_gas"
+			            },
+			            "Object": {
+			              "Role": "LFAC_gas.cabinet"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "LFAC_gasses_have_cabinets"
+			        }
+			      ]
+			    },
+			    "LFAC_aircompressor_has_column_64": {
+			      "Binding": {
+			        "ConceptualEntity": "LFAC_Aircompressor"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "LFAC_aircompressor": {
+			          "Target": {
+			            "Entity": "LFAC_aircompressor"
+			          }
+			        },
+			        "LFAC_aircompressor.column_64": {
+			          "Target": {
+			            "Entity": "LFAC_aircompressor.column_64"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "LFAC_aircompressor"
+			            },
+			            "Object": {
+			              "Role": "LFAC_aircompressor.column_64"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "LFAC_aircompressors_have_column_64"
+			        }
+			      ]
+			    },
+			    "LFAC_aircompressor_has_column_63": {
+			      "Binding": {
+			        "ConceptualEntity": "LFAC_Aircompressor"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "LFAC_aircompressor": {
+			          "Target": {
+			            "Entity": "LFAC_aircompressor"
+			          }
+			        },
+			        "LFAC_aircompressor.column_63": {
+			          "Target": {
+			            "Entity": "LFAC_aircompressor.column_63"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "LFAC_aircompressor"
+			            },
+			            "Object": {
+			              "Role": "LFAC_aircompressor.column_63"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "LFAC_aircompressors_have_column_63"
+			        }
+			      ]
+			    },
+			    "LFAC_aircompressor_has_value": {
+			      "Binding": {
+			        "ConceptualEntity": "LFAC_Aircompressor"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "LFAC_aircompressor": {
+			          "Target": {
+			            "Entity": "LFAC_aircompressor"
+			          }
+			        },
+			        "LFAC_aircompressor.value": {
+			          "Target": {
+			            "Entity": "LFAC_aircompressor.value"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "LFAC_aircompressor"
+			            },
+			            "Object": {
+			              "Role": "LFAC_aircompressor.value"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "LFAC_aircompressors_have_values"
+			        }
+			      ]
+			    },
+			    "LFAC_aircompressor_has_location": {
+			      "Binding": {
+			        "ConceptualEntity": "LFAC_Aircompressor"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "LFAC_aircompressor": {
+			          "Target": {
+			            "Entity": "LFAC_aircompressor"
+			          }
+			        },
+			        "LFAC_aircompressor.location": {
+			          "Target": {
+			            "Entity": "LFAC_aircompressor.location"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "LFAC_aircompressor"
+			            },
+			            "Object": {
+			              "Role": "LFAC_aircompressor.location"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "LFAC_aircompressors_have_locations"
+			        }
+			      ]
+			    },
+			    "LFAC_aircompressor_has_目标值": {
+			      "Binding": {
+			        "ConceptualEntity": "LFAC_Aircompressor"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "LFAC_aircompressor": {
+			          "Target": {
+			            "Entity": "LFAC_aircompressor"
+			          }
+			        },
+			        "LFAC_aircompressor.目标值": {
+			          "Target": {
+			            "Entity": "LFAC_aircompressor.目标值"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "LFAC_aircompressor"
+			            },
+			            "Object": {
+			              "Role": "LFAC_aircompressor.目标值"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "LFAC_aircompressors_have_目标值"
+			        }
+			      ]
+			    },
+			    "LFAC_aircompressor_has_输入比功率": {
+			      "Binding": {
+			        "ConceptualEntity": "LFAC_Aircompressor"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "LFAC_aircompressor": {
+			          "Target": {
+			            "Entity": "LFAC_aircompressor"
+			          }
+			        },
+			        "LFAC_aircompressor.输入比功率": {
+			          "Target": {
+			            "Entity": "LFAC_aircompressor.输入比功率"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "LFAC_aircompressor"
+			            },
+			            "Object": {
+			              "Role": "LFAC_aircompressor.输入比功率"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "LFAC_aircompressors_have_输入比功率"
+			        }
+			      ]
+			    },
+			    "LFAC_aircompressor_has_气电比": {
+			      "Binding": {
+			        "ConceptualEntity": "LFAC_Aircompressor"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "LFAC_aircompressor": {
+			          "Target": {
+			            "Entity": "LFAC_aircompressor"
+			          }
+			        },
+			        "LFAC_aircompressor.气电比": {
+			          "Target": {
+			            "Entity": "LFAC_aircompressor.气电比"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "LFAC_aircompressor"
+			            },
+			            "Object": {
+			              "Role": "LFAC_aircompressor.气电比"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "LFAC_aircompressors_have_气电比"
+			        }
+			      ]
+			    },
+			    "LFAC_aircompressor_has_分表累计": {
+			      "Binding": {
+			        "ConceptualEntity": "LFAC_Aircompressor"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "LFAC_aircompressor": {
+			          "Target": {
+			            "Entity": "LFAC_aircompressor"
+			          }
+			        },
+			        "LFAC_aircompressor.分表累计": {
+			          "Target": {
+			            "Entity": "LFAC_aircompressor.分表累计"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "LFAC_aircompressor"
+			            },
+			            "Object": {
+			              "Role": "LFAC_aircompressor.分表累计"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "LFAC_aircompressors_have_分表累计"
+			        }
+			      ]
+			    },
+			    "LFAC_electricity_40_0v_has_entity__measure_label_accum": {
+			      "Binding": {
+			        "ConceptualEntity": "LFAC_Electricity400v"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "LFAC_electricity_40_0v": {
+			          "Target": {
+			            "Entity": "LFAC_electricity_40_0v"
+			          }
+			        },
+			        "entity__measure.label_accum": {
+			          "Target": {
+			            "Entity": "entity__measure.label_accum"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "LFAC_electricity_40_0v"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.label_accum"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "LFAC_electricity_40_0vs_have_label_accum"
+			        }
+			      ]
+			    },
+			    "LFAC_electricity_40_0v_has_entity__measure_selected_now": {
+			      "Binding": {
+			        "ConceptualEntity": "LFAC_Electricity400v"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "LFAC_electricity_40_0v": {
+			          "Target": {
+			            "Entity": "LFAC_electricity_40_0v"
+			          }
+			        },
+			        "entity__measure.selected_now": {
+			          "Target": {
+			            "Entity": "entity__measure.selected_now"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "LFAC_electricity_40_0v"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.selected_now"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "LFAC_electricity_40_0vs_have_selected_now"
+			        }
+			      ]
+			    },
+			    "LFAC_electricity_40_0v_has_entity__measure_running_total": {
+			      "Binding": {
+			        "ConceptualEntity": "LFAC_Electricity400v"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "LFAC_electricity_40_0v": {
+			          "Target": {
+			            "Entity": "LFAC_electricity_40_0v"
+			          }
+			        },
+			        "entity__measure.running_total": {
+			          "Target": {
+			            "Entity": "entity__measure.running_total"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "LFAC_electricity_40_0v"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.running_total"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "LFAC_electricity_40_0vs_have_running_total"
+			        }
+			      ]
+			    },
+			    "LFAC_electricity_40_0v_has_entity__measure_占比": {
+			      "Binding": {
+			        "ConceptualEntity": "LFAC_Electricity400v"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "LFAC_electricity_40_0v": {
+			          "Target": {
+			            "Entity": "LFAC_electricity_40_0v"
+			          }
+			        },
+			        "entity__measure.占比": {
+			          "Target": {
+			            "Entity": "entity__measure.占比"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "LFAC_electricity_40_0v"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.占比"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "LFAC_electricity_40_0vs_have_占比"
 			        }
 			      ]
 			    },
@@ -4374,15 +7838,15 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "entity__measure_has_YTD_number": {
+			    "LFAC_electricity_40_0v_has_entity__measure_YTD_number": {
 			      "Binding": {
-			        "ConceptualEntity": "_Measure"
+			        "ConceptualEntity": "LFAC_Electricity400v"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "entity__measure": {
+			        "LFAC_electricity_40_0v": {
 			          "Target": {
-			            "Entity": "entity__measure"
+			            "Entity": "LFAC_electricity_40_0v"
 			          }
 			        },
 			        "entity__measure.YTD_number": {
@@ -4395,7 +7859,7 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "entity__measure"
+			              "Role": "LFAC_electricity_40_0v"
 			            },
 			            "Object": {
 			              "Role": "entity__measure.YTD_number"
@@ -4403,7 +7867,7 @@ cultureInfo en-US
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "Phrasing_measures_have_YTD_number"
+			          "ID": "LFAC_electricity_40_0vs_have_YTD_number"
 			        }
 			      ]
 			    },
@@ -4440,7 +7904,7 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "LFAC_electricity_40_0v_has_entity__measure_total_number": {
+			    "LFAC_electricity_40_0v_has_entity__measure_eletricity_usage": {
 			      "Binding": {
 			        "ConceptualEntity": "LFAC_Electricity400v"
 			      },
@@ -4451,9 +7915,9 @@ cultureInfo en-US
 			            "Entity": "LFAC_electricity_40_0v"
 			          }
 			        },
-			        "entity__measure.total_number": {
+			        "entity__measure.eletricity_usage": {
 			          "Target": {
-			            "Entity": "entity__measure.total_number"
+			            "Entity": "entity__measure.eletricity_usage"
 			          }
 			        }
 			      },
@@ -4464,12 +7928,12 @@ cultureInfo en-US
 			              "Role": "LFAC_electricity_40_0v"
 			            },
 			            "Object": {
-			              "Role": "entity__measure.total_number"
+			              "Role": "entity__measure.eletricity_usage"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "LFAC_electricity_40_0vs_have_total_number"
+			          "ID": "LFAC_electricity_40_0vs_have_eletricity_usage"
 			        }
 			      ]
 			    },
@@ -4503,138 +7967,6 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "Phrasing_measures_have_values"
-			        }
-			      ]
-			    },
-			    "calendar_has_year_month": {
-			      "Binding": {
-			        "ConceptualEntity": "Calendar"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "calendar": {
-			          "Target": {
-			            "Entity": "calendar"
-			          }
-			        },
-			        "calendar.year_month": {
-			          "Target": {
-			            "Entity": "calendar.year_month"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "calendar"
-			            },
-			            "Object": {
-			              "Role": "calendar.year_month"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "calendars_have_year_months"
-			        }
-			      ]
-			    },
-			    "calendar_has_month": {
-			      "Binding": {
-			        "ConceptualEntity": "Calendar"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "calendar": {
-			          "Target": {
-			            "Entity": "calendar"
-			          }
-			        },
-			        "calendar.month": {
-			          "Target": {
-			            "Entity": "calendar.month"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "calendar"
-			            },
-			            "Object": {
-			              "Role": "calendar.month"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "calendars_have_months"
-			        }
-			      ]
-			    },
-			    "calendar_has_year": {
-			      "Binding": {
-			        "ConceptualEntity": "Calendar"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "calendar": {
-			          "Target": {
-			            "Entity": "calendar"
-			          }
-			        },
-			        "calendar.year": {
-			          "Target": {
-			            "Entity": "calendar.year"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "calendar"
-			            },
-			            "Object": {
-			              "Role": "calendar.year"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "calendars_have_years"
-			        }
-			      ]
-			    },
-			    "calendar_has_date": {
-			      "Binding": {
-			        "ConceptualEntity": "Calendar"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "calendar": {
-			          "Target": {
-			            "Entity": "calendar"
-			          }
-			        },
-			        "calendar.date": {
-			          "Target": {
-			            "Entity": "calendar.date"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "calendar"
-			            },
-			            "Object": {
-			              "Role": "calendar.date"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "calendars_have_dates"
 			        }
 			      ]
 			    },
@@ -4704,7 +8036,7 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "LFAC_electricity_40_0v_has_function": {
+			    "LFAC_electricity_40_0v_has_功能分类": {
 			      "Binding": {
 			        "ConceptualEntity": "LFAC_Electricity400v"
 			      },
@@ -4715,9 +8047,9 @@ cultureInfo en-US
 			            "Entity": "LFAC_electricity_40_0v"
 			          }
 			        },
-			        "LFAC_electricity_40_0v.function": {
+			        "LFAC_electricity_40_0v.功能分类": {
 			          "Target": {
-			            "Entity": "LFAC_electricity_40_0v.function"
+			            "Entity": "LFAC_electricity_40_0v.功能分类"
 			          }
 			        }
 			      },
@@ -4728,16 +8060,16 @@ cultureInfo en-US
 			              "Role": "LFAC_electricity_40_0v"
 			            },
 			            "Object": {
-			              "Role": "LFAC_electricity_40_0v.function"
+			              "Role": "LFAC_electricity_40_0v.功能分类"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "LFAC_electricity_40_0vs_have_functions"
+			          "ID": "LFAC_electricity_40_0vs_have_功能分类"
 			        }
 			      ]
 			    },
-			    "LFAC_electricity_40_0v_has_area": {
+			    "LFAC_electricity_40_0v_has_使用区域": {
 			      "Binding": {
 			        "ConceptualEntity": "LFAC_Electricity400v"
 			      },
@@ -4748,9 +8080,9 @@ cultureInfo en-US
 			            "Entity": "LFAC_electricity_40_0v"
 			          }
 			        },
-			        "LFAC_electricity_40_0v.area": {
+			        "LFAC_electricity_40_0v.使用区域": {
 			          "Target": {
-			            "Entity": "LFAC_electricity_40_0v.area"
+			            "Entity": "LFAC_electricity_40_0v.使用区域"
 			          }
 			        }
 			      },
@@ -4761,12 +8093,12 @@ cultureInfo en-US
 			              "Role": "LFAC_electricity_40_0v"
 			            },
 			            "Object": {
-			              "Role": "LFAC_electricity_40_0v.area"
+			              "Role": "LFAC_electricity_40_0v.使用区域"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "LFAC_electricity_40_0vs_have_areas"
+			          "ID": "LFAC_electricity_40_0vs_have_使用区域"
 			        }
 			      ]
 			    },
@@ -4803,33 +8135,33 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "dim_electricity_area_in_subarea": {
+			    "LFAC_aircompressor_in_location": {
 			      "Binding": {
-			        "ConceptualEntity": "dim_electricityArea"
+			        "ConceptualEntity": "LFAC_Aircompressor"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "dim_electricity_area": {
+			        "LFAC_aircompressor": {
 			          "Target": {
-			            "Entity": "dim_electricity_area"
+			            "Entity": "LFAC_aircompressor"
 			          }
 			        },
-			        "dim_electricity_area.subarea": {
+			        "LFAC_aircompressor.location": {
 			          "Target": {
-			            "Entity": "dim_electricity_area.subarea"
+			            "Entity": "LFAC_aircompressor.location"
 			          }
 			        }
 			      },
 			      "SemanticSlots": {
 			        "Where": {
-			          "Role": "dim_electricity_area.subarea"
+			          "Role": "LFAC_aircompressor.location"
 			        }
 			      },
 			      "Phrasings": [
 			        {
 			          "Preposition": {
 			            "Subject": {
-			              "Role": "dim_electricity_area"
+			              "Role": "LFAC_aircompressor"
 			            },
 			            "Prepositions": [
 			              {
@@ -4839,119 +8171,29 @@ cultureInfo en-US
 			              }
 			            ],
 			            "Object": {
-			              "Role": "dim_electricity_area.subarea"
+			              "Role": "LFAC_aircompressor.location"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "dim_electricity_areas_are_in_subareas"
+			          "ID": "LFAC_aircompressors_are_in_locations"
 			        }
 			      ]
 			    },
-			    "dim_electricity_area_in_area": {
+			    "LFAC_aircompressor_electricity_usage_has_d_date": {
 			      "Binding": {
-			        "ConceptualEntity": "dim_electricityArea"
+			        "ConceptualEntity": "LFAC_Aircompressor_ElectricityUsage"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "dim_electricity_area": {
+			        "LFAC_aircompressor_electricity_usage": {
 			          "Target": {
-			            "Entity": "dim_electricity_area"
+			            "Entity": "LFAC_aircompressor_electricity_usage"
 			          }
 			        },
-			        "dim_electricity_area.area": {
+			        "d_date": {
 			          "Target": {
-			            "Entity": "dim_electricity_area.area"
-			          }
-			        }
-			      },
-			      "SemanticSlots": {
-			        "Where": {
-			          "Role": "dim_electricity_area.area"
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Preposition": {
-			            "Subject": {
-			              "Role": "dim_electricity_area"
-			            },
-			            "Prepositions": [
-			              {
-			                "in": {
-			                  "State": "Generated"
-			                }
-			              }
-			            ],
-			            "Object": {
-			              "Role": "dim_electricity_area.area"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_electricity_areas_are_in_areas"
-			        }
-			      ]
-			    },
-			    "LFAC_electricity_40_0v_in_area": {
-			      "Binding": {
-			        "ConceptualEntity": "LFAC_Electricity400v"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "LFAC_electricity_40_0v": {
-			          "Target": {
-			            "Entity": "LFAC_electricity_40_0v"
-			          }
-			        },
-			        "LFAC_electricity_40_0v.area": {
-			          "Target": {
-			            "Entity": "LFAC_electricity_40_0v.area"
-			          }
-			        }
-			      },
-			      "SemanticSlots": {
-			        "Where": {
-			          "Role": "LFAC_electricity_40_0v.area"
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Preposition": {
-			            "Subject": {
-			              "Role": "LFAC_electricity_40_0v"
-			            },
-			            "Prepositions": [
-			              {
-			                "in": {
-			                  "State": "Generated"
-			                }
-			              }
-			            ],
-			            "Object": {
-			              "Role": "LFAC_electricity_40_0v.area"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "LFAC_electricity_40_0vs_are_in_areas"
-			        }
-			      ]
-			    },
-			    "LFAC_electricity_40_0v_has_dim_electricity": {
-			      "Binding": {
-			        "ConceptualEntity": "LFAC_Electricity400v"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "LFAC_electricity_40_0v": {
-			          "Target": {
-			            "Entity": "LFAC_electricity_40_0v"
-			          }
-			        },
-			        "dim_electricity": {
-			          "Target": {
-			            "Entity": "dim_electricity"
+			            "Entity": "d_date"
 			          }
 			        }
 			      },
@@ -4959,30 +8201,35 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "LFAC_electricity_40_0v"
+			              "Role": "LFAC_aircompressor_electricity_usage"
 			            },
 			            "Object": {
-			              "Role": "dim_electricity"
+			              "Role": "d_date"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "LFAC_electricity_40_0vs_have_dim_electricity"
+			          "ID": "LFAC_aircompressor_electricity_usages_have_d_dates"
 			        },
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "dim_electricity"
+			              "Role": "d_date"
 			            },
 			            "Object": {
-			              "Role": "LFAC_electricity_40_0v"
+			              "Role": "LFAC_aircompressor_electricity_usage"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "dim_electricity_have_LFAC_electricity_40_0vs"
+			          "ID": "d_dates_have_LFAC_aircompressor_electricity_usages"
 			        }
 			      ]
+			    }
+			  },
+			  "Agents": {
+			    "Internal": {
+			      "Version": "1.1.0"
 			    }
 			  }
 			}

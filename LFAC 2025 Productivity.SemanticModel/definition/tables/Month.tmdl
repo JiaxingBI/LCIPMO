@@ -1,0 +1,53 @@
+table Month
+	lineageTag: 057e7985-5fc5-4b5a-ab0a-07f5d70f9926
+
+	column Date = DATE (2025,Month[MonthNum],1)
+		formatString: yyyy-mm
+		lineageTag: 49d85b8a-1784-4505-baee-7dafa77400b1
+		summarizeBy: none
+
+		variation Variation
+			isDefault
+			relationship: 96b8fd5b-8749-4eee-8a5c-30f6b24bde8a
+			defaultHierarchy: LocalDateTable_6b456a03-cb66-4050-ad34-6cdf91d13f6b.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column IsCurrentMonth = IF('Month'[MonthNum] = MONTH(TODAY()), "Current Month", [Month])
+		lineageTag: 96fc64dc-7b42-4c5e-a2bb-73ae9c21e906
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthNum
+		formatString: 0
+		lineageTag: d4e82e8c-1261-4b68-8208-d04ae2632215
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: LFAC[MonthNum]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month
+		lineageTag: 3e291373-2dbf-4ba2-b268-0ad91d4230a4
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Month]
+		sortByColumn: MonthNum
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Month = calculated
+		mode: import
+		source =
+				
+				SUMMARIZE (
+				    'LFAC',
+				    'LFAC'[MonthNum],
+				    "Month", FORMAT ( DATE ( 2025, 'LFAC'[MonthNum], 1 ), "mmmm" )
+				)
+
+	annotation PBI_Id = 99cd0e0815c6470cac3e39206b1cedd3
+

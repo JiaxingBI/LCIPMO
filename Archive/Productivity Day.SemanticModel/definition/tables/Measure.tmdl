@@ -1,0 +1,83 @@
+table Measure
+	lineageTag: b1ce69b8-843e-4628-914c-09c42e8ef4d2
+
+	measure Identified_2025 =
+			
+			CALCULATE (
+			    SUM ( Productivty[Actual] ),
+			    Productivty[Site] = "JIA",
+			    Productivty[Year] = "2025",
+			    Productivty[Deparment] IN { "Moulding", "Processing", "Packing" }
+			)
+		formatString: 0.0
+		lineageTag: de4bb152-8481-46a7-ae26-b1199cd0ebb0
+
+	measure Target_2025 =
+			
+			CALCULATE (
+			    SUM ( Productivty[Target] ),
+			    Productivty[Site] = "JIA",
+			    Productivty[Year] = "2025",
+			    Productivty[Deparment] IN { "Moulding", "Processing", "Packing" }
+			)
+		formatString: 0.0
+		lineageTag: d14f88a8-0cd8-45a9-8a27-40584e526314
+
+	measure Target_2024 =
+			
+			CALCULATE (
+			    SUM ( Productivty[Target] ),
+			    Productivty[Site] = "JIA",
+			    Productivty[Year] = "2024",
+			    Productivty[Deparment] IN { "Moulding", "Processing", "Packing" }
+			)
+		formatString: 0.0
+		lineageTag: bb62afc7-f833-4dad-8c03-49086354527e
+
+	measure Identified_2024 =
+			
+			CALCULATE (
+			    SUM ( Productivty[Actual] ),
+			    Productivty[Site] = "JIA",
+			    Productivty[Year] = "2024",
+			    Productivty[Deparment] IN { "Moulding", "Processing", "Packing" }
+			)
+		formatString: 0.0
+		lineageTag: a857b15f-20fb-435d-ac6c-d511211b09ea
+
+	measure Target_2023 =
+			
+			CALCULATE (
+			    SUM ( Productivty[Target] ),
+			    Productivty[Site] = "JIA",
+			    Productivty[Year] = "2023",
+			    Productivty[Deparment] IN { "Moulding", "Processing", "Packing" }
+			)
+		formatString: 0.0
+		lineageTag: 9abbda5d-461c-4787-8bda-dfaf89cb1bed
+
+	measure Identified_2023 =
+			
+			CALCULATE (
+			    SUM ( Productivty[Actual] ),
+			    Productivty[Site] = "JIA",
+			    Productivty[Year] = "2023",
+			    Productivty[Deparment] IN { "Moulding", "Processing", "Packing" }
+			)
+		formatString: 0.0
+		lineageTag: d46af37d-2ad5-42b1-aee9-4fb111cc5dfb
+
+	column Value
+		lineageTag: af0731b6-3a0d-4930-950e-302c94ca701b
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Measure = calculated
+		mode: import
+		source = {""}
+
+	annotation PBI_Id = 896ffa3cf8de4e76a36dd06407b60ca5
+

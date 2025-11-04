@@ -1,0 +1,33 @@
+table Month
+	lineageTag: 41e51ebc-2b68-42dd-b980-026d65a51dff
+
+	column MonthNum
+		formatString: 0
+		lineageTag: 9e98a94e-43d0-4e4b-b89c-c69c5b305c95
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: OverallTracker[MonthNum]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month
+		lineageTag: 8a43dd1f-1f8e-4b1c-afcf-95718d80be0a
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Month]
+		sortByColumn: MonthNum
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Month = calculated
+		mode: import
+		source =
+				
+				SUMMARIZE (
+				    'OverallTracker',
+				    'OverallTracker'[MonthNum],
+				    "Month", FORMAT ( DATE ( 2025, 'OverallTracker'[MonthNum], 1 ), "mmmm" )
+				)
+
+	annotation PBI_Id = 78311526605945d0b465e407c70ee1b9
+

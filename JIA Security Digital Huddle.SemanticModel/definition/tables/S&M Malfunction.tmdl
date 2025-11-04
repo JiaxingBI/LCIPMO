@@ -1,0 +1,128 @@
+table 'S&M Malfunction'
+	lineageTag: d3de9365-5674-40c5-8bd5-93f6623911e6
+
+	measure NewAddYesterday =
+			
+			IF(
+			    SUM('S&M Malfunction'[New])<>0,
+			    SUM('S&M Malfunction'[New]),
+			    0
+			)
+		formatString: 0
+		lineageTag: 983db15f-3f4d-4a72-a46e-e70b1ae95e6b
+
+	column Department
+		dataType: string
+		lineageTag: f0ad3c2a-c16f-44a3-9048-61f454516d21
+		summarizeBy: none
+		sourceColumn: Department
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month
+		dataType: string
+		lineageTag: 898203ec-1f92-4c41-962a-bf4b740c96fd
+		summarizeBy: none
+		sourceColumn: Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column Done
+		dataType: int64
+		lineageTag: 2595c339-af67-435e-915c-713cd9cb9d7d
+		summarizeBy: sum
+		sourceColumn: Done
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Pending
+		dataType: int64
+		lineageTag: 7c28db1c-0f0c-48c4-a5ac-d3f316da7eef
+		summarizeBy: sum
+		sourceColumn: Pending
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Ongoing
+		dataType: int64
+		lineageTag: d8ce5f31-13e8-4649-b23c-aede45ebcb1f
+		summarizeBy: sum
+		sourceColumn: Ongoing
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column MonthNumber = ```
+			
+			  SWITCH(
+			    [Month],
+			    "Jan",   1,
+			    "Feb",   2,
+			    "Mar",   3,
+			    "Apr",   4,
+			    "May",   5,
+			    "Jun",   6,
+			    "Jul",   7,
+			    "Aug",   8,
+			    "Sep",   9,
+			    "Oct",  10,
+			    "Nov",11,
+			    "Dec",12,
+			    BLANK()
+			  )
+			```
+		formatString: 0
+		lineageTag: 592f3e44-f3e6-4a15-a83f-357802e74bb6
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		lineageTag: 03db60b3-390f-4345-bd41-e8e18be63d02
+		summarizeBy: none
+		sourceColumn: Date
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column New
+		dataType: int64
+		formatString: 0
+		lineageTag: d2abe3b6-184a-4573-a825-d15da9d5ff5e
+		summarizeBy: sum
+		sourceColumn: New
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'S&M Malfunction' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://legogroup.sharepoint.com/sites/CHJiaxingSecurity/Shared%20Documents/00%20Digital%20Huddle/Security%20Huddle%20Update.xlsx"), null, true),
+				    #"S&M Mulfunction_Sheet" = Source{[Item="S&M Mulfunction",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(#"S&M Mulfunction_Sheet", [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"已完成", Int64.Type}, {"暂不维修", Int64.Type}, {"维修进行中", Int64.Type}, {"昨日新增", Int64.Type}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type",{{"已完成", "Done"}, {"维修进行中", "Ongoing"}, {"暂不维修", "Unavailable"}, {"昨日新增", "New Additions Yesterday"}}),
+				    #"Added Custom" = Table.AddColumn(#"Renamed Columns", "Date", each #date(1900,1,1) + #duration([Month]-2, 0, 0, 0)),
+				    #"Removed Columns" = Table.RemoveColumns(#"Added Custom",{"Month"}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Removed Columns",{{"Date", type date}}),
+				    #"Added Custom1" = Table.AddColumn(#"Changed Type1", "Month", each Date.ToText([Date], "MMM", "en-US")),
+				    #"Renamed Columns1" = Table.RenameColumns(#"Added Custom1",{{"New Additions Yesterday", "New"}, {"Unavailable", "Pending"}})
+				in
+				    #"Renamed Columns1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,365 @@
+table Measure
+	lineageTag: 4e719b4b-c955-4a33-b308-fa6d8a618e39
+
+	measure MaxVersion = ```
+			
+			    CALCULATE ( MAX ( OverallTracker[Version] ), ALL ( OverallTracker ) )
+			```
+		formatString: 0
+		lineageTag: e005151b-65fc-4810-99d7-5df6cee75f65
+
+	measure CurrentMonth = ```
+			
+			   IF (
+			        ISFILTERED ( 'Month'[Month] ),
+			        SELECTEDVALUE('Month'[MonthNum]),
+			        [MaxVersion]
+			    )
+			```
+		formatString: 0
+		lineageTag: 8d247130-4056-43f4-b6d6-94610af17b60
+
+	measure InYearBenefit_Color =
+			
+			IF (
+			    [InYearBenefit] < 8,
+			    "#E63946",
+			    "#01a522"
+			)
+		lineageTag: 0a613083-a3c0-4bf6-a5fe-f6bc2a0addb9
+
+	measure TargetYTD_ = ```
+			
+			VAR CurrMonth = [CurrentMonth] 
+			RETURN 
+			CALCULATE( 
+			    SUM(OverallTracker[Value]), 
+			    OverallTracker[Value Type] = "Target" && 
+			    OverallTracker[Version] = CurrMonth&& 
+			    OverallTracker[MonthNum] <= CurrMonth )
+			```
+		lineageTag: 6dcc4493-7ce8-43ff-b43c-41295bc08793
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure ActualYTD_ = ```
+			
+			VAR CurrMonth = [CurrentMonth] 
+			RETURN 
+			CALCULATE( 
+			    SUM(OverallTracker[Value]), 
+			    OverallTracker[Value Type] = "Actual" && 
+			    OverallTracker[Version] = CurrMonth&& 
+			    OverallTracker[MonthNum] <= CurrMonth )
+			```
+		lineageTag: 305284ce-6e7f-4bee-86de-ae385498651f
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure InYearBenefit_PRO_Color =
+			
+			IF (
+			    [InYearBenefit] < 3,
+			    "#E63946",
+			    "#01a522"
+			)
+		lineageTag: 143339eb-f4f4-433f-ae4a-fafc0ac7bd85
+
+	measure InYearBenefit_PAC_Color =
+			
+			IF (
+			    [InYearBenefit] < 13,
+			    "#E63946",
+			    "#01a522"
+			)
+		lineageTag: 483aa41a-2470-4f47-b8cd-6d21fbc26599
+
+	measure LastVersion = ```
+			
+			    CALCULATE ( MAX ( OverallTracker[Version] ), ALL ( OverallTracker ) ) - 1
+			```
+		formatString: 0
+		lineageTag: bf0b6aad-ba95-4da4-8f7e-a1afdbf74c5b
+
+	measure InYearBenefit = ```
+			
+			var currentMonth = MAX('Month'[MonthNum])
+			VAR MaxMonthVersion = [MaxVersion]
+			//Month Selected
+			var actualYTD = 
+			    CALCULATE(
+			        SUM(OverallTracker[Value]),
+			                OverallTracker[Value Type]="Actual"&&
+			                OverallTracker[MonthNum]<=currentMonth
+			    )
+			var futureTarget = 
+			   CALCULATE(
+			      CALCULATE(
+			        SUM(OverallTracker[Value]),
+			                OverallTracker[Value Type]="Target"&&
+			                OverallTracker[MonthNum]>currentMonth
+			    )
+			   )
+			// No Selected
+			var _ActualYTD = 
+			    CALCULATE(
+			        SUM(OverallTracker[Value]),
+			                OverallTracker[Value Type]="Actual"&&OverallTracker[Version] = MaxMonthVersion,
+			                OverallTracker[MonthNum]<=MaxMonthVersion
+			    )
+			var _FutureTarget = 
+			   CALCULATE(
+			      CALCULATE(
+			        SUM(OverallTracker[Value]),
+			                OverallTracker[Value Type]="Target"&&OverallTracker[Version] = MaxMonthVersion,
+			                OverallTracker[MonthNum]>MaxMonthVersion
+			    )
+			   )
+			
+			RETURN
+			IF (
+			    ISFILTERED ( 'Month'[Month] ),
+			    actualYTD  + futureTarget,
+			    _ActualYTD  + _FutureTarget 
+			)
+			
+			```
+		lineageTag: 761a0cb4-15df-4a89-ab36-fac0e4ac4206
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure ActualYTD = ```
+			
+			VAR CurrMonth = [CurrentMonth] 
+			RETURN 
+			CALCULATE( 
+			    SUM(OverallTracker[Value]), 
+			    OverallTracker[Value Type] = "Actual" &&
+			    OverallTracker[Version] = CurrMonth, 
+			    FILTER( ALL(OverallTracker), 
+			    OverallTracker[MonthNum] <= CurrMonth )
+			)
+			```
+		lineageTag: f994bf54-20c3-40ca-9fa1-bd09460b299e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Compare =
+			
+			[InYearBenefit] - [InYearBenefit1]
+		lineageTag: f2d99d72-2711-48e7-9682-23556b0a69a2
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure CompareColor =
+			
+			IF (
+			    [Compare] < 0,
+			    "#E63946",
+			    "#01a522"
+			)
+		lineageTag: 92790c58-5db7-45a7-a351-bb09ffa763e2
+
+	measure InYearBenefit1 = ```
+			
+			var currentMonth = MAX('Month'[MonthNum])-1
+			VAR MaxMonthVersion = [MaxVersion]-1
+			//Month Selected
+			var actualYTD = 
+			    CALCULATE(
+			        SUM(OverallTracker[Value]),
+			                OverallTracker[Value Type]="Actual"&&
+			                OverallTracker[MonthNum]<=currentMonth
+			    )
+			var futureTarget = 
+			   CALCULATE(
+			      CALCULATE(
+			        SUM(OverallTracker[Value]),
+			                OverallTracker[Value Type]="Target"&&
+			                OverallTracker[MonthNum]>currentMonth
+			    )
+			   )
+			// No Selected
+			var _ActualYTD = 
+			    CALCULATE(
+			        SUM(OverallTracker[Value]),
+			                OverallTracker[Value Type]="Actual"&&OverallTracker[Version] = MaxMonthVersion,
+			                OverallTracker[MonthNum]<=MaxMonthVersion
+			    )
+			var _FutureTarget = 
+			   CALCULATE(
+			      CALCULATE(
+			        SUM(OverallTracker[Value]),
+			                OverallTracker[Value Type]="Target"&&OverallTracker[Version] = MaxMonthVersion,
+			                OverallTracker[MonthNum]>MaxMonthVersion
+			    )
+			   )
+			
+			RETURN
+			IF (
+			    ISFILTERED ( 'Month'[Month] ),
+			    actualYTD  + futureTarget,
+			    _ActualYTD  + _FutureTarget 
+			)
+			
+			```
+		lineageTag: 98cadbb1-69b7-4465-a9e3-c018116b03d3
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure IL0-2 = ```
+			
+			var currentMonth = MAX('Month'[MonthNum])
+			VAR MaxMonthVersion = [MaxVersion]
+			//Month Selected
+			var actualYTD = 
+			    CALCULATE(
+			        SUM(OverallTracker[Value]),
+			                OverallTracker[Value Type]="Actual"&&OverallTracker[IL] IN { "IL0 - Identified", "IL1 - Validated", "IL2 - Planned" },
+			                OverallTracker[MonthNum]<=currentMonth
+			    )
+			var futureTarget = 
+			   CALCULATE(
+			      CALCULATE(
+			        SUM(OverallTracker[Value]),
+			                OverallTracker[Value Type]="Target"&&OverallTracker[IL] IN { "IL0 - Identified", "IL1 - Validated", "IL2 - Planned" },
+			                OverallTracker[MonthNum]>currentMonth
+			    )
+			   )
+			// No Selected
+			var _ActualYTD = 
+			    CALCULATE(
+			        SUM(OverallTracker[Value]),
+			                OverallTracker[Value Type]="Actual"&&OverallTracker[Version] = MaxMonthVersion&&OverallTracker[IL] IN { "IL0 - Identified", "IL1 - Validated", "IL2 - Planned" },
+			                OverallTracker[MonthNum]<=MaxMonthVersion
+			    )
+			var _FutureTarget = 
+			   CALCULATE(
+			      CALCULATE(
+			        SUM(OverallTracker[Value]),
+			                OverallTracker[Value Type]="Target"&&OverallTracker[Version] = MaxMonthVersion&&OverallTracker[IL] IN { "IL0 - Identified", "IL1 - Validated", "IL2 - Planned" },
+			                OverallTracker[MonthNum]>MaxMonthVersion
+			    )
+			   )
+			
+			RETURN
+			IF (
+			    ISFILTERED ( 'Month'[Month] ),
+			    actualYTD  + futureTarget,
+			    _ActualYTD  + _FutureTarget 
+			)
+			
+			```
+		lineageTag: ae74a0ea-4a60-4e37-a85a-52f914b81a63
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure ActualYTD_IL02 =
+			
+			VAR CurrMonth = [CurrentMonth]
+			RETURN
+			CALCULATE(
+			    SUM(OverallTracker[Value]),
+			    OverallTracker[Value Type] = "Actual"&&
+			    OverallTracker[Version] = CurrMonth,
+			    FILTER(
+			        ALL(OverallTracker),
+			        OverallTracker[MonthNum] <= CurrMonth &&
+			        OverallTracker[IL] IN { "IL0 - Identified", "IL1 - Validated", "IL2 - Planned" }
+			    )
+			)
+		lineageTag: d5c0fa85-2379-4a90-a04b-0ad3784c02e8
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure IL3-5 = ```
+			
+			var currentMonth = MAX('Month'[MonthNum])
+			VAR MaxMonthVersion = [MaxVersion]
+			//Month Selected
+			var actualYTD = 
+			    CALCULATE(
+			        SUM(OverallTracker[Value]),
+			                OverallTracker[Value Type]="Actual"&&OverallTracker[IL] IN { "IL3 - Decision & Implementation", "IL4 - Implemented", "IL5 - Savings approved by finance" },
+			                OverallTracker[MonthNum]<=currentMonth
+			    )
+			var futureTarget = 
+			   CALCULATE(
+			      CALCULATE(
+			        SUM(OverallTracker[Value]),
+			                OverallTracker[Value Type]="Target"&&OverallTracker[IL] IN { "IL3 - Decision & Implementation", "IL4 - Implemented", "IL5 - Savings approved by finance" },
+			                OverallTracker[MonthNum]>currentMonth
+			    )
+			   )
+			// No Selected
+			var _ActualYTD = 
+			    CALCULATE(
+			        SUM(OverallTracker[Value]),
+			                OverallTracker[Value Type]="Actual"&&OverallTracker[Version] = MaxMonthVersion&&OverallTracker[IL] IN { "IL3 - Decision & Implementation", "IL4 - Implemented", "IL5 - Savings approved by finance" },
+			                OverallTracker[MonthNum]<=MaxMonthVersion
+			    )
+			var _FutureTarget = 
+			   CALCULATE(
+			      CALCULATE(
+			        SUM(OverallTracker[Value]),
+			                OverallTracker[Value Type]="Target"&&OverallTracker[Version] = MaxMonthVersion&&OverallTracker[IL] IN { "IL3 - Decision & Implementation", "IL4 - Implemented", "IL5 - Savings approved by finance" },
+			                OverallTracker[MonthNum]>MaxMonthVersion
+			    )
+			   )
+			
+			RETURN
+			IF (
+			    ISFILTERED ( 'Month'[Month] ),
+			    actualYTD  + futureTarget,
+			    _ActualYTD  + _FutureTarget 
+			)
+			
+			```
+		lineageTag: f6473e26-b11d-47f6-880f-8ef9d9ccde03
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure ActualYTD_1 = ```
+			
+			VAR CurrMonth = [CurrentMonth] -1
+			RETURN 
+			CALCULATE( 
+			    SUM(OverallTracker[Value]), 
+			    OverallTracker[Value Type] = "Actual" && 
+			    OverallTracker[Version] = CurrMonth&& 
+			    OverallTracker[MonthNum] <= CurrMonth )
+			```
+		lineageTag: 9e6742ab-385e-4dd1-b7ed-5a70567308d2
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Compare1 =
+			
+			[ActualYTD_] - [ActualYTD_1]
+		lineageTag: a8054021-70d4-4156-ac1e-9e3e112a6812
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure CompareColor1 =
+			
+			IF (
+			    [Compare1] < 0,
+			    "#E63946",
+			    "#01a522"
+			)
+		lineageTag: 434b8e17-6feb-4850-91ba-4eb7839f1757
+
+	column Value
+		lineageTag: ff842870-96f7-4f10-bbc6-66514ff2a405
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Measure = calculated
+		mode: import
+		source = {""}
+
+	annotation PBI_Id = 0552b090e71346028e9e6077bf3145a0
+

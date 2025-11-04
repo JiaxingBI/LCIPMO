@@ -1,0 +1,44 @@
+table 'TotalValues_Overall Tracker'
+	lineageTag: f5293a9e-ea20-469f-89e5-3a0df20cdee8
+
+	column 'Project name'
+		lineageTag: 3b41e991-fda0-4064-81f0-d343cd30a23f
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Overall tracker[Project name]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Value Type'
+		lineageTag: 24e81196-efb7-427f-bf91-2171af80b9d9
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Overall tracker[Value Type]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Total values'
+		lineageTag: 936f96c5-2516-45ab-b24e-d23b06f0277e
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Total values]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'TotalValues_Overall Tracker' = calculated
+		mode: import
+		source =
+				
+				ADDCOLUMNS(
+				    SUMMARIZE(
+				        'Overall tracker',
+				        'Overall tracker'[Project name],'Overall tracker'[Value Type]
+				    ),
+				    "Total values",
+				    CALCULATE(SUMX('Overall tracker','Overall tracker'[Value]))
+				)
+
+	annotation PBI_Id = dea0bbf91a4f4cc29d3ef51c8142d853
+

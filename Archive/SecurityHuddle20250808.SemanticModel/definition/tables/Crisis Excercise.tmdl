@@ -1,0 +1,102 @@
+table 'Crisis Excercise'
+	lineageTag: b371e2a6-ec48-4be5-b4bf-b7e4d0656124
+
+	column 'No.'
+		dataType: string
+		lineageTag: 4a0687e7-519d-4fd3-9e71-08dca001a432
+		summarizeBy: none
+		sourceColumn: No.
+
+		annotation SummarizationSetBy = Automatic
+
+	column Exercise
+		dataType: string
+		lineageTag: e04d181c-2419-4381-ab28-b78568e8b943
+		summarizeBy: none
+		sourceColumn: Exercise
+
+		annotation SummarizationSetBy = Automatic
+
+	column Form
+		dataType: string
+		lineageTag: 09b4ed1a-d16c-4117-bd90-750812a2f421
+		summarizeBy: none
+		sourceColumn: Form
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Planned Month'
+		dataType: string
+		lineageTag: fb926a68-6ec8-4fd6-8425-80e9eb0bbaa5
+		summarizeBy: none
+		sourceColumn: Planned Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column Driver
+		dataType: string
+		lineageTag: 473c59fc-04da-4b6a-978f-b98628eb5601
+		summarizeBy: none
+		sourceColumn: Driver
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Actual Complete Date'
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 13038143-a693-452b-893e-7bfaeadc7081
+		summarizeBy: none
+		sourceColumn: Actual Complete Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Progress
+		dataType: string
+		lineageTag: 4a329ede-cc5c-4d98-991a-df5ac31ea7de
+		summarizeBy: none
+		sourceColumn: Progress
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Confirmed By'
+		dataType: string
+		lineageTag: db7075a5-d850-4fc2-b66d-7dcc598b159b
+		summarizeBy: none
+		sourceColumn: Confirmed By
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Crisis Excercise' = m
+		mode: import
+		source = ```
+				let
+				    Source = Excel.Workbook(Web.Contents("https://legogroup.sharepoint.com/sites/JIALCI/Shared%20Documents/General/03_BI/01_Project%20List/02.%20Project%20List/09.%20Security%20Digital%20Huddle/Security%20Huddle%20Update.xlsx"), null, true),
+				    #"Crisis Excercise_Sheet" = Source{[Item="Crisis Excercise",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Crisis Excercise_Sheet", [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Crisis Management Exercises 2025 PLAN", type any}, {"Column2", type text}, {"Column3", type text}, {"Column4", type text}, {"Column5", type text}, {"Column6", type text}, {"Column7", type any}, {"Column8", type text}}),
+				    #"Promoted Headers1" = Table.PromoteHeaders(#"Changed Type", [PromoteAllScalars=true]),
+				    #"Rounded Off" = Table.TransformColumns(#"Promoted Headers1",{{"Actual Complete Date", each Number.Round(_, 2), type number}}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Rounded Off",{{"Actual Complete Date", type text}}),
+				    #"Split Column by Delimiter" = Table.SplitColumn(#"Changed Type1", "Actual Complete Date", Splitter.SplitTextByDelimiter(".", QuoteStyle.Csv), {"Actual Complete Date.1", "Actual Complete Date.2"}),
+				    #"Changed Type2" = Table.TransformColumnTypes(#"Split Column by Delimiter",{{"Actual Complete Date.1", Int64.Type}, {"Actual Complete Date.2", Int64.Type}}),
+				    #"Added Custom" = Table.AddColumn(#"Changed Type2", "Actual Complete Date", each if [Actual Complete Date.1] = null or [Actual Complete Date.2] = null 
+				      then null 
+				      else #date(
+				        Date.Year(DateTime.LocalNow()),
+				        [Actual Complete Date.1],
+				        [Actual Complete Date.2]
+				      )),
+				    #"Changed Type3" = Table.TransformColumnTypes(#"Added Custom",{{"Actual Complete Date", type date}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type3",{"Actual Complete Date.1", "Actual Complete Date.2"}),
+				    #"Reordered Columns" = Table.ReorderColumns(#"Removed Columns",{"No.", "Exercise", "Form", "Planned Month", "Driver", "Actual Complete Date", "Progress", "Confirmed By"})
+				
+				in
+				    #"Reordered Columns"
+				```
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

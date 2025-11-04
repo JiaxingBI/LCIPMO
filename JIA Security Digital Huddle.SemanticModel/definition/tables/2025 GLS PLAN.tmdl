@@ -1,0 +1,160 @@
+table '2025 GLS PLAN'
+	lineageTag: c6230a17-8b72-4201-9103-76fb3b0169ac
+
+	column Month
+		dataType: string
+		lineageTag: 024d5031-f54b-412a-a4ec-219197261916
+		summarizeBy: none
+		sourceColumn: Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column GLS
+		dataType: string
+		lineageTag: f2f0ac0d-c716-4d78-83bc-e6f8897f84ff
+		summarizeBy: none
+		sourceColumn: GLS
+
+		annotation SummarizationSetBy = Automatic
+
+	column Week
+		dataType: string
+		lineageTag: 61bac38c-792c-436f-9f0e-3a66278406ff
+		summarizeBy: none
+		sourceColumn: Week
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cat.'
+		dataType: string
+		lineageTag: f360b777-ddcd-4856-b704-7e7506c67a41
+		summarizeBy: none
+		sourceColumn: Cat.
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'GLS Area'
+		dataType: string
+		lineageTag: 1ed5aef2-0752-4dbb-97c8-cdb3e3c5d5c4
+		summarizeBy: none
+		sourceColumn: GLS Area
+
+		annotation SummarizationSetBy = Automatic
+
+	column Time
+		dataType: string
+		lineageTag: 907bace2-8995-4c94-b1b9-c1fda334ca6b
+		summarizeBy: none
+		sourceColumn: Time
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Look What'
+		dataType: string
+		lineageTag: 623919a7-a04e-47a7-920f-05eae9e73158
+		summarizeBy: none
+		sourceColumn: Look What
+
+		annotation SummarizationSetBy = Automatic
+
+	column Driver/Owner
+		dataType: string
+		lineageTag: 0c5824a9-b699-4d48-9826-87468e762868
+		summarizeBy: none
+		sourceColumn: Driver/Owner
+
+		annotation SummarizationSetBy = Automatic
+
+	column Participants(自愿填写）
+		dataType: string
+		lineageTag: 5e7dcb38-2f23-4ff4-b081-af38cc308037
+		summarizeBy: none
+		sourceColumn: Participants(自愿填写）
+
+		annotation SummarizationSetBy = Automatic
+
+	column Optional
+		dataType: string
+		lineageTag: 68b90bb0-7823-42e0-9fea-2be85ac9d20c
+		summarizeBy: none
+		sourceColumn: Optional
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		dataType: string
+		lineageTag: 45782c03-a3e3-44e2-96c2-3b52e8aaf5cc
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthNum =
+			SWITCH(
+			    TRUE(),
+			    '2025 GLS PLAN'[Month]="Jan",1,
+			    '2025 GLS PLAN'[Month]="Feb",2,
+			    '2025 GLS PLAN'[Month]="Mar",3,
+			    '2025 GLS PLAN'[Month]="Apr",4,
+			    '2025 GLS PLAN'[Month]="May",5,
+			    '2025 GLS PLAN'[Month]="Jun",6,
+			    '2025 GLS PLAN'[Month]="Jul",7,
+			    '2025 GLS PLAN'[Month]="Aug",8,
+			    '2025 GLS PLAN'[Month]="Sep",9,
+			    '2025 GLS PLAN'[Month]="Oct",10,
+			    '2025 GLS PLAN'[Month]="Nov",11,
+			    12)
+		formatString: 0
+		lineageTag: 607cf06e-b333-4a22-a237-603caf84f860
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		lineageTag: a55ca877-cffd-42e6-9d0d-b65b5fb0c5b5
+		summarizeBy: none
+		sourceColumn: Date
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column When
+		dataType: int64
+		formatString: 0
+		lineageTag: b8096dad-e197-4d35-af8a-f133b79f82f1
+		summarizeBy: sum
+		sourceColumn: When
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	partition '2025 GLS PLAN' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://legogroup.sharepoint.com/sites/CHJiaxingSecurity/Shared%20Documents/00%20Digital%20Huddle/Digital%20Huddle%20(Excel%E7%89%88-%E8%AF%95%E8%BF%90%E8%A1%8C%EF%BC%89/Security%20GLS%20Plan.xlsx"), null, true),
+				    #"Yearly Plan_Sheet" = Source{[Item="Yearly Plan",Kind="Sheet"]}[Data],
+				    #"Removed Top Rows" = Table.Skip(#"Yearly Plan_Sheet",1),
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Removed Top Rows", [PromoteAllScalars=true]),
+				    #"Removed Blank Rows" = Table.SelectRows(#"Promoted Headers", each not List.IsEmpty(List.RemoveMatchingItems(Record.FieldValues(_), {"", null}))),
+				    #"Removed Columns1" = Table.RemoveColumns(#"Removed Blank Rows",{"Column13", "Column14", "Column15"}),
+				    #"Inserted Text Before Delimiter" = Table.AddColumn(#"Removed Columns1", "Text Before Delimiter", each Text.BeforeDelimiter([Time], ","), type text),
+				    #"Added Prefix" = Table.TransformColumns(#"Inserted Text Before Delimiter", {{"Text Before Delimiter", each "2025 " & _, type text}}),
+				    #"Replaced Value" = Table.ReplaceValue(#"Added Prefix","2025 ",null,Replacer.ReplaceValue,{"Text Before Delimiter"}),
+				    #"Changed Type2" = Table.TransformColumnTypes(#"Replaced Value",{{"Text Before Delimiter", type date}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type2",{{"Text Before Delimiter", "Date"}, {"GLS #", "GLS"}}),
+				    #"Extracted Text After Delimiter" = Table.TransformColumns(#"Renamed Columns", {{"GLS", each Text.AfterDelimiter(_, "#"), type text}})
+				in
+				    #"Extracted Text After Delimiter"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

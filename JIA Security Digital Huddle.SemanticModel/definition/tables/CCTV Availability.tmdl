@@ -1,0 +1,35 @@
+table 'CCTV Availability'
+	lineageTag: 51694a34-6978-4243-b844-d072dfdf790f
+
+	column Area
+		dataType: string
+		lineageTag: 9d82f223-4a1c-4e32-a832-0ef10316a35c
+		summarizeBy: none
+		sourceColumn: Area
+
+		annotation SummarizationSetBy = Automatic
+
+	column Availability
+		dataType: double
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 4b4019ac-eb29-4fee-bf36-a4f5e5fa01c7
+		summarizeBy: sum
+		sourceColumn: Availability
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'CCTV Availability' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://legogroup.sharepoint.com/sites/CHJiaxingSecurity/Shared%20Documents/00%20Digital%20Huddle/Security%20Huddle%20Update.xlsx"), null, true),
+				    #"CCTV Availability _Sheet" = Source{[Item="CCTV Availability ",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(#"CCTV Availability _Sheet", [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Availability", Percentage.Type}, {"Area", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

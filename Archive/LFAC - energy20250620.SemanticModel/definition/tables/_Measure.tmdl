@@ -1,0 +1,38 @@
+table _Measure
+	lineageTag: 9a4fdf82-2bb3-4004-82e3-0918cd931d84
+
+	measure 'Eletricity Usage' = SUM('LFAC_Electricity400v'[Value])
+		formatString: #,0
+		lineageTag: e2d21b1e-cbdf-45ce-885f-c3d7b8242621
+
+	measure Avg_Number = AVERAGEX( VALUES('LFAC_Electricity400v'[Date]),[Eletricity Usage])
+		formatString: #,0
+		lineageTag: c4b3dca4-63df-447c-9a76-da3c5b0dbab5
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure YTD_Number = ```
+			
+			 var numytd = CALCULATE([Eletricity Usage],DATESYTD('Calendar'[Date]))
+			 var res = IF(NOT(ISBLANK([Eletricity Usage])),numytd)
+			 RETURN
+			    res
+			    
+			```
+		formatString: #,0
+		lineageTag: d1ac11d6-2dab-44e9-b1ed-ff1b780e45a9
+
+	column Value
+		lineageTag: 072c9930-b587-41c8-9744-6ebdedc3862f
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _Measure = calculated
+		mode: import
+		source = {""}
+
+	annotation PBI_Id = a0ff22b421c749508ac68e635a2f0047
+

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "LFAC 2025 Productivity"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "7980c692-8cc4-ba03-467c-47f58dac61a9"
+  }
+}

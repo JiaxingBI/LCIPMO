@@ -1,0 +1,26 @@
+table Others
+	lineageTag: d1cbea75-1c99-44c0-8149-f3c704c32bd0
+
+	column 'O T H E R S'
+		dataType: string
+		lineageTag: 721c9787-271f-4a82-96fa-3220db69f21a
+		summarizeBy: none
+		sourceColumn: O T H E R S
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Others = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://legogroup.sharepoint.com/sites/CHJiaxingSecurity/Shared%20Documents/00%20Digital%20Huddle/Digital%20Huddle%20(Excel%E7%89%88-%E8%AF%95%E8%BF%90%E8%A1%8C%EF%BC%89/02%20Security%20GLS%20Plan%20(2025).xlsx"), null, true),
+				    Others_Sheet = Source{[Item="Others",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(Others_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"O T H E R S", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

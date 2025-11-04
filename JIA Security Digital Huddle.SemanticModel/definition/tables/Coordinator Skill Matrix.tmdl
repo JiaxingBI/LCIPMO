@@ -1,0 +1,38 @@
+table 'Coordinator Skill Matrix'
+	lineageTag: 496eb1a0-45a9-4c77-bc41-16256cfaae7f
+
+	column 'Completion (vs. targets)'
+		dataType: double
+		formatString: 0%;-0%;0%
+		lineageTag: d728f114-4ef5-4891-b48e-b9a3f3e0ed79
+		summarizeBy: sum
+		sourceColumn: Completion (vs. targets)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Skills Matrix Gap'
+		dataType: string
+		lineageTag: b5c6f6e6-cac3-46d9-b0fb-5d8c8fb8a78c
+		summarizeBy: none
+		sourceColumn: Skills Matrix Gap
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Coordinator Skill Matrix' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://legogroup.sharepoint.com/sites/CHJiaxingSecurity/Shared Documents/08 LCC%E6%97%A5%E5%B8%B8%E7%AE%A1%E7%90%86/LCC Skill Matrix/Coordinator Skill Matrix 2.0 %EF%BC%88LEGO%EF%BC%89.xlsx"), null, true),
+				    #"Skill Matrix 2.0_Sheet" = Source{[Item="Skill Matrix 2.0",Kind="Sheet"]}[Data],
+				    #"Removed Other Columns" = Table.SelectColumns(#"Skill Matrix 2.0_Sheet",{"Column42", "Column43"}),
+				    #"Removed Top Rows" = Table.Skip(#"Removed Other Columns",38),
+				    #"Filtered Rows" = Table.SelectRows(#"Removed Top Rows", each ([Column42] <> null)),
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Filtered Rows", [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Completion #(lf)(vs. targets)", Percentage.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

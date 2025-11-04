@@ -8,21 +8,25 @@ model Model
 
 annotation __PBI_TimeIntelligenceEnabled = 0
 
-annotation PBIDesktopVersion = 2.143.878.0 (25.05)+b20aa3b866ec1b70879135a4e60e4b1301c75b21
+annotation PBIDesktopVersion = 2.146.1454.0 (25.08)+901d6c338d1dea81ac3e53073ffb10469f0f37b8
 
-annotation PBI_QueryOrder = ["LFAC_Electricity400v","LFAC_Humidity","dim_heatingcooling_type","LFAC_Others","dim_electricityArea","dim_electricity","LFAC_Aircompressor","LFAC_Gas","LFAC_Water"]
+annotation PBI_QueryOrder = ["LFAC_Electricity400v","LFAC_Humidity","dim_heatingcooling_type","LFAC_Others","LFAC_Aircompressor","LFAC_Gas","LFAC_Water","Electricity Area","dDate","LFAC_20kv","LFAC_Aircompressor_ElectricityUsage","LFAC_EC冷机10kv","HBW_SNArea","dAreaNumKey"]
 
 ref table LFAC_Electricity400v
-ref table Calendar
 ref table _Measure
 ref table LFAC_Humidity
 ref table dim_heatingcooling_type
 ref table LFAC_Others
-ref table dim_electricityArea
-ref table dim_electricity
 ref table LFAC_Aircompressor
 ref table LFAC_Gas
 ref table LFAC_Water
+ref table 'Electricity Area'
+ref table dDate
+ref table LFAC_20kv
+ref table LFAC_Aircompressor_ElectricityUsage
+ref table LFAC_EC冷机10kv
+ref table HBW_SNArea
+ref table dAreaNumKey
 
 ref cultureInfo en-US
 
