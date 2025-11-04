@@ -78,7 +78,7 @@
       "displayName": "Access Issue",
       "displayOption": 1,
       "filters": "[]",
-      "height": 1080.00,
+      "height": 2000.00,
       "name": "05e74f0358e9a6a4a4c7",
       "ordinal": 6,
       "visualContainers": [
@@ -87,8 +87,8 @@
           "filters": "[{\"name\":\"1d3978db36b8273d967f\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Access Issue\"}},\"Property\":\"AccessCategory\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"a\",\"Entity\":\"Access Issue\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"a\"}},\"Property\":\"AccessCategory\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Vehicle'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{}}]",
           "height": 435.30,
           "width": 590.11,
-          "x": 1299.77,
-          "y": 249.84,
+          "x": 0.77,
+          "y": 0.84,
           "z": 2000.00
         },
         {
@@ -96,7 +96,7 @@
           "filters": "[{\"name\":\"a838029d0e1c08a3dbcf\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Access Issue\"}},\"Property\":\"AccessCategory\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"a\",\"Entity\":\"Access Issue\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"a\"}},\"Property\":\"AccessCategory\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Vehicle'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{},\"ordinal\":1},{\"name\":\"68d750b33c5966efeca0\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"S&M Malfunction\"}},\"Property\":\"Department\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"S&M Malfunction\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Department\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Security'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{},\"ordinal\":2}]",
           "height": 305.00,
           "width": 601.67,
-          "x": 1288.33,
+          "x": 0,
           "y": 715.00,
           "z": 5000.00
         },
