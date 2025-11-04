@@ -403,9 +403,11 @@ table _Measure
 			
 			var AvgMins = AVERAGEX('ExerciseTime',[Exercise_Actual])
 			var WeeklyHrs = TRUNC(DIVIDE(AvgMins,60))
+			var tt= CALCULATE(WeeklyHrs,AvgMins)
 			var WeeklyMins = FORMAT(AvgMins,"00")- FORMAT(WeeklyHrs*60,"00")
+			var res = "This is a test for git"
 			RETURN
-			    WeeklyHrs & "hrs : " & WeeklyMins & "mins"
+			    res
 			
 			```
 		displayFolder: Local Measure\Excercise
