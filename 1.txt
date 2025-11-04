@@ -1,26 +1,21 @@
-{
-  "createOrReplace": {
-    "object": {
-      "database": "JIA Proccesing HxH Dataset_HANA",
-      "table": "_Measures"
-    },
-    "table": {
-      "name": "_Measures",
-      "lineageTag": "c26d7edc-deea-465e-b1b2-685bfeb492bf",
-      "partitions": [
-        {
-          "name": "_Measures-65a7357f-617e-4125-8e08-d0e1840b5e6a",
-          "mode": "import",
-          "source": {
-            "type": "m",
-            "expression": [
-              "let",
-              "    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText(\"i44FAA==\", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),",
-              "    #\"Changed Type\" = Table.TransformColumnTypes(Source,{{\"Column1\", type text}}),",
-              "    #\"Removed Columns\" = Table.RemoveColumns(#\"Changed Type\",{\"Column1\"})",
-              "in",
-              "    #\"Removed Columns\""
-            ]
+
+dsadzasdasd
+
+12
+
+23
+
+4
+124sadasd
+
+dsadzasdasd
+
+
+1
+4
+214
+1
+dsad
           }
         }
       ],
@@ -38,7 +33,7 @@
           ]
         },
         {
-          "name": "Actual Net Production Time (Hrs)",
+          "name": "Actual Ndsdset Production Time (Hrs)",
           "expression": "Divide([Actual Net Production Time (Mins)],60)",
           "formatString": "0.0",
           "displayFolder": "02_Hrs",
