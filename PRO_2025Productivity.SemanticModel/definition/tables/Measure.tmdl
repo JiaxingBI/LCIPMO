@@ -52,9 +52,8 @@ table Measure
 			    OverallTracker[Version] = CurrMonth&& 
 			    OverallTracker[MonthNum] <= CurrMonth )
 			```
+		formatString: 0.0
 		lineageTag: 305284ce-6e7f-4bee-86de-ae385498651f
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure InYearBenefit_PRO_Color =
 			
@@ -115,18 +114,19 @@ table Measure
 			                OverallTracker[MonthNum]>MaxMonthVersion
 			    )
 			   )
-			
-			RETURN
-			IF (
+			var A = IF (
 			    ISFILTERED ( 'Month'[Month] ),
 			    actualYTD  + futureTarget,
 			    _ActualYTD  + _FutureTarget 
 			)
+			var InYearLAtestMonth = 
+			    _ActualYTD  + _FutureTarget
+			RETURN
+			IF(A = BLANK(), [ProcessingFuture], A)
 			
 			```
+		formatString: 0.0
 		lineageTag: 761a0cb4-15df-4a89-ab36-fac0e4ac4206
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure ActualYTD = ```
 			
@@ -250,9 +250,8 @@ table Measure
 			)
 			
 			```
+		formatString: 0.0
 		lineageTag: ae74a0ea-4a60-4e37-a85a-52f914b81a63
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure ActualYTD_IL02 =
 			
@@ -315,9 +314,8 @@ table Measure
 			)
 			
 			```
+		formatString: 0.0
 		lineageTag: f6473e26-b11d-47f6-880f-8ef9d9ccde03
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure ActualYTD_1 = ```
 			
@@ -348,6 +346,89 @@ table Measure
 			    "#01a522"
 			)
 		lineageTag: 434b8e17-6feb-4850-91ba-4eb7839f1757
+
+	measure Target = ```
+			
+			VAR CurrMonth = [CurrentMonth] 
+			RETURN 
+			CALCULATE( 
+			    SUM(OverallTracker[Value]), 
+			    OverallTracker[Value Type] = "Target" && 
+			    OverallTracker[Version] = CurrMonth&& 
+			    OverallTracker[MonthNum] >= CurrMonth )
+			```
+		lineageTag: b564f4fb-685d-4ffc-bbb6-2b4fbc85b636
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure ProcessingFuture = ```
+			
+			VAR MaxMonthVersion = [MaxVersion]
+			// No Selected
+			var _ActualYTD = 
+			    CALCULATE(
+			        SUM(OverallTracker[Value]),
+			                OverallTracker[Value Type]="Actual"&&OverallTracker[Version] = MaxMonthVersion,
+			                OverallTracker[MonthNum]<=MaxMonthVersion,REMOVEFILTERS(OverallTracker), OverallTracker[Area]="Processing"
+			    )
+			var _FutureTarget = 
+			   CALCULATE(
+			        SUM(OverallTracker[Value]),
+			                OverallTracker[Value Type]="Target"&&OverallTracker[Version] = MaxMonthVersion,
+			                OverallTracker[MonthNum]>MaxMonthVersion,REMOVEFILTERS(OverallTracker),  OverallTracker[Area]="Processing"
+			    )
+			    RETURN _ActualYTD+_FutureTarget
+			```
+		lineageTag: 5f1ebb4b-cf33-4f83-918f-74469f9e8723
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 111InYearBenefit = ```
+			
+			var currentMonth = MAX('Month'[MonthNum])
+			VAR MaxMonthVersion = [MaxVersion]
+			//Month Selected
+			var actualYTD = 
+			    CALCULATE(
+			        SUM(OverallTracker[Value]),
+			                OverallTracker[Value Type]="Actual"&&
+			                OverallTracker[MonthNum]<=currentMonth
+			    )
+			var futureTarget = 
+			   CALCULATE(
+			      CALCULATE(
+			        SUM(OverallTracker[Value]),
+			                OverallTracker[Value Type]="Target"&&
+			                OverallTracker[MonthNum]>currentMonth
+			    )
+			   )
+			// No Selected
+			var _ActualYTD = 
+			    CALCULATE(
+			        SUM(OverallTracker[Value]),
+			                OverallTracker[Value Type]="Actual"&&OverallTracker[Version] = MaxMonthVersion,
+			                OverallTracker[MonthNum]<=MaxMonthVersion
+			    )
+			var _FutureTarget = 
+			   CALCULATE(
+			      CALCULATE(
+			        SUM(OverallTracker[Value]),
+			                OverallTracker[Value Type]="Target"&&OverallTracker[Version] = MaxMonthVersion,
+			                OverallTracker[MonthNum]>MaxMonthVersion
+			    )
+			   )
+			
+			RETURN
+			IF (
+			    ISFILTERED ( 'Month'[Month] ),
+			    actualYTD  + futureTarget,
+			    _ActualYTD  + _FutureTarget 
+			)
+			
+			```
+		lineageTag: 87ad6d2e-7a88-4814-82b1-81bbdf8a96f1
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column Value
 		lineageTag: ff842870-96f7-4f10-bbc6-66514ff2a405
