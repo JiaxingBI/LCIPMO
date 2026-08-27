@@ -1,4 +1,0 @@
-relationship AutoDetected_743e7ede-6db2-4733-af32-f653f34ae213
-	fromColumn: canteen.分类
-	toColumn: Sheet1.分类
-

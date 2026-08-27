@@ -1,4 +1,0 @@
-relationship 15ef6092-b4ac-05f0-21a8-102e95cb863e
-	fromColumn: OverallTracker.Version
-	toColumn: Month.MonthNum
-
