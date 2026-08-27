@@ -1,0 +1,164 @@
+table Productivity
+	lineageTag: 83426aa4-1b1e-4375-965f-835d4fe5154b
+
+	measure ActualSaving = SUM('Productivity'[Actual])
+		lineageTag: e5f39262-4211-439b-b249-b31a4551ac85
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure JIA_Actual = CALCULATE([ActualSaving],Productivity[Site]="JIA")
+		lineageTag: 8af5001c-7241-47e6-b851-178d819c9245
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Label =
+			
+			CALCULATE(
+			    MAX(Productivity[Department]),
+			    KEEPFILTERS(Productivity[Year] IN { "2024", "2025", "2026" })
+			)
+		lineageTag: 95b0395c-1129-44d7-8830-9f6721db3ddb
+
+	measure JIA_Target = CALCULATE( SUM('Productivity'[Target]), 'Productivity'[Site]="JIA")
+		lineageTag: 292300d9-f83c-444f-9377-c32825351df3
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Bar = MIN([JIA_Actual],[JIA_Target])
+		lineageTag: f14dce85-d1ec-493b-9ea5-37b30c3effc2
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MarkerValue = MAX([JIA_Actual],[JIA_Target])
+		lineageTag: 43d66d7d-2abd-423a-af2d-5bb835ec0042
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure BarMet = ```
+			
+			var VActual = [JIA_Actual]
+			var VTarget = [JIA_Target]
+			RETURN
+			    IF(
+			        VTarget <= VActual,
+			        [MarkerValue]-[Bar]
+			    )
+			
+			```
+		lineageTag: 3ac08558-22e7-45a1-8811-4dc4de76f5de
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure BarUnMet =
+			
+			var VActual = [JIA_Actual]
+			var VTarget = [JIA_Target]
+			RETURN
+			    IF(
+			        VTarget > VActual,
+			        [MarkerValue]-[Bar]
+			    )
+		lineageTag: 9cd13058-d6f2-43f3-98a4-b5f50e0b2098
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Title = ```
+			
+			var curYear = SELECTEDVALUE('Productivity'[Year],"All Year")
+			var curDept = SELECTEDVALUE('Productivity'[Department],"JIA")
+			var res = 
+			    "JIA Target vs Actual: " & curYear & " - " & curDept
+			
+			RETURN
+			    res
+			```
+		lineageTag: e06fc767-67e1-4dda-b5d1-cdbae8932d5b
+
+	measure Intiative = ```
+			
+			 var x = CALCULATE(SUM(Productivity[Number of intiatives]),Productivity[Year]="2026")
+			 
+			 RETURN
+			    "2026- Number of Initiatives - "  & SELECTEDVALUE('2026Identify'[Dept],"All")& " "& x 
+			```
+		lineageTag: 97ea4717-34a9-4e36-839d-014a6a4f1497
+
+	column Year
+		dataType: string
+		lineageTag: f554c570-6bf3-4a51-9b6a-e7ebf05ec9ee
+		summarizeBy: none
+		sourceColumn: Year
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Number of intiatives'
+		dataType: int64
+		formatString: 0
+		lineageTag: 1508e7ef-b8ae-4d8c-806e-3b647dbbe495
+		summarizeBy: sum
+		sourceColumn: Number of intiatives
+
+		annotation SummarizationSetBy = Automatic
+
+	column Actual
+		dataType: double
+		lineageTag: 0a103ec0-4012-4196-9631-675f05ac34d5
+		summarizeBy: sum
+		sourceColumn: Actual
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Target
+		dataType: double
+		lineageTag: 2f2baca3-9c3f-4b83-8303-6eb24ac900f9
+		summarizeBy: sum
+		sourceColumn: Target
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Site
+		dataType: string
+		lineageTag: 6a9d1956-f549-47a4-9957-2b5a2d1a8e49
+		summarizeBy: none
+		sourceColumn: Site
+
+		annotation SummarizationSetBy = Automatic
+
+	column Result
+		dataType: double
+		formatString: 0.00
+		lineageTag: 58516792-7bbc-48aa-9d01-49419a6be97c
+		summarizeBy: sum
+		sourceColumn: Result
+
+		annotation SummarizationSetBy = Automatic
+
+	column Department
+		dataType: string
+		lineageTag: 70391823-7204-4565-a510-278d759fdcb6
+		summarizeBy: none
+		sourceColumn: Department
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Productivity = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://legogroup.sharepoint.com/sites/JIALCI/Shared%20Documents/General/03_BI/Productivity2023-2026.xlsx"), null, true),
+				    Sheet1_Sheet = Source{[Item="Sheet1",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(Sheet1_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Year", type text}, {"Number of intiatives", Int64.Type}, {"Actual", type number}, {"Target", type number}, {"Site", type text}, {"Department", type text}, {"Result", type number}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

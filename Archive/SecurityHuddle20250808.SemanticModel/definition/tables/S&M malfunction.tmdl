@@ -1,0 +1,116 @@
+table 'S&M malfunction'
+	lineageTag: d3de9365-5674-40c5-8bd5-93f6623911e6
+
+	column Department
+		dataType: string
+		lineageTag: f0ad3c2a-c16f-44a3-9048-61f454516d21
+		summarizeBy: none
+		sourceColumn: Department
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month
+		dataType: string
+		lineageTag: 898203ec-1f92-4c41-962a-bf4b740c96fd
+		summarizeBy: none
+		sourceColumn: Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column Done
+		dataType: int64
+		lineageTag: 2595c339-af67-435e-915c-713cd9cb9d7d
+		summarizeBy: sum
+		sourceColumn: Done
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Unavailable
+		dataType: int64
+		lineageTag: 7c28db1c-0f0c-48c4-a5ac-d3f316da7eef
+		summarizeBy: sum
+		sourceColumn: Unavailable
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Ongoing
+		dataType: int64
+		lineageTag: d8ce5f31-13e8-4649-b23c-aede45ebcb1f
+		summarizeBy: sum
+		sourceColumn: Ongoing
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Overhaul
+		dataType: int64
+		lineageTag: 11f97b11-a59f-4542-8cdb-f720250d8099
+		summarizeBy: sum
+		sourceColumn: Overhaul
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column MonthNumber = ```
+			
+			  SWITCH(
+			    [Month],
+			    "一月",   1,
+			    "二月",   2,
+			    "三月",   3,
+			    "四月",   4,
+			    "五月",   5,
+			    "六月",   6,
+			    "七月",   7,
+			    "八月",   8,
+			    "九月",   9,
+			    "十月",  10,
+			    "十一月",11,
+			    "十二月",12,
+			    BLANK()
+			  )
+			```
+		formatString: 0
+		lineageTag: 592f3e44-f3e6-4a15-a83f-357802e74bb6
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthStartDate = ```
+			
+			  FORMAT(DATE( YEAR(TODAY()), [MonthNumber], 1 ),"mmm","en-US")
+			```
+		lineageTag: fbb35347-1b99-4e8d-954a-23897a329451
+		summarizeBy: none
+		sortByColumn: MonthNumber
+
+		changedProperty = DataType
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition 'S&M malfunction' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://legogroup.sharepoint.com/sites/JIALCI/Shared%20Documents/General/03_BI/01_Project%20List/02.%20Project%20List/09.%20Security%20Digital%20Huddle/Security%20Huddle%20Update.xlsx"), null, true),
+				    #"S&M Mulfunction_Sheet" = Source{[Item="S&M Mulfunction",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(#"S&M Mulfunction_Sheet", [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"已完成", Int64.Type}, {"暂不维修", Int64.Type}, {"维修进行中", Int64.Type}, {"重大维修", Int64.Type}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type",{{"已完成", "Done"}, {"维修进行中", "Ongoing"}, {"暂不维修", "Unavailable"}, {"重大维修", "Overhaul"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

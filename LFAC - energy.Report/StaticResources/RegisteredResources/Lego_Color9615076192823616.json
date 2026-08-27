@@ -1,0 +1,64 @@
+{
+  "name": "Lego Color",
+  "dataColors": [
+    "#DD1A22",
+    "#FFD400",
+    "#006CB7",
+    "#00AF4D",
+    "#00A3DA",
+    "#F6ADCD",
+    "#F47D20",
+    "#000000"
+  ],
+  "background": "#FFFFFF",
+  "foreground": "#070f25",
+  "tableAccent": "#0F1934",
+  "textClasses": {
+    "label": {
+      "fontFace": "'Segoe UI', wf_segoe-ui_normal, helvetica, arial, sans-serif",
+      "fontSize": 12
+    },
+    "callout": {
+      "fontFace": "'Segoe UI', wf_segoe-ui_normal, helvetica, arial, sans-serif",
+      "fontSize": 20
+    },
+    "title": {
+      "fontFace": "'Segoe UI Bold', wf_segoe-ui_bold, helvetica, arial, sans-serif",
+      "fontSize": 15
+    }
+  },
+  "bad": "#DD1A22",
+  "neutral": "#FFD400",
+  "good": "#00AF4D",
+  "visualStyles": {
+    "*": {
+      "*": {
+        "background": [
+          {
+            "transparency": 100
+          }
+        ],
+        "border": [
+          {
+            "show": true,
+            "radius": 1
+          }
+        ]
+      }
+    },
+    "page": {
+      "*": {
+        "background": [
+          {
+            "color": {
+              "solid": {
+                "color": "#FFFFFF"
+              }
+            },
+            "transparency": 100
+          }
+        ]
+      }
+    }
+  }
+}

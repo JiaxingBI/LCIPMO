@@ -1,0 +1,103 @@
+table 'Visitors Today'
+	lineageTag: 63af9e0a-ea9f-461e-8daa-87c8c6dd19cb
+
+	column 'No.'
+		dataType: int64
+		formatString: 0
+		lineageTag: f5e98d7a-b7a7-41a6-affc-668301d46516
+		summarizeBy: none
+		sourceColumn: No.
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 3b6f85c3-b03a-4ba6-a22d-b142f3978ffe
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Time
+		dataType: string
+		lineageTag: 6434c4ac-7551-48a7-aa27-c89da4d92117
+		summarizeBy: none
+		sourceColumn: Time
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Visitors From'
+		dataType: string
+		lineageTag: f60566a9-5c2b-432d-ada5-f8a1498a2079
+		summarizeBy: none
+		sourceColumn: Visitors From
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Visitor Qty '
+		dataType: int64
+		formatString: 0
+		lineageTag: 8cb0185f-682a-447a-b5d2-110ffc92e4c0
+		summarizeBy: sum
+		sourceColumn: "Visitor Qty "
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Location '
+		dataType: string
+		lineageTag: a7667347-fbe9-4174-8dc7-2fbb26f199d8
+		summarizeBy: none
+		sourceColumn: "Location "
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Visting Area'
+		dataType: string
+		lineageTag: 0c01fa05-128a-454e-863b-9fefecc9a11e
+		summarizeBy: none
+		sourceColumn: Visting Area
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Security Request'
+		dataType: string
+		lineageTag: 991f9c71-f97c-4b1b-b7d6-c971779a179c
+		summarizeBy: none
+		sourceColumn: Security Request
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'LEGO Department'
+		dataType: string
+		lineageTag: 06d92d77-0352-4437-b525-18134890800b
+		summarizeBy: none
+		sourceColumn: LEGO Department
+
+		annotation SummarizationSetBy = Automatic
+
+	column ' Contact Person'
+		dataType: string
+		lineageTag: 54537adc-7625-4c2f-aaf8-a495928a299f
+		summarizeBy: none
+		sourceColumn: " Contact Person"
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Visitors Today' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://legogroup.sharepoint.com/sites/JIALCI/Shared%20Documents/General/03_BI/01_Project%20List/02.%20Project%20List/09.%20Security%20Digital%20Huddle/Visitor(s)%20Today.xlsx"), null, true),
+				    Table1_Table = Source{[Item="Table1",Kind="Table"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(Table1_Table,{{"No.", Int64.Type}, {"Date", type date}, {"Time", type text}, {"Visitors From", type text}, {"Visitor Qty ", Int64.Type}, {"Location ", type any}, {"Visting Area", type text}, {"Security Request", type text}, {"LEGO Department", type text}, {" Contact Person", type text}}),
+				    #"Filtered Rows" = Table.SelectRows(#"Changed Type", each ([#"No."] <> null))
+				in
+				    #"Filtered Rows"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

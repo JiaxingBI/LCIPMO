@@ -1,0 +1,191 @@
+table DetailedProjects
+	lineageTag: d68df17a-b4f0-4db5-a6ff-2e79beca0835
+
+	column Status = ```
+			
+			VAR Actualwk = [WkActual]
+			VAR Planwk = [WKPlan]
+			VAR Currentwk = WEEKNUM(TODAY())
+			VAR Phase = [_Phase]
+			VAR fx = 
+			    IF(
+			        ISBLANK('DetailedProjects'[SAT Plan]), "🟡", 
+			        
+			        IF(
+			            Phase = "Phase 1",
+			                /* Phase 1: Only consider SAT timing */
+			                IF(
+			                    ISBLANK(Actualwk),              
+			                    /* If no ActualWk, compare CurrentWk with PlanWk */
+			                    IF(Currentwk <= Planwk, "🟢", "🔴"),
+			                    /* If ActualWk exists, compare ActualWk with PlanWk */
+			                    IF(Actualwk <= Planwk, "🟢", "🔴")
+			                ),
+			                
+			                /* Phase 2: Only consider savings */
+			                IF(
+			                    [2025 Saving] <= [Projected YE Saving], "🟢", "🔴"
+			                )
+			        )
+			    )
+			RETURN
+			    fx
+			```
+		lineageTag: cc73df64-a2b9-4d1f-9433-7e379096b463
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column key
+		dataType: string
+		lineageTag: e4b1dadf-2a18-471c-9793-f06a9e5847d7
+		summarizeBy: none
+		sourceColumn: key
+
+		annotation SummarizationSetBy = Automatic
+
+	column Category
+		dataType: string
+		lineageTag: 6220dea3-0932-4170-92f1-72312c3afe10
+		summarizeBy: none
+		sourceColumn: Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column IDTracker
+		dataType: string
+		lineageTag: 35b6a398-c453-419a-83a4-1a9bd0d01a52
+		summarizeBy: none
+		sourceColumn: ID Tracker
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Projected YE Saving'
+		dataType: double
+		lineageTag: f6706ef1-b124-4d5f-9a1c-09f8a1fd1ba7
+		summarizeBy: sum
+		sourceColumn: Projected YE Saving
+
+		changedProperty = Name
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ProjectName
+		dataType: string
+		lineageTag: e724da20-6586-4db9-9c5f-517ff47df9db
+		summarizeBy: none
+		sourceColumn: Initiatives
+
+		annotation SummarizationSetBy = Automatic
+
+	column Site
+		dataType: string
+		lineageTag: c3670139-a1cc-4f1e-a531-98bcd35ca181
+		summarizeBy: none
+		sourceColumn: Site
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'SAT Plan'
+		dataType: dateTime
+		formatString: m/d/yyyy
+		lineageTag: f4e82026-752f-4eaa-b759-85ccf0301be0
+		summarizeBy: none
+		sourceColumn: SAT Plan
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'SAT Actual'
+		dataType: dateTime
+		formatString: m/d/yyyy
+		lineageTag: 0e92025e-2d5f-4dc8-9c15-6647794c0013
+		summarizeBy: none
+		sourceColumn: SAT Actual
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'Implement Lead'
+		dataType: string
+		lineageTag: a51114ea-3043-46c5-b810-b21580ba6cd3
+		summarizeBy: none
+		sourceColumn: Implement Lead
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'SAT Lead'
+		dataType: string
+		lineageTag: 1fcca2a4-a4bf-4094-87db-d672ed60d44c
+		summarizeBy: none
+		sourceColumn: SAT Lead
+
+		annotation SummarizationSetBy = Automatic
+
+	column '2025 Saving'
+		dataType: double
+		lineageTag: 036d29b8-79e1-46a9-b165-95b17673b3d5
+		summarizeBy: sum
+		sourceColumn: 2025 Planned Saving
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Comments
+		dataType: string
+		lineageTag: d10b3381-2190-40f4-9778-1dbe35acd1b9
+		summarizeBy: none
+		sourceColumn: Comments
+
+		annotation SummarizationSetBy = Automatic
+
+	column WkActual = WEEKNUM('DetailedProjects'[SAT Actual])
+		formatString: 0
+		lineageTag: 3f0f0be0-81bb-4df5-8f30-f786416eeff2
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column WKPlan = WEEKNUM(DetailedProjects[SAT Plan])
+		formatString: 0
+		lineageTag: 2b34deca-65a4-42af-bb94-5c193ae75fbc
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column _Phase =
+			IF(
+			        ISBLANK([SAT Actual]), "Phase 1",
+			        IF ([WkActual] >= WEEKNUM(TODAY()), "Phase 1", "Phase 2")
+			    )
+		lineageTag: df191855-b0d4-438c-b419-50f0b59ac99b
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DetailedProjects = m
+		mode: import
+		source =
+				let
+				    Source = CommonDataService.Database("cn-jia-bi.crm4.dynamics.com"),
+				    dbo_cr08e_prow_allsites = Source{[Schema="dbo",Item="cr08e_prow_allsites"]}[Data],
+				    #"Removed Other Columns" = Table.SelectColumns(dbo_cr08e_prow_allsites,{"cr08e_key", "cr08e_category", "cr08e_idtracker", "cr08e_projected", "cr08e_projectname", "cr08e_site", "cr08e_satplan", "cr08e_satactual", "cr08e_implementlead", "cr08e_satlead", "cr08e_saving", "cr08e_comments"}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Removed Other Columns",{{"cr08e_key", "key"}, {"cr08e_category", "Category"}, {"cr08e_idtracker", "ID Tracker"}, {"cr08e_projected", "Projected"}, {"cr08e_projectname", "Initiatives"}, {"cr08e_site", "Site"}, {"cr08e_satplan", "SAT Plan"}, {"cr08e_satactual", "SAT Actual"}, {"cr08e_implementlead", "Implement Lead"}, {"cr08e_satlead", "SAT Lead"}, {"cr08e_saving", "2025 Saving"}, {"cr08e_comments", "Comments"}}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Renamed Columns",{{"SAT Plan", type date}, {"SAT Actual", type date}, {"2025 Saving", type number}}),
+				    #"Renamed Columns1" = Table.RenameColumns(#"Changed Type",{{"Projected", "Projected YE Saving"}, {"2025 Saving", "2025 Planned Saving"}})
+				in
+				    #"Renamed Columns1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,78 @@
+table 'Moulding Hour Summary'
+	lineageTag: 141c026c-ebcc-4d12-91b3-ea022d97c6aa
+
+	column 'Calendar day'
+		dataType: dateTime
+		formatString: mm.dd
+		lineageTag: e462392d-2ec3-4d0b-bbb5-b66096959076
+		summarizeBy: none
+		sourceColumn: Calendar day
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column Line
+		dataType: int64
+		formatString: 0
+		lineageTag: 52416635-3d3d-439c-92d8-59d859607631
+		summarizeBy: none
+		sourceColumn: Line
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Moulding Hours'
+		dataType: double
+		lineageTag: 0f558d29-1e65-4ffb-8523-089ce089eef9
+		summarizeBy: sum
+		sourceColumn: Moulding Hours
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SN = RELATED('FACT'[SN])
+		lineageTag: 4b72097f-5812-4c33-8a90-f5b5cdf48587
+		summarizeBy: none
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column key = [SN]&"_"&[Calendar day]
+		lineageTag: e284c8af-e494-4d19-9158-2a884a70c68c
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column key1 = [Line]&"_"&[Calendar day]
+		lineageTag: 0f2532c5-29f6-4468-b134-a03b50b2851b
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Moulding Hour Summary' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://legogroup-my.sharepoint.com/personal/guochun_li_lego_com/Documents/Moulding%20Hours%20%20Produced%20Weight%20(2025.01-2025.05)%2020250604%20(1).xlsx"), null, true),
+				    #"Moulding Hour Summary_Sheet" = Source{[Item="Moulding Hour Summary",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Moulding Hour Summary_Sheet", [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Calendar day", type date}, {"Line", Int64.Type}, {"Moulding Hours", type number}})
+				in
+				    #"Changed Type"
+
+	changedProperty = IsHidden
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

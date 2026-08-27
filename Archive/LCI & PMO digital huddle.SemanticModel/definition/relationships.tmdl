@@ -1,0 +1,109 @@
+relationship a8a13572-9388-721c-b59e-b87f15e4ef56
+	securityFilteringBehavior: none
+	fromColumn: 'Weekly Focus_2025'.Date
+	toColumn: dDate.Date
+
+relationship AutoDetected_78003f6d-4e22-4583-91f6-76d37e9bb4ad
+	fromColumn: 'Weekly Focus_2025'.Date
+	toColumn: 'Meeting host'.Date
+
+relationship 1cd5eb75-9a4d-420c-b7a0-3ea233c42679
+	joinOnDateBehavior: datePartOnly
+	fromColumn: OfficeStatus.'Start of Week'
+	toColumn: LocalDateTable_e8a8847f-0272-4a94-a80d-f74f06c1e3b6.Date
+
+relationship 5416148b-0553-90fe-6846-915d6dda2192
+	fromColumn: OfficeStatus.Day
+	toColumn: CalendarLocal.Date
+
+relationship e477c5be-bd1c-4d4a-90a7-4aba76080ff5
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Weekly Focus_2025'.DateKey
+	toColumn: LocalDateTable_72433733-1b09-4fc3-abf0-a99adaf3fc36.Date
+
+relationship AutoDetected_d26d84b6-befa-4fe0-9de7-c331f9257813
+	fromColumn: Productivity_InYear.Area
+	toColumn: Productivity_Target.Area
+
+relationship 1b58ccf7-957b-41d5-81e4-d67dcc4fb69a
+	securityFilteringBehavior: none
+	fromColumn: dDate.'KPI_rotate days'
+	toColumn: LocalDateTable_8d11d649-530d-4240-bbfe-b919c741bcaa.Date
+
+relationship 7a6b590b-9e44-4b9d-b088-575bef2a342c
+	securityFilteringBehavior: none
+	fromColumn: dDate.Date
+	toColumn: LocalDateTable_be91b4d5-f66e-44c5-99cf-4370f3f962ba.Date
+
+relationship d5c48b63-7b02-456d-bea8-6238bc399537
+	securityFilteringBehavior: none
+	fromColumn: 'Digital_Huddle Focus'.Due_Date
+	toColumn: LocalDateTable_21a8e5c6-98ca-4d53-b49b-69151599e111.Date
+
+relationship 8b32446e-6047-4671-8b86-9f1a0a0c137f
+	securityFilteringBehavior: none
+	fromColumn: 'Digital_Huddle Focus'.Last_Modified_Time
+	toColumn: LocalDateTable_5ff2e4dc-788f-489f-8a06-41716277b3d3.Date
+
+relationship d9dc447b-dc02-4b40-9ab9-887046e29b29
+	securityFilteringBehavior: none
+	fromColumn: 'Digital_Huddle Focus'.Required_Time
+	toColumn: LocalDateTable_4cb90060-8b4f-495c-b5a2-ff30ad69a203.Date
+
+relationship 20154f77-af06-40f6-a349-4652ccde8f8c
+	securityFilteringBehavior: none
+	fromColumn: 'Digital_Huddle PDCA'.Countermeasure_Act_date
+	toColumn: LocalDateTable_ac783307-ac08-4ee1-aa26-e6cb58d1dded.Date
+
+relationship 06f5b748-22cf-488b-880e-7533d9a8dec0
+	securityFilteringBehavior: none
+	fromColumn: 'Digital_Huddle PDCA'.Containment_Check_date
+	toColumn: LocalDateTable_2c57eabe-518d-44cf-95da-c02b1947074b.Date
+
+relationship 0534e39d-c00e-4a50-9a94-fb73a8f145a9
+	securityFilteringBehavior: none
+	fromColumn: 'Digital_Huddle PDCA'.Date_of_record
+	toColumn: LocalDateTable_d70b6f36-0c57-4e24-aa62-4b14e7d804cd.Date
+
+relationship ca09f59e-3218-4e7a-9366-19a8801e4651
+	securityFilteringBehavior: none
+	fromColumn: 'Digital_Huddle KPI_data'.Date
+	toColumn: dDate.Date
+
+relationship 8dfa1f23-437a-44af-a3eb-a5edc473137b
+	crossFilteringBehavior: bothDirections
+	securityFilteringBehavior: none
+	fromColumn: 'Digital_Huddle KPI_data'.KPI_ID
+	toColumn: 'Digital_Huddle KPIs'.ID
+
+relationship c45ce34c-963b-443e-b854-2086626d5524
+	crossFilteringBehavior: bothDirections
+	securityFilteringBehavior: none
+	fromCardinality: one
+	fromColumn: 'Digital_Huddle Departments'.ID
+	toColumn: 'Digital_Huddle Focus'.ID
+
+relationship 607ec075-73b5-4436-be30-71c920595838
+	crossFilteringBehavior: bothDirections
+	securityFilteringBehavior: none
+	fromColumn: 'Digital_Huddle KPIs'.DepartmentID
+	toColumn: 'Digital_Huddle Departments'.ID
+
+relationship ed9394b8-e894-4c49-ac03-fbe40968b2ed
+	securityFilteringBehavior: none
+	fromColumn: 'Digital_Huddle GLS'.Department_ID
+	toColumn: 'Digital_Huddle Departments'.ID
+
+relationship af33718d-893c-4d41-89f3-98d7e20b08ff
+	securityFilteringBehavior: none
+	fromColumn: 'Digital_Huddle GLS'.Date
+	toColumn: dDate.Date
+
+relationship 47dacd27-e6c0-2796-d5b1-2aa832726770
+	fromColumn: Productivity_InYear.Key
+	toColumn: Productivity_Overview.key
+
+relationship 5b40b047-ecd8-2b1b-bb34-e603b0312099
+	fromColumn: Productivity_PFP.Key
+	toColumn: Productivity_Overview.key
+

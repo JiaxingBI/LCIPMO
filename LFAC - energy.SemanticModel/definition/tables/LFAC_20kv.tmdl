@@ -1,0 +1,54 @@
+table LFAC_20kv
+	lineageTag: ba9b76ee-d402-4dbb-9c4d-3b367b329ba4
+
+	column Cabinet
+		dataType: string
+		lineageTag: ae3d99e2-a1e5-4342-84a0-13a2ebf35ecf
+		summarizeBy: none
+		sourceColumn: Cabinet
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 0b7f1640-2b3d-4590-9265-957bbf1f7ca9
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Value
+		dataType: double
+		formatString: #,0
+		lineageTag: 4977c788-35df-4d16-8294-7eeaf8a6ae12
+		summarizeBy: sum
+		sourceColumn: Value
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	partition LFAC_20kv = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://legogroup.sharepoint.com/sites/JIALFACTECH/Shared%20Documents/18%20%E8%83%BD%E6%BA%90%E4%BF%A1%E6%81%AF%E7%AE%A1%E7%90%86/01%20Energy%20Data%20%E8%83%BD%E6%BA%90%E6%95%B0%E6%8D%AE/%E8%83%BD%E6%BA%90%E4%B8%AD%E5%BF%83%E6%95%B0%E6%8D%AE%E8%AE%B0%E5%BD%95%E8%A1%A8%202025.xlsx"), null, true),
+				    其他_Sheet = Source{[Item="其他",Kind="Sheet"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(其他_Sheet, each ([Column1] = "20kV总进电" or [Column1] = "301屋顶光伏发电量" or [Column1] = "Cabinet" or [Column1] = "M3屋顶光伏发电量" or [Column1] = "Pro屋顶光伏发电量" or [Column1] = "屋顶光伏发电量" or [Column1] = "车棚光伏发电量")),
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Filtered Rows", [PromoteAllScalars=true]),
+				    #"Unpivoted Other Columns" = Table.UnpivotOtherColumns(#"Promoted Headers", {"Cabinet", "能源种类", "Unit", "备注"}, "Date", "Value"),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Unpivoted Other Columns",{{"Date", type date}}),
+				    #"Removed Errors" = Table.RemoveRowsWithErrors(#"Changed Type", {"Date"}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Removed Errors",{"备注", "能源种类", "Unit"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

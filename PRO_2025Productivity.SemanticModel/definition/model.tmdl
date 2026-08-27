@@ -1,0 +1,28 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+/// Errors in queries that were loaded on 9/29/2025 11:18:41 AM.
+queryGroup 'Query Errors - 9/29/2025 11:18:41 AM'
+
+	annotation PBI_QueryGroupOrder = 0
+
+/// Errors in queries that were loaded on 9/29/2025 11:55:21 AM.
+queryGroup 'Query Errors - 9/29/2025 11:55:21 AM'
+
+	annotation PBI_QueryGroupOrder = 1
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["OverallTracker","Errors in Query1","Errors in OverallTracker"]
+
+ref table OverallTracker
+ref table Month
+ref table Measure
+
+ref cultureInfo en-US
+

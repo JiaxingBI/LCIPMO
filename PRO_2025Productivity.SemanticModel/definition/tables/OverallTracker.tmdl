@@ -1,0 +1,171 @@
+table OverallTracker
+	lineageTag: 71dc03f9-92a8-4b87-84d3-a982a4b2bdca
+
+	column Version
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 71a405c4-eb2c-421b-ae16-0ea77e28a4be
+		summarizeBy: none
+		sourceColumn: Version
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column Area
+		dataType: string
+		lineageTag: 641c3b45-3bd4-4894-8ed5-205fb89d4c18
+		summarizeBy: none
+		sourceColumn: Area
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Dept.'
+		dataType: string
+		lineageTag: a42cae93-9e08-4231-b17e-8849d3aa69ad
+		summarizeBy: none
+		sourceColumn: Dept.
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Project name'
+		dataType: string
+		lineageTag: 45253aca-984d-4e92-b594-9f1f3843b4a5
+		summarizeBy: none
+		sourceColumn: Project name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Project leader'
+		dataType: string
+		lineageTag: b6df7a2a-de6f-4625-9bb9-a1ee75ab36f4
+		summarizeBy: none
+		sourceColumn: Project leader
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost bucket'
+		dataType: string
+		lineageTag: 43ec5510-3b70-4810-b392-ee2ef39ad1d3
+		summarizeBy: none
+		sourceColumn: Cost bucket
+
+		annotation SummarizationSetBy = Automatic
+
+	column Category
+		dataType: string
+		lineageTag: 3805d99c-565b-47cc-b207-73396106a240
+		summarizeBy: none
+		sourceColumn: Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Value Type'
+		dataType: string
+		lineageTag: 36c9ce15-c8ae-4df3-8657-a8c2ac11a3e1
+		summarizeBy: none
+		sourceColumn: Value Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column IL
+		dataType: string
+		lineageTag: 0c2178ab-e0ea-46aa-960a-9316f339c4a6
+		summarizeBy: none
+		sourceColumn: IL
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthNum
+		dataType: int64
+		formatString: 0
+		lineageTag: 257ed8b2-0d20-44e3-9e3b-8029f1a9aa69
+		summarizeBy: sum
+		sourceColumn: MonthNum
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		dataType: double
+		lineageTag: 438ac360-8f9a-4806-b565-fac30fda18d6
+		summarizeBy: sum
+		sourceColumn: Value
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column VersionMonth
+		dataType: string
+		isHidden
+		lineageTag: bb307ad5-63b1-4745-b036-e6c3583b8f78
+		summarizeBy: none
+		sourceColumn: VersionMonth
+		sortByColumn: Version
+
+		changedProperty = SortByColumn
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition OverallTracker = m
+		mode: import
+		source =
+				let
+				    Source = SharePoint.Contents("https://legogroup.sharepoint.com/sites/Productivity2020", [ApiVersion = 15]),
+				    #"Shared Documents" = Source{[Name="Shared Documents"]}[Content],
+				    General = #"Shared Documents"{[Name="General"]}[Content],
+				    #"Overall Productivity tracker" = General{[Name="Overall Productivity tracker"]}[Content],
+				    #"2025 Locked" = #"Overall Productivity tracker"{[Name="2025 Locked"]}[Content],
+				    #"Added Custom" = Table.AddColumn(#"2025 Locked", "Custom", each Excel.Workbook([Content])),
+				    #"Removed Other Columns" = Table.SelectColumns(#"Added Custom",{"Date created", "Custom"}),
+				    #"Changed Type" = Table.TransformColumns(#"Removed Other Columns",{{"Date created", Date.Month, Int64.Type}}),
+				    #"Subtracted from Column" = Table.TransformColumns(#"Changed Type", {{"Date created", each _ - 1, type number}}),
+				    #"Expanded Custom" = Table.ExpandTableColumn(#"Subtracted from Column", "Custom", {"Name", "Data", "Item", "Kind", "Hidden"}, {"Custom.Name", "Custom.Data", "Custom.Item", "Custom.Kind", "Custom.Hidden"}),
+				    #"Filtered Rows" = Table.SelectRows(#"Expanded Custom", each ([Custom.Name] = "Overall tracker")),
+				    #"Removed Columns" = Table.RemoveColumns(#"Filtered Rows",{"Custom.Name", "Custom.Item", "Custom.Kind", "Custom.Hidden"}),
+				    #"Expanded Custom.Data" = Table.ExpandTableColumn(#"Removed Columns", "Custom.Data", {"Column1", "Column2", "Column3", "Column4", "Column5", "Column6", "Column7", "Column8", "Column9", "Column10", "Column11", "Column12", "Column13", "Column14", "Column15", "Column16", "Column17", "Column18", "Column19", "Column20", "Column21", "Column22"}),
+				    #"Removed Columns1" = Table.RemoveColumns(#"Expanded Custom.Data",{"Column20", "Column21"}),
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Removed Columns1", [PromoteAllScalars=true]),
+				    #"Renamed Columns" = Table.RenameColumns(#"Promoted Headers",{{"3", "Version"}, {"3_1", "3"}}),
+				    #"Filtered Rows1" = Table.SelectRows(#"Renamed Columns", each true),
+				    #"Removed Rows" = Table.SelectRows(#"Filtered Rows1", each not Text.Contains([Project name], "Project name")),
+				    #"Replaced Value" = Table.ReplaceValue(#"Removed Rows",null,0,Replacer.ReplaceValue,{"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"}),
+				    #"Unpivoted Columns" = Table.UnpivotOtherColumns(#"Replaced Value", {"Version", "Area", "Dept.", "Project name", "Project leader", "Cost bucket", "Category", "Value Type", "IL"}, "Attribute", "Value"),
+				    #"Renamed Columns1" = Table.RenameColumns(#"Unpivoted Columns",{{"Attribute", "MonthNum"}}),
+				    #"Filtered Rows2" = Table.SelectRows(#"Renamed Columns1", each true),
+				    #"Changed Type1" = Table.TransformColumns(
+				    #"Filtered Rows2",
+				    {{"Value", each if _ = " - " or _ = " -     " or _ = "-     " or _ = "·" or _ = "-" then 0 else _, type number}}
+				),
+				    #"Filtered Rows3" = Table.SelectRows(#"Changed Type1", each true),
+				    #"Changed Type2" = Table.TransformColumnTypes(#"Filtered Rows3",{{"MonthNum", Int64.Type}}),
+				    #"Filtered Rows4" = Table.SelectRows(#"Changed Type2", each true),
+				    #"Added Custom1" = Table.AddColumn(
+				    #"Filtered Rows4",
+				    "VersionMonth",
+				    each if [Version] = 1 then "January"
+				         else if [Version] = 2 then "February"
+				         else if [Version] = 3 then "March"
+				         else if [Version] = 4 then "April"
+				         else if [Version] = 5 then "May"
+				         else if [Version] = 6 then "June"
+				         else if [Version] = 7 then "July"
+				         else if [Version] = 8 then "August"
+				         else if [Version] = 9 then "September"
+				         else if [Version] = 10 then "October"
+				         else if [Version] = 11 then "November"
+				         else if [Version] = 12 then "December"
+				         else "Unknown"
+				)
+				in
+				    #"Added Custom1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

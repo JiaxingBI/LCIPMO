@@ -1,0 +1,347 @@
+table Measure
+	lineageTag: 13558b4e-230e-4d51-b44c-519cec223b6d
+
+	measure Target =
+			
+			CALCULATE(
+			    SUM('LFAC'[Value]),
+			    'LFAC'[Value Type] = "Target（MDKK）",
+			    LFAC[Version] = MAX(LFAC[Version])
+			)
+		lineageTag: 2b6b8dbd-692b-411e-9c57-e281eb629bd6
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'InYearBenefit Color' =
+			
+			IF (
+			    [InYearBenefit1] < [Target],
+			    "#E63946",
+			    "#01a522"
+			)
+		lineageTag: 05d3010c-bd71-4956-9639-6800e85f7a60
+
+	measure LastMonthInVersion =
+			
+			VAR MaxVersion =
+			    CALCULATE(
+			        MAX(LFAC[Version]),
+			        ALL(LFAC)
+			    )
+			RETURN
+			MAXX(
+			    FILTER(
+			        ALL(LFAC),
+			        LFAC[Version] = MaxVersion
+			        && LFAC[Value Type] = "Actual（MDKK)"
+			        && NOT(ISBLANK(LFAC[Value]))   -- 忽略空值
+			        && LFAC[Value] <> 0            -- 忽略值为0
+			    ),
+			    LFAC[MonthNum]
+			)
+		lineageTag: 51799ecc-2fa9-484a-80e0-2420763973c1
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure var = [InYearBenefit1] - [Target]
+		lineageTag: c8f880f3-457f-4a8e-b5c1-1d5aaef3509e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'var Color' =
+			
+			IF (
+			    [var] < 0,
+			    "#E63946",
+			    "#01a522"
+			)
+		lineageTag: d7232350-b1f9-4732-8660-e845239fa753
+
+	measure InYearBenefit = ```
+			
+			VAR FutureTarget =
+			    CALCULATE (
+			        SUM ( LFAC[Value] ),
+			        LFAC[Value Type] = "Target（MDKK）" ,
+			        REMOVEFILTERS('Month'[MonthNum]),
+			        LFAC[MonthNum]>MAX('Month'[MonthNum])
+			    )
+			VAR tothismonth=IF(
+			    MAX('Month'[MonthNum])<=MONTH(TODAY())-1,
+			    FutureTarget,
+			    BLANK()
+			)
+			RETURN
+			    [ActualYTD] + tothismonth
+			
+			```
+		lineageTag: 938ed9c5-ee27-4a2b-98fa-efe032aaec9d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure ActualYTD =
+			
+			var YTDacutal = CALCULATE(
+			    SUM(LFAC[Value]),
+			    LFAC[Value Type]="Actual（MDKK)",
+			    FILTER(
+			        ALL(LFAC[MonthNum]),
+			        LFAC[MonthNum] <= MAX('Month'[MonthNum])
+			    )
+			)
+			return IF(
+			    MAX('Month'[MonthNum])<=MONTH(TODAY())-1,
+			    YTDacutal,
+			    BLANK()
+			)
+		lineageTag: c1e19e85-ca0c-4704-8f9d-0e7f26e1b86b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure TargetYTD =
+			
+			var YTDacutal = CALCULATE(
+			    SUM(LFAC[Value]),
+			    LFAC[Value Type]="Target（MDKK）",
+			    FILTER(
+			        ALL(LFAC[MonthNum]),
+			        LFAC[MonthNum] <= MAX('Month'[MonthNum])
+			    )
+			)
+			return IF(
+			    MAX('Month'[MonthNum])<=MONTH(TODAY())-1,
+			    YTDacutal,
+			    BLANK()
+			)
+		lineageTag: ab3f0fcd-4251-415b-9b19-bebb4f9a5098
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure FutureTarget_Default = ```
+			
+			VAR MaxVersion = [MaxVersion]
+			VAR LastMonthInVersion = [LastMonthInVersion]
+			RETURN    
+			    CALCULATE (
+			        SUM ( LFAC[Value] ),
+			        LFAC[Value Type] = "Target（MDKK）",
+			        LFAC[Version] = MaxVersion,
+			        LFAC[MonthNum] > LastMonthInVersion
+			    )
+			```
+		formatString: 0.0000
+		lineageTag: e31d44af-71ac-4005-82c0-04f2d43f3088
+
+	measure MaxVersion = ```
+			
+			    CALCULATE ( MAX ( LFAC[Version] ), ALL ( LFAC ) )
+			```
+		formatString: 0
+		lineageTag: 87f62f31-74a6-43fb-ad40-95ae71ce9463
+
+	measure CheckLastMonth = ```
+			
+			VAR MaxVersion = CALCULATE(MAX(LFAC[Version]), ALL(LFAC))
+			RETURN
+			MAXX(
+			    FILTER(
+			        ALL(LFAC),
+			        LFAC[Version] = MaxVersion
+			        && LFAC[Value Type] = "Actual（MDKK）"
+			        && NOT ISBLANK(LFAC[Value])
+			    ),
+			    LFAC[MonthNum]
+			)
+			
+			```
+		formatString: 0
+		lineageTag: e55bbdf4-65f3-4ae0-a5d1-6a538b75729e
+
+	measure ActualLast = ```
+			
+			var LastVersion = [LastMonthInVersion]
+			RETURN
+			    CALCULATE(
+			        [ActualYTD],
+			        ALL(LFAC),
+			        'Month'[MonthNum] = LastVersion 
+			    )
+			```
+		lineageTag: d6b69741-318a-470b-90d3-14116059b787
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure InYearBenefit1 =
+			
+			VAR MaxMonthVersion = [MaxVersion]
+			VAR LastVersion     = [LastMonthInVersion]
+			
+			// 选择月份
+			VAR FutureTarget_Selected =
+			    CALCULATE (
+			        SUM ( LFAC[Value] ),
+			        LFAC[Value Type] = "Target（MDKK）",
+			        REMOVEFILTERS ( 'Month'[MonthNum] ),
+			        LFAC[MonthNum] > MAX ( 'Month'[MonthNum] )
+			    )
+			VAR ToThisMonth_Selected =
+			    IF ( MAX ( 'Month'[MonthNum] ) <= MONTH ( TODAY() ) - 1, FutureTarget_Selected )
+			
+			// 未选择月份
+			VAR ActualYTD_AtLastMonth =
+			    CALCULATE (
+			        [ActualYTD],
+			        REMOVEFILTERS ( 'Month' ),
+			        'Month'[MonthNum] = LastVersion,
+			        LFAC[Version] = MaxMonthVersion
+			    )
+			
+			VAR FutureTarget_Default =
+			    CALCULATE (
+			        SUM ( LFAC[Value] ),
+			        LFAC[Value Type] = "Target（MDKK）",
+			        LFAC[Version] = MaxMonthVersion,
+			        REMOVEFILTERS ( 'Month' ),
+			        LFAC[MonthNum] > LastVersion
+			    )
+			
+			RETURN
+			IF (
+			    ISFILTERED ( 'Month'[Month] ),
+			    [ActualYTD] + ToThisMonth_Selected,
+			    ActualYTD_AtLastMonth + FutureTarget_Default
+			)
+		lineageTag: fa03a89d-ee56-4dee-be23-9cf7fe476889
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure IL0_2 = ```
+			
+			CALCULATE (
+			    [InYearBenefit],
+			    KEEPFILTERS ( LFAC[IL] IN { "IL0", "IL1", "IL2" } )
+			)
+			
+			```
+		lineageTag: 9d5030f8-60e6-402e-b1fa-eafcf59c8baf
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure IL3_5 = ```
+			
+			CALCULATE (
+			    [InYearBenefit1],
+			    KEEPFILTERS ( LFAC[IL] IN { "IL3", "IL4", "IL5" } )
+			)
+			
+			```
+		lineageTag: 4c3931b1-0989-46d4-a48b-e76830a0fc07
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure IL0_2Card = ```
+			
+			VAR MaxMonthVersion = [MaxVersion]
+			VAR LastVersion     = [LastMonthInVersion]
+			// 有月份筛选时
+			VAR FutureTarget_Selected =
+			    CALCULATE (
+			        SUM ( LFAC[Value] ),
+			        LFAC[Value Type] = "Target（MDKK）",
+			        REMOVEFILTERS ( 'Month'[MonthNum] ),
+			        LFAC[MonthNum] > MAX ( 'Month'[MonthNum] ),
+			        LFAC[IL] IN { "IL0", "IL1", "IL2" }       
+			    )
+			
+			VAR ToThisMonth_Selected =
+			    IF ( MAX ( 'Month'[MonthNum] ) <= MONTH ( TODAY() ) - 1, FutureTarget_Selected )
+			// 无月份筛选时
+			VAR ActualYTD_AtLastMonth =
+			    CALCULATE (
+			        [ActualYTD],
+			        REMOVEFILTERS ( 'Month' ),
+			        'Month'[MonthNum] = LastVersion,
+			        LFAC[Version] = MaxMonthVersion,
+			        LFAC[IL] IN { "IL0", "IL1", "IL2" }    
+			    )
+			
+			VAR FutureTarget_Default =
+			    CALCULATE (
+			        SUM ( LFAC[Value] ),
+			        LFAC[Value Type] = "Target（MDKK）",
+			        LFAC[Version] = MaxMonthVersion,
+			        REMOVEFILTERS ( 'Month' ),
+			        LFAC[MonthNum] > LastVersion,
+			        LFAC[IL] IN { "IL0", "IL1", "IL2" } 
+			    )
+			RETURN
+			IF (
+			    ISFILTERED ( 'Month'[Month] ),
+			    CALCULATE ( [ActualYTD], LFAC[IL] IN { "IL0", "IL1", "IL2" } ) + ToThisMonth_Selected,
+			    ActualYTD_AtLastMonth + FutureTarget_Default
+			)
+			```
+		lineageTag: d9a26751-872a-4792-a55f-7d68459548bd
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure IL3_5Card = ```
+			
+			VAR MaxMonthVersion = [MaxVersion]
+			VAR LastVersion     = [LastMonthInVersion]
+			// 有月份筛选时
+			VAR FutureTarget_Selected =
+			    CALCULATE (
+			        SUM ( LFAC[Value] ),
+			        LFAC[Value Type] = "Target（MDKK）",
+			        REMOVEFILTERS ( 'Month'[MonthNum] ),
+			        LFAC[MonthNum] > MAX ( 'Month'[MonthNum] ),
+			        LFAC[IL] IN { "IL3", "IL4", "IL5" }   
+			    )
+			
+			VAR ToThisMonth_Selected =
+			    IF ( MAX ( 'Month'[MonthNum] ) <= MONTH ( TODAY() ) - 1, FutureTarget_Selected )
+			// 无月份筛选时
+			VAR ActualYTD_AtLastMonth =
+			    CALCULATE (
+			        [ActualYTD],
+			        REMOVEFILTERS ( 'Month' ),
+			        'Month'[MonthNum] = LastVersion,
+			        LFAC[Version] = MaxMonthVersion,
+			        LFAC[IL] IN { "IL3", "IL4", "IL5" }    
+			    )
+			
+			VAR FutureTarget_Default =
+			    CALCULATE (
+			        SUM ( LFAC[Value] ),
+			        LFAC[Value Type] = "Target（MDKK）",
+			        LFAC[Version] = MaxMonthVersion,
+			        REMOVEFILTERS ( 'Month' ),
+			        LFAC[MonthNum] > LastVersion,
+			        LFAC[IL] IN { "IL3", "IL4", "IL5" } 
+			    )
+			RETURN
+			IF (
+			    ISFILTERED ( 'Month'[Month] ),
+			    CALCULATE ( [ActualYTD], LFAC[IL] IN { "IL3", "IL4", "IL5" } ) + ToThisMonth_Selected,
+			    ActualYTD_AtLastMonth + FutureTarget_Default
+			)
+			```
+		lineageTag: 217564c9-31cc-4682-9917-6221091c9012
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Value
+		lineageTag: 5292b2bb-9fc2-4445-bd6a-736187f75a84
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Measure = calculated
+		mode: import
+		source = {""}
+
+	annotation PBI_Id = 473d417b966f45f2a88fa14ea595f51b
+

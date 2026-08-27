@@ -1,0 +1,43 @@
+table dAlarmArea
+	lineageTag: 5d59226d-da0b-4f05-803b-1d957a34c1a6
+
+	column SortOrder
+		dataType: int64
+		formatString: 0
+		lineageTag: 3940bbe1-9f40-40a2-a949-2389a03b33db
+		summarizeBy: none
+		sourceColumn: SortOrder
+
+		annotation SummarizationSetBy = Automatic
+
+	column LocationEng
+		dataType: string
+		lineageTag: 6882e9fd-cf12-46e7-9665-dc18387e242f
+		summarizeBy: none
+		sourceColumn: LocationEng
+		sortByColumn: SortOrder
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dAlarmArea = m
+		mode: import
+		source =
+				let
+				    Source = #"Alarm Response",
+				    #"Removed Other Columns" = Table.SelectColumns(Source,{"Location", "LocationEng"}),
+				    #"Removed Duplicates" = Table.Distinct(#"Removed Other Columns"),
+				    #"Sorted Rows" = Table.Sort(#"Removed Duplicates",{{"Location", Order.Ascending}}),
+				    #"Split Column by Character Transition" = Table.SplitColumn(#"Sorted Rows", "Location", Splitter.SplitTextByCharacterTransition((c) => not List.Contains({"0".."9"}, c), {"0".."9"}), {"Location.1", "Location.2"}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Split Column by Character Transition",{{"Location.2", Int64.Type}}),
+				    #"Sorted Rows1" = Table.Sort(#"Changed Type",{{"Location.2", Order.Ascending}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Sorted Rows1",{"Location.1"}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Removed Columns",{{"Location.2", "SortOrder"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

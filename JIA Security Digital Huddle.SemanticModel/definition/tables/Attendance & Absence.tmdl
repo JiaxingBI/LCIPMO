@@ -1,0 +1,61 @@
+table 'Attendance & Absence'
+	lineageTag: 864f1f19-0ba3-4fe5-a23d-ec32b951a158
+
+	measure colorValue =
+			
+			IF(
+			    max('Attendance & Absence'[出勤率%])<1,
+			    "#d54550",
+			    "black"
+			)
+		lineageTag: 44737693-d183-48cd-af28-5bf7e3c65430
+
+	column Area区域
+		dataType: string
+		lineageTag: 528bd7a1-7fc6-4895-9a01-015bfdb1e03d
+		summarizeBy: none
+		sourceColumn: Area区域
+		sortByColumn: SortOrder
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 出勤率%
+		dataType: double
+		formatString: 0%;-0%;0%
+		lineageTag: 9cd949a5-3353-4c07-9421-af4986809089
+		summarizeBy: sum
+		sourceColumn: 出勤率%
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column SortOrder
+		dataType: double
+		lineageTag: cdeda62c-7989-416e-ad14-0e9ab9e21f32
+		summarizeBy: sum
+		sourceColumn: SortOrder
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'Attendance & Absence' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://legogroup.sharepoint.com/sites/CHJiaxingSecurity/Shared%20Documents/00%20Digital%20Huddle/Security%20Huddle%20Update.xlsx"), null, true),
+				    #"Attendance & Absence(ESPA)_Sheet" = Source{[Item="Attendance & Absence",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Attendance & Absence(ESPA)_Sheet", [PromoteAllScalars=true]),
+				    #"Removed Blank Rows" = Table.SelectRows(#"Promoted Headers", each not List.IsEmpty(List.RemoveMatchingItems(Record.FieldValues(_), {"", null}))),
+				    #"Removed Other Columns" = Table.SelectColumns(#"Removed Blank Rows",{"Area区域", "出勤率%"}),
+				    #"Added Conditional Column" = Table.AddColumn(#"Removed Other Columns", "SortOrder", each if [Area区域] = "ESPA" then 2 else if [Area区域] = "Non-ESPA" then 3 else if [Area区域] = "LCC" then 1 else null, type number)
+				in
+				    #"Added Conditional Column"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

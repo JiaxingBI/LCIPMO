@@ -1,0 +1,95 @@
+table 'Crisis Excercise'
+	lineageTag: b371e2a6-ec48-4be5-b4bf-b7e4d0656124
+
+	column 'No.'
+		dataType: string
+		lineageTag: 4a0687e7-519d-4fd3-9e71-08dca001a432
+		summarizeBy: none
+		sourceColumn: No.
+
+		annotation SummarizationSetBy = Automatic
+
+	column Exercise
+		dataType: string
+		lineageTag: e04d181c-2419-4381-ab28-b78568e8b943
+		summarizeBy: none
+		sourceColumn: Exercise
+
+		annotation SummarizationSetBy = Automatic
+
+	column Form
+		dataType: string
+		lineageTag: 09b4ed1a-d16c-4117-bd90-750812a2f421
+		summarizeBy: none
+		sourceColumn: Form
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Planned Month'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: fb926a68-6ec8-4fd6-8425-80e9eb0bbaa5
+		summarizeBy: none
+		sourceColumn: Planned Month
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Driver
+		dataType: string
+		lineageTag: 473c59fc-04da-4b6a-978f-b98628eb5601
+		summarizeBy: none
+		sourceColumn: Driver
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Actual Complete Date'
+		dataType: string
+		lineageTag: 13038143-a693-452b-893e-7bfaeadc7081
+		summarizeBy: none
+		sourceColumn: Actual Complete Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column Progress
+		dataType: string
+		lineageTag: 4a329ede-cc5c-4d98-991a-df5ac31ea7de
+		summarizeBy: none
+		sourceColumn: Progress
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Confirmed By'
+		dataType: string
+		lineageTag: db7075a5-d850-4fc2-b66d-7dcc598b159b
+		summarizeBy: none
+		sourceColumn: Confirmed By
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column9
+		dataType: string
+		lineageTag: 1ac665c2-cf9a-447f-8300-af635454f723
+		summarizeBy: none
+		sourceColumn: Column9
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Crisis Excercise' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://legogroup.sharepoint.com/sites/CHJiaxingSecurity/Shared%20Documents/00%20Digital%20Huddle/Security%20Huddle%20Update.xlsx"), null, true),
+				    #"Crisis Excercise_Sheet" = Source{[Item="Crisis Excercise",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Crisis Excercise_Sheet", [PromoteAllScalars=true]),
+				    #"Promoted Headers1" = Table.PromoteHeaders(#"Promoted Headers", [PromoteAllScalars=true])
+				in
+				    #"Promoted Headers1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

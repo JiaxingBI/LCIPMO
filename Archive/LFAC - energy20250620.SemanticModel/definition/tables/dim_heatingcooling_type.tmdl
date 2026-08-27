@@ -1,0 +1,31 @@
+table dim_heatingcooling_type
+	lineageTag: af47367a-1b2e-4550-9225-6eb54dfc951c
+
+	column Type
+		dataType: string
+		lineageTag: a6f24951-f472-495a-89db-f71ed0b944cc
+		summarizeBy: none
+		sourceColumn: Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Name
+		dataType: string
+		lineageTag: aec2a74f-80f6-40aa-a882-edaf37f82782
+		summarizeBy: none
+		sourceColumn: Name
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_heatingcooling_type = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45WetG899muCU92rH26v/lp24Znc3Yp6ShBGE/bdz3bsOXZjpVPdy1TitXBpRas6mnb9hcLV/iGZ8TkPV+562lfNwkanm5f+qITJEaCnmdTNzzrXQeUfNaxnwRtL1fPeDZv25Pdk0lxXk/ri8WtpLht84qnCyeCNTxvXvuyvR+oCMgAKerrfto1G1XmaUcbSGbmCkhA6z/fPRM11OEqX85GVfli/2wcKiFOAnKx+AG3ItTAwa0OyX+hIcHwcAhwdFYI9g2IyQMqwpQsyk9OLS7OzEtHyMNteLJrytP+7RC1cHuUYmMB", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Type = _t, Name = _t])
+				in
+				    Source
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

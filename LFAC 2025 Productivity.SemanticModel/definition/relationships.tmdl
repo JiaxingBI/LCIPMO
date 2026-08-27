@@ -1,0 +1,9 @@
+relationship 96b8fd5b-8749-4eee-8a5c-30f6b24bde8a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Month.Date
+	toColumn: LocalDateTable_6b456a03-cb66-4050-ad34-6cdf91d13f6b.Date
+
+relationship 9a3cc202-7fa7-813d-5a3a-d4a18a4e6f3f
+	fromColumn: LFAC.Version
+	toColumn: Month.MonthNum
+

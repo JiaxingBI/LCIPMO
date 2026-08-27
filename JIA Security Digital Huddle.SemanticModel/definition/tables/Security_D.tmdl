@@ -1,0 +1,367 @@
+table Security_D
+	isHidden
+	lineageTag: 59d485f7-f10e-4897-80d4-eb0f964d325a
+
+	column Title
+		dataType: string
+		isHidden
+		lineageTag: 04a2be3a-59f6-47da-ad8f-e1c3e841dcef
+		summarizeBy: none
+		sourceColumn: Title
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Category
+		dataType: string
+		isHidden
+		lineageTag: aba04434-bdf8-4eb9-ba11-d879a5c0a730
+		summarizeBy: none
+		sourceColumn: Category
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Description
+		dataType: string
+		isHidden
+		lineageTag: df6d812f-2e14-4cd7-9c88-36667d2f7d1b
+		summarizeBy: none
+		sourceColumn: Description
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Penetration Area'
+		dataType: string
+		isHidden
+		lineageTag: 66c7f79d-7b59-4cea-a5ff-fad568d4317d
+		summarizeBy: none
+		sourceColumn: Penetration Area
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Penetration_Result
+		dataType: string
+		isHidden
+		lineageTag: 456ffb98-825e-402d-ab0b-858ea658c9c7
+		summarizeBy: none
+		sourceColumn: Penetration_Result
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		lineageTag: 4814a71f-746b-40aa-8c8f-78cb9086a462
+		summarizeBy: none
+		sourceColumn: Date
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Finished
+		dataType: boolean
+		isHidden
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 5b9f4d39-dcef-48f6-b8fb-e81710735906
+		summarizeBy: none
+		sourceColumn: Finished
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 7726cd16-7a5b-4b0b-885e-0985aad3e425
+		summarizeBy: count
+		sourceColumn: ID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Modified
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		lineageTag: 48b83e59-704c-4c2f-8187-7f493ae8732e
+		summarizeBy: none
+		sourceColumn: Modified
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Created
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		lineageTag: f695df7f-3988-4f78-b484-ab58a253dad3
+		summarizeBy: none
+		sourceColumn: Created
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Type
+		dataType: string
+		isHidden
+		lineageTag: 11839ca0-7ff8-4cc0-8a8c-5ecf67e9ad51
+		summarizeBy: none
+		sourceColumn: Type
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Color Tag'
+		dataType: string
+		isHidden
+		lineageTag: 8591d0c6-bd84-4416-9cce-1edba726a21c
+		summarizeBy: none
+		sourceColumn: Color Tag
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Compliance Asset Id'
+		dataType: string
+		isHidden
+		lineageTag: 59a4de57-c47e-45a9-b768-98b4c633e4de
+		summarizeBy: none
+		sourceColumn: Compliance Asset Id
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Content Type'
+		dataType: string
+		isHidden
+		lineageTag: dde4114b-3efd-4d82-a4ec-7dcc4da5de7a
+		summarizeBy: none
+		sourceColumn: Content Type
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Created By'
+		dataType: string
+		isHidden
+		lineageTag: dcb7f363-f3e1-4bd1-9b1f-79672544a2ff
+		summarizeBy: none
+		sourceColumn: Created By
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Modified By'
+		dataType: string
+		isHidden
+		lineageTag: 2f5d5e0b-1085-4a6a-b468-4545734cb466
+		summarizeBy: none
+		sourceColumn: Modified By
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Attachments
+		dataType: string
+		isHidden
+		lineageTag: 451558a9-42d1-411e-82c6-0f95274696f9
+		summarizeBy: none
+		sourceColumn: Attachments
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Item Child Count'
+		dataType: string
+		isHidden
+		lineageTag: dd09fad2-0665-45d7-8e6d-ac10afeb5d8b
+		summarizeBy: none
+		sourceColumn: Item Child Count
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Folder Child Count'
+		dataType: string
+		isHidden
+		lineageTag: a6983555-c505-44f6-9559-bbe8491126d2
+		summarizeBy: none
+		sourceColumn: Folder Child Count
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Label setting'
+		dataType: string
+		isHidden
+		lineageTag: f06d33ac-578e-400d-9372-1620829e7f28
+		summarizeBy: none
+		sourceColumn: Label setting
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Retention label'
+		dataType: string
+		isHidden
+		lineageTag: 9406cd7a-6c0d-486e-88b8-8633f6795837
+		summarizeBy: none
+		sourceColumn: Retention label
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Retention label Applied'
+		dataType: string
+		isHidden
+		lineageTag: 194d2b3c-33ae-44fe-bd5b-e4807c1930d4
+		summarizeBy: none
+		sourceColumn: Retention label Applied
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Weekname
+		dataType: string
+		isHidden
+		lineageTag: e6fb0baf-6039-48ab-83ee-57129efb8462
+		summarizeBy: none
+		sourceColumn: Weekname
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column DayOfMonth
+		dataType: string
+		isHidden
+		lineageTag: d1aed819-d27a-44b2-8f6d-a5c53b4c034c
+		summarizeBy: none
+		sourceColumn: DayOfMonth
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column AccessUserType
+		dataType: string
+		isHidden
+		lineageTag: cfefddad-6bab-4b57-b93d-4527567dcc0b
+		summarizeBy: none
+		sourceColumn: AccessUserType
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column AccessCategory
+		dataType: string
+		isHidden
+		lineageTag: d0109847-54f7-4e24-8753-a68da6d67559
+		summarizeBy: none
+		sourceColumn: AccessCategory
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Access Type'
+		dataType: string
+		isHidden
+		lineageTag: 4fce4efb-66cf-4066-a7d6-e5a0f6e7e587
+		summarizeBy: none
+		sourceColumn: Access Type
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Access Times'
+		dataType: string
+		lineageTag: 4c362a7c-854a-49ac-a82f-f33f57fe3b65
+		summarizeBy: none
+		sourceColumn: Access Times
+
+		annotation SummarizationSetBy = Automatic
+
+	column Times
+		dataType: string
+		lineageTag: edf8a1dd-e24a-49f7-87f3-a235368b94ec
+		summarizeBy: none
+		sourceColumn: Times
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Training Type'
+		dataType: string
+		lineageTag: f29a3ce1-0f87-4ccc-be98-d2c4de1695d6
+		summarizeBy: none
+		sourceColumn: Training Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Trainee
+		dataType: string
+		lineageTag: 3f4952fe-8a6a-4501-908d-a0ac3ff34c88
+		summarizeBy: none
+		sourceColumn: Trainee
+
+		annotation SummarizationSetBy = Automatic
+
+	column Trainer
+		dataType: string
+		lineageTag: b2baf9ed-988a-43d2-aea0-bca9cf97f346
+		summarizeBy: none
+		sourceColumn: Trainer
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Security_D = m
+		mode: import
+		source =
+				let
+				    Source = SharePoint.Tables("https://legogroup.sharepoint.com/sites/CHJiaxingSecurity/", [Implementation="2.0", ViewMode="All"]),
+				    #"7b36f8f3-528a-45fe-bcba-6e28ffa9a97d" = Source{[Id="7b36f8f3-528a-45fe-bcba-6e28ffa9a97d"]}[Items],
+				    #"Removed Columns" = Table.RemoveColumns(#"7b36f8f3-528a-45fe-bcba-6e28ffa9a97d",{"Version", "Edit", "Label applied by", "Item is a Record", "App Created By", "App Modified By"}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Removed Columns",{{"Date", type date}}),
+				    #"Added Custom" = Table.AddColumn(#"Changed Type", "Weekname", each Date.ToText([Date], "ddd", "en-US")),
+				    #"Added Custom1" = Table.AddColumn(#"Added Custom", "DayOfMonth", each Date.Day([Date]))
+				in
+				    #"Added Custom1"
+
+	changedProperty = IsHidden
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

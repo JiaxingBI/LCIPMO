@@ -1,0 +1,65 @@
+table LFAC_Humidity
+	lineageTag: a383ee0b-df9e-4823-a187-8bd6620bb780
+
+	column month
+		dataType: string
+		lineageTag: 6432d02a-0ee4-4953-8ffb-d9b195ffa22c
+		summarizeBy: none
+		sourceColumn: month
+
+		annotation SummarizationSetBy = Automatic
+
+	column day
+		dataType: int64
+		formatString: 0
+		lineageTag: 9460f256-b125-406a-ac08-e1c86fec9306
+		summarizeBy: sum
+		sourceColumn: day
+
+		annotation SummarizationSetBy = Automatic
+
+	column hour
+		dataType: int64
+		formatString: 0
+		lineageTag: 2c8cbc03-6f25-46b6-85aa-aeea025822b1
+		summarizeBy: sum
+		sourceColumn: hour
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		dataType: double
+		lineageTag: add8b440-ce3e-4fb0-b039-a3bb988befe2
+		summarizeBy: sum
+		sourceColumn: Value
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition LFAC_Humidity = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://legogroup.sharepoint.com/sites/JIALFACTECH/Shared%20Documents/18%20%E8%83%BD%E6%BA%90%E4%BF%A1%E6%81%AF%E7%AE%A1%E7%90%86/01%20Energy%20Data%20%E8%83%BD%E6%BA%90%E6%95%B0%E6%8D%AE/%E8%83%BD%E6%BA%90%E4%B8%AD%E5%BF%83%E6%95%B0%E6%8D%AE%E8%AE%B0%E5%BD%95%E8%A1%A8%202025.xlsx"), null, true),
+				    #"温湿度input(52)_Sheet" = Source{[Item="温湿度input(52)",Kind="Sheet"]}[Data],
+				    #"Transposed Table" = Table.Transpose(#"温湿度input(52)_Sheet"),
+				    #"Filtered Rows" = Table.SelectRows(#"Transposed Table", each ([Column1] <> "室外温度")),
+				    #"Transposed Table1" = Table.Transpose(#"Filtered Rows"),
+				    #"Removed Top Rows" = Table.Skip(#"Transposed Table1",1),
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Removed Top Rows", [PromoteAllScalars=true]),
+				    #"Removed Columns" = Table.RemoveColumns(#"Promoted Headers",{"Column35", "Column36", "Column37", "Column34"}),
+				    #"Filtered Rows1" = Table.SelectRows(#"Removed Columns", each ([#"h\天"] <> null)),
+				    #"Filled Down" = Table.FillDown(#"Filtered Rows1",{"月"}),
+				    #"Unpivoted Other Columns" = Table.UnpivotOtherColumns(#"Filled Down", {"h\天", "月"}, "day", "Value"),
+				    #"Renamed Columns" = Table.RenameColumns(#"Unpivoted Other Columns",{{"h\天", "hour"}, {"月", "month"}}),
+				    #"Reordered Columns" = Table.ReorderColumns(#"Renamed Columns",{"month", "day", "hour", "Value"}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Reordered Columns",{{"day", Int64.Type}, {"Value", type number}, {"hour", Int64.Type}}),
+				    #"Sorted Rows" = Table.Sort(#"Changed Type",{{"month", Order.Ascending}, {"day", Order.Ascending}, {"hour", Order.Ascending}})
+				in
+				    #"Sorted Rows"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

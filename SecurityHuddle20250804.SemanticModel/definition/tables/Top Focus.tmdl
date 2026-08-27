@@ -1,0 +1,64 @@
+table 'Top Focus'
+	lineageTag: ad9524ee-fb8b-442c-807c-99cad36e0536
+
+	column FocusType
+		dataType: string
+		lineageTag: f4a30344-cdfc-4513-b692-07eef394df1f
+		summarizeBy: none
+		sourceColumn: FocusType
+
+		annotation SummarizationSetBy = Automatic
+
+	column QMW
+		dataType: string
+		lineageTag: 15607851-0a66-4114-a35e-8a054fe25cf6
+		summarizeBy: none
+		sourceColumn: QMW
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'No.'
+		dataType: int64
+		formatString: 0
+		lineageTag: 0877d2fd-5a2f-4d2e-a2c0-ea5d26bd00b9
+		summarizeBy: none
+		sourceColumn: No.
+
+		annotation SummarizationSetBy = Automatic
+
+	column Title
+		dataType: string
+		lineageTag: 989b741d-3684-4e79-8f5b-ad699a8f5179
+		summarizeBy: none
+		sourceColumn: Title
+
+		annotation SummarizationSetBy = Automatic
+
+	column Detail
+		dataType: string
+		lineageTag: 57d69496-0898-4a5d-b54d-c4390bb57106
+		summarizeBy: none
+		sourceColumn: Detail
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Top Focus' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://legogroup.sharepoint.com/sites/JIALCI/Shared%20Documents/General/03_BI/01_Project%20List/02.%20Project%20List/09.%20Security%20Digital%20Huddle/Security%20Huddle%20Update.xlsx")),
+				    #"Top Focus_Sheet" = Source{[Item="Top Focus",Kind="Sheet"]}[Data],
+				    #"Removed Top Rows1" = Table.Skip(#"Top Focus_Sheet",1),
+				    #"Promoted Headers1" = Table.PromoteHeaders(#"Removed Top Rows1", [PromoteAllScalars=true]),
+				    #"Removed Blank Rows1" = Table.SelectRows(#"Promoted Headers1", each not List.IsEmpty(List.RemoveMatchingItems(Record.FieldValues(_), {"", null}))),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Removed Blank Rows1",{{"Column1", type text}, {"Column2", type text}, {"No.", Int64.Type}, {"Title", type text}, {"Detail", type text}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type",{{"Column1", "FocusType"}, {"Column2", "QMW"}}),
+				    #"Filled Down" = Table.FillDown(#"Renamed Columns",{"FocusType", "QMW", "No.", "Title"}),
+				    #"Replaced Value" = Table.ReplaceValue(#"Filled Down",null," ",Replacer.ReplaceValue,{"Detail"})
+				in
+				    #"Replaced Value"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

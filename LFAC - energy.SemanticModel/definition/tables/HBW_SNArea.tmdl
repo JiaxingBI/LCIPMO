@@ -1,0 +1,94 @@
+table HBW_SNArea
+	lineageTag: 4fa4ba75-76bb-44f3-bb06-76d69282322c
+
+	column SN
+		dataType: string
+		lineageTag: 3998fe18-de8e-4ae4-b397-447f1f911789
+		summarizeBy: none
+		sourceColumn: SN
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Swithboard
+		dataType: string
+		lineageTag: fd0c4137-9861-4b53-b01f-adebbc88e398
+		summarizeBy: none
+		sourceColumn: Swithboard
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 区域
+		dataType: string
+		lineageTag: 7358d800-cf06-4653-8acf-573ce74b6800
+		summarizeBy: none
+		sourceColumn: 区域
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 功能
+		dataType: string
+		lineageTag: aaf063ea-ff8d-4ac3-b1da-d04246726b4a
+		summarizeBy: none
+		sourceColumn: 功能
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 用途
+		dataType: string
+		lineageTag: 22bbb6a7-29e4-4940-aaaa-54ece91f6222
+		summarizeBy: none
+		sourceColumn: 用途
+		sortByColumn: Sort
+
+		changedProperty = SortByColumn
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column HBW区域
+		dataType: string
+		lineageTag: 587dbf40-e411-4bbb-aef4-83c50703c186
+		summarizeBy: none
+		sourceColumn: HBW区域
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sort
+		dataType: int64
+		lineageTag: 06581235-2b3a-4473-aef4-49ca76831f96
+		summarizeBy: none
+		sourceColumn: Sort
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition HBW_SNArea = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("tZddT9NQGMe/ysm8lMaec9q1uyyFZQkLLovGC+BiwIJLzJbMeY8alBFFIySSQMBEAY1KJPFlmQO/zNptV3wFn9PTtV3Xdt0CCenO1qf/3/N6TllYSChyYipBJC2HBYpyWd08OshMPyBC7+ueefjbaO6Ym//ajXXj/BmzEyW4dnaP2s1TWDBD+MhVK6tPVmqlShm+4MTSFKimYDmtIePPcbfe7J5dGp9e6vMiEeBPFmVEQK97udNbf2o0TvhtS54MyBfKq49K5TWkVYuFYI4qwjIdxkldH4eGxoMmE1TY71ldECUET7cb37sX37oXJ733P9uNunncGlaFrwJNh8ixfOcG/VusLpbdXCSDcoHQZN5jkfEyoTzQZbR244Df6uz+MptvO2fn40WFCXGak6BraEs5qcLa2PpsbO33Nl6DW+ATqwIWLRnVJ0PDZFI+GXP9LyhhLVdwdTZOzb1t8807o3na+dLs/ngeramIYZrLk2oqqpO+ZFj6uIx50IRf3FR6tFkqtcx9do+3GjOY0RC36X3chmcHS48ImbknCyJ2q+3o+XrLK5xiCZjWRwnjvjD1OYp9ethKGWwOXIAiQsd5Gkt85G38HRDwetYfHRo3PLXfy1TAAcVovhroZU+h3TJkS2sPayAPS8o1ZR6h13woZVoegqZuLQal2fzhdJB4CtuFDhBn2qCcZem8ar2yIXgCCAmPwAMhLoRMAKF8t4qCUDcSOiISGgxhdZsbCSEuJDKSYAgWkz5zB0EBQbVsPsMBWafoNLCfcKA8VkeXg7iZIhNlChNqT7r1hD4vON3az5I4iWp/YxryXfBOQ1Z2/Zcn9J+N3YweRqIWibrTwZdk/GrIPE/OODOI98itVpaLVQTXSu0xWiksl8rFWsQRm2eG8CnZ8qyXctqNySs8SzckLym3ndNNDjvdrlqbWJBuGR9eGIf7sGtfteruHut7X9CrhXIRrGEpcwQVXYRkIQIJsqCOQQBrWCbtcVZ4z/aPKARyxvYRdE2dZSt9Nw9YpOe1+Vk0i7iHGCGH5raUB4WdYNgK2+9S1ivO3DCKRLFIfBYLENsneSowKjmKRGOD2B3c3w4x39l9JCWKJMUmsRpi3m4p1fs24ICkKJAcG8TmHNtNR6wtWPeTKJBQKCoZG8VmHve7z/7vyYdKRgWlxCax1oYLJ5HA5lOjSGpsEssYXJaW/gM=", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [SN = _t, Swithboard = _t, 区域 = _t, 功能 = _t, HBW区域 = _t, 用途 = _t, Sort = _t]),
+				    #"Changed Type1" = Table.TransformColumnTypes(Source,{{"Sort", Int64.Type}}),
+				    #"Sorted Rows" = Table.Sort(#"Changed Type1",{{"SN", Order.Ascending}})
+				in
+				    #"Sorted Rows"
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

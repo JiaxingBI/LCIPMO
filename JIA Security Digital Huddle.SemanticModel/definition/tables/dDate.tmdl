@@ -1,0 +1,288 @@
+table dDate
+	lineageTag: 1ad49672-2362-4314-8532-e5ec215d2b64
+	dataCategory: Time
+
+	column Date
+		dataType: dateTime
+		isKey
+		formatString: Mm/dd
+		lineageTag: f7e717cb-43b6-4201-bc51-0ca029fae2d1
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column Year_num
+		dataType: int64
+		formatString: 0
+		lineageTag: 091cd2ee-fe92-4bb4-b439-7086da6a0d3e
+		summarizeBy: sum
+		sourceColumn: Year_num
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month_num
+		dataType: int64
+		formatString: 0
+		lineageTag: cf126cf5-e4b0-4504-9b08-144b9a0f3b7c
+		summarizeBy: sum
+		sourceColumn: Month_num
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthName
+		dataType: string
+		lineageTag: 97a5688b-6302-488b-afb8-49aa25a3ec51
+		summarizeBy: none
+		sourceColumn: MonthName
+		sortByColumn: Month_num
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'MonthName Short'
+		dataType: string
+		lineageTag: b31b746f-e42d-4db2-bf2b-78e0555f6daf
+		summarizeBy: none
+		sourceColumn: MonthName Short
+		sortByColumn: Month_num
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quarter
+		dataType: int64
+		formatString: 0
+		lineageTag: 47fa0b38-4423-402f-ad7c-491a0ab8a35c
+		summarizeBy: sum
+		sourceColumn: Quarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Week of Year'
+		dataType: int64
+		formatString: 0
+		lineageTag: 05f0d1c2-8d81-4fba-8f53-5ec8c3e84ea6
+		summarizeBy: sum
+		sourceColumn: Week of Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Week of Month'
+		dataType: int64
+		formatString: 0
+		lineageTag: 43215edb-6eaf-4067-b3eb-4bb6822ee076
+		summarizeBy: sum
+		sourceColumn: Week of Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column Day
+		dataType: int64
+		formatString: 0
+		lineageTag: c15dc52d-06d6-4d72-93eb-852d404a2360
+		summarizeBy: sum
+		sourceColumn: Day
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day of Week'
+		dataType: int64
+		formatString: 0
+		lineageTag: 07526d92-2803-4b88-9d60-57fb28ca3f72
+		summarizeBy: sum
+		sourceColumn: Day of Week
+
+		annotation SummarizationSetBy = Automatic
+
+	column Day_num
+		dataType: int64
+		formatString: 0
+		lineageTag: 453a7246-1f7f-4ea4-8685-0d5a0ce997ea
+		summarizeBy: sum
+		sourceColumn: Day_num
+
+		annotation SummarizationSetBy = Automatic
+
+	column WeekdayName
+		dataType: string
+		lineageTag: 069a5f22-71d5-4b01-8e53-50ead6a13ff4
+		summarizeBy: none
+		sourceColumn: WeekdayName
+		sortByColumn: 'Day of Week'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column YearMonth
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: e93199b0-22f7-4bd5-ace0-bf0d2c2b6583
+		summarizeBy: none
+		sourceColumn: YearMonth
+		sortByColumn: YearMonthOrder
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column YearMonthOrder
+		dataType: int64
+		formatString: 0
+		lineageTag: 35dd5e64-a7da-4d84-8db5-c76afe80464c
+		summarizeBy: sum
+		sourceColumn: YearMonthOrder
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsCurrentYear
+		dataType: string
+		lineageTag: 8532c3ca-5add-42b3-aa86-c05697ec261a
+		summarizeBy: none
+		sourceColumn: IsCurrentYear
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsCurrentMonth
+		dataType: string
+		lineageTag: c2124fbe-6a21-464d-8d4b-8dc007dbde75
+		summarizeBy: none
+		sourceColumn: IsCurrentMonth
+		sortByColumn: Month_num
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column WeekNum
+		dataType: string
+		lineageTag: 6b34f6ff-1134-4240-a3db-fbf9d3b88aac
+		summarizeBy: none
+		sourceColumn: WeekNum
+		sortByColumn: 'Week of Year'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsCurrentWeek
+		dataType: string
+		lineageTag: c3844bbe-9503-4ff4-936d-971f7d7e6237
+		summarizeBy: none
+		sourceColumn: IsCurrentWeek
+		sortByColumn: 'Week of Year'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsLastWeek
+		dataType: string
+		lineageTag: fd0c3d55-51c0-495b-bb8d-49ece1956feb
+		summarizeBy: none
+		sourceColumn: IsLastWeek
+		sortByColumn: 'Week of Year'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Quarter Q'
+		dataType: string
+		lineageTag: 2b573f86-005f-4c34-b238-7e7a47f6bf29
+		summarizeBy: none
+		sourceColumn: Quarter Q
+		sortByColumn: Quarter
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column WeekNameShort
+		dataType: string
+		lineageTag: db407f59-1c09-45d7-9f53-1ff5372a3af5
+		summarizeBy: none
+		sourceColumn: WeekNameShort
+		sortByColumn: 'Day of Week'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column Relative_Week
+		dataType: int64
+		formatString: 0
+		lineageTag: a5fe6821-150f-4564-848d-9ef0a1fbc874
+		summarizeBy: sum
+		sourceColumn: Relative_Week
+
+		annotation SummarizationSetBy = Automatic
+
+	column Relative_WorkDay =
+			
+			var _LastDay = TODAY()-1
+			var lastWorkDay =MAXX(FILTER(ALL('dDate'),[Day of Week]<=5 && 'dDate'[Date]<TODAY()),'dDate'[Date])
+			var res = 'dDate'[Date] >=lastWorkDay && 'dDate'[Date]<=_LastDay
+			RETURN
+			    res
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 79f0d8af-9848-4bef-8474-98f67f99df50
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dDate = m
+		mode: import
+		source =
+				let
+				  StartYear = 2024,
+				  EndYear = Date.Year(DateTime.LocalNow()),
+				  StartDate = #date(StartYear,1,1),
+				  EndDate = #date(EndYear,12,31),
+				  NumberOfDays = Duration.Days( EndDate - StartDate ),
+				  Dates = List.Dates(StartDate, NumberOfDays+1, #duration(1,0,0,0)),
+				  #"Converted to Table" = Table.FromList(Dates, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
+				  #"Renamed Columns" = Table.RenameColumns(#"Converted to Table", {{"Column1", "FullDateAlternateKey"}}),
+				  #"Changed Type" = Table.TransformColumnTypes(#"Renamed Columns", {{"FullDateAlternateKey", type date}}),
+				  Year = Table.AddColumn(#"Changed Type", "Year", each Date.Year([FullDateAlternateKey]), type number),
+				  Month = Table.AddColumn(Year, "Month", each Date.Month([FullDateAlternateKey]), type number),
+				  FullMonthName = Table.AddColumn(Month, "Month Name", each Date.MonthName([FullDateAlternateKey]), type text),
+				  ShortMonthName = Table.AddColumn(FullMonthName, "MonthName Short", each Text.Start([Month Name], 3), type text),
+				    Qtr = Table.AddColumn(ShortMonthName, "Quarter", each Date.QuarterOfYear([FullDateAlternateKey]), type number),
+				  WeekNo = Table.AddColumn(Qtr, "Week of Year", each Date.WeekOfYear([FullDateAlternateKey], Day.Monday), type number),
+				  WeekofMonth = Table.AddColumn(WeekNo, "Week of Month", each Date.WeekOfMonth([FullDateAlternateKey], Day.Monday), type number),
+				  Day = Table.AddColumn(WeekofMonth, "Day", each Date.Day([FullDateAlternateKey]), type number),
+				  DayofWeek = Table.AddColumn(Day, "Day of Week", each Date.DayOfWeek([FullDateAlternateKey],Day.Monday)+1, type number),
+				  DayofYear = Table.AddColumn(DayofWeek, "Day of Year", each Date.DayOfYear([FullDateAlternateKey]), type number),
+				  #"Inserted Day Name" = Table.AddColumn(DayofYear, "Day Name", each Date.DayOfWeekName([FullDateAlternateKey]), type text),
+				  #"Year-Month" = Table.AddColumn(#"Inserted Day Name", "YearMonth", each Date.ToText([FullDateAlternateKey], "yyyy-MMM")),
+				  YearMonthOrder = Table.AddColumn(#"Year-Month", "YearMonthOrder", each [Year]*100+[Month]),
+				  IsCurrentYear = Table.AddColumn(YearMonthOrder, "IsCurrentYear", each if [Year] = Date.Year(DateTime.LocalNow()) then "Current Year" else [Year]),
+				  IsCurrentMonth = Table.AddColumn(IsCurrentYear, "IsCurrentMonth", each if [Year] = Date.Year(DateTime.LocalNow()) and [Month] = Date.Month(DateTime.LocalNow()) then "Current Month" else [MonthName Short]),
+				  #"Added Custom" = Table.AddColumn(IsCurrentMonth, "Week with WK", each "WK " & Text.From([Week of Year])),
+				  IsCurrentWeek = Table.AddColumn(#"Added Custom", "IsCurrentWeek", each if [Year] = Date.Year(DateTime.LocalNow()) and [Week of Year] = Date.WeekOfYear(DateTime.LocalNow()) then "Current Week" else [Week with WK]),
+				  Custom1 = Table.AddColumn(IsCurrentWeek, "IsLastWeek", each if [Year] = Date.Year(DateTime.LocalNow()) and [Week of Year] = Date.WeekOfYear(DateTime.LocalNow())-1 then "Last Week" else [Week with WK]),
+				  #"Renamed columns 1" = Table.RenameColumns(Custom1, {{"FullDateAlternateKey", "Date"}}),
+				  #"Inserted quarter 1" = Table.AddColumn(#"Renamed columns 1", "Quarter Q", each "Q" & Text.From(Date.QuarterOfYear([Date])), type text),
+				  #"Inserted First Characters" = Table.AddColumn(#"Inserted quarter 1", "WeekNameShort", each Text.Start([Day Name], 3), type text),
+				  #"Transform columns" = Table.TransformColumnTypes(#"Inserted First Characters", {{"YearMonth", type text}, {"YearMonthOrder", type text}, {"IsCurrentYear", type text}, {"IsCurrentMonth", type text}, {"Week with WK", type text}, {"IsCurrentWeek", type text}, {"IsLastWeek", type text}}),
+				  #"Replace errors" = Table.ReplaceErrorValues(#"Transform columns", {{"YearMonth", null}, {"YearMonthOrder", null}, {"IsCurrentYear", null}, {"IsCurrentMonth", null}, {"Week with WK", null}, {"IsCurrentWeek", null}, {"IsLastWeek", null}}),
+				    #"Added Custom1" = Table.AddColumn(#"Replace errors", "Relative_Week", each [Week of Year]- Date.WeekOfYear(DateTime.LocalNow())),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Added Custom1",{{"Date", type date}, {"Year", Int64.Type}, {"Month", Int64.Type}, {"Month Name", type text}, {"MonthName Short", type text}, {"Quarter", Int64.Type}, {"Week of Year", Int64.Type}, {"Week of Month", Int64.Type}, {"Day", Int64.Type}, {"Day of Week", Int64.Type}, {"Day of Year", Int64.Type}, {"Day Name", type text}, {"YearMonth", type date}, {"YearMonthOrder", Int64.Type}, {"IsCurrentYear", type text}, {"IsCurrentMonth", type text}, {"Week with WK", type text}, {"IsCurrentWeek", type text}, {"IsLastWeek", type text}, {"Quarter Q", type text}, {"WeekNameShort", type text}, {"Relative_Week", Int64.Type}}),
+				    #"Renamed Columns1" = Table.RenameColumns(#"Changed Type1",{{"Year", "Year_num"}, {"Month", "Month_num"}, {"Month Name", "MonthName"}, {"Day Name", "WeekdayName"}, {"Week with WK", "WeekNum"}, {"Day of Year", "Day_num"}})
+				in
+				    #"Renamed Columns1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

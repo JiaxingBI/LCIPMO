@@ -1,0 +1,108 @@
+table 'Access Issue'
+	lineageTag: 439e8921-0ba6-4c84-ba53-d7d863319630
+
+	column Title
+		dataType: string
+		lineageTag: 8f96b4d3-a3bf-4fdd-a23a-09b42df6f31c
+		summarizeBy: none
+		sourceColumn: Title
+
+		annotation SummarizationSetBy = Automatic
+
+	column Category
+		dataType: string
+		lineageTag: 7a8a99c8-8ac2-4854-8aa6-74c1b713ab7a
+		summarizeBy: none
+		sourceColumn: Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column Description
+		dataType: string
+		lineageTag: 03119d6f-4175-4fcd-ae1f-9afa1d5c83ec
+		summarizeBy: none
+		sourceColumn: Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		lineageTag: 79fd5573-6628-4313-b650-27d434004e13
+		summarizeBy: none
+		sourceColumn: Date
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Weekname
+		dataType: string
+		lineageTag: 4745eaa1-29d0-4bbd-9e3c-c03ca4b3d0cb
+		summarizeBy: none
+		sourceColumn: Weekname
+
+		annotation SummarizationSetBy = Automatic
+
+	column DayOfMonth
+		dataType: string
+		isHidden
+		lineageTag: 08bd61c4-2c29-47f4-bcf3-7075e24d2fae
+		summarizeBy: none
+		sourceColumn: DayOfMonth
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column AccessUserType
+		dataType: string
+		lineageTag: d47dc258-3877-4d41-bd10-dfa5b5b41c75
+		summarizeBy: none
+		sourceColumn: AccessUserType
+
+		annotation SummarizationSetBy = Automatic
+
+	column AccessCategory
+		dataType: string
+		lineageTag: 3b459eef-1f6c-4e88-95f0-f6cc5efa393c
+		summarizeBy: none
+		sourceColumn: AccessCategory
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Access Type'
+		dataType: string
+		lineageTag: 0de276f2-bafa-4c6c-bb9b-b4e67a053d40
+		summarizeBy: none
+		sourceColumn: Access Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Access Times'
+		dataType: int64
+		formatString: 0
+		lineageTag: a565c95e-133b-4776-86bb-5dd131ffa451
+		summarizeBy: sum
+		sourceColumn: Access Times
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Access Issue' = m
+		mode: import
+		source =
+				let
+				    Source = Security_D,
+				    #"Removed Other Columns" = Table.SelectColumns(Source,{"Title", "Category", "Description", "Access Type", "Date", "AccessUserType", "AccessCategory", "Access Times", "Weekname", "DayOfMonth"}),
+				    #"Filtered Rows" = Table.SelectRows(#"Removed Other Columns", each ([Category] = "Access Issue")),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Filtered Rows",{{"Access Times", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

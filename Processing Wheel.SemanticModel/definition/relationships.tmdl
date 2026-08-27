@@ -1,0 +1,20 @@
+relationship AutoDetected_23f8ff38-9c3a-4928-ba94-8f5a79a61a69
+	fromColumn: HistoryOverview.'History_Overview.Report'
+	toColumn: 'Weekly Calendar'.Report
+
+relationship AutoDetected_b66700de-be08-49b9-9732-a09d86d1d658
+	fromColumn: HistoryOverview.'History_Overview.IL'
+	toColumn: 'IL Sort'.IL
+
+relationship d1a21704-ddbf-2e83-fddc-7568b292e1e5
+	fromColumn: HistoryOverview.'History_Overview.ELT Level 5'
+	toColumn: Target-Plant.Plant
+
+relationship e55a924d-6b63-c1fa-c9eb-c9d56dfd0b5c
+	fromColumn: HistoryOverview.'History_Overview.O Strategic Initiative'
+	toColumn: 'Strategic Intiative'.'Strategic Intiative'
+
+relationship 41dffdb2-6b8d-c96e-c6d6-678872b08222
+	fromColumn: 'Weekly Calendar'.Date
+	toColumn: dCalendar.Date
+

@@ -1,0 +1,396 @@
+table Security_Q
+	isHidden
+	lineageTag: 0cd1e9fe-5d44-4f7b-aba2-c4f23e4cf0e2
+
+	column Findings
+		dataType: string
+		isHidden
+		lineageTag: bdd4cc4f-dc4a-4d2e-ac3f-f9cd600dc0d0
+		summarizeBy: none
+		sourceColumn: Findings
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Created
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		lineageTag: 786fdd3f-0341-410b-b9ab-1f22e11d3426
+		summarizeBy: none
+		sourceColumn: Created
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		lineageTag: 548a78ba-a685-4d81-ae16-4575f60ab6ca
+		summarizeBy: none
+		sourceColumn: Date
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column FindingCategory
+		dataType: string
+		isHidden
+		lineageTag: 4629e8e5-e360-4295-a87f-75462ed2059d
+		summarizeBy: none
+		sourceColumn: FindingCategory
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Abnormal Finding Area'
+		dataType: string
+		isHidden
+		lineageTag: 64c5eca1-2b22-43f1-86c4-923966fee08e
+		summarizeBy: none
+		sourceColumn: Abnormal Finding Area
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Non ESPA Finding Area'
+		dataType: string
+		isHidden
+		lineageTag: 2748c207-6f49-4334-be7d-fb7034579244
+		summarizeBy: none
+		sourceColumn: Non ESPA Finding Area
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Alarm/ False Alarm'
+		dataType: string
+		isHidden
+		lineageTag: 79e5a258-8b95-4457-a7a5-55604f33245e
+		summarizeBy: none
+		sourceColumn: Alarm/ False Alarm
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Alarm Type'
+		dataType: string
+		isHidden
+		lineageTag: 1a94b745-a806-46b9-8669-09019322575d
+		summarizeBy: none
+		sourceColumn: Alarm Type
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Complaint/Appreciation
+		dataType: string
+		isHidden
+		lineageTag: b023db98-0e4b-40ba-8213-a2c969977b1b
+		summarizeBy: none
+		sourceColumn: Complaint/Appreciation
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 7febe670-2f8d-487c-a728-8a2be101783a
+		summarizeBy: count
+		sourceColumn: ID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Color Tag'
+		dataType: string
+		isHidden
+		lineageTag: 3b10fb68-1988-4899-a7bf-0b3822d10cde
+		summarizeBy: none
+		sourceColumn: Color Tag
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Compliance Asset Id'
+		dataType: string
+		isHidden
+		lineageTag: d5697a75-5e20-400b-aa09-97ffc0206aa9
+		summarizeBy: none
+		sourceColumn: Compliance Asset Id
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		dataType: string
+		isHidden
+		lineageTag: f255fdd3-3ca4-428f-a03e-adaa6f7c6316
+		summarizeBy: none
+		sourceColumn: Status
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CorA_Area
+		dataType: string
+		isHidden
+		lineageTag: 6b0df0d0-9465-459d-89f7-5cd512049c63
+		summarizeBy: none
+		sourceColumn: CorA_Area
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Content Type'
+		dataType: string
+		isHidden
+		lineageTag: 66922557-1f2f-42c7-a833-2f9c4bcae794
+		summarizeBy: none
+		sourceColumn: Content Type
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Modified
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		lineageTag: b59f6a32-13d8-42ed-8bb4-81faef83beeb
+		summarizeBy: none
+		sourceColumn: Modified
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Modified By'
+		dataType: string
+		isHidden
+		lineageTag: 488470f6-eafd-4193-9325-ba415ac862f1
+		summarizeBy: none
+		sourceColumn: Modified By
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Type
+		dataType: string
+		isHidden
+		lineageTag: 595baf7c-733f-4909-8340-6a173405c8cc
+		summarizeBy: none
+		sourceColumn: Type
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Item Child Count'
+		dataType: string
+		isHidden
+		lineageTag: e41928d5-2e82-4f3a-8297-7a226a597396
+		summarizeBy: none
+		sourceColumn: Item Child Count
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Folder Child Count'
+		dataType: string
+		isHidden
+		lineageTag: 2d605aef-5c83-486b-947c-0ad2a13d014c
+		summarizeBy: none
+		sourceColumn: Folder Child Count
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Label setting'
+		dataType: string
+		isHidden
+		lineageTag: 1432ffc3-6d3a-4648-b8e1-670256e37228
+		summarizeBy: none
+		sourceColumn: Label setting
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Retention label'
+		dataType: string
+		isHidden
+		lineageTag: c613a31b-8f7e-4708-8201-8de76d1f93a2
+		summarizeBy: none
+		sourceColumn: Retention label
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Retention label Applied'
+		dataType: string
+		isHidden
+		lineageTag: b12974a6-e7d0-428d-b3a0-39c311aeb151
+		summarizeBy: none
+		sourceColumn: Retention label Applied
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column DayOfMonth
+		dataType: string
+		isHidden
+		lineageTag: 62567f14-15cc-4398-8e49-9e938b6c1639
+		summarizeBy: none
+		sourceColumn: DayOfMonth
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ESPA Finding Area'
+		dataType: string
+		isHidden
+		lineageTag: 1880a440-8e93-4455-b559-b2f71f3c285d
+		summarizeBy: none
+		sourceColumn: ESPA Finding Area
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Created By'
+		dataType: string
+		isHidden
+		lineageTag: cad47b19-6ed6-4081-952d-f3fe5e7a208e
+		summarizeBy: none
+		sourceColumn: Created By
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Attachments
+		dataType: string
+		isHidden
+		lineageTag: 7c63dd20-cc18-4298-b7d1-04007ec46280
+		summarizeBy: none
+		sourceColumn: Attachments
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Weekname
+		dataType: string
+		isHidden
+		lineageTag: 6a7c8ed3-d1a3-490a-bf66-83ac56be57ac
+		summarizeBy: none
+		sourceColumn: Weekname
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Radar_Location
+		dataType: string
+		lineageTag: b399ccfd-357a-4194-9e4f-58325f6cf007
+		summarizeBy: none
+		sourceColumn: Radar_Location
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'No.'
+		dataType: double
+		lineageTag: 4e2e88e5-3bf4-4283-afd3-3baa3b03b335
+		summarizeBy: sum
+		sourceColumn: No.
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Times
+		dataType: string
+		lineageTag: b6433e15-db17-49c8-9692-5af15d92d2b2
+		summarizeBy: none
+		sourceColumn: Times
+
+		annotation SummarizationSetBy = Automatic
+
+	column Location_Incident
+		dataType: string
+		lineageTag: f896ffdb-5ea5-49ab-a42e-cf0780b94f5c
+		summarizeBy: none
+		sourceColumn: Location_Incident
+
+		annotation SummarizationSetBy = Automatic
+
+	column Equipment
+		dataType: string
+		lineageTag: 48d542f5-de19-4dfe-9cc6-64b28fb60431
+		summarizeBy: none
+		sourceColumn: Equipment
+
+		annotation SummarizationSetBy = Automatic
+
+	column IncidentFindingNumber
+		dataType: string
+		lineageTag: 4b1f4d53-0c19-4686-9665-d059c945a676
+		summarizeBy: none
+		sourceColumn: IncidentFindingNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column IncidentFindingStatus
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 38f9d7a5-5f14-4105-adba-f8b2bbabc1b3
+		summarizeBy: none
+		sourceColumn: IncidentFindingStatus
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Security_Q = m
+		mode: import
+		source =
+				let
+				    Source = SharePoint.Tables("https://legogroup.sharepoint.com/sites/CHJiaxingSecurity/", [Implementation="2.0", ViewMode="All"]),
+				    #"d1435c0c-a8a3-4797-b0c4-316437af908f" = Source{[Id="d1435c0c-a8a3-4797-b0c4-316437af908f"]}[Items],
+				    #"Removed Columns" = Table.RemoveColumns(#"d1435c0c-a8a3-4797-b0c4-316437af908f",{"Version", "Edit", "Label applied by", "Item is a Record", "App Created By", "App Modified By"}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Removed Columns",{{"Date", type date}}),
+				    #"Added Custom" = Table.AddColumn(#"Changed Type", "Weekname", each Date.ToText([Date], "ddd", "en-US")),
+				    #"Added Custom1" = Table.AddColumn(#"Added Custom", "DayOfMonth", each Date.Day([Date]))
+				in
+				    #"Added Custom1"
+
+	changedProperty = IsHidden
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

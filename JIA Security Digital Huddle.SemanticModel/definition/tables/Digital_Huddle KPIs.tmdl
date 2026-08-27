@@ -1,0 +1,161 @@
+table 'Digital_Huddle KPIs'
+	isHidden
+	lineageTag: 2d04d531-e8b8-49f4-a814-ee579a749fe9
+
+	column ID
+		dataType: int64
+		isHidden
+		isNullable: false
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: ece9bf6f-a5f0-4218-aaf3-9e48d2651ac6
+		summarizeBy: count
+		sourceColumn: ID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column DepartmentID
+		dataType: int64
+		isHidden
+		isNullable: false
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 997e7fff-cf4f-4aa9-8a9b-9bfed6523555
+		summarizeBy: count
+		sourceColumn: DepartmentID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Title
+		dataType: string
+		isHidden
+		isNullable: false
+		sourceProviderType: nvarchar(200)
+		lineageTag: dcb7743c-33f5-48bc-929d-bd2f26c88315
+		summarizeBy: none
+		sourceColumn: Title
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Target
+		dataType: double
+		isHidden
+		isNullable: false
+		sourceProviderType: real
+		lineageTag: 15ee6ba4-149a-42e9-b5ca-ec41ff384c55
+		summarizeBy: sum
+		sourceColumn: Target
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Green_type
+		dataType: string
+		isHidden
+		isNullable: false
+		sourceProviderType: nvarchar(50)
+		lineageTag: 965dac76-65a4-473b-a123-71f75b146bcd
+		summarizeBy: none
+		sourceColumn: Green_type
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Area
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(50)
+		lineageTag: e75aeb4c-1b9d-489d-b9dc-6d9e67d6a820
+		summarizeBy: none
+		sourceColumn: Area
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Last_modified_by_email
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(50)
+		lineageTag: 5c0028cb-66e6-42de-94cc-3e62bfb85e83
+		summarizeBy: none
+		sourceColumn: Last_modified_by_email
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Last_modified_at
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(50)
+		lineageTag: ecac40b9-5393-4921-9564-f630bbaf6bc0
+		summarizeBy: none
+		sourceColumn: Last_modified_at
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column UpdateFrequency
+		dataType: string
+		isHidden
+		sourceProviderType: varchar(30)
+		lineageTag: bb83d60d-0091-4cc6-9bac-9a3530ecc32b
+		summarizeBy: none
+		sourceColumn: UpdateFrequency
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column owner
+		dataType: string
+		isHidden
+		sourceProviderType: varchar(30)
+		lineageTag: de2d13ab-b6e2-48b7-b0ce-a26ea3286c95
+		summarizeBy: none
+		sourceColumn: owner
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Inactive
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(50)
+		lineageTag: b94a24ef-9fb8-4822-8aa4-4182a0607ece
+		summarizeBy: none
+		sourceColumn: Inactive
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Digital_Huddle KPIs' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("btmstdfdevbiman.database.windows.net", "Digital_Huddle_JIA"),
+				    dbo_Digital_Huddle.KPIs = Source{[Schema="dbo",Item="Digital_Huddle.KPIs"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(dbo_Digital_Huddle.KPIs, each ([DepartmentID] = 43))
+				in
+				    #"Filtered Rows"
+
+	changedProperty = IsHidden
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

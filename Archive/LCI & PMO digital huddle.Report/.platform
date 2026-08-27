@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "LCI & PMO digital huddle"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "cedce3f6-8136-a3a8-4f5e-cac501b92f95"
+  }
+}

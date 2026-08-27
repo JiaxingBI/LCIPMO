@@ -1,0 +1,54 @@
+table 'Digital_Huddle Departments'
+	lineageTag: 548ddf2c-dc8e-4dd6-a18c-82aaef185df3
+	sourceLineageTag: 860bbe51-7516-406e-9620-f93b06e0833f
+
+	column ID
+		dataType: int64
+		isNullable: false
+		formatString: 0
+		lineageTag: f213b506-a914-49b4-ba50-c2b4bbd6e42e
+		sourceLineageTag: e34e80eb-cbe5-4951-bc4c-c0ce98cfcd96
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Department
+		dataType: string
+		lineageTag: d1349b6f-c4da-43a8-9a6f-e82ba871e3b7
+		sourceLineageTag: a066613d-4d0c-4749-b4ea-58e0c6446e0c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Department
+
+		annotation SummarizationSetBy = Automatic
+
+	column FunctionalArea
+		dataType: string
+		lineageTag: 9681d4d1-ce63-49b5-b49a-9010db07e92a
+		sourceLineageTag: 56257349-06df-4da8-9678-5178bcb8718c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: FunctionalArea
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sorting
+		dataType: string
+		lineageTag: 14b47e04-6a95-4e11-b0ae-a8d1f2fb2da1
+		sourceLineageTag: 870af2bc-2503-4aec-967a-2cc58963b889
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Sorting
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Digital_Huddle Departments-570d269c-ad1d-4f92-a3a0-09acf0b27405' = entity
+		mode: directQuery
+		source
+			entityName: Digital_Huddle Departments
+			expressionSource: 'DirectQuery 到 AS - JIA Digital huddle - Dataset1'
+
+	annotation PBI_ResultType = Exception
+

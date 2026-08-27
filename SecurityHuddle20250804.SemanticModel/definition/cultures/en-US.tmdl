@@ -1,0 +1,752 @@
+cultureInfo en-US
+
+	linguisticMetadata =
+			{
+			  "Version": "4.1.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "measure": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measure"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "measure": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "degree": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "quota": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "extent": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "portion": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "ration": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "size": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        }
+			      ]
+			    },
+			    "measure.column": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measure",
+			          "ConceptualProperty": "Column"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "column": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "pilaster": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "pier": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "pillar": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "post": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "support": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "stake": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "pole": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "buttress": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "underpinning": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "contribution": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        }
+			      ]
+			    },
+			    "table1measure.incidentfindingespa": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measure",
+			          "ConceptualProperty": "IncidentFindingESPA1"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "ESPA1": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table1measure.incidentfindingespa2": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measure",
+			          "ConceptualProperty": "IncidentFindingESPA2"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "ESPA2": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table1measure.abnormalfindingespa1": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measure",
+			          "ConceptualProperty": "AbnormalFindingESPA"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "ESPA": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table1measure.alarm_true": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measure",
+			          "ConceptualProperty": "Alarm_True"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "True": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table1measure.alarm_false": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measure",
+			          "ConceptualProperty": "Alarm_False"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "False": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table1datetable.currentweekofyear": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dDate",
+			          "ConceptualProperty": "CurrentWeekOfYear"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "This Week": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table1measure.nightinspection": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measure",
+			          "ConceptualProperty": "NightInspection"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Finding Yesterday": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table1datetable.day_num": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dDate",
+			          "ConceptualProperty": "Day_num"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Day": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "digital_huddle_kpi_data.date": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Digital_Huddle KPI_data",
+			          "ConceptualProperty": "Date"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "table1measure.pct_smf": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measure",
+			          "ConceptualProperty": "pct_SMFSecurity"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "完成率": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "sm_mulfunction.month": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "S&M malfunction",
+			          "ConceptualProperty": "Month"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "sm_mulfunction.monthstartdate": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "S&M malfunction",
+			          "ConceptualProperty": "MonthStartDate"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "月份": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table1measure.pct_smflac": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measure",
+			          "ConceptualProperty": "pct_SMFLAC"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "完成率": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table1measure.pct_sm_it": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measure",
+			          "ConceptualProperty": "pct_SM_IT"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "完成率": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "project_tracker.no_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Project Tracker",
+			          "ConceptualProperty": "No."
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "No.": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table1measure.crsisex_finish": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measure",
+			          "ConceptualProperty": "CrsisEx_finish"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Finished": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table1measure.crsisex_target": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measure",
+			          "ConceptualProperty": "CrsisEx_Target"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Target": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "attendance__absenceespa.position_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Attendance & Absence(ESPA)",
+			          "ConceptualProperty": "Position 岗位"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "attendance__absenceespa.status_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Attendance & Absence(ESPA)",
+			          "ConceptualProperty": "Status 状态"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "table2025_gls_plan.driver_owner": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "2025 GLS PLAN",
+			          "ConceptualProperty": "Driver/Owner"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Driver": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "access_issue.accessusertype": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Access Issue",
+			          "ConceptualProperty": "AccessUserType"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Type": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table1measure.penetration_total": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measure",
+			          "ConceptualProperty": "penetration_total"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Total": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table1measure.penetration_failed": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measure",
+			          "ConceptualProperty": "penetration_failed"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Failed": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table1measure.penetration_pct": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measure",
+			          "ConceptualProperty": "penetration_pct"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Passing Rate": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "manned_guards_training_nonespa.column": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Manned Guards Training (Non-ESPA)",
+			          "ConceptualProperty": "培训通过率"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "通过率": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    }
+			  },
+			  "Relationships": {
+			    "measure_has_safety_LTI1": {
+			      "Binding": {
+			        "ConceptualEntity": "_Measure"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "measure": {
+			          "Target": {
+			            "Entity": "measure"
+			          }
+			        },
+			        "measure.safety_LTI1": {
+			          "Target": {
+			            "Entity": "measure.safety_LTI1"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "measure"
+			            },
+			            "Object": {
+			              "Role": "measure.safety_LTI1"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "measures_have_safety_LTI1"
+			        }
+			      ]
+			    },
+			    "measure_has_column": {
+			      "Binding": {
+			        "ConceptualEntity": "_Measure"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "measure": {
+			          "Target": {
+			            "Entity": "measure"
+			          }
+			        },
+			        "measure.column": {
+			          "Target": {
+			            "Entity": "measure.column"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "measure"
+			            },
+			            "Object": {
+			              "Role": "measure.column"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "measures_have_columns"
+			        }
+			      ]
+			    }
+			  },
+			  "Agents": {
+			    "Internal": {
+			      "Version": "1.1.0"
+			    }
+			  }
+			}
+		contentType: json
+

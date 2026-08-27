@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "MLD_PRO_PAC_2025Productivity"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "7bf708f1-1f0c-8113-4119-ecf6efde7c7b"
+  }
+}

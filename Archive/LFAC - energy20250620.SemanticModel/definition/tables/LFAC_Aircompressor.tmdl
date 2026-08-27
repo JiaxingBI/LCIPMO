@@ -1,0 +1,110 @@
+table LFAC_Aircompressor
+	lineageTag: 71dd8e40-fe49-409f-9e02-dbbe7c0ec0e4
+
+	column Week
+		dataType: string
+		isHidden
+		lineageTag: 62f9d46e-119b-4916-ac26-1c62a1336756
+		summarizeBy: none
+		sourceColumn: Week
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 分表累计
+		dataType: double
+		lineageTag: 5a542a09-19d0-4954-b8cb-d253db1d90d5
+		summarizeBy: sum
+		sourceColumn: 分表累计
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 气电比
+		dataType: double
+		lineageTag: e6dfef30-7f85-4787-8146-ae6f859928c6
+		summarizeBy: sum
+		sourceColumn: 气电比
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 输入比功率
+		dataType: double
+		lineageTag: e63d2758-e8f8-4554-86b4-1fb60497017e
+		summarizeBy: sum
+		sourceColumn: 输入比功率
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 目标值
+		dataType: string
+		lineageTag: dbf13290-e8f3-4ac6-839a-da0988d3bc67
+		summarizeBy: none
+		sourceColumn: 目标值
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: 4b9ba26c-6941-4c7a-aa12-12f5d8bb5a5e
+		summarizeBy: none
+		sourceColumn: Date
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Location
+		dataType: string
+		lineageTag: 41203611-7281-4edf-b0a1-661c1d8d0c02
+		summarizeBy: none
+		sourceColumn: Location
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		dataType: double
+		lineageTag: 90ecdc02-c81d-4a35-94fb-23905e339b7d
+		summarizeBy: sum
+		sourceColumn: Value
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition LFAC_Aircompressor = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://legogroup.sharepoint.com/sites/JIALFACTECH/Shared%20Documents/18%20%E8%83%BD%E6%BA%90%E4%BF%A1%E6%81%AF%E7%AE%A1%E7%90%86/01%20Energy%20Data%20%E8%83%BD%E6%BA%90%E6%95%B0%E6%8D%AE/%E8%83%BD%E6%BA%90%E4%B8%AD%E5%BF%83%E6%95%B0%E6%8D%AE%E8%AE%B0%E5%BD%95%E8%A1%A8%202025.xlsx"), null, true),
+				    #"Air compressor_Sheet" = Source{[Item="Air compressor",Kind="Sheet"]}[Data],
+				    #"Removed Top Rows" = Table.Skip(#"Air compressor_Sheet",30),
+				    #"Removed Bottom Rows" = Table.RemoveLastN(#"Removed Top Rows",59),
+				    #"Renamed Columns" = Table.RenameColumns(#"Removed Bottom Rows",{{"Column1", "Week"}, {"Column2", "Usages"}, {"Column3", "CN303总表"}, {"Column4", "CN101"}, {"Column5", "CN102"}, {"Column6", "CN103"}, {"Column7", "CN104"}, {"Column8", "CN105"}, {"Column9", "CN106"}, {"Column10", "CN202"}, {"Column11", "CN301"}, {"Column12", "CN302"}, {"Column13", "分表累计"}, {"Column14", "气电比"}, {"Column15", "输入比功率"}, {"Column16", "目标值"}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Renamed Columns",{"Column18", "Column19", "Column20", "Column21", "Column22", "Column23", "Column24", "Column25", "Column26", "Column27", "Column28", "Column29", "Column30", "Column31", "Column32", "Column33", "Column34", "Column35", "Column36", "Column37", "Column38", "Column39", "Column40", "Column41", "Column42", "Column43", "Column44", "Column45", "Column46", "Column47", "Column48", "Column49", "Column50", "Column51", "Column52", "Column53", "Column54", "Column55", "Column56", "Column57", "Column58", "Column59", "Column60", "Column61", "Column62", "Column17"}),
+				    #"Replaced Errors" = Table.ReplaceErrorValues(#"Removed Columns", {{"Week", null}}),
+				    #"Filled Down" = Table.FillDown(#"Replaced Errors",{"Week", "分表累计", "气电比", "输入比功率", "目标值"}),
+				    #"Filtered Rows" = Table.SelectRows(#"Filled Down", each ([Usages] = "实际用量") and ([CN303总表] <> null and [CN303总表] <> "")),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Filtered Rows",{{"气电比", type number}, {"输入比功率", type number}, {"分表累计", type number}}),
+				    #"Removed Errors" = Table.RemoveRowsWithErrors(#"Changed Type", {"气电比"}),
+				    #"Added Custom" = Table.AddColumn(#"Removed Errors", "Date", each Date.StartOfWeek(Date.AddDays(#date(2025, 1, 1), ([Week] - 1) * 7), Day.Sunday)),
+				    #"Unpivoted Only Selected Columns" = Table.Unpivot(#"Added Custom", {"CN101", "CN102", "CN103", "CN104", "CN105", "CN106", "CN202", "CN301", "CN302","CN303总表"}, "Location", "Value"),
+				    #"Removed Columns1" = Table.RemoveColumns(#"Unpivoted Only Selected Columns",{"Usages"}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Removed Columns1",{{"Date", type date}, {"Value", type number}})
+				in
+				    #"Changed Type1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

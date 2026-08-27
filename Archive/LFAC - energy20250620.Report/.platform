@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "LFAC - energy20250620"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "8a53e6cf-faab-b627-420a-0e857fdb133d"
+  }
+}

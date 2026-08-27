@@ -1,0 +1,83 @@
+table 'LEGO Security Training'
+	lineageTag: 8bf9ce1a-c237-47e5-bfd3-8c893e25a7d9
+
+	column Times
+		dataType: int64
+		formatString: 0
+		lineageTag: ed178365-dd36-4d08-aca5-ee12fca125d1
+		summarizeBy: sum
+		sourceColumn: Times
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column Trainee
+		dataType: string
+		lineageTag: da89d787-a765-4f4c-ad9e-c4ee780219c5
+		summarizeBy: none
+		sourceColumn: Trainee
+
+		annotation SummarizationSetBy = Automatic
+
+	column Trainer
+		dataType: string
+		lineageTag: fb0fd632-1d87-4aed-ad49-6b23f7dc98f0
+		summarizeBy: none
+		sourceColumn: Trainer
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Training Type'
+		dataType: string
+		lineageTag: 84ca8b50-d3ed-409d-a005-35e333133774
+		summarizeBy: none
+		sourceColumn: Training Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Category
+		dataType: string
+		lineageTag: b1d9fc7f-5623-40eb-be46-a45045bc0ced
+		summarizeBy: none
+		sourceColumn: Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: afc42def-9eb0-4ad8-aead-e46b53bb202b
+		summarizeBy: none
+		sourceColumn: Date
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Created
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 1a4b8f8c-65f5-4fad-b690-5fda4f67887d
+		summarizeBy: none
+		sourceColumn: Created
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'LEGO Security Training' = m
+		mode: import
+		source =
+				let
+				    Source = Security_D,
+				    #"Removed Other Columns" = Table.SelectColumns(Source,{"Category", "Date", "Times", "Training Type", "Trainee", "Trainer", "Created"}),
+				    #"Filtered Rows" = Table.SelectRows(#"Removed Other Columns", each ([Category] = "Security Training"))
+				    in
+				    #"Filtered Rows"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

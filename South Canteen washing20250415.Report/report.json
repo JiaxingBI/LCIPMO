@@ -1,0 +1,107 @@
+{
+  "config": "{\"version\":\"5.59\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.62\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true,\"useEnhancedTooltips\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}],\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY24SU10",
+            "path": "BaseThemes/CY24SU10.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{\"relationships\":[{\"source\":\"47a87d8b2e5b7b03f239\",\"target\":\"7f44cf24b93efe710d50\",\"type\":3},{\"source\":\"47a87d8b2e5b7b03f239\",\"target\":\"0f81509a4a8080194732\",\"type\":3},{\"source\":\"47a87d8b2e5b7b03f239\",\"target\":\"26aa9bd2d3c015ce1689\",\"type\":1}]}",
+      "displayName": "Page 1",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "50f39cb85de3524134f0",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"0f81509a4a8080194732\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":16.6824644549763,\"z\":1000,\"width\":517.1563981042653,\"height\":235.07109004739334,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"canteen.Name\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"canteen\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Name\"},\"Name\":\"canteen.Name\",\"NativeReferenceName\":\"Name\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Basic'\"}}}}}],\"general\":[{\"properties\":{\"orientation\":{\"expr\":{\"Literal\":{\"Value\":\"1D\"}}}}}]},\"vcObjects\":{\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"background\":[{\"properties\":{\"color\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":-0.1}}}}}}}]}}}",
+          "filters": "[]",
+          "height": 235.07,
+          "width": 517.16,
+          "x": 0.00,
+          "y": 16.68,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"1619d5391c0b8fa77b04\",\"layouts\":[{\"id\":0,\"position\":{\"x\":815.9241706161137,\"y\":16.6824644549763,\"z\":6000,\"width\":442.8436018957346,\"height\":235.07109004739334,\"tabOrder\":6000}}],\"singleVisual\":{\"visualType\":\"pieChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Sheet1.活动类别\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(canteen.间隔(分钟))\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"Sheet1\",\"Type\":0},{\"Name\":\"c\",\"Entity\":\"canteen\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"活动类别\"},\"Name\":\"Sheet1.活动类别\",\"NativeReferenceName\":\"活动类别\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"间隔(分钟)\"}},\"Function\":0},\"Name\":\"Sum(canteen.间隔(分钟))\",\"NativeReferenceName\":\"间隔(分钟) 的总和\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"间隔(分钟)\"}},\"Function\":0}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"legend\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"labelDisplayUnits\":{\"expr\":{\"Literal\":{\"Value\":\"1D\"}}}}}]},\"vcObjects\":{\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 235.07,
+          "width": 442.84,
+          "x": 815.92,
+          "y": 16.68,
+          "z": 6000.00
+        },
+        {
+          "config": "{\"name\":\"26aa9bd2d3c015ce1689\",\"layouts\":[{\"id\":0,\"position\":{\"x\":523.7220478922605,\"y\":16.6824644549763,\"z\":2000,\"width\":285.11848341232223,\"height\":78.86255924170615,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"canteen.durations(hrs)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"canteen\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"durations(hrs)\"},\"Name\":\"canteen.durations(hrs)\",\"NativeReferenceName\":\"durations(hrs)\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"durations(hrs)\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"28D\"}}}}}],\"wordWrap\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"vcObjects\":{\"background\":[{\"properties\":{\"color\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":-0.1}}}}}}}],\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 78.86,
+          "width": 285.12,
+          "x": 523.72,
+          "y": 16.68,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"47a87d8b2e5b7b03f239\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":256.30331753554503,\"z\":5000,\"width\":1258.7677725118483,\"height\":121.32701421800947,\"tabOrder\":4000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"canteen.分类\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"canteen\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"分类\"},\"Name\":\"canteen.分类\",\"NativeReferenceName\":\"分类\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Basic'\"}}}}}],\"general\":[{\"properties\":{\"orientation\":{\"expr\":{\"Literal\":{\"Value\":\"1D\"}}}}}]},\"vcObjects\":{\"background\":[{\"properties\":{\"color\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":-0.1}}}}}}}],\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 121.33,
+          "width": 1258.77,
+          "x": 0.00,
+          "y": 256.30,
+          "z": 5000.00
+        },
+        {
+          "config": "{\"name\":\"6ed8f5ff48d7dffa6b2b\",\"layouts\":[{\"id\":0,\"position\":{\"x\":523.2227488151658,\"y\":104.64454976303317,\"z\":4000,\"width\":285.11848341232223,\"height\":147.10900473933648,\"tabOrder\":5000}}],\"singleVisual\":{\"visualType\":\"pivotTable\",\"projections\":{\"Rows\":[{\"queryRef\":\"canteen.分类\",\"active\":true}],\"Values\":[{\"queryRef\":\"canteen.%分类\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"canteen\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"分类\"},\"Name\":\"canteen.分类\",\"NativeReferenceName\":\"分类\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"%分类\"},\"Name\":\"canteen.%分类\",\"NativeReferenceName\":\"%分类\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"分类\"}}}]},\"drillFilterOtherVisuals\":true,\"vcObjects\":{\"background\":[{\"properties\":{\"color\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":-0.1}}}}}}}],\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 147.11,
+          "width": 285.12,
+          "x": 523.22,
+          "y": 104.64,
+          "z": 4000.00
+        },
+        {
+          "config": "{\"name\":\"7f44cf24b93efe710d50\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":382.18009478672985,\"z\":0,\"width\":732.5118483412322,\"height\":338.1990521327014,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"pieChart\",\"projections\":{\"Category\":[{\"queryRef\":\"canteen.分类\",\"active\":true}],\"Y\":[{\"queryRef\":\"CountNonNull(canteen.间隔(分钟))\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"canteen\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"分类\"},\"Name\":\"canteen.分类\",\"NativeReferenceName\":\"分类\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"间隔(分钟)\"}},\"Function\":0},\"Name\":\"CountNonNull(canteen.间隔(分钟))\",\"NativeReferenceName\":\"Sum of 间隔(分钟)\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"间隔(分钟)\"}},\"Function\":0}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"vcObjects\":{\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 338.20,
+          "width": 732.51,
+          "x": 0.00,
+          "y": 382.18,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"e68c617db15ad90bb8fa\",\"layouts\":[{\"id\":0,\"position\":{\"x\":741.6113744075828,\"y\":382.18009478672985,\"z\":3000,\"width\":517.1563981042653,\"height\":338.1990521327014,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"columnChart\",\"projections\":{\"Category\":[{\"queryRef\":\"canteen.分类\",\"active\":true}],\"Y\":[{\"queryRef\":\"canteen.durations(hrs)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"canteen\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"分类\"},\"Name\":\"canteen.分类\",\"NativeReferenceName\":\"分类\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"durations(hrs)\"},\"Name\":\"canteen.durations(hrs)\",\"NativeReferenceName\":\"durations(hrs)\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"durations(hrs)\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"categoryAxis\":[{\"properties\":{\"showAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"valueAxis\":[{\"properties\":{\"showAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"background\":[{\"properties\":{\"color\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":0}}}}}}}],\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[{\"name\":\"ceb29e289a8fd31b6ba4\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"canteen\"}},\"Property\":\"分类\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"canteen\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"分类\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'其他粗加工'\"}}],[{\"Literal\":{\"Value\":\"'切菜'\"}}],[{\"Literal\":{\"Value\":\"'干货类洗菜'\"}}],[{\"Literal\":{\"Value\":\"'干货类粗加工（削皮，去根）'\"}}],[{\"Literal\":{\"Value\":\"'根茎类洗菜'\"}}],[{\"Literal\":{\"Value\":\"'根茎类粗加工（削皮，去根）'\"}}],[{\"Literal\":{\"Value\":\"'洗菜'\"}}],[{\"Literal\":{\"Value\":\"'绿叶类粗加工（削皮，去根）'\"}}],[{\"Literal\":{\"Value\":\"'绿叶类洗菜'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":0,\"objects\":{},\"isHiddenInViewMode\":false}]",
+          "height": 338.20,
+          "width": 517.16,
+          "x": 741.61,
+          "y": 382.18,
+          "z": 3000.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Page 2",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "d5764f3dc7b91c055294",
+      "ordinal": 1,
+      "visualContainers": [],
+      "width": 1280.00
+    }
+  ]
+}

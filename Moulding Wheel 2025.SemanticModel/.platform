@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Moulding Wheel 2025"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "e14ceeb6-ae4c-8d91-4f92-0866037b588c"
+  }
+}

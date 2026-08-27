@@ -1,0 +1,50 @@
+model Model
+	defaultMode: directQuery
+	culture: zh-CN
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBIDesktopVersion = 2.141.1754.0 (25.03)+e4409ed908ce97a5e9747f7dc48da475cf1c71a2
+
+annotation PBI_QueryOrder = ["DirectQuery 到 AS - JIA Digital huddle - Dataset1","Meeting host","EHS","Weekly Focus_2025","OfficeStatus","Others","2025ProductivityTracker","2025Tooltip","ActionList"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_ProTooling = ["CalcGroup","DaxQueryView_Desktop"]
+
+annotation __TEdtr = 1
+
+ref table dDate
+ref table _Measure
+ref table 'Digital_Huddle GLS'
+ref table 'Digital_Huddle Departments'
+ref table 'Digital_Huddle KPI_data'
+ref table 'Digital_Huddle KPIs'
+ref table 'Digital_Huddle PDCA'
+ref table Archive
+ref table 'Digital_Huddle Focus'
+ref table DateTableTemplate_89415fec-b729-45e9-bbe0-447e64ad87ab
+ref table LocalDateTable_be91b4d5-f66e-44c5-99cf-4370f3f962ba
+ref table LocalDateTable_8d11d649-530d-4240-bbfe-b919c741bcaa
+ref table LocalDateTable_d70b6f36-0c57-4e24-aa62-4b14e7d804cd
+ref table LocalDateTable_2c57eabe-518d-44cf-95da-c02b1947074b
+ref table LocalDateTable_ac783307-ac08-4ee1-aa26-e6cb58d1dded
+ref table 'Meeting host'
+ref table LocalDateTable_4cb90060-8b4f-495c-b5a2-ff30ad69a203
+ref table LocalDateTable_5ff2e4dc-788f-489f-8a06-41716277b3d3
+ref table LocalDateTable_21a8e5c6-98ca-4d53-b49b-69151599e111
+ref table EHS
+ref table 'Weekly Focus_2025'
+ref table OfficeStatus
+ref table Others
+ref table 2025ProductivityTracker
+ref table 2025Tooltip
+ref table LocalDateTable_e8a8847f-0272-4a94-a80d-f74f06c1e3b6
+ref table CalendarLocal
+ref table ActionList
+
+ref cultureInfo zh-CN
+

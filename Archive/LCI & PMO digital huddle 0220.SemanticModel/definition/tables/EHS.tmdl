@@ -1,0 +1,75 @@
+table EHS
+	lineageTag: 9a14b0f5-ee83-4bc3-b31a-834be2355c68
+
+	measure 'Target Total' = SUM(EHS[Target])
+		formatString: 0
+		lineageTag: ab278a49-9f17-42d6-af4b-45e3bcad0d4a
+
+	column Owner
+		dataType: string
+		lineageTag: b1adf2bd-2c4a-4d4c-b379-c565ba065795
+		summarizeBy: none
+		sourceColumn: Owner
+
+		annotation SummarizationSetBy = Automatic
+
+	column Item
+		dataType: string
+		lineageTag: 033a2d9e-cb82-4fa4-9e2a-d09120e52c3f
+		summarizeBy: none
+		sourceColumn: Item
+
+		annotation SummarizationSetBy = Automatic
+
+	column Actual
+		dataType: int64
+		formatString: 0
+		lineageTag: a64f0b29-1df7-4b59-abcb-e85adf57d846
+		summarizeBy: sum
+		sourceColumn: Actual
+
+		annotation SummarizationSetBy = Automatic
+
+	column Target
+		dataType: int64
+		formatString: 0
+		lineageTag: d4041731-b49a-45a6-a01d-46e161dce971
+		summarizeBy: sum
+		sourceColumn: Target
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Achieved rate'
+		dataType: double
+		lineageTag: 20d32a0e-a0a3-4c8b-a517-88c61b751fcb
+		summarizeBy: sum
+		sourceColumn: Achieved rate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Outstanding
+		dataType: string
+		lineageTag: 7512f20f-77d4-4cdf-b328-5da2d42c7d96
+		summarizeBy: none
+		sourceColumn: Outstanding
+
+		annotation SummarizationSetBy = Automatic
+
+	partition EHS = m
+		mode: import
+		source =
+				let
+				    源 = Excel.Workbook(Web.Contents("https://legogroup.sharepoint.com/sites/JIALCI/Shared%20Documents/General/01_Department%20Info/01_Digital%20Huddle/06_KPI/2023/P-KPI%202023_RZ_LCI%20EHS%20V0.xlsx"), null, true),
+				    EHS_Sheet = 源{[Item="EHS",Kind="Sheet"]}[Data],
+				    提升的标题 = Table.PromoteHeaders(EHS_Sheet, [PromoteAllScalars=true]),
+				    更改的类型 = Table.TransformColumnTypes(提升的标题,{{"Owner", type text}, {"Item", type text}, {"Actual", Int64.Type}, {"Target", Int64.Type}, {"Achieved rate", type number}}),
+				    #"Filtered Rows" = Table.SelectRows(更改的类型, each ([Target] = 1))
+				in
+				    #"Filtered Rows"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

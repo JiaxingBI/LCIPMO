@@ -1,0 +1,126 @@
+table 'Digital_Huddle KPI_data'
+	lineageTag: 65d49a9a-7de7-4074-894a-00d5afaceab7
+
+	column ID
+		dataType: int64
+		isNullable: false
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 069d1bba-98c1-4d88-8a06-af3e4c10969c
+		summarizeBy: count
+		sourceColumn: ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column KPI_ID
+		dataType: int64
+		isNullable: false
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 476cf7f4-4ae0-47e3-abe3-121d082bc289
+		summarizeBy: count
+		sourceColumn: KPI_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: dateTime
+		isNullable: false
+		formatString: Long Date
+		sourceProviderType: nvarchar(50)
+		lineageTag: 77a4cfc4-ec68-4c3c-b4fe-71a4a06208bd
+		summarizeBy: none
+		sourceColumn: Date
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Actual_value
+		dataType: double
+		isNullable: false
+		sourceProviderType: real
+		lineageTag: d58e2fe2-7b65-47f1-b753-cedff0bc1e28
+		summarizeBy: sum
+		sourceColumn: Actual_value
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Comment_value
+		dataType: string
+		sourceProviderType: nvarchar(500)
+		lineageTag: 980d262c-2934-40cb-9eb8-c25a2f882e26
+		summarizeBy: none
+		sourceColumn: Comment_value
+
+		annotation SummarizationSetBy = Automatic
+
+	column Last_modified_by
+		dataType: string
+		sourceProviderType: nvarchar(50)
+		lineageTag: ce5d4d70-b402-4ea4-a89d-fbb3b021f533
+		summarizeBy: none
+		sourceColumn: Last_modified_by
+
+		annotation SummarizationSetBy = Automatic
+
+	column last_modified_at
+		dataType: string
+		sourceProviderType: nvarchar(50)
+		lineageTag: 5c173c4a-6be3-4816-8c76-9eeb235d7956
+		summarizeBy: none
+		sourceColumn: last_modified_at
+
+		annotation SummarizationSetBy = Automatic
+
+	column Target_from
+		dataType: double
+		sourceProviderType: real
+		lineageTag: c47573fa-d200-49ff-a1ef-8d5997808b38
+		summarizeBy: sum
+		sourceColumn: Target_from
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Target_to
+		dataType: double
+		sourceProviderType: real
+		lineageTag: 67e25eb8-d0bf-43e9-9ffe-bf2e281c2d0d
+		summarizeBy: sum
+		sourceColumn: Target_to
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column YTD_value
+		dataType: double
+		sourceProviderType: real
+		lineageTag: 2ff61fcc-2b14-4291-8043-9f7ac133d317
+		summarizeBy: sum
+		sourceColumn: YTD_value
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'Digital_Huddle KPI_data' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("btmstdfdevbiman.database.windows.net", "Digital_Huddle_JIA"),
+				    dbo_Digital_Huddle.KPI_data = Source{[Schema="dbo",Item="Digital_Huddle.KPI_data"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(dbo_Digital_Huddle.KPI_data, each ([KPI_ID] = 811 or [KPI_ID] = 812 or [KPI_ID] = 813))
+				in
+				    #"Filtered Rows"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

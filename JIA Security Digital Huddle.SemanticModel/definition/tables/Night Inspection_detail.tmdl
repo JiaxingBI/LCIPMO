@@ -1,0 +1,147 @@
+table 'Night Inspection_detail'
+	lineageTag: 0960b2e2-5fdc-4ab2-8b01-9b0934b61295
+
+	column NO
+		dataType: string
+		lineageTag: 35ba84db-8721-4cda-8197-793cb56a0133
+		summarizeBy: none
+		sourceColumn: NO
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month
+		dataType: string
+		lineageTag: 9fa7bf38-3353-41c6-92da-f7a942be5f16
+		summarizeBy: none
+		sourceColumn: Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column WHEN
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: d93528a6-8ad3-4251-b091-c68d1d023768
+		summarizeBy: none
+		sourceColumn: WHEN
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column WHO
+		dataType: string
+		lineageTag: 9cf86005-f44d-4067-a97d-e324113de407
+		summarizeBy: none
+		sourceColumn: WHO
+
+		annotation SummarizationSetBy = Automatic
+
+	column WHERE
+		dataType: string
+		lineageTag: 44fa5be5-dcb1-486e-8461-4fb6e1813cc9
+		summarizeBy: none
+		sourceColumn: WHERE
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Good Findings (+)'
+		dataType: string
+		lineageTag: c7a19435-8297-440f-9adb-02fc8751aa51
+		summarizeBy: none
+		sourceColumn: Good Findings (+)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Abnormal Findings (-)'
+		dataType: string
+		lineageTag: da04a8ff-323b-4f10-809e-b34c11efddc2
+		summarizeBy: none
+		sourceColumn: Abnormal Findings (-)
+
+		annotation SummarizationSetBy = Automatic
+
+	column Actions
+		dataType: string
+		lineageTag: 1db014fe-0174-4374-a2ba-2d212c97b7d3
+		summarizeBy: none
+		sourceColumn: Actions
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'MONTH 2'
+		dataType: string
+		lineageTag: 5efc7e04-1083-48d6-ae16-49c8e326bb6d
+		summarizeBy: none
+		sourceColumn: MONTH
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Action Owner'
+		dataType: string
+		lineageTag: 3a2fadad-7e71-4d7d-9ccc-2cd01766b580
+		summarizeBy: none
+		sourceColumn: Action Owner
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Night Inspection_detail' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://legogroup.sharepoint.com/sites/CHJiaxingSecurity/Shared%20Documents/00%20Digital%20Huddle/Digital%20Huddle%20(Excel%E7%89%88-%E8%AF%95%E8%BF%90%E8%A1%8C%EF%BC%89/Supporting%20Document%20(Quality-Night%20Inspection)/2025/Night%20Inspection%20Finding%20Report-%202025.xlsx"), null, true),
+				    Findings_Sheet = Source{[Item="Findings",Kind="Sheet"]}[Data],
+				    #"Removed Top Rows" = Table.Skip(Findings_Sheet,2),
+				    #"Promoted Headers1" = Table.PromoteHeaders(#"Removed Top Rows", [PromoteAllScalars=true]),
+				    #"Filled Down1" = Table.FillDown(#"Promoted Headers1",{"WHEN","WHO"}),
+				    #"Removed Other Columns" = Table.SelectColumns(#"Filled Down1",{"NO", "MONTH", "WHEN", "WHO", "WHERE", "Good Findings (+)", "Abnormal Findings (-)", "Actions", "Action Owner"}),
+				    #"Added Custom" = Table.AddColumn(#"Removed Other Columns", "Month.1", each Text.Upper(
+				    Date.ToText(
+				      Date.FromText([MONTH] & " 1, 2020", "en-US"),
+				      "MMM",
+				      "en-US"
+				    )
+				  )),
+				    #"Renamed Columns" = Table.RenameColumns(#"Added Custom",{{"Month.1", "Month"}}),
+				    #"Add Parsed Column" =
+				        Table.AddColumn(
+				            #"Renamed Columns",
+				            "WHEN_Parsed",
+				            each
+				                let
+				                    raw = [WHEN],
+				                    isDate = Value.Is(raw, type date) or Value.Is(raw, type datetime),
+				                    cleaned =
+				                        if isDate then
+				                            raw
+				                        else
+				                            Text.Replace(
+				                                Text.AfterDelimiter(Text.From(raw), ".", {0, RelativePosition.FromStart}),
+				                                ".",
+				                                " "
+				                            ),
+				                    parsedDateTime =
+				                        if isDate then
+				                            if Value.Is(raw, type date) then DateTime.From(raw) else raw
+				                        else
+				                            DateTime.FromText(cleaned, "en-US")
+				                in
+				                    DateTime.Date(parsedDateTime),
+				            type date
+				        ),
+				    AddFormattedText = Table.AddColumn(
+				            #"Add Parsed Column",
+				            "WHEN_Text",
+				            each Date.ToText([WHEN_Parsed], "yyyy/M/d"),
+				            type text
+				        ),
+				    #"Removed Columns1" = Table.RemoveColumns(AddFormattedText,{"WHEN", "WHEN_Text"}),
+				    #"Renamed Columns1" = Table.RenameColumns(#"Removed Columns1",{{"WHEN_Parsed", "WHEN"}}),
+				    #"Capitalized Each Word" = Table.TransformColumns(#"Renamed Columns1",{{"WHO", Text.Proper, type text}}),
+				    #"Removed Blank Rows" = Table.SelectRows(#"Capitalized Each Word", each not List.IsEmpty(List.RemoveMatchingItems(Record.FieldValues(_), {"", null})))
+				in
+				    #"Removed Blank Rows"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

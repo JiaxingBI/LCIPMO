@@ -1,0 +1,34 @@
+table Archive
+	lineageTag: 0b0de87f-e2b3-4a04-b9dc-ade261dfa747
+	sourceLineageTag: 5841e772-c05b-4dcc-9c15-1f056316fb49
+
+	column Archive
+		dataType: boolean
+		isNullable: false
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: ae70bc7d-9336-40a4-8cdc-3df3cd17523c
+		sourceLineageTag: 382bc772-6700-4e9a-b6ae-548b59baffd3
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Archive
+
+		annotation SummarizationSetBy = Automatic
+
+	column Filter
+		dataType: string
+		lineageTag: 77431f28-b424-4930-a800-37a5294189ad
+		sourceLineageTag: a5b21f13-f52f-41ab-bba2-234c1b92165e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Filter
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Archive-04742e7e-aadf-4044-8182-ac4782cc1945 = entity
+		mode: directQuery
+		source
+			entityName: Archive
+			expressionSource: 'DirectQuery 到 AS - JIA Digital huddle - Dataset1'
+
+	annotation PBI_ResultType = Exception
+

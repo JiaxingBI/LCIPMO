@@ -1,0 +1,326 @@
+table 'Abnormal Finding'
+	lineageTag: 3131e26a-a704-4384-9ca8-6429e1b4a5e1
+
+	column Findings
+		dataType: string
+		lineageTag: c1783614-2e47-4198-8ce8-a1d6815c7916
+		summarizeBy: none
+		sourceColumn: Findings
+
+		annotation SummarizationSetBy = Automatic
+
+	column Created
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: e1c98546-23fb-46b5-935e-dc322ec1285a
+		summarizeBy: none
+		sourceColumn: Created
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: c4964a9e-d6c7-49d8-88b3-4a19a6109fd3
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column FindingCategory
+		dataType: string
+		lineageTag: 465fa40a-ca0c-48b0-b494-4d1cbdc0affb
+		summarizeBy: none
+		sourceColumn: FindingCategory
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ESPA Finding Area '
+		dataType: string
+		lineageTag: ac01e996-7efb-44e9-83b8-3c9ea590452e
+		summarizeBy: none
+		sourceColumn: "ESPA Finding Area "
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Abnormal Finding Area'
+		dataType: string
+		lineageTag: 93613054-40e3-4e59-96b5-3a574427df11
+		summarizeBy: none
+		sourceColumn: Abnormal Finding Area
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Non ESPA Finding Area'
+		dataType: string
+		lineageTag: 82b19ee1-9735-48b7-a095-3d29545b7c2c
+		summarizeBy: none
+		sourceColumn: Non ESPA Finding Area
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Alarm/ False Alarm'
+		dataType: string
+		lineageTag: ef9f4b45-1ff8-46d9-bdb1-1a391b5b6e50
+		summarizeBy: none
+		sourceColumn: Alarm/ False Alarm
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Alarm Type'
+		dataType: string
+		lineageTag: 8e9481eb-3cd4-4275-9fa6-b325f234744d
+		summarizeBy: none
+		sourceColumn: Alarm Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Where
+		dataType: string
+		lineageTag: b831f711-b786-4fa9-b34e-9a7396d9db52
+		summarizeBy: none
+		sourceColumn: Where
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Photos(Good Finding)'
+		dataType: string
+		lineageTag: 424b3046-d16a-4e3f-afb4-58fa22cd3ece
+		summarizeBy: none
+		sourceColumn: Photos(Good Finding)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Good Findings'
+		dataType: string
+		lineageTag: 3926a9fe-0d03-4591-b71f-3497bf39e588
+		summarizeBy: none
+		sourceColumn: Good Findings
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Abnormal Findings'
+		dataType: string
+		lineageTag: ec8c8471-f97e-4268-b72d-171264ead20e
+		summarizeBy: none
+		sourceColumn: Abnormal Findings
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Photos (Abnormal Findings)'
+		dataType: string
+		lineageTag: a46e43f7-0ba8-48bd-b464-8c693e57903e
+		summarizeBy: none
+		sourceColumn: Photos (Abnormal Findings)
+
+		annotation SummarizationSetBy = Automatic
+
+	column Actions
+		dataType: string
+		lineageTag: a3fced2b-3ecc-45b6-b3e7-a7c3d093c2b1
+		summarizeBy: none
+		sourceColumn: Actions
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Responsible By'
+		dataType: string
+		lineageTag: 696b3bd6-cfb9-41ca-806c-e24abcb9a005
+		summarizeBy: none
+		sourceColumn: Responsible By
+
+		annotation SummarizationSetBy = Automatic
+
+	column Complaint/Appreciation
+		dataType: string
+		lineageTag: e134c28f-bb2e-4f3b-b5f2-2186afd90545
+		summarizeBy: none
+		sourceColumn: Complaint/Appreciation
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 55c84b5c-2bc4-47c5-a23d-cb3b85de900d
+		summarizeBy: count
+		sourceColumn: ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Associated files'
+		dataType: string
+		lineageTag: b1a4aa2c-b51d-4a90-b3d9-3e2d45a068dd
+		summarizeBy: none
+		sourceColumn: Associated files
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Color Tag'
+		dataType: string
+		lineageTag: 2a9ddd54-235f-4ddb-ad64-31de2b92c8ff
+		summarizeBy: none
+		sourceColumn: Color Tag
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Compliance Asset Id'
+		dataType: string
+		lineageTag: 998489b3-a975-4ff6-98c0-da6e9b179acd
+		summarizeBy: none
+		sourceColumn: Compliance Asset Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Priority
+		dataType: string
+		lineageTag: 0b210679-5ed7-4944-bb3b-f909639d82dc
+		summarizeBy: none
+		sourceColumn: Priority
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		dataType: string
+		lineageTag: 44b40724-e7ca-4fa7-9ba9-7649ad6c6651
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Assigned to'
+		dataType: string
+		lineageTag: fc045446-dbfe-49e1-945f-cf33ceccc860
+		summarizeBy: none
+		sourceColumn: Assigned to
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Related issue'
+		dataType: string
+		lineageTag: a0fd608e-2702-45af-b80c-457199709034
+		summarizeBy: none
+		sourceColumn: Related issue
+
+		annotation SummarizationSetBy = Automatic
+
+	column CorA_Area
+		dataType: string
+		lineageTag: d6f4db1c-5118-486b-b480-33619e33e6c0
+		summarizeBy: none
+		sourceColumn: CorA_Area
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Content Type'
+		dataType: string
+		lineageTag: 559915f2-b799-4874-947b-d02285a6133d
+		summarizeBy: none
+		sourceColumn: Content Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Modified
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 07b67dd1-011b-49cd-ae1f-e14eb0d07d3a
+		summarizeBy: none
+		sourceColumn: Modified
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Modified By'
+		dataType: string
+		lineageTag: b5ce859e-118c-492c-af7e-042f113d2403
+		summarizeBy: none
+		sourceColumn: Modified By
+
+		annotation SummarizationSetBy = Automatic
+
+	column Edit
+		dataType: string
+		lineageTag: 4d15c794-5ce8-4280-822d-d846b796d824
+		summarizeBy: none
+		sourceColumn: Edit
+
+		annotation SummarizationSetBy = Automatic
+
+	column Type
+		dataType: string
+		lineageTag: 00fc83b9-39ba-4923-b0f4-9c8421dfeaab
+		summarizeBy: none
+		sourceColumn: Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Item Child Count'
+		dataType: string
+		lineageTag: d2c070d5-3bba-4b08-b4f8-eadcfb6f482a
+		summarizeBy: none
+		sourceColumn: Item Child Count
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Folder Child Count'
+		dataType: string
+		lineageTag: 7cf1f8a4-ab36-4975-bcf4-bcfe78696c22
+		summarizeBy: none
+		sourceColumn: Folder Child Count
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Label setting'
+		dataType: string
+		lineageTag: bb4e2894-7a18-4217-b3c0-e1f58c48bce8
+		summarizeBy: none
+		sourceColumn: Label setting
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Retention label'
+		dataType: string
+		lineageTag: c16d105c-635a-4409-b7e1-8f1e0f006131
+		summarizeBy: none
+		sourceColumn: Retention label
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Retention label Applied'
+		dataType: string
+		lineageTag: a196617d-d662-409a-abab-9cd82d5296d1
+		summarizeBy: none
+		sourceColumn: Retention label Applied
+
+		annotation SummarizationSetBy = Automatic
+
+	column Weekday
+		dataType: string
+		lineageTag: cfa85f69-775c-406c-b71c-406abda01cf0
+		summarizeBy: none
+		sourceColumn: Weekday
+
+		annotation SummarizationSetBy = Automatic
+
+	column DayOfMonth
+		dataType: string
+		lineageTag: 0e61090b-aae8-4e46-85ec-b6c3cd281429
+		summarizeBy: none
+		sourceColumn: DayOfMonth
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Abnormal Finding' = m
+		mode: import
+		source =
+				let
+				    Source = Security_Q,
+				    #"Filtered Rows" = Table.SelectRows(Source, each ([FindingCategory] = "Abnormal Finding (ESPA)" or [FindingCategory] = "Abnormal Finding (Non-ESPA)"))
+				in
+				    #"Filtered Rows"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
